@@ -1,0 +1,6 @@
+{
+  "label": "Mixtape",
+  "icon": "/mnt/SDCARD/App/Mixtape/icon.png",
+  "launch": "launch.sh",
+  "description": "Browse and install community ports and apps"
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "Per-repo install hints layered over the live MiyooMini-Ports catalog. Keys are GitHub owner/repo (case-insensitive). Fields: asset (substring that must appear in the release asset name), all (install every asset that matches 'asset'), url (fixed download URL instead of a release), appDir (folder name under App/ when the archive has no folder), manual (can't be installed on-device; text explains why), note (extra tip shown after install), keep (glob list of user files never overwritten on update).",
+  "danfragoso/miyoopod": { "url": "https://github.com/danfragoso/miyoopod/raw/refs/heads/main/releases/MiyooPod.zip" },
+  "producdevity/stardew-valley-miyoo-mini-port": { "manual": "Stardew needs a PC step: download the release, put your game depot in its gamefiles folder, run prepare.sh, then copy OnionOS-package/Roms to the SD card root." },
+  "scheeseman486/openrct2mini": { "manual": "Released as a .7z archive, which Mixtape can't unpack. Extract it to the SD card root on a PC, then copy your RollerCoaster Tycoon 2 install into Roms/PORTS/Games/OpenRCT2mini/rct2/." },
+  "weimingtom/onscripter-jh-miyoo-mini-plus": { "manual": "Source only: there is no prebuilt binary to install." },
+  "mxmgorin/moria-handheld": { "asset": "onionos-app" },
+  "mxmgorin/monktower-handheld": { "asset": "onionos" },
+  "mxmgorin/retsend": { "asset": "onionos" },
+  "mxmgorin/retsurf": { "asset": "onionos" },
+  "joyrider3774/miyoo_mini_games": { "asset": "onion", "all": true, "note": "Six games were added to Ports. If they don't show up, run '~Import ports' from the Ports list." },
+  "livelovelinux/cpu_overclock_onion_os": { "appDir": "CpuOverclock" },
+  "xk9274/moonlight-app-miyoo": { "appDir": "moonlight", "keep": ["config/*"] },
+  "hotcereal/cloud-saves-miyoo-mini-plus": { "note": "Cloud Saves also needs the rclone ARMv7 binary at the SD card root and a remote named 'cloud'. See the project's README." },
+  "xk9274/pico-8-wrapper-miyoo": { "note": "Copy the Raspberry Pi pico8_dyn and pico8.dat from your PICO-8 purchase into App/pico/bin." },
+  "smonbon/miyooaudiobook": { "note": "MiyooAudiobook needs a TTF font at App/MiyooAudiobook/assets/font.ttf." },
+  "redtopper/super-haxagon": { "asset": "miyoo" },
+  "elijahtowers/miyonos": { "asset": "app", "keep": ["data/*"] },
+  "jackharvest/pocketflex": { "keep": ["*.cfg", "config/*", "data/*"] },
+  "snyderman3000/mixtape": { "asset": "onionos", "keep": ["data/*"] }
+}

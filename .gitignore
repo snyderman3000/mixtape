@@ -1,0 +1,5 @@
+/dist/
+/package/Mixtape/mixtape
+/package/Mixtape/data/
+*.png.tmp
+/mixtape

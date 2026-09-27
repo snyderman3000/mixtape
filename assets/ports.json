@@ -1,0 +1,555 @@
+{
+  "$schema": "./ports.schema.json",
+  "ports": [
+    {
+      "name": "Stardew Valley",
+      "categories": ["rpg", "simulation"],
+      "status": "experimental",
+      "assets": "owned",
+      "upstream": "https://github.com/Producdevity/stardew-valley-miyoo-mini-port/releases",
+      "image": "https://raw.githubusercontent.com/Producdevity/stardew-valley-miyoo-mini-port/refs/heads/master/setup-app/src/assets/stardew-cover.png",
+      "notes": "Setup takes some time, use the Setup App or the prepare script and instructions on the repo.",
+      "porter": ["Producdevity"]
+    },
+    {
+      "name": "Undertale",
+      "categories": ["rpg"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/cobaltgit/Butterscotch/releases",
+      "image": "https://github.com/user-attachments/assets/6651cc2e-0d6d-4354-b98d-081e84a981df",
+      "notes": "GameMaker runner (\"Butterscotch\"). Supply your Undertale game data; use the onion-port release.",
+      "porter": ["cobaltgit"]
+    },
+    {
+      "name": "Half-Life",
+      "categories": ["fps"],
+      "status": "prerelease",
+      "assets": "owned",
+      "upstream": "https://github.com/IC-0n417/half-life-miyoo-mini-plus/releases",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/70/header.jpg",
+      "notes": "Xash3D FWGS. Add your Steam valve/ folder. Onion-ready zip.",
+      "porter": ["IC-0n417"]
+    },
+    {
+      "name": "Quake II",
+      "categories": ["fps"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/Apaczer/quake2-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/Apaczer/quake2-miyoo/HEAD/quake2.png",
+      "notes": "Yamagi. Ships an .ipk, place manually. Q1 is in Onion.",
+      "porter": ["Apaczer"]
+    },
+    {
+      "name": "POSTAL",
+      "categories": ["shooter"],
+      "status": "experimental",
+      "assets": "owned",
+      "upstream": "https://github.com/bostrt/POSTAL-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/bostrt/POSTAL-miyoo/HEAD/keys.png",
+      "notes": "Release tarball is a build artifact; README has the Docker build.",
+      "porter": ["bostrt"]
+    },
+    {
+      "name": "OpenRCT2",
+      "categories": ["simulation"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/scheeseman486/OpenRCT2mini/releases",
+      "image": "https://github.com/user-attachments/assets/fa893cc8-1484-4751-94be-4ead00a6c8f9",
+      "notes": "Low-spec build. Add your RCT2 install. Archive merges onto SD.",
+      "porter": ["scheeseman486"]
+    },
+    {
+      "name": "Elasto Mania",
+      "categories": ["racing", "platform"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/neri-rnd/elma-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/neri-rnd/elma-miyoo/057bce3e9a705486ff9daddb4f49576217856345/docs/screenshot.png",
+      "notes": "Supply elma.res and .lgr.",
+      "porter": ["neri-rnd"]
+    },
+    {
+      "name": "Frozen Bubble",
+      "categories": ["puzzle", "arcade"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mehdisadeghi/frozen-bubble-onion/releases",
+      "image": "https://github.com/user-attachments/assets/c68db5c9-7e72-4d19-8e98-c598a3f5e54e",
+      "notes": "Self-contained, nothing to supply.",
+      "porter": ["mehdisadeghi"]
+    },
+    {
+      "name": "SuperTux",
+      "categories": ["platform"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/andrigamerita/supertux/releases",
+      "image": "https://www.supertux.org/images/0_7_0/github_preview.png",
+      "notes": "0.1.3. Ships gmenu2x layout, place manually. Last release 2021.",
+      "porter": ["andrigamerita"]
+    },
+    {
+      "name": "Super Haxagon",
+      "categories": ["reflex"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/RedTopper/Super-Haxagon/releases",
+      "image": "https://raw.githubusercontent.com/RedTopper/Super-Haxagon/88a8f6c3e0a40cb015b5055d5212c3abec1f279d/driver/SDL2-PortMaster/resources/screenshot.png",
+      "notes": "Two zips to combine; App-folder layout.",
+      "porter": ["RedTopper"]
+    },
+    {
+      "name": "joyrider3774 games",
+      "categories": ["arcade", "puzzle"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/joyrider3774/miyoo_mini_games/releases",
+      "image": "https://raw.githubusercontent.com/joyrider3774/blockdude_funkey/de20a6c0ba54ddd64465c6b09924e566f4bd4457/metadata/screenshot-miyoo.png",
+      "notes": "6 games: Blockdude, Blips, F1 Game & Watch, Rubido, Sokoban, Znax.",
+      "porter": ["joyrider3774"]
+    },
+    {
+      "name": "ONScripter-jh",
+      "categories": ["engine"],
+      "status": "source-only",
+      "assets": "owned",
+      "upstream": "https://github.com/weimingtom/onscripter-jh-miyoo-mini-plus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/ONScripter_Snake.png",
+      "notes": "Visual-novel engine. WIP, no binary.",
+      "porter": ["weimingtom"]
+    },
+    {
+      "name": "FreeJ2ME",
+      "categories": ["engine"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/aweigit/freej2me-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/aweigit/freej2me-miyoomini/HEAD/img/ubuntu18.png",
+      "notes": "Java/J2ME emulator. Supply .jar games.",
+      "porter": ["aweigit"]
+    },
+    {
+      "name": "PocketStream",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/IC-0n417/PocketStream/releases",
+      "image": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.28.0/icons/youtube.svg",
+      "notes": "YouTube client. Mini Plus/Flip (WiFi): feed, search, 144-480p; no login. Needs Onion's FFplay package.",
+      "porter": ["IC-0n417"]
+    },
+    {
+      "name": "PocketFeeds",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/IC-0n417/PocketFeeds/releases",
+      "image": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.28.0/icons/reddit.svg",
+      "notes": "Read-only Reddit client. Mini Plus/Flip (WiFi): feeds, search, comments; no account.",
+      "porter": ["IC-0n417"]
+    },
+    {
+      "name": "MiyooFin",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/S3ggie/MiyooFin/releases",
+      "image": "https://raw.githubusercontent.com/S3ggie/MiyooFin/HEAD/assets/icon.png",
+      "notes": "Jellyfin client. Mini Plus (WiFi): streams from your server, caches art to SD.",
+      "porter": ["S3ggie"]
+    },
+    {
+      "name": "PocketFlex",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/jackharvest/PocketFlex/releases",
+      "image": "https://raw.githubusercontent.com/jackharvest/PocketFlex/HEAD/docs/screens/home.png",
+      "notes": "Plex client with a text UI. Mini Plus (WiFi): stream or download for offline.",
+      "porter": ["jackharvest"]
+    },
+    {
+      "name": "dpad-chat",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/SartajBhuvaji/dpad-chat/releases",
+      "image": "https://raw.githubusercontent.com/SartajBhuvaji/dpad-chat/HEAD/docs/img/app.png",
+      "notes": "ChatGPT client using Onion's on-screen keyboard; keeps chat history. Mini Plus (WiFi).",
+      "porter": ["SartajBhuvaji"]
+    },
+    {
+      "name": "MiyooPod",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/danfragoso/miyoopod/releases",
+      "image": "https://raw.githubusercontent.com/danfragoso/miyoopod/HEAD/screenshots/hero.png",
+      "notes": "Music player: MP3/FLAC/OGG, lyrics, OTA self-update (OTA needs WiFi: Plus/Flip).",
+      "porter": ["danfragoso"]
+    },
+    {
+      "name": "Moonlight",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/XK9274/moonlight-app-miyoo",
+      "image": "https://github.com/user-attachments/assets/f688bbb9-4619-4f54-b7d7-ef3c8b520e7f",
+      "notes": "Stream PC games from Sunshine/Apollo. Mini Plus (WiFi). Best for slower-paced games.",
+      "porter": ["XK9274"]
+    },
+    {
+      "name": "Lynx",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/tailtwo/lynx-miyoo/releases",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Lynx_%28web_browser%29.png",
+      "notes": "Terminal web browser. Mini Plus (WiFi).",
+      "porter": ["tailtwo"]
+    },
+    {
+      "name": "wthr",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/trashplusplus/wthr/releases",
+      "image": "https://github.com/user-attachments/assets/521d182f-fbd3-4c7a-a59d-3bf1af38fa34",
+      "notes": "Weather forecast. Mini Plus/Flip (WiFi).",
+      "porter": ["trashplusplus"]
+    },
+    {
+      "name": "HYPR Radio",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/zoitrok/hypr-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/zoitrok/hypr-miyoo/HEAD/docs/screenshot-now-playing.png",
+      "notes": "Demoscene radio (Nectar Radio) player. Mini Plus (WiFi).",
+      "porter": ["zoitrok"]
+    },
+    {
+      "name": "Miyonos",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/ElijahTowers/Miyonos/releases",
+      "image": "https://raw.githubusercontent.com/ElijahTowers/Miyonos/HEAD/docs/images/now-playing.png",
+      "notes": "Sonos speaker remote. Mini Plus (WiFi).",
+      "porter": ["ElijahTowers"]
+    },
+    {
+      "name": "retsend",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mxmgorin/retsend/releases",
+      "image": "https://raw.githubusercontent.com/mxmgorin/retsend/HEAD/resources/retsend_receive.png",
+      "notes": "LocalSend-compatible file transfer with phones and PCs. Mini Plus/Flip (WiFi).",
+      "porter": ["mxmgorin"]
+    },
+    {
+      "name": "Speed Test",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/josegonzalez/miyoo-speedtest/releases",
+      "image": "https://raw.githubusercontent.com/simple-icons/simple-icons/16.28.0/icons/speedtest.svg",
+      "notes": "Internet speed test. Mini Plus (WiFi).",
+      "porter": ["josegonzalez"]
+    },
+    {
+      "name": "guide-watch",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/djaysan/guide-watch/releases",
+      "image": "https://raw.githubusercontent.com/djaysan/guide-watch/HEAD/docs/images/banner.png",
+      "notes": "Downloads GameFAQs walkthroughs for your ROMs; read them over a paused game. Mini Plus (WiFi).",
+      "porter": ["djaysan"]
+    },
+    {
+      "name": "MiyooThemeDownloader",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/SebastianMaung/MiyooThemeDownloader/releases",
+      "image": "https://raw.githubusercontent.com/SebastianMaung/MiyooThemeDownloader/HEAD/ThemeStore/advmenu/im1.png",
+      "notes": "On-device Onion theme browser and downloader. Mini Plus (WiFi). Archived upstream, still works.",
+      "porter": ["SebastianMaung"]
+    },
+    {
+      "name": "MiyooAudiobook",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/smonbon/MiyooAudiobook/releases",
+      "image": "https://raw.githubusercontent.com/smonbon/MiyooAudiobook/HEAD/assets/icon.png",
+      "notes": "Audiobook player: resume, variable speed, cover art, sleep timer. All devices.",
+      "porter": ["smonbon"]
+    },
+    {
+      "name": "bible.sh",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/likeich/bible-sh/releases",
+      "image": "https://raw.githubusercontent.com/likeich/bible-sh/main/screenshots/MainUI.png",
+      "notes": "KJV Bible reader. All devices.",
+      "porter": ["likeich"]
+    },
+    {
+      "name": "storii",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/pcorbel/storii/releases",
+      "image": "https://raw.githubusercontent.com/pcorbel/storii/HEAD/.github/docs/menus/storiies.png",
+      "notes": "Kids' MP3 player with story/chapter menus. All devices.",
+      "porter": ["pcorbel"]
+    },
+    {
+      "name": "miyoo-htop",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/allanxp4/miyoo-htop/releases",
+      "image": "https://raw.githubusercontent.com/allanxp4/miyoo-htop/HEAD/.github/miyoo.jpg",
+      "notes": "htop task manager port. All devices.",
+      "porter": ["allanxp4"]
+    },
+    {
+      "name": "miyoodeck",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mkl159/miyoodeck/releases",
+      "image": "https://raw.githubusercontent.com/mkl159/miyoodeck/HEAD/docs/preview.png",
+      "notes": "Web dashboard for the handheld: controller, game launcher, file manager, live screen. Mini Plus (WiFi).",
+      "porter": ["mkl159"]
+    },
+    {
+      "name": "guardianplay",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mkl159/guardianplay-onion/releases",
+      "image": "https://raw.githubusercontent.com/mkl159/guardianplay-onion/HEAD/docs/screenshots/banner.png",
+      "notes": "Parental controls: PIN, play-time limits, stats. All devices.",
+      "porter": ["mkl159"]
+    },
+    {
+      "name": "onion-kids-mode",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/daverad/onion-kids-mode/releases",
+      "image": "https://raw.githubusercontent.com/daverad/onion-kids-mode/HEAD/docs/screenshots/carousel.png",
+      "notes": "Kid-friendly UI: curated games, timer, PIN lock. All devices.",
+      "porter": ["daverad"]
+    },
+    {
+      "name": "Syncthing",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/XK9274/syncthing-app-miyoo",
+      "image": "https://raw.githubusercontent.com/syncthing/syncthing/main/assets/logo-128.png",
+      "notes": "File sync with PC/phone via Syncthing, wired into Onion. Mini Plus (WiFi).",
+      "porter": ["XK9274"]
+    },
+    {
+      "name": "Cloud Saves",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/hotcereal/cloud-saves-miyoo-mini-plus",
+      "image": "https://raw.githubusercontent.com/hotcereal/files/main/Unknown-3.png",
+      "notes": "Upload/download saves to any cloud storage via rclone. Mini Plus (WiFi).",
+      "porter": ["hotcereal"]
+    },
+    {
+      "name": "Time Quick Fix",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/hotcereal/time-quick-fix",
+      "image": "https://raw.githubusercontent.com/hotcereal/files/main/TimeQuickFix.png",
+      "notes": "Sets system time via NTP/Cloudflare. Mini Plus (WiFi).",
+      "porter": ["hotcereal"]
+    },
+    {
+      "name": "Captain Claw",
+      "categories": ["platform"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/ArticlessCZ-Coder/captain-claw-miyoo/releases",
+      "image": "https://github.com/user-attachments/assets/4664ef2b-4eea-460b-a707-3428fea89103",
+      "notes": "OpenClaw engine port. Supply your own CLAW.REZ from the original 1997 game. Levels 1-7 (all OpenClaw implements) are playable; no music, as the game's MIDI needs a synth this build deliberately omits. Hold MENU to quit.",
+      "porter": ["ArticlessCZ-Coder"]
+    },
+    {
+      "name": "Mini Tracker",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/k2-ant/mini-tracker/releases",
+      "image": "https://raw.githubusercontent.com/k2-ant/mini-tracker/HEAD/branding/icon-hires.png",
+      "notes": "Backlog and play-time tracker that runs on the handheld; reads Onion's play activity read-only, box-art grid. All devices.",
+      "porter": ["k2-ant"]
+    },
+    {
+      "name": "Petals Around the Rose",
+      "categories": ["puzzle"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/schizophreek/petals/releases",
+      "image": "https://raw.githubusercontent.com/schizophreek/petals/482b7f46197650b78fc58acad0be5755e833b93e/petals_scr.png",
+      "notes": "Standalone dice logic puzzle port for Miyoo Mini and Miyoo A30.",
+      "porter": ["schizophreek"]
+    },
+    {
+      "name": "Jazz Jackrabbit 2",
+      "categories": ["platform"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/ArticlessCZ-Coder/jazz2-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/ArticlessCZ-Coder/jazz2-miyoo/3de963ee96dc8db505a6eae4f504659dbb24b16e/docs/screenshot.png",
+      "notes": "Jazz² Resurrection engine port. Supply your own copy of the game; a Windows converter is included in the download. Steady 30 FPS, sound, music and cinematics; single-player only, and the textured backgrounds are drawn flat because the effect cost a third of the frame.",
+      "porter": ["ArticlessCZ-Coder"]
+    },
+    {
+      "name": "Tennis vs Zombies",
+      "categories": ["arcade"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/gutospinelli/TennisVsZombies-MiyooMini/releases",
+      "image": "https://raw.githubusercontent.com/gutospinelli/TennisVsZombies-MiyooMini/main/output/Imgs/TennisVsZombies.png",
+      "notes": "Original indie action tennis survival game running natively at 60 FPS with full studio soundtrack.",
+      "porter": ["gutospinelli"]
+    },
+    {
+      "name": "Mines of Moria",
+      "categories": ["rpg"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mxmgorin/moria-handheld/releases",
+      "image": "https://raw.githubusercontent.com/mxmgorin/moria-handheld/a55fabc634c8c919f20a5b3319b12bd5a1db79b5/portmaster/screenshot.png",
+      "notes": "Descend the Mines of Moria, level by level, and slay the Balrog waiting at the bottom. Rufe.org's rebuild of Umoria, itself the 1983 roguelike by Robert Alan Koeneke that Angband and much of the genre grew out of: permadeath, a randomly generated dungeon on every stairway, a town to spend your gold in between dives. This build uses the graphical client, with sprite tiles and a map that fills the screen. Press Start for the in-game menu, where the tile renderer, magnification and colours can all be changed.",
+      "porter": ["mxmgorin"]
+    },
+    {
+      "name": "Monk Tower",
+      "categories": ["rpg"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mxmgorin/monktower-handheld/releases",
+      "image": "https://raw.githubusercontent.com/mxmgorin/monktower-handheld/fe5f4a27f741c0d16eb04cd9688ce3e274f05b60/monk-tower-cover.png",
+      "notes": "A simple coffee-break roguelike game. Roam through 20 levels of the cloister tower, to retrieve the lost manuscript. Carefully manage your weapons, as they get damaged quicker than you think. Separate packages for OnionOS, spruceOS and Allium.",
+      "porter": ["mxmgorin"]
+    },
+    {
+      "name": "Minecraft: Bedrock Edition 1.2",
+      "categories": ["simulation"],
+      "status": "experimental",
+      "assets": "owned",
+      "upstream": "https://github.com/DankMiimer/minecraft-bedrock-miyoo-mini-plus/releases",
+      "image": "https://raw.githubusercontent.com/DankMiimer/minecraft-bedrock-miyoo-mini-plus/HEAD/docs/miyoo-mini-plus-bedrock.jpg",
+      "notes": "Bedrock 1.2.20.2 through the minecraft-linux launcher on a software GL stack. Mini Plus only. No GPU, so 6-8 fps: choose 160x120 at the launch prompt, and relaunch at 320x240 if you need the Settings or Store buttons. Supply your own Android APK.",
+      "porter": ["DankMiimer"]
+    },
+    {
+      "name": "CPU Overclock",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/LiveLoveLinux/Cpu_Overclock_Onion_OS",
+      "image": "https://raw.githubusercontent.com/LiveLoveLinux/Cpu_Overclock_Onion_OS/HEAD/icon.png",
+      "notes": "Pick a CPU clock from a simple list; the app detects Mini versus Mini Plus on its own and writes the setting into the RetroArch and NDS configs. Mini tops out at 1600 MHz, Mini Plus at 1800 MHz. The App/CpuOverclock folder on the SD card must be named exactly that or the icon will not show.",
+      "porter": ["LiveLoveLinux"]
+    },
+    {
+      "name": "Pico-8 Wrapper",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/XK9274/pico-8-wrapper-miyoo/releases",
+      "image": "https://github.com/XK9274/pico-8-wrapper-miyoo/assets/47260768/32566649-9008-43e8-8cd5-9d2a587fe493",
+      "notes": "Runs the native Pico-8 fantasy console with Splore and realtime overclocking (Select + Up/Down). Mini and Mini Plus. Supply your own purchased Raspberry Pi pico8_dyn and pico8.dat from Lexaloffle.",
+      "porter": ["XK9274"]
+    },
+    {
+      "name": "Better WiFi",
+      "categories": ["app"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/XK9274/better-wifi-miyoo/releases",
+      "image": "https://github.com/XK9274/better-wifi-miyoo/assets/47260768/78de2a92-c2d6-405f-8fe3-906b11ad2c16",
+      "notes": "Rebuilt WiFi manager with a simple GUI: scan, connect, and manage networks from the device. Mini Plus (WiFi).",
+      "porter": ["XK9274"]
+    },
+    {
+      "name": "retsurf",
+      "categories": ["app"],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/mxmgorin/retsurf/releases",
+      "image": "https://raw.githubusercontent.com/mxmgorin/retsurf/2793750ca6db62d0eb6098e01dcacec9d8084767/resources/images/retsurf-hints.png",
+      "notes": "A web browser built on the Servo engine, designed for gamepad navigation. Features include Vimium-style link hints, an on-screen keyboard, tabs, bookmarks, reader mode, and downloads.",
+      "porter": ["mxmgorin"]
+    },
+    {
+      "name": "Balatro",
+      "categories": ["puzzle"],
+      "status": "prerelease",
+      "assets": "owned",
+      "upstream": "https://github.com/Producdevity/balatro-miyoo-mini-port/releases",
+      "image": "https://raw.githubusercontent.com/Producdevity/balatro-miyoo-mini-port/master/docs/images/gameplay.gif",
+      "notes": "Rust compatibility runtime for the LÖVE game. Supply your own Balatro.love; the first launch prepares audio. Runs at 1.5 GHz via Onion's clock helper.",
+      "porter": ["Producdevity"]
+    },
+    {
+      "name": "Fallout",
+      "categories": ["rpg"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/cacuracaptors/fallout1-ce-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/cacuracaptors/fallout1-ce-miyoomini/7a5e5cc969a8e406afed837892e40c487524cc45/docs/images/cover.png",
+      "notes": "fallout1-ce port with a full D-pad/button control scheme. Supply your own master.dat, critter.dat, and data folder.",
+      "porter": ["cacuracaptors"]
+    },
+    {
+      "name": "Fallout 2",
+      "categories": ["rpg"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/cacuracaptors/fallout2-ce-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/cacuracaptors/fallout2-ce-miyoomini/e8b85743887c4ac0c836b4c4aa0bc13ae8c70020/docs/images/cover.png",
+      "notes": "Based on the actively maintained FOR:CE fork, not the original fallout2-ce. Native mod support, including the Restoration Project. Supply your own master.dat, critter.dat, and data folder.",
+      "porter": ["cacuracaptors"]
+    },
+    {
+      "name": "3D Pinball Space Cadet",
+      "categories": ["arcade"],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/cacuracaptors/spacecadetpinball-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/cacuracaptors/spacecadetpinball-miyoomini/986ea7b235bf3d7a806508dd4685016559416b1b/docs/images/cover.png",
+      "notes": "k4zmu2a decompilation. Supply PINBALL.DAT, FONT.DAT, and all SOUND*.WAV files from the original Windows install.",
+      "porter": ["cacuracaptors"]
+    },
+    {
+      "name": "Insaniquarium Deluxe",
+      "categories": ["simulation", "arcade"],
+      "status": "experimental",
+      "assets": "owned",
+      "upstream": "https://github.com/RAlexander777/Insaniquarium_Miyoo_Mini_Flip/releases",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3320/header.jpg",
+      "notes": "Native port of the PopCap game. Copy data/, fishsongs/, images/, music/, properties/ and sounds/ from your own PC copy of Insaniquarium Deluxe into Roms/PORTS/Games/Insaniquarium/. Smooth on the Mini Flip with synchronized audio; Mini and Mini Plus are untested, and the launcher's input device path is set for the Flip.",
+      "porter": ["RAlexander777"]
+    }
+  ]
+}
