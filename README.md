@@ -78,7 +78,7 @@ go run . -shot list   # renders a screen to shot.png on your PC (boot|list|apps|
 
 ### Releasing
 
-Bump `version` in `main.go`, add notes in `docs/releases/vX.Y.Z.md`, and push a `vX.Y.Z` tag. GitHub Actions runs the tests, builds the zip and publishes the release. Every push to `main` is also test-built by the CI workflow.
+Bump `version` in `main.go`, add notes in `docs/releases/vX.Y.Z.md`, and push to `main`. GitHub Actions runs the tests, builds the zip, tags the version and publishes the release. Every push to `main` is also test-built by the CI workflow.
 
 ## Credits
 

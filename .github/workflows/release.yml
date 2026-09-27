@@ -1,48 +1,70 @@
 name: Release
 
-# Pushing a tag like v0.1.2 builds Mixtape and publishes a GitHub release with
-# the OnionOS zip attached. Release notes come from docs/releases/<tag>.md.
+# Publishes a release automatically when main contains a new version:
+#   1. bump `version` in main.go
+#   2. add docs/releases/vX.Y.Z.md (the release notes; required, so nothing
+#      is ever released by accident)
+#   3. push to main
+# The workflow tests, builds, tags vX.Y.Z and publishes the release with the
+# OnionOS zip attached. If that version is already released, it does nothing.
+# Pushing a vX.Y.Z tag by hand also works.
 on:
   push:
+    branches: [main]
     tags: ["v*"]
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.24"
 
-      - name: Check the tag matches the app's version
-        run: |
-          V=$(grep -o 'const version = "[^"]*"' main.go | cut -d'"' -f2)
-          if [ "v$V" != "$GITHUB_REF_NAME" ]; then
-            echo "::error::main.go says version $V but the tag is $GITHUB_REF_NAME"
-            exit 1
-          fi
-
-      - name: Test and build
-        run: ./build.sh
-
-      - name: Publish the release
+      - name: Decide whether to release
+        id: check
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          ZIP="dist/Mixtape-${GITHUB_REF_NAME}-OnionOS.zip"
-          test -f "$ZIP"
-          NOTES="docs/releases/${GITHUB_REF_NAME}.md"
-          if [ ! -f "$NOTES" ]; then
-            NOTES=$(mktemp)
-            echo "Mixtape ${GITHUB_REF_NAME}. Copy the App folder from the zip to the root of your SD card, or press SELECT in Mixtape to update." > "$NOTES"
+          V=$(grep -o 'const version = "[^"]*"' main.go | cut -d'"' -f2)
+          TAG="v$V"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if [ "$GITHUB_REF_TYPE" = "tag" ] && [ "$GITHUB_REF_NAME" != "$TAG" ]; then
+            echo "::error::main.go says $V but the tag is $GITHUB_REF_NAME"; exit 1
           fi
-          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
-            echo "Release already exists; replacing its zip."
-            gh release upload "$GITHUB_REF_NAME" "$ZIP" --clobber
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists — nothing to do."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          elif [ ! -f "docs/releases/$TAG.md" ]; then
+            echo "No docs/releases/$TAG.md yet — not releasing."
+            echo "go=false" >> "$GITHUB_OUTPUT"
           else
-            gh release create "$GITHUB_REF_NAME" "$ZIP" --title "Mixtape ${GITHUB_REF_NAME}" --notes-file "$NOTES" --verify-tag
+            echo "Releasing $TAG."
+            echo "go=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - uses: actions/setup-go@v5
+        if: steps.check.outputs.go == 'true'
+        with:
+          go-version: "1.24"
+
+      - name: Test and build
+        if: steps.check.outputs.go == 'true'
+        run: ./build.sh
+
+      - name: Publish
+        if: steps.check.outputs.go == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.check.outputs.tag }}
+        run: |
+          ZIP="dist/Mixtape-${TAG}-OnionOS.zip"
+          test -f "$ZIP"
+          gh release create "$TAG" "$ZIP" --target "$GITHUB_SHA" \
+            --title "Mixtape $TAG" --notes-file "docs/releases/$TAG.md"
