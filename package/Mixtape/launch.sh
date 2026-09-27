@@ -9,6 +9,14 @@ if [ -f "$log" ] && [ "$(wc -c < "$log")" -gt 262144 ]; then mv "$log" "$log.1";
 export SSL_CERT_FILE="$appdir/cacert.pem"
 export GODEBUG=tlsmlkem=0
 touch /tmp/stay_awake            # don't auto-sleep in the middle of a download
-"$appdir/mixtape" >> "$log" 2>&1
+
+# Mixtape leaves data/.restart behind after updating itself, so run it again.
+while :; do
+    rm -f "$appdir/data/.restart"
+    "$appdir/mixtape" >> "$log" 2>&1
+    sync
+    [ -f "$appdir/data/.restart" ] || break
+done
+
 rm -f /tmp/stay_awake
 sync

@@ -79,6 +79,11 @@ func demoScene(u *UI, scene string) {
 			u.confirmOK = "ERASE"
 			u.modal = modalConfirm
 		}
+	case "self":
+		u.selfNew = &Plan{Version: "v0.2.0", Files: []Asset{{Name: "Mixtape-v0.2.0-OnionOS.zip", Size: 3 << 20}}}
+	case "self-confirm":
+		u.selfNew = &Plan{Version: "v0.2.0", Files: []Asset{{Name: "Mixtape-v0.2.0-OnionOS.zip", Size: 3 << 20}}}
+		u.confirmSelf()
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail

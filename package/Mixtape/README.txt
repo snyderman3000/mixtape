@@ -14,6 +14,7 @@ CONTROLS
   A ................ open / install / update
   X ................ erase (only things Mixtape installed)
   Y ................ check for updates (list) / rescan release (detail)
+  SELECT ........... update Mixtape itself (it also checks at startup)
   B ................ back / exit        MENU ... exit
 
 WHERE THE LIST COMES FROM

@@ -72,6 +72,10 @@ type UI struct {
 	toast      string
 	toastUntil time.Time
 
+	selfNew      *Plan
+	selfChecking bool
+	msgDone      func()
+
 	frame int
 	quit  bool
 	post  chan func()
@@ -110,6 +114,89 @@ func (u *UI) Start() {
 			u.refilter()
 			if cat.Source != "live" {
 				u.showToast("OFFLINE — USING " + strings.ToUpper(cat.Source) + " CATALOG")
+			} else {
+				u.checkSelf(false)
+			}
+		}
+	}()
+}
+
+// checkSelf looks for a newer Mixtape release. manual=true comes from the SELECT button.
+func (u *UI) checkSelf(manual bool) {
+	if u.selfChecking {
+		return
+	}
+	u.selfChecking = true
+	if manual {
+		u.showToast("CHECKING FOR A NEW MIXTAPE" + "…")
+	}
+	go func() {
+		plan, err := u.env.SelfUpdatePlan(manual)
+		u.post <- func() {
+			u.selfChecking = false
+			switch {
+			case err != nil:
+				if manual {
+					u.message("TAPE JAM", colMagenta, "Couldn't check for Mixtape updates: "+netHint(err).Error())
+				}
+			case plan == nil:
+				u.selfNew = nil
+				if manual {
+					u.showToast("MIXTAPE IS UP TO DATE (v" + version + ")")
+				}
+			default:
+				u.selfNew = plan
+				if manual {
+					u.confirmSelf()
+				} else {
+					u.showToast("MIXTAPE " + plan.Version + " IS OUT — PRESS SELECT")
+				}
+			}
+		}
+	}()
+}
+
+func (u *UI) confirmSelf() {
+	plan := u.selfNew
+	size := ""
+	if n := plan.Size(); n > 0 {
+		size = " (" + human(n) + ")"
+	}
+	u.confirmQ = "UPDATE MIXTAPE FROM v" + version + " TO " + plan.Version + size + "? YOUR SETTINGS ARE KEPT AND MIXTAPE WILL RESTART."
+	u.confirmOK = "UPDATE"
+	u.confirmFn = func() { u.doSelfUpdate(plan) }
+	u.modal = modalConfirm
+}
+
+func (u *UI) doSelfUpdate(plan *Plan) {
+	ctx, cancel := context.WithCancel(context.Background())
+	u.cancel = cancel
+	u.modal = modalBusy
+	u.busyName = "Mixtape " + plan.Version
+	u.prog = Progress{Phase: "CONNECTING"}
+	go func() {
+		err := u.env.SelfInstall(ctx, plan, func(pr Progress) {
+			select {
+			case u.post <- func() {
+				if u.prog.Phase != "ABORTING" {
+					u.prog = pr
+				}
+			}:
+			default:
+			}
+		})
+		u.post <- func() {
+			cancel()
+			u.cancel = nil
+			if err != nil {
+				u.message("TAPE JAM", colMagenta, "Mixtape update failed: "+err.Error()+"\n\nYour current version still works.")
+				return
+			}
+			u.selfNew = nil
+			u.message("NEW TAPE LOADED", colCyan, "Mixtape "+plan.Version+" is installed. Press A to restart it.\n\nIf you land back in Onion's menu instead, just open Mixtape again.")
+			u.msgDone = func() {
+				u.env.RequestRestart()
+				u.quit = true
 			}
 		}
 	}()
@@ -208,7 +295,7 @@ func (u *UI) Key(k int) {
 	}
 	switch u.modal {
 	case modalBusy:
-		if k == BtnB && u.cancel != nil {
+		if k == BtnB && u.cancel != nil && !strings.HasPrefix(u.prog.Phase, "UNPACK") {
 			u.cancel()
 			u.prog.Phase = "ABORTING"
 		}
@@ -216,6 +303,10 @@ func (u *UI) Key(k int) {
 	case modalMsg:
 		if k == BtnA || k == BtnB || k == BtnStart {
 			u.modal = modalNone
+			if f := u.msgDone; f != nil {
+				u.msgDone = nil
+				f()
+			}
 		}
 		return
 	case modalConfirm:
@@ -225,6 +316,10 @@ func (u *UI) Key(k int) {
 		} else if k == BtnB {
 			u.modal = modalNone
 		}
+		return
+	}
+	if k == BtnSelect && u.scr != scrBoot {
+		u.checkSelf(true)
 		return
 	}
 	switch u.scr {
@@ -291,11 +386,15 @@ func (u *UI) keyDetail(k int) {
 	case BtnB:
 		u.scr = scrList
 	case BtnA, BtnStart:
+		if isSelf(p) {
+			u.checkSelf(true)
+			return
+		}
 		if plan := u.plans[p.Name]; plan != nil && plan.Problem == "" && !u.planBusy[p.Name] {
 			u.startInstall(p, plan)
 		}
 	case BtnX:
-		if u.manifests[p.Name] != nil {
+		if u.manifests[p.Name] != nil && !isSelf(p) {
 			u.confirmQ = "ERASE " + strings.ToUpper(p.Name) + " FROM THE CARD?"
 			u.confirmOK = "ERASE"
 			u.confirmFn = func() { u.doUninstall(p) }
@@ -543,7 +642,11 @@ func (u *UI) drawHeader(c *Canvas) {
 	h := u.headerH()
 	c.Fill(0, 0, c.W, h, colPanel)
 	x := c.TextGlow(u.fLogo, u.px(14), u.px(9), "MIXTAPE", colAmber)
-	c.Text(u.fTiny, x+u.px(10), u.px(19), "// COMMUNITY PORT DECK", colCyan)
+	if u.selfNew != nil {
+		c.Text(u.fTiny, x+u.px(10), u.px(19), "▲ "+strings.ToUpper(u.selfNew.Version)+" READY · SELECT", colMagenta)
+	} else {
+		c.Text(u.fTiny, x+u.px(10), u.px(19), "// COMMUNITY PORT DECK", colCyan)
+	}
 	// right: battery, wifi, clock
 	right := c.W - u.px(14)
 	clock := time.Now().Format("15:04")
@@ -762,7 +865,7 @@ func (u *UI) drawList(c *Canvas) {
 	if u.checking != "" {
 		right = u.checking + strings.Repeat("·", u.frame/4%4)
 	}
-	u.footer(c, [][2]string{{"A", "PLAY"}, {"B", "EXIT"}, {"Y", "UPDATES"}}, right)
+	u.footer(c, [][2]string{{"A", "PLAY"}, {"B", "EXIT"}, {"Y", "UPDATES"}, {"SEL", "MIXTAPE"}}, right)
 }
 
 func statusColor(s string) color.RGBA {

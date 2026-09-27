@@ -14,6 +14,7 @@
 - **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app.
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
+- **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT to install it; your settings are kept and Mixtape restarts.
 - **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you.
 - **Safe by design.** Nothing is written outside the SD card, and Onion's own system files are never replaced.
 - **Bring-your-own-files games are marked.** Ports like Balatro, Fallout and Half-Life need your own legally purchased game data. Mixtape tags them **BYO** and shows where the files go. It never downloads commercial game data.
@@ -36,6 +37,7 @@ Requires OnionOS 4.2 or newer. Wi-Fi features need a Miyoo Mini Plus or Mini Fli
 | A | Open / install / update |
 | X | Erase (only things Mixtape installed) |
 | Y | Check for updates (list) · re-check release (details) |
+| SELECT | Update Mixtape itself |
 | B | Back / exit · MENU exits anywhere |
 
 List markers: **●** installed by Mixtape · **○** found on the card (installed by hand) · **▲NEW** update available · **BYO** bring your own game files · **PC** must be installed from a computer (for example, `.7z` releases).
