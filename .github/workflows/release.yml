@@ -1,0 +1,48 @@
+name: Release
+
+# Pushing a tag like v0.1.2 builds Mixtape and publishes a GitHub release with
+# the OnionOS zip attached. Release notes come from docs/releases/<tag>.md.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+
+      - name: Check the tag matches the app's version
+        run: |
+          V=$(grep -o 'const version = "[^"]*"' main.go | cut -d'"' -f2)
+          if [ "v$V" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::main.go says version $V but the tag is $GITHUB_REF_NAME"
+            exit 1
+          fi
+
+      - name: Test and build
+        run: ./build.sh
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ZIP="dist/Mixtape-${GITHUB_REF_NAME}-OnionOS.zip"
+          test -f "$ZIP"
+          NOTES="docs/releases/${GITHUB_REF_NAME}.md"
+          if [ ! -f "$NOTES" ]; then
+            NOTES=$(mktemp)
+            echo "Mixtape ${GITHUB_REF_NAME}. Copy the App folder from the zip to the root of your SD card, or press SELECT in Mixtape to update." > "$NOTES"
+          fi
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "Release already exists; replacing its zip."
+            gh release upload "$GITHUB_REF_NAME" "$ZIP" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "$ZIP" --title "Mixtape ${GITHUB_REF_NAME}" --notes-file "$NOTES" --verify-tag
+          fi

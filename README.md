@@ -76,6 +76,10 @@ Requires Go 1.24 or newer.
 go run . -shot list   # renders a screen to shot.png on your PC (boot|list|apps|detail|busy|done|error|confirm)
 ```
 
+### Releasing
+
+Bump `version` in `main.go`, add notes in `docs/releases/vX.Y.Z.md`, and push a `vX.Y.Z` tag. GitHub Actions runs the tests, builds the zip and publishes the release. Every push to `main` is also test-built by the CI workflow.
+
 ## Credits
 
 - **Catalog:** [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) by Producdevity (MIT). Mixtape is only a front end for it. The ports belong to their authors.
