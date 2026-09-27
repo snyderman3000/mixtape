@@ -85,4 +85,4 @@ go run . -shot list   # renders a screen to shot.png on your PC (boot|list|apps|
 
 ## License
 
-MIT. See [LICENSE](LICENSE). Bundled fonts and certificates keep their own licenses (`package/Mixtape/licenses`).
+MIT. See [LICENSE](LICENSE). Bundled fonts and certificates keep their own licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
