@@ -404,3 +404,46 @@ func TestPlanAndInstallViaFakeGitHub(t *testing.T) {
 		t.Fatalf("manual plan = %+v", pl)
 	}
 }
+
+func TestWindowsZipPaths(t *testing.T) {
+	fx := newFixture(t)
+	os.WriteFile(filepath.Join(fx.env.SDRoot, "Roms/PORTS/keep.txt"), []byte("mine"), 0o644)
+	var buf bytes.Buffer
+	zw := zip.NewWriter(&buf)
+	for _, n := range []string{`licenses\GPL.txt`, `Roms\PORTS\`, `Roms\PORTS\Games\`, `Roms\PORTS\Games\Half-Life\logs\`,
+		`Roms\PORTS\Games\Half-Life\launch.sh`, `Roms\PORTS\Shortcuts\Ports\Half-Life.notfound`, `README.md`} {
+		w, _ := zw.Create(n)
+		if !strings.HasSuffix(n, `\`) {
+			w.Write([]byte("x"))
+		}
+	}
+	zw.Close()
+	res, err := fx.install(t, &Port{Name: "Half-Life"}, "hl.zip", buf.Bytes(), "v1", false)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, p := range []string{"Roms/PORTS/Games/Half-Life/launch.sh", "Roms/PORTS/Shortcuts/Ports/Half-Life.notfound", "Roms/PORTS/keep.txt"} {
+		if !fx.exists(p) {
+			t.Errorf("missing %s", p)
+		}
+	}
+	if fx.exists("licenses") || fx.exists("README.md") {
+		t.Error("copied non-SD files")
+	}
+	if !contains(res.Where, "Roms/PORTS/Games/Half-Life") {
+		t.Errorf("where = %v", res.Where)
+	}
+}
+
+func TestFileNeverReplacesFolder(t *testing.T) {
+	fx := newFixture(t)
+	os.MkdirAll(filepath.Join(fx.env.SDRoot, "App/Thing/data"), 0o755)
+	os.WriteFile(filepath.Join(fx.env.SDRoot, "App/Thing/data/save"), []byte("s"), 0o644)
+	_, err := fx.install(t, &Port{Name: "Thing"}, "t.zip", mkzip(t, map[string]string{"App/Thing/launch.sh": "x", "App/Thing/data": "not a folder"}), "v1", false)
+	if err == nil || !strings.Contains(err.Error(), "folder") {
+		t.Fatalf("err = %v", err)
+	}
+	if fx.read("App/Thing/data/save") != "s" {
+		t.Fatal("folder contents damaged")
+	}
+}

@@ -123,7 +123,7 @@ func openArchive(p string) (*archive, error) {
 	a := &archive{closeFn: func() { zr.Close() }}
 	for _, f := range zr.File {
 		f := f
-		e := &entry{name: cleanEntry(f.Name), dir: f.FileInfo().IsDir(), size: int64(f.UncompressedSize64), zfile: f}
+		e := &entry{name: cleanEntry(f.Name), dir: f.FileInfo().IsDir() || isDirName(f.Name), size: int64(f.UncompressedSize64), zfile: f}
 		if f.Mode()&os.ModeSymlink != 0 {
 			e.skip = true
 		}
@@ -153,13 +153,18 @@ func openTarGz(p string) (*archive, error) {
 		if err != nil {
 			return nil, err
 		}
-		e := &entry{name: cleanEntry(h.Name), dir: h.Typeflag == tar.TypeDir, size: h.Size}
+		e := &entry{name: cleanEntry(h.Name), dir: h.Typeflag == tar.TypeDir || isDirName(h.Name), size: h.Size}
 		if h.Typeflag != tar.TypeReg && h.Typeflag != tar.TypeDir {
 			e.skip = true
 		}
 		a.entries = append(a.entries, e)
 	}
 	return a, nil
+}
+
+// isDirName catches folder entries written by Windows zip tools ("Roms\\PORTS\\").
+func isDirName(n string) bool {
+	return strings.HasSuffix(n, "/") || strings.HasSuffix(n, "\\")
 }
 
 func cleanEntry(n string) string {
@@ -601,6 +606,12 @@ func (env *Env) Install(ctx context.Context, p *Port, plan *Plan, prog func(Prog
 	if err := writeFileAtomic(env.manifestPath(p), b); err != nil {
 		return nil, fmt.Errorf("installed, but couldn't save the record: %v", err)
 	}
+	for rel := range written {
+		if strings.HasSuffix(strings.ToLower(rel), ".notfound") {
+			res.Notes = append(res.Notes, "Its Ports entry stays hidden until the game files are in place. After copying them, open Games → Ports and run '~Import ports'.")
+			break
+		}
+	}
 	env.afterChange(res)
 	if p.Recipe != nil && p.Recipe.Note != "" {
 		res.Notes = append(res.Notes, p.Recipe.Note)
@@ -664,6 +675,12 @@ func (env *Env) extract(ctx context.Context, a *archive, lay *Layout,
 		if !okw {
 			return nil
 		}
+		if st, err := os.Stat(abs); err == nil && st.IsDir() {
+			if e.size == 0 {
+				return nil // an empty "file" standing in for a folder that already exists
+			}
+			return fmt.Errorf("the archive has a file named %s, but that's a folder on your card — not replacing it", rel)
+		}
 		if err := os.MkdirAll(filepath.Dir(abs), 0o755); err != nil {
 			return fmt.Errorf("can't create %s: %v", path.Dir(rel), err)
 		}
@@ -681,7 +698,9 @@ func (env *Env) extract(ctx context.Context, a *archive, lay *Layout,
 			os.Remove(tmp)
 			return fmt.Errorf("writing %s: %v", rel, err)
 		}
-		os.Remove(abs) // FAT: rename doesn't replace
+		if st, err := os.Lstat(abs); err == nil && st.Mode().IsRegular() {
+			os.Remove(abs) // FAT: rename doesn't replace
+		}
 		if err := os.Rename(tmp, abs); err != nil {
 			os.Remove(tmp)
 			return fmt.Errorf("replacing %s: %v", rel, err)

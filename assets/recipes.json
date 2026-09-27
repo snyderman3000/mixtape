@@ -17,5 +17,6 @@
   "redtopper/super-haxagon": { "asset": "miyoo" },
   "elijahtowers/miyonos": { "asset": "app", "keep": ["data/*"] },
   "jackharvest/pocketflex": { "keep": ["*.cfg", "config/*", "data/*"] },
-  "snyderman3000/mixtape": { "asset": "onionos", "keep": ["data/*"] }
+  "snyderman3000/mixtape": { "asset": "onionos", "keep": ["data/*"] },
+  "ic-0n417/half-life-miyoo-mini-plus": { "note": "Copy the contents of your Steam Half-Life valve folder into Roms/PORTS/Games/Half-Life/valve/, but skip any files that already exist there. The port's own ARM libraries and miyoo.cfg must stay." }
 }
