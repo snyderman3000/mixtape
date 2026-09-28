@@ -84,6 +84,55 @@ func demoScene(u *UI, scene string) {
 	case "self-confirm":
 		u.selfNew = &Plan{Version: "v0.2.0", Files: []Asset{{Name: "Mixtape-v0.2.0-OnionOS.zip", Size: 3 << 20}}}
 		u.confirmSelf()
+	case "hacks", "hack-detail", "hack-busy", "hack-done":
+		hs, _ := parseHacks(embeddedHacks)
+		u.hk.cat = &HackCatalog{Hacks: hs, Source: "live"}
+		u.hk.scanned = true
+		u.hk.match = map[*Hack]*Match{}
+		u.hk.made = map[string]string{}
+		for _, x := range hs {
+			switch x.Title {
+			case "Pokémon Throwback":
+				u.hk.match[x] = &Match{ROM: &ROMFile{Path: "Roms/GBA/Pokemon - FireRed Version (USA).gba"}, Variant: 0}
+			case "Pokemon Perfect Crystal - Original Version", "Super Mario Land DX", "Pokémon Crystal Legacy":
+				u.hk.match[x] = &Match{ROM: &ROMFile{Path: "Roms/GBC/" + x.Game + ".gbc"}, Variant: 1}
+			case "Super Metroid: Redesign", "Kaizo Mario World":
+				u.hk.match[x] = &Match{ROM: &ROMFile{Path: "Roms/SFC/Super Mario World (USA).sfc"}, Variant: -1}
+			}
+			if x.Title == "Super Mario Land DX" {
+				u.hk.made[hackKey(x)] = "Roms/GB/Super Mario Land DX.gb"
+			}
+		}
+		u.tab = tabHacks
+		u.refilterHacks()
+		u.sel[tabHacks] = 1
+		if scene != "hacks" {
+			for _, x := range hs {
+				if x.Title == "Pokémon Crystal Legacy" {
+					u.hk.cur = x
+					u.hk.variant = 1
+				}
+			}
+			u.scr = scrHackDetail
+			if path := os.Getenv("MIXTAPE_DEMO_IMG"); path != "" {
+				if f, err := os.Open(path); err == nil {
+					img, _, err := image.Decode(f)
+					f.Close()
+					if err == nil {
+						w, h := u.shotBox()
+						u.imgs[archiveURL(u.hk.cur.Screenshot)] = fit(img, w, h)
+					}
+				}
+			}
+		}
+		switch scene {
+		case "hack-busy":
+			u.modal = modalBusy
+			u.busyName = "Pokémon Crystal Legacy"
+			u.prog = Progress{Phase: "PATCHING"}
+		case "hack-done":
+			u.message("TRACK LOADED", colCyan, "Saved as Roms/GBC/Pokémon Crystal Legacy v1.3.1 (Crystal (USA, Europe) Rev 1).gbc. Find it in Games → Game Boy Color.\n\n✓ Checksum verified: the patched game is exactly what the author released.\n\nYour original ROM was not changed.")
+		}
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail

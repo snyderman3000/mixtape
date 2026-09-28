@@ -336,7 +336,10 @@ func (f *Font) symbol(r rune) *glyph {
 					set(x, y)
 				}
 			case '✓':
-				if (x < s/2 && math.Abs(fy-(c+fx*0.6)) <= 1) || (x >= s/2-1 && math.Abs(fy-(float64(s-1)-(fx-float64(s/2))*1.4)) <= 1) {
+				// short stroke down-right from (0, 0.55s) to (0.38s, s), long stroke up to (s, 0.1s)
+				t := math.Max(1.2, float64(s)/7)
+				x1, y1, x2, y2, x3, y3 := 0.0, 0.55*float64(s-1), 0.38*float64(s-1), float64(s-1), float64(s-1), 0.1*float64(s-1)
+				if segDist(fx, fy, x1, y1, x2, y2) <= t || segDist(fx, fy, x2, y2, x3, y3) <= t {
 					set(x, y)
 				}
 			}
@@ -585,4 +588,12 @@ func (c *Canvas) Noise(x, y, w, h int, seed uint32) {
 			c.Set(xx+1, yy+1, col)
 		}
 	}
+}
+
+// segDist is the distance from point (px,py) to the segment (ax,ay)-(bx,by).
+func segDist(px, py, ax, ay, bx, by float64) float64 {
+	dx, dy := bx-ax, by-ay
+	t := ((px-ax)*dx + (py-ay)*dy) / (dx*dx + dy*dy)
+	t = math.Max(0, math.Min(1, t))
+	return math.Hypot(px-(ax+t*dx), py-(ay+t*dy))
 }

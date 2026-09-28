@@ -1,0 +1,45 @@
+name: Hack catalog
+
+# Rebuilds catalog/hacks.json (the HACKS tab's list) from the RomHacking.net
+# archive on the Internet Archive plus tools/hackdb/extras.json, verifies every
+# entry downloads the way the device fetches it, and commits the result.
+# Runs when the builder or extras change, or by hand from the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths: ["tools/hackdb/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hackdb
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+      - name: Build and verify
+        run: |
+          go mod tidy
+          go test ./patch ./tools/hackdb
+          sh tools/hackdb/run.sh
+          cat out/verify.txt
+      - name: Commit catalog
+        run: |
+          cp out/hacks.json catalog/hacks.json
+          cp out/report.txt catalog/report.txt
+          cp out/verify.txt catalog/verify.txt
+          git config user.name "hack-catalog-bot"
+          git config user.email "hack-catalog-bot@users.noreply.github.com"
+          git add catalog
+          git commit -m "Rebuild hack catalog" || echo "no changes"
+          git pull --rebase origin main
+          git push

@@ -17,6 +17,7 @@ const (
 	scrBoot screen = iota
 	scrList
 	scrDetail
+	scrHackDetail
 )
 
 type modalKind int
@@ -28,7 +29,7 @@ const (
 	modalConfirm
 )
 
-var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD"}
+var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD", "HACKS"}
 
 type UI struct {
 	env  *Env
@@ -37,12 +38,15 @@ type UI struct {
 
 	fLogo, fBig, fBody, fSmall, fTiny, fLCD, fLCDBig *Font
 
-	scr     screen
-	cat     *Catalog
-	tab     int
-	sel     [4]int
-	scroll  [4]int
-	visible []*Port
+	scr    screen
+	cat    *Catalog
+	tab    int
+	sel    [5]int
+	scroll [5]int
+
+	hk       hackState
+	hackROMs []*ROMFile
+	visible  []*Port
 
 	cur        *Port
 	plans      map[string]*Plan
@@ -117,6 +121,7 @@ func (u *UI) Start() {
 			} else {
 				u.checkSelf(false)
 			}
+			u.loadHacks()
 		}
 	}()
 }
@@ -224,6 +229,10 @@ func (u *UI) installed(p *Port) bool {
 }
 
 func (u *UI) refilter() {
+	if u.tab == tabHacks {
+		u.enterHacksTab()
+		return
+	}
 	u.visible = u.visible[:0]
 	if u.cat == nil {
 		return
@@ -283,7 +292,8 @@ func (u *UI) Animating() bool {
 	return u.scr == scrBoot || u.modal == modalBusy || time.Now().Before(u.seekUntil) ||
 		(u.toast != "" && time.Now().Before(u.toastUntil.Add(100*time.Millisecond))) ||
 		(u.cur != nil && u.scr == scrDetail && (u.planBusy[u.cur.Name] || u.imgBusy[u.cur.Image])) ||
-		u.checking != ""
+		u.checking != "" || u.hk.scanning != "" || u.hk.loading ||
+		(u.scr == scrHackDetail && u.hk.cur != nil && u.imgBusy[archiveURL(u.hk.cur.Screenshot)])
 }
 
 // ---------- input ----------
@@ -324,14 +334,22 @@ func (u *UI) Key(k int) {
 	}
 	switch u.scr {
 	case scrList:
+		if u.tab == tabHacks && u.keyHackList(k) {
+			return
+		}
 		u.keyList(k)
 	case scrDetail:
 		u.keyDetail(k)
+	case scrHackDetail:
+		u.keyHackDetail(k)
 	}
 }
 
 func (u *UI) keyList(k int) {
 	n := len(u.visible)
+	if u.tab == tabHacks {
+		n = len(u.hk.vis)
+	}
 	move := func(d int) {
 		if n == 0 {
 			return
@@ -602,7 +620,14 @@ func (u *UI) Draw(c *Canvas) {
 		u.drawBoot(c)
 	case scrList:
 		u.drawHeader(c)
-		u.drawList(c)
+		if u.tab == tabHacks {
+			u.drawHackList(c)
+		} else {
+			u.drawList(c)
+		}
+	case scrHackDetail:
+		u.drawHeader(c)
+		u.drawHackDetail(c)
 	case scrDetail:
 		u.drawHeader(c)
 		u.drawDetail(c)
@@ -717,6 +742,12 @@ func (u *UI) drawTabs(c *Canvas) {
 	x = c.Chip(u.fTiny, x, y+u.px(2), "L1", colAmberDim, false) + u.px(2)
 	for i, t := range tabNames {
 		label := fmt.Sprintf("%s %02d", t, u.tabCount(i))
+		if i == tabHacks {
+			label = t
+			if u.hk.scanned {
+				label = fmt.Sprintf("%s %02d", t, len(u.hk.match))
+			}
+		}
 		w := u.fSmall.Width(label) + u.px(20)
 		h := u.fSmall.height + u.px(8)
 		if i == u.tab {
