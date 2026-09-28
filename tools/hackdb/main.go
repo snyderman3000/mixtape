@@ -699,7 +699,8 @@ func short(s string, n int) string {
 func URL(p string) string {
 	parts := strings.Split(p, "/")
 	for i, s := range parts {
-		parts[i] = url.PathEscape(s)
+		// PathEscape leaves + and & alone, but archive.org reads + as a space
+		parts[i] = strings.NewReplacer("+", "%2B", "&", "%26").Replace(url.PathEscape(s))
 	}
 	return archiveURL + "/" + strings.Join(parts, "/")
 }
