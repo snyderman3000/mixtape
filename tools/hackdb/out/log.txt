@@ -1,21 +1,105 @@
 + set -e
 + sh tools/hackdb/explore.sh
-http=401 size=172 url=https://dn720808.ca.archive.org/0/items/romhacking.net-20240801/romhacking.sql.zip
-sql.zip: HTML document, ASCII text, with CRLF line terminators
-<html>.
-<head><title>401 Authorization Required</title></head>.
-<body>.
-<center><h1>401 Authorization Required</h1></center>.
-<hr><center>nginx</center>.
-</body>.
-</html>.
+===== romhackingbackup08102024
+romhackingbackup08102024_archive.torrent 65129 
+romhackingbackup08102024_files.xml None 
+romhackingbackup08102024_meta.sqlite 20480 
+romhackingbackup08102024_meta.xml 930 
+www.romhacking.net.zip 13244947677 
+files: 5
+===== rhdn-20210914
+RHDN-20210914.zip 6562337739 
+rhdn-20210914_archive.torrent 33136 
+rhdn-20210914_files.xml None 
+rhdn-20210914_meta.sqlite 20480 
+rhdn-20210914_meta.xml 1099 
+files: 5
+===== rom-hack-patch-archive
+Disc Hack Archive.7z 1235866245 
+English Disc Translations.7z 791062974 
+English PSP Translations.7z 1068545849 
+English ROM Translations.7z 1092450836 
+English Saturn Translations.7z 1041483014 
+GBA Fire Emblem - The Sacred Stones (UA) Hacks.7z 1222524447 
+GBA Fire Emblem Hacks.7z 1122827930 
+GBA Hacks.7z 988983772 
+GBA Pokemon - Emerald Version (UE) Hacks 1.7z 971436282 
+GBA Pokemon - Emerald Version (UE) Hacks 2.7z 1032402267 
+GBA Pokemon - FireRed Version (U) Hacks 1.7z 909427366 
+GBA Pokemon - FireRed Version (U) Hacks 2.7z 827392958 
+GC Pokemon XD (U)/Pokemon XG v1.0.7.7z 783633965 
+GC Pokemon XD (U)/Pokemon XG v1.1.6-2.7z 1183515060 
+GC Pokemon XD (U)/Pokemon XG v1.1.8-3.7z 395084093 
+GC Pokemon XD (U)/Pokemon XG v1.2.1-3.7z 279165446 
+GameCube Hacks.7z 997673049 
+Genesis-MD Hacks.7z 552012344 
+N64 Hacks 1.7z 1205721419 
+N64 Hacks 2.7z 1055294664 
+N64 Mario Party 1, 2, 3 (U) Hacks.7z 477321390 
+N64 Super Mario 64 (U) Hacks Part 1.7z 1196049161 
+N64 Super Mario 64 (U) Hacks Part 2.7z 1150219479 
+N64 Super Mario 64 (U) Hacks Part 3.7z 988155235 
+N64 Super Mario 64 (U) Hacks Part 4.7z 1111152698 
+NDS Hacks 1.7z 764984102 
+NDS Hacks 2.7z 720062253 
+NDS New Super Mario Bros. (U) Hacks.7z 548089358 
+NES-FC Hacks.7z 657923640 
+PSP.7z 830246329 
+PSX Grandia Undub Patches.7z 724416453 
+PSX Hacks.7z 1147632402 
+PSX Mortal Kombat 4 (U) Hardcore Attack (Hack).7z 397665234 
+PSX Resident Evil - Director's Cut - Dual Shock Ver. (U) Hacks.7z 1023850281 
+PSX Xenogears (U) Hacks.7z 388813854 
+ROM Hack Archive 1.7z 863442025 
+ROM Hack Archive 2.7z 761885800 
+SNES-SFC Hacks 1.7z 1034465397 
+SNES-SFC Hacks 2.7z 601412485 
+SNES-SFC Super Mario World Hacks.7z 479454076 
+Saturn - Grandia (J) English.7z 665324990 
+Saturn - Lunar - Silver Star Story (J) English.7z 1636407287 
+Wii Hacks.7z 722938092 
+rom-hack-patch-archive_archive.torrent 371728 
+rom-hack-patch-archive_files.xml None 
+rom-hack-patch-archive_meta.sqlite 89088 
+rom-hack-patch-archive_meta.xml 3208 
+rom-hack-patch-archive_reviews.xml 6539 
+files: 48
+===== inner file tests
+--- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/index.html
+ 
+<!DOCTYPE html> 
+<html lang="en">
+.<head>
+..<meta charset="utf-8"> 
+..<meta name="viewport" content="width=device-width, initial-scale=1.0">
+..<meta name="description" content="A nation just over a rebellion by their own psychic soldiers is attacked by an alien being in a gian">
+..<meta property="og:url" content="https://www.romhacking.net/hacks/1/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Dragoon X Omega - Gold Edition">
+        <meta property="og:site_name" content="ROMhacking.net">
+        <meta property="og:image" content="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/nes/images/titles/1titlescreen.png">
+        <meta property="og:description" content="A nation just over a rebellion by their own psychic soldiers is attacked by an alien being in a gian">
+        <link rel="alternate" type="application/rss+xml" titletr: write error: Broken pipe
 
-{"result":[{"name":"rhdn_20240801.zip","source":"original","mtime":"1722546725","size":"12573450015","md5":"4547af4b34a232eeee6d27910c1a2f44","crc32":"dd72b1ae","sha1":"c0d642c1d54713db47c10500ebdaf5fcd79e1082","format":"ZIP","filecount":"90462","private":"true"},{"name":"romhacking.net-20240801_archive.torrent","source":"metadata","btih":"ef81577600018d0d924fc775738cf6b678ac211a","mtime":"1738761332","size":"12","md5":"b90acad44e90b94cd054765f05a9a713","crc32":"f9dbd566","sha1":"7340ce619f32b96b7c3cac52e20438a0fed00d25","format":"Archive BitTorrent","private":"true"},{"name":"romhacking.net-20240801_files.xml","source":"original","format":"Metadata","md5":"641a895ba1faee809ec373c88fa77b35","summation":"md5"},{"name":"romhacking.net-20240801_meta.sqlite","source":"original","mtime":"1722548047","size":"20480","md5":"8c595ec35dbbc966987ccab4b61ca907","crc32":"f67e20c7","sha1":"f6dfdcd30fc9bc4fdd6ab7d0584e0e5cf1042f87","format":"Metadata"},{"name":"romhacking.net-20240801_meta.xml","source":"original","mtime":"1725235041","size":"926","md5":"2c376c6152d1913837c344d75fb669e1","crc32":"b62f83f6","sha1":"fb35cdf86d8cf0c751896268ab6ae8154c9188aa","format":"Metadata"},{"name":"romhacking.net-20240801_reviews.xml","source":"original","mtime":"1748773442","size":"32494","md5":"85c1f2d18d17fd7f588d3a8f64d120af","crc32":"4e7a2029","sha1":"b9d32e759556d3c6e914cd1656494f3526605652","format":"Metadata"},{"name":"romhacking.sql.zip","source":"original","mtime":"1722547968","size":"6820209","md5":"d2d4151a1628504e9cb3d59f9eff3172","crc32":"536a31ad","sha1":"111b3df6d4dfcb43c0c66480d861fa85e820c06a","format":"ZIP","filecount":"1","viruscheck":"1722548398","private":"true"}]}
-[sql.zip]
-  End-of-central-directory signature not found.  Either this file is not
-  a zipfile, or it constitutes one disk of a multi-part archive.  In the
-  latter case the central directory and zipfile comment will be found on
-  the last disk(s) of this archive.
-unzip:  cannot find zipfile directory in one of sql.zip or
-        sql.zip.zip, and cannot find sql.zip.ZIP, period.
-exit=9
+--- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/
+
+http=200 type=application/octet-stream size=0
+
+--- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/
+<!DOCTYPE html>
+<html lang="en">
+<!-- __ _ _ _ __| |_ (_)__ _____
+    / _` | '_/ _| ' \| |\ V / -_)
+    \__,_|_| \__|_||_|_| \_/\___| -->
+  <head data-release=-202640- data-node="ia800104.us.archive.org">
+    <title>Internet Archive: View Archive</title>
+
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+        <meta name="google-site-verification" content="Q2YSouphkkgHkFNP7FgAkc4TmBs1Gmag3uGNndb53B8" />
+    <meta name="google-site-verification" content="bpjKvUvsX0lxfmjg19TLblckWkDpnptZEYsBntApxUk" />
+
+    <meta name="baggage" content="sentry-trace_id=0f6c9be5431a49d181a679c3a4ae0d1f,sentry-sample_rate=0.001,sentry-transaction=%2Fview_archive.php,sentry-public_key=94bf3037c1e245c8a927aaa4daad2dbb,sentry-environment=production,sentry-sampled=false,sentry-sample_rand=0.866462"/>    <meta name="sentry-trace" content="0f6c9be5431a49d181a679c3a4ae0d1f-bbftr: write error: Broken pipe
+curl: (23) Failure writing output to destination
+
+exit=0
