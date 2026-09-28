@@ -1,26 +1,17 @@
 #!/bin/sh
-# Explore the RomHacking.net SQL export: list tables, schemas and sample rows.
-set -e
-mkdir -p work out
-cd work
-curl -sSL -A "Mozilla/5.0 mixtape-hackdb" -w "http=%{http_code} size=%{size_download} url=%{url_effective}\n" -o sql.zip "https://archive.org/download/romhacking.net-20240801/romhacking.sql.zip"
-file sql.zip; head -c 600 sql.zip | tr -c "[:print:]\n" "."; echo
-curl -sSL "https://archive.org/metadata/romhacking.net-20240801/files" | head -c 3000; echo
-unzip -o -q sql.zip
-ls -la > ../out/files.txt
-F=$(ls *.sql | head -1)
-grep -n "CREATE TABLE" "$F" > ../out/tables.txt || true
-awk '/CREATE TABLE/{p=1} p{print} /;$/{if(p){print "";p=0}}' "$F" > ../out/schemas.sql
-# first 3 INSERT statements per table, truncated
-python3 - "$F" > ../out/samples.txt <<'PY'
-import sys,re,collections
-seen=collections.Counter()
-with open(sys.argv[1],encoding='utf-8',errors='replace') as f:
-    for line in f:
-        m=re.match(r"INSERT INTO `?(\w+)`?",line)
-        if m and seen[m.group(1)]<2:
-            seen[m.group(1)]+=1
-            print(line[:3000]); print()
-PY
-# a peek at the big file archive listing
-curl -sSL "https://archive.org/download/romhacking.net-20240801/rhdn_20240808.zip/" | head -c 20000 > ../out/zip_index_head.html || true
+# Which archive.org copies of RHDN / patch archives are publicly downloadable?
+set +e
+UA="Mozilla/5.0 mixtape-hackdb"
+for item in romhackingbackup08102024 rhdn-20210914 rom-hack-patch-archive; do
+  echo "===== $item"
+  curl -sSL -A "$UA" "https://archive.org/metadata/$item/files" | python3 -c "
+import json,sys
+d=json.load(sys.stdin).get('result',[])
+for f in d[:80]: print(f.get('name'), f.get('size'), 'PRIVATE' if f.get('private') else '')
+print('files:',len(d))"
+done
+echo "===== inner file tests"
+t() { echo "--- $1"; curl -sSL -A "$UA" -r 0-400 -w "\nhttp=%{http_code} type=%{content_type} size=%{size_download}\n" "$1" | tr -c "[:print:]\n" "." | head -c 900; echo; }
+t "https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/index.html"
+t "https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/"
+t "https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/"
