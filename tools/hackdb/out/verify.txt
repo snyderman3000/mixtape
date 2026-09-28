@@ -1,0 +1,21 @@
+verified 384/404 entries download and open correctly on the device path (382 with screenshots)
+DROP GB   Medarot 1 — download: status 0 status 503
+DROP GBA  All-Stars + World Luigi in Super Mario Advance 2 — download: status 0 status 503
+DROP GBA  Original Sunset Wilds title card & sprites for MK - SC — download: status 0 status 503
+DROP GBA  e+ Complete — download: status 0 status 503
+DROP GBA  FE1 + FE2 — download: status 0 status 503
+DROP GBA  Pokémon - Faria Version — 0 of 1 patch options found
+DROP GBA  Final Fantasy 1 Angel Ring as a Drop — download: status 0 status 503
+DROP GBA  Improved Equipment Stat Viewing — download: status 0 status 503
+DROP NES  Metroid + Saving — download: status 0 status 503
+DROP NES  Rockman 6: Unique Harassment — 2 of 3 patch options found
+DROP NES  Battletoads & Double Dragon 4 players — download: status 400 <nil>
+DROP NES  Metal Gear MSX + Style — download: status 0 status 503
+DROP SNES Chrono Trigger+ — download: status 0 status 503
+DROP SNES Super Mario World: Bowsette Edition — download: status 0 status 503
+DROP SNES SMW The Crown Tale — 1 of 2 patch options found
+DROP SNES Celes + Terra — download: status 0 status 503
+DROP SNES Rockman & Forte - Player Switching — download: status 0 status 503
+DROP SNES Rockman & Forte - Multiple Equipment — download: status 0 status 503
+DROP SNES Enable Ryo Sakazaki and Easy move — download: status 0 status 503
+DROP SNES Super CV IV - CV1 Font + HUD + Icons — download: status 0 status 503

@@ -1,4 +1,4 @@
-generated 2026-09-28T13:09:54Z: 404 entries (38 Pokémon), 18 skipped
+generated 2026-09-28T13:15:07Z: 404 entries (38 Pokémon), 18 skipped
   hack/GB            51
   hack/GBA           70
   hack/NES           84

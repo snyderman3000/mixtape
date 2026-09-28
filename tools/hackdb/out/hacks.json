@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T13:09:54Z",
+ "generated": "2026-09-28T13:15:07Z",
  "source": "RomHacking.net archive (Internet Archive item rhdn-20210914)",
  "archive_url": "https://archive.org/download/rhdn-20210914/RHDN-20210914.zip",
  "hacks": [
@@ -1201,38 +1201,6 @@
      "size": 8328,
      "src_crc": "B681E243",
      "dst_crc": "034F5527"
-    }
-   ]
-  },
-  {
-   "id": 5792,
-   "kind": "translation",
-   "title": "Medarot 1",
-   "system": "GB",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "Cash Medal Chameleon",
-   "version": "0.5.9+txt.6",
-   "released": "02 January 2021",
-   "downloads": 1220,
-   "score": "0/0",
-   "desc": "Medarot 1 is an role playing game for the Game Boy.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Medarot - Kuwagata Version (Japan) (Rev A) (SGB Enhanced)",
-    "file_crc": "5E77E82E",
-    "file_sha1": "2262F69A89ABE0F66DC1554C1EE470FD536130A3",
-    "rom_crc": "5E77E82E",
-    "rom_sha1": "2262F69A89ABE0F66DC1554C1EE470FD536130A3"
-   },
-   "archive": "translations/Game Boy/Medarot 1/English/Cash Medal Chameleon___0_5_9+txt_6/medarot1-0.5.9+txt.6.zip",
-   "shot": "translations/Game Boy/Medarot 1/English/Cash Medal Chameleon___0_5_9+txt_6/Medarot 1_screenshot0.png",
-   "variants": [
-    {
-     "label": "m1kabuto-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814",
-     "member": "m1kabuto-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814.ips",
-     "format": "ips",
-     "size": 274775
     }
    ]
   },
@@ -3296,45 +3264,6 @@
    ]
   },
   {
-   "id": 4910,
-   "kind": "hack",
-   "title": "All-Stars + World Luigi in Super Mario Advance 2",
-   "system": "GBA",
-   "game": "Super Mario World: Super Mario Advance 2",
-   "category": "Improvement",
-   "genre": "Action \u003e Platformer",
-   "author": "JY",
-   "version": "1.0",
-   "released": "30 January 2020",
-   "downloads": 2008,
-   "score": "2/3",
-   "desc": "Super Mario Advance 2 saw the second time Nintendo decided to redraw World Luigi’s sprites, this time having him based off his appearance in the first Super Mario Advance mixed with elements of World’s art style. It’s unknown why Nintendo tried going to this extent to differentiate Luigi’s appearance from Mario’s in 2001, as they already had access to a perfectly fine set of World-style Luigi sprites from roughly seven years prior. This hack essentially undoes Nintendo’s admittedly odd decision by swapping out the existing, arguably less-appealing Luigi sprites in Super Mario Advance 2 for those found in Super Mario All-Stars + Super Mario World.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es)",
-    "file_crc": "FCFEF343",
-    "file_sha1": "199A5A01BD3F56FBA9A701062EDBCF57E1528A0C",
-    "rom_crc": "FCFEF343",
-    "rom_sha1": "199A5A01BD3F56FBA9A701062EDBCF57E1528A0C"
-   },
-   "archive": "hacks/GBA/Super Mario World_ Super Mario Advance 2/All-Stars + World Luigi in Super Mario Advance 2___1_0/All-Stars + World Luigi.zip",
-   "shot": "hacks/GBA/Super Mario World_ Super Mario Advance 2/All-Stars + World Luigi in Super Mario Advance 2___1_0/All-Stars + World Luigi in Super Mario Advance 2_screenshot0.png",
-   "variants": [
-    {
-     "label": "sma2-aswluigi-e",
-     "member": "All-Stars + World Luigi/sma2-aswluigi-e.ips",
-     "format": "ips",
-     "size": 19066
-    },
-    {
-     "label": "sma2-aswluigi-u",
-     "member": "All-Stars + World Luigi/sma2-aswluigi-u.ips",
-     "format": "ips",
-     "size": 19066
-    }
-   ]
-  },
-  {
    "id": 5538,
    "kind": "translation",
    "title": "Gyakuten Saiban 3",
@@ -3469,39 +3398,6 @@
      "member": "(US) [voice hack] Legend of Zelda, The - A Link to the Past \u0026 Four Swords (USA, Australia).ips",
      "format": "ips",
      "size": 32385
-    }
-   ]
-  },
-  {
-   "id": 3491,
-   "kind": "hack",
-   "title": "Original Sunset Wilds title card \u0026 sprites for MK - SC",
-   "system": "GBA",
-   "game": "Mario Kart: Super Circuit",
-   "category": "Improvement",
-   "genre": "Racing",
-   "author": "SCD",
-   "version": "Final",
-   "released": "16 June 2017",
-   "downloads": 1405,
-   "score": "0/0",
-   "desc": "This hack restores the original Sunset Wilds title card \u0026 sprites back to the American version of this game, so now the Shy Guys are wearing their Native American war bonnets once again. They were removed from this version because Nintendo of America were worried that they might cause a controversy if they kept them in. The 0xED hex editor was used to restore the graphics.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Mario Kart - Super Circuit (Europe)",
-    "file_crc": "20025842",
-    "file_sha1": "2CDFC94CBE7A7F4EFE00D98DD33EBB5F50CF91F0",
-    "rom_crc": "20025842",
-    "rom_sha1": "2CDFC94CBE7A7F4EFE00D98DD33EBB5F50CF91F0"
-   },
-   "archive": "hacks/GBA/Mario Kart_ Super Circuit/Original Sunset Wilds title card \u0026 sprites for MK - SC___Final/Original Sunset Wilds title card \u0026 sprites for MK - SC.zip",
-   "shot": "hacks/GBA/Mario Kart_ Super Circuit/Original Sunset Wilds title card \u0026 sprites for MK - SC___Final/Original Sunset Wilds title card \u0026 sprites for MK - SC_screenshot0.png",
-   "variants": [
-    {
-     "label": "Original Sunset Wilds title card \u0026 sprites for MK - SC",
-     "member": "Original Sunset Wilds title card \u0026 sprites for MK - SC.ips",
-     "format": "ips",
-     "size": 8967
     }
    ]
   },
@@ -3854,51 +3750,6 @@
      "size": 35571,
      "src_crc": "B857C3C5",
      "dst_crc": "96634053"
-    }
-   ]
-  },
-  {
-   "id": 5366,
-   "kind": "hack",
-   "title": "e+ Complete",
-   "system": "GBA",
-   "game": "F-Zero: GP Legend",
-   "category": "Improvement",
-   "genre": "Racing",
-   "author": "Guy Perfect",
-   "version": "1.0",
-   "released": "04 September 2020",
-   "downloads": 1068,
-   "score": "2/2",
-   "desc": "F-Zero GP Legend had e-Reader support in Japan. Cards included bonus content such as new courses, challenge ghosts and machine unlocks. This mod incorporates all of the e-Reader content directly into the game. See the readme for more information. All three versions of the game are supported.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "F-Zero - GP Legend (USA)",
-    "file_crc": "781AAB58",
-    "file_sha1": "977588D9D27B7115E0BB309FB019AE81B9F413FF",
-    "rom_crc": "781AAB58",
-    "rom_sha1": "977588D9D27B7115E0BB309FB019AE81B9F413FF"
-   },
-   "archive": "hacks/GBA/F-Zero_ GP Legend/e+ Complete___1_0/f-zero_gpl_e+_complete.zip",
-   "shot": "hacks/GBA/F-Zero_ GP Legend/e+ Complete___1_0/e+ Complete_screenshot0.png",
-   "variants": [
-    {
-     "label": "e+_complete_usa",
-     "member": "e+_complete_usa.ips",
-     "format": "ips",
-     "size": 18133
-    },
-    {
-     "label": "e+_complete_eur",
-     "member": "e+_complete_eur.ips",
-     "format": "ips",
-     "size": 28167
-    },
-    {
-     "label": "e+_complete_jpn",
-     "member": "e+_complete_jpn.ips",
-     "format": "ips",
-     "size": 18238
     }
    ]
   },
@@ -4500,41 +4351,6 @@
    ]
   },
   {
-   "id": 5156,
-   "kind": "hack",
-   "title": "FE1 + FE2",
-   "system": "GBA",
-   "game": "Fire Emblem: The Sacred Stones",
-   "category": "Complete",
-   "genre": "Strategy \u003e Turn Based",
-   "author": "Binary Team",
-   "version": "1.0",
-   "released": "03 February 2016",
-   "downloads": 491,
-   "score": "0/0",
-   "desc": "This hack is based on the Japanese version of Sacred Stones. It serves to recreate the two NES entries of the Fire Emblem series in a single hack. While the Dark Dragon and the Sword Light recreation is faithful to the original game, the Gaiden remake opts to replace the original game’s maps with larger, more sprawling areas. These more represent compressed versions of the acts of the original game. Some notes: Due to technical limitations, some empty chapters will play and complete before the game selection menu appears. Though the Tower of Valni appears, it can be ignored. Marth’s death does not cause Game Over, due to a bug. See the Fire Emblem Universe thread for more information.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Fire Emblem - Seima no Kouseki (Japan)",
-    "file_crc": "9D76826F",
-    "file_sha1": "7DA0456035366AA18414FAA79D8FE7649F03C1ED",
-    "rom_crc": "9D76826F",
-    "rom_sha1": "7DA0456035366AA18414FAA79D8FE7649F03C1ED"
-   },
-   "archive": "hacks/GBA/Fire Emblem_ The Sacred Stones/FE1 + FE2___1_0/FE1+2_GBA.zip",
-   "shot": "hacks/GBA/Fire Emblem_ The Sacred Stones/FE1 + FE2___1_0/FE1 + FE2_screenshot0.png",
-   "variants": [
-    {
-     "label": "FE1+2_GBA",
-     "member": "FE1+2_GBA.UPS",
-     "format": "ups",
-     "size": 12757027,
-     "src_crc": "9D76826F",
-     "dst_crc": "A995E809"
-    }
-   ]
-  },
-  {
    "id": 6037,
    "kind": "translation",
    "title": "Nekketsu Monogatari Advance",
@@ -4727,40 +4543,6 @@
      "member": "allin.ips",
      "format": "ips",
      "size": 353
-    }
-   ]
-  },
-  {
-   "id": 5721,
-   "kind": "hack",
-   "title": "Pokémon - Faria Version",
-   "system": "GBA",
-   "game": "Pokémon: FireRed Version",
-   "category": "Complete",
-   "genre": "Role Playing",
-   "author": "Ricardo de Faria",
-   "version": "1.2",
-   "released": "27 February 2021",
-   "downloads": 447,
-   "score": "0/0",
-   "pokemon": true,
-   "desc": "Pokémon - Faria Version is a ROM hack of Pokémon - FireRed Version (USA, V1.0). The story and gameplay are the same as the original Pokémon game, with some new features and changes done along the way, like a new storyline on top of the main one, a new rival as the antagonist and Sandshrew as the hero. The starters have been changed and the difficulty of the game has been increased, so trainers, your main rival, gym leaders and the Elite Four will have different teams and strategies.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Pokemon - FireRed Version (USA)",
-    "file_crc": "DD88761C",
-    "file_sha1": "41CB23D8DCCC8EBD7C649CD8FBB58EEACE6E2FDC",
-    "rom_crc": "DD88761C",
-    "rom_sha1": "41CB23D8DCCC8EBD7C649CD8FBB58EEACE6E2FDC"
-   },
-   "archive": "hacks/GBA/Pokémon_ FireRed Version/Pokémon - Faria Version___1_2/PokÃ©mon - Faria Version.zip",
-   "shot": "hacks/GBA/Pokémon_ FireRed Version/Pokémon - Faria Version___1_2/Pokémon - Faria Version_screenshot0.png",
-   "variants": [
-    {
-     "label": "Pok\ufffdmon - Faria Version",
-     "member": "Pok\ufffdmon - Faria Version.ips",
-     "format": "ips",
-     "size": 301241
     }
    ]
   },
@@ -5129,39 +4911,6 @@
    ]
   },
   {
-   "id": 5686,
-   "kind": "hack",
-   "title": "Final Fantasy 1 Angel Ring as a Drop",
-   "system": "GBA",
-   "game": "Final Fantasy I \u0026 II: Dawn of Souls",
-   "category": "Bug Fix",
-   "genre": "Role Playing",
-   "author": "Rabite",
-   "version": "1.0",
-   "released": "27 January 2021",
-   "downloads": 280,
-   "score": "1/1",
-   "desc": "There’s an annoying bug in Final Fantasy 1 on GBA where one of the better pieces of equipment will never be possible to get legit. The Angel Ring can only be found on one floor in the 10th treasure chest. Unfortunately that floor cannot have a layout that supports 10 chests. So in vanilla FF1 this item is impossible to get without Game Genie. The Angel Ring is not just any piece of equipment either. It can be equipped by any mage or wizard and will restore 10% of their max HP at the end of a turn. It’s stats are nothing to sneeze at either with some of the best absorb or evade possible on that armor slot. So this patch enables you to get the Angel Ring as a 10% chance drop from Holy Dragons.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Final Fantasy I \u0026 II - Dawn of Souls (USA)",
-    "file_crc": "1B39CDAB",
-    "file_sha1": "6472695D69661490F78245E2982E1E676C080BE7",
-    "rom_crc": "1B39CDAB",
-    "rom_sha1": "6472695D69661490F78245E2982E1E676C080BE7"
-   },
-   "archive": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Final Fantasy 1 Angel Ring as a Drop___1_0/Angel Ring as drop.zip",
-   "shot": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Final Fantasy 1 Angel Ring as a Drop___1_0/Final Fantasy 1 Angel Ring as a Drop_screenshot0.png",
-   "variants": [
-    {
-     "label": "ff1 angel ring as drop",
-     "member": "ff1 angel ring as drop.ips",
-     "format": "ips",
-     "size": 2464
-    }
-   ]
-  },
-  {
    "id": 4931,
    "kind": "hack",
    "title": "Pokemon : swaprald verison",
@@ -5225,39 +4974,6 @@
      "member": "AW2KartalminiWarRoom2020.ips",
      "format": "ips",
      "size": 6989
-    }
-   ]
-  },
-  {
-   "id": 5685,
-   "kind": "hack",
-   "title": "Improved Equipment Stat Viewing",
-   "system": "GBA",
-   "game": "Final Fantasy I \u0026 II: Dawn of Souls",
-   "category": "Improvement",
-   "genre": "Role Playing",
-   "author": "Rabite",
-   "version": "1.0",
-   "released": "27 January 2021",
-   "downloads": 253,
-   "score": "0/0",
-   "desc": "One of the biggest problems the new equipment in Dawn of Souls had was that some weapons had properties that were hidden from the player. Murasame casts Protect. Lightbringer casts Holy. Rune Axe casts Curaga. But all it tells you when you select the equipment in question is who can use it. Well that’s great. But what about the resistances of Genji Armor? What’s the critical hit rate of a Kikuichimonji? Is the Rune Sword better or worse than the Great Sword? This patch fixes those questions (mostly). It will show resistances of armor and show the benefits of each weapon.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Final Fantasy I \u0026 II - Dawn of Souls (USA)",
-    "file_crc": "1B39CDAB",
-    "file_sha1": "6472695D69661490F78245E2982E1E676C080BE7",
-    "rom_crc": "1B39CDAB",
-    "rom_sha1": "6472695D69661490F78245E2982E1E676C080BE7"
-   },
-   "archive": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Improved Equipment Stat Viewing___1_0/Improved Equipment Stat Viewing.zip",
-   "shot": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Improved Equipment Stat Viewing___1_0/Improved Equipment Stat Viewing_screenshot0.png",
-   "variants": [
-    {
-     "label": "Improved Equipment Stat Viewing",
-     "member": "Improved Equipment Stat Viewing.ips",
-     "format": "ips",
-     "size": 1140
     }
    ]
   },
@@ -5491,36 +5207,6 @@
      "member": "FF Restored/Final Fantasy Restored - 1.0.ips",
      "format": "ips",
      "size": 59712
-    }
-   ]
-  },
-  {
-   "id": 1186,
-   "kind": "hack",
-   "title": "Metroid + Saving",
-   "system": "NES",
-   "game": "Metroid",
-   "category": "Improvement",
-   "genre": "Action Adventure",
-   "author": "snarfblam",
-   "version": "0.3",
-   "released": "09 March 2014",
-   "downloads": 9055,
-   "score": "9/10",
-   "desc": "This hack replaces Metroid’s password system with a saving system, offering three save files. The file selection menu shows the player’s equipment, and as an added bonus, the player’s health is now saved (no need to grind for health every time you resume your game). The save system can be a handy addition for those who don’t like to use save-states, or those playing on a flash-cart. Included is a scrollable map when the game is paused and the ability to combine wave and ice beams. Version 0.3 fixes a bug that could prevent the game from booting correctly in some cases. The hack has been tested and confirmed to work on the PowerPak as well as a normal cart.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "9901E0B53828475CD77B4B684E0590252CB762D8",
-    "rom_sha1": "FDBFC7871962F72A1EF57E5A7E456164FB93430B"
-   },
-   "archive": "hacks/NES/Metroid/Metroid + Saving___0_3/Metroid Plus Saving 0.3.zip",
-   "shot": "hacks/NES/Metroid/Metroid + Saving___0_3/Metroid + Saving_screenshot0.png",
-   "variants": [
-    {
-     "label": "Metroid Plus",
-     "member": "Metroid Plus.ips",
-     "format": "ips",
-     "size": 205226
     }
    ]
   },
@@ -6880,51 +6566,6 @@
    ]
   },
   {
-   "id": 5179,
-   "kind": "hack",
-   "title": "Rockman 6: Unique Harassment",
-   "system": "NES",
-   "game": "Mega Man 6",
-   "category": "Complete",
-   "genre": "Action \u003e Platformer",
-   "author": "Tatsu",
-   "version": "1.2",
-   "released": "14 June 2020",
-   "downloads": 3068,
-   "score": "7/9",
-   "desc": "This is a complete level hack of Rockman 6 for the NES. Apply the patch to the Rockman 6 ROM (Japanese version), not for Mega Man 6 ROM (USA version). Features: New levels Features Robot Masters (and other enemy robots) from other Rockman games New Robot Master attack patters New Weapons “New” BGM Weapon and Adaptor switch function Other QoL hacks included (check readme for details) Note: v1.2 - 06/14/2020 Patch this to a clean Rockman 6 ROM. Not meant to reapply over the old pre-patched ROM.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Rockman 6 - Shijou Saidai no Tatakai!! (Japan)",
-    "file_crc": "AB1D7979",
-    "file_sha1": "316BEA6B2AEF7E5ECDE995EAB4AD99DB78F85C34",
-    "rom_crc": "2D664D99",
-    "rom_sha1": "47336976A531FAB2592AF636A630A290EB036D18"
-   },
-   "archive": "hacks/NES/Mega Man 6/Rockman 6_ Unique Harassment___1_2/Rockman6UH (v1.2).zip",
-   "shot": "hacks/NES/Mega Man 6/Rockman 6_ Unique Harassment___1_2/Rockman 6_ Unique Harassment_screenshot0.png",
-   "variants": [
-    {
-     "label": "ver1.1 › Rockman6UH_ver1.1",
-     "member": "Rockman6UH/ver1.1/Rockman6UH_ver1.1.ips",
-     "format": "ips",
-     "size": 455246
-    },
-    {
-     "label": "ver1.2 › Rockman6UH_ver1.2",
-     "member": "Rockman6UH/ver1.2/Rockman6UH_ver1.2.ips",
-     "format": "ips",
-     "size": 455579
-    },
-    {
-     "label": "\ufffd\ufffdver › Rockman6UH",
-     "member": "Rockman6UH/\ufffd\ufffdver/Rockman6UH.ips",
-     "format": "ips",
-     "size": 454793
-    }
-   ]
-  },
-  {
    "id": 4801,
    "kind": "hack",
    "title": "SMB3 RELOADED",
@@ -7318,45 +6959,6 @@
      "size": 6010,
      "src_crc": "3337EC46",
      "dst_crc": "59A714FD"
-    }
-   ]
-  },
-  {
-   "id": 3980,
-   "kind": "hack",
-   "title": "Battletoads \u0026 Double Dragon 4 players",
-   "system": "NES",
-   "game": "Battletoads \u0026 Double Dragon: The Ultimate Team",
-   "category": "Complete",
-   "genre": "Action \u003e Beat 'Em Up",
-   "author": "NakeuD2007",
-   "version": "2.1-4stage",
-   "released": "26 October 2018",
-   "downloads": 2620,
-   "score": "0/0",
-   "desc": "Mod/hack adds fourth (and third) player to Battletoads \u0026 Double Dragon (NES, U-version) to make possible to play the game with four people at the same time. Also: New moves, character levels system, enemy multiplier, new mechanics, lives share mode. To play as it intended, use moded emulator (with extended capacity or “blast processing”) with 256_spr rom. https://www.patreon.com/posts/moded-emulator-34560541 https://www.emu-land.net/forum/index.php/topic,77237.0.html Project topic YouTube Channel",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Battletoads-Double Dragon (USA)",
-    "file_crc": "53B02F3D",
-    "file_sha1": "61832D0F955CFF169FF059BD557BE4F522B15B7C",
-    "rom_crc": "CEB65B06",
-    "rom_sha1": "A14563325B0F33C358142E7363D31614722FDDB1"
-   },
-   "archive": "hacks/NES/Battletoads \u0026 Double Dragon_ The Ultimate Team/Battletoads \u0026 Double Dragon 4 players___2_1-4stage/[NES] Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_v0.9_v2.1-4stages [IPS].zip",
-   "shot": "hacks/NES/Battletoads \u0026 Double Dragon_ The Ultimate Team/Battletoads \u0026 Double Dragon 4 players___2_1-4stage/Battletoads \u0026 Double Dragon 4 players_screenshot0.jpg",
-   "variants": [
-    {
-     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages",
-     "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages.ips",
-     "format": "ips",
-     "size": 68491
-    },
-    {
-     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr",
-     "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr.ips",
-     "format": "ips",
-     "size": 69966
     }
    ]
   },
@@ -7803,36 +7405,6 @@
      "member": "The Legend of Zelda - Triforce Power (Version 3.6).ips",
      "format": "ips",
      "size": 27083
-    }
-   ]
-  },
-  {
-   "id": 4109,
-   "kind": "hack",
-   "title": "Metal Gear MSX + Style",
-   "system": "NES",
-   "game": "Metal Gear",
-   "category": "Improvement",
-   "genre": "Action",
-   "author": "Mister Xiado",
-   "version": "1.0",
-   "released": "08 August 2018",
-   "downloads": 2176,
-   "score": "1/1",
-   "desc": "This hack for Metal Gear (NES) corrects the numerous spelling, grammatical, and punctuation errors that were present in many early NES titles. In addition to these changes, several errors resulting from a rushed port, such as the wrong location given for the EOD suit, have been corrected. Background tiles and palettes have been changed to more closely match the MSX original, barring any changes that would cause unintended chaos, as POWs and equipment pickups share a single palette. The title screen has been changed to be more like the original, including a translation of the original logo style, albeit parallel, rather than the original canted alignment of the title.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "9AAA7C001465311AE79D84644AA5FCE1F9766860",
-    "rom_sha1": "2783BEF3CC207E9BF57A65EEA5AB9B68E2214AF0"
-   },
-   "archive": "hacks/NES/Metal Gear/Metal Gear MSX + Style___1_0/Metal Gear MSX + Style.zip",
-   "shot": "hacks/NES/Metal Gear/Metal Gear MSX + Style___1_0/Metal Gear MSX + Style_screenshot0.png",
-   "variants": [
-    {
-     "label": "Metal Gear MSX + Style",
-     "member": "Metal Gear MSX + Style.ips",
-     "format": "ips",
-     "size": 5053
     }
    ]
   },
@@ -9417,37 +8989,6 @@
    ]
   },
   {
-   "id": 3691,
-   "kind": "hack",
-   "title": "Chrono Trigger+",
-   "system": "SNES",
-   "game": "Chrono Trigger",
-   "category": "Improvement",
-   "genre": "Role Playing",
-   "author": "ThegreatBen",
-   "version": "2.4",
-   "released": "26 March 2020",
-   "downloads": 16375,
-   "score": "5/5",
-   "desc": "This hack adds a ton of cut content back into the game, allows access to previously unexplorable areas, fixes some bugs and offers some options to remove the linearity from the game. Full list of changes in the readme. In addition 1999 is fully explorable and offers tons of stuff to do. As well as more Easter eggs and quality of life improvements. More stuff carries over like names money, fair prizes and cats. The optional patches are explained in the readme.",
-   "patching": "No-Header (SNES)",
-   "header": "none",
-   "base": {
-    "file_crc": "2D206BF7",
-    "file_sha1": "DE5822F4F2F7A55ACB8926D4C0EAA63D5D989312"
-   },
-   "archive": "hacks/SNES/Chrono Trigger/Chrono Trigger+___2_4/CT+.zip",
-   "shot": "hacks/SNES/Chrono Trigger/Chrono Trigger+___2_4/Chrono Trigger+_screenshot0.png",
-   "variants": [
-    {
-     "label": "Auto-run+",
-     "member": "Auto-run+.ips",
-     "format": "ips",
-     "size": 64
-    }
-   ]
-  },
-  {
    "id": 1780,
    "kind": "hack",
    "title": "Mega Man X1: Proto Edition",
@@ -10358,45 +9899,6 @@
    ]
   },
   {
-   "id": 4164,
-   "kind": "hack",
-   "title": "Super Mario World: Bowsette Edition",
-   "system": "SNES",
-   "game": "Super Mario World",
-   "category": "Improvement",
-   "genre": "Action \u003e Platformer",
-   "author": "Moltz",
-   "version": "1.2",
-   "released": "01 October 2018",
-   "downloads": 4710,
-   "score": "1/1",
-   "desc": "Ever wanted to play a Super Mario game where you could both fight AND rescue Princess Bowser/Bowsette? If your answer is yes, then this might be EXACTLY what you’ve been looking for. Super Mario World: Bowsette Edition is a ROM Hack that swaps the graphics of Bowser and Princess Peach with Bowsette; a female lookalike of Princess Peach with draconic features that’s actually Bowser wearing the Super Crown from NSMBUDX. In order for the hack to be more than just some graphic swaps, “freebies” of sorts have been added: Unique graphics for Luigi (taken from Super Mario All Stars + Super Mario World). Some misc. enemies \u0026 places use graphics from Super Mario Maker. A “mostly” animated overworld.",
-   "patching": "Header (SNES)",
-   "header": "required",
-   "base": {
-    "file_crc": "2C36C43E",
-    "file_sha1": "15B51DA40ED5D1F868EDFCB9A2B73784CFA0A326",
-    "rom_crc": "B19ED489",
-    "rom_sha1": "6B47BB75D16514B6A476AA0C73A683A2A4C18765"
-   },
-   "archive": "hacks/SNES/Super Mario World/Super Mario World_ Bowsette Edition___1_2/smw+princess+bowser+edition+1.2.zip",
-   "shot": "hacks/SNES/Super Mario World/Super Mario World_ Bowsette Edition___1_2/Super Mario World_ Bowsette Edition_screenshot0.png",
-   "variants": [
-    {
-     "label": "SMW Bowsette Edition -A-1.2",
-     "member": "SMW Bowsette Edition -A-1.2.ips",
-     "format": "ips",
-     "size": 397838
-    },
-    {
-     "label": "SMW Bowsette Edition -B-1.2",
-     "member": "SMW Bowsette Edition -B-1.2.ips",
-     "format": "ips",
-     "size": 398094
-    }
-   ]
-  },
-  {
    "id": 4964,
    "kind": "hack",
    "title": "MaternalBound Redux",
@@ -11222,50 +10724,6 @@
    ]
   },
   {
-   "id": 4881,
-   "kind": "hack",
-   "title": "SMW The Crown Tale",
-   "system": "SNES",
-   "game": "Super Mario World",
-   "category": "Complete",
-   "genre": "Action \u003e Platformer",
-   "author": "Bandicoot",
-   "version": "1.33",
-   "released": "28 May 2021",
-   "downloads": 3119,
-   "score": "4/4",
-   "desc": "SMW The Crown Tale is romhack of SMW based on the Bowsette memes around the internet, the hack is basically a traditional Mario adventure with a story involving Bowsette and the Super Crown. While it have a story is not really a huge-super impressive one, but it can still be funny with the dialogues included. Story: While Mario was taking a vacation on a far away island Toadette suddenly appears before him with sudden news that her Super Crown was stolen by Bowser and that he used it to impersonate the Princess and fool everyone on the mushroom kingdom.",
-   "patching": "Header (SNES)",
-   "header": "required",
-   "base": {
-    "name": "Super Mario World (USA)",
-    "file_crc": "A31BEAD4",
-    "file_sha1": "553CF42F35ACF63028A369608742BB5B913C103F",
-    "rom_crc": "B19ED489",
-    "rom_sha1": "6B47BB75D16514B6A476AA0C73A683A2A4C18765"
-   },
-   "archive": "hacks/SNES/Super Mario World/SMW The Crown Tale___1_33/SMW The Crown Tale v1.33.zip",
-   "shot": "hacks/SNES/Super Mario World/SMW The Crown Tale___1_33/SMW The Crown Tale_screenshot0.png",
-   "variants": [
-    {
-     "label": "SMW The Crown Tale English Version",
-     "member": "SMW The Crown Tale English Version.bps",
-     "format": "bps",
-     "size": 2002790,
-     "src_crc": "B19ED489",
-     "dst_crc": "548B7F2A"
-    },
-    {
-     "label": "SMW O conto da Coroa Vers\ufffdo BR",
-     "member": "SMW O conto da Coroa Vers\ufffdo BR.bps",
-     "format": "bps",
-     "size": 2002243,
-     "src_crc": "B19ED489",
-     "dst_crc": "53D167DA"
-    }
-   ]
-  },
-  {
    "id": 4812,
    "kind": "hack",
    "title": "Mortal Kombat Champion Edition",
@@ -11668,39 +11126,6 @@
    ]
   },
   {
-   "id": 46,
-   "kind": "hack",
-   "title": "Celes + Terra",
-   "system": "SNES",
-   "game": "Final Fantasy IV",
-   "category": "Complete",
-   "genre": "Role Playing",
-   "author": "Drum Solo",
-   "version": "1.0",
-   "released": "14 September 2002",
-   "downloads": 2402,
-   "score": "1/2",
-   "desc": "This ROM hack alters the game into a story mostly centered on characters from at least one other game in the Final Fantasy series, notably Celes and Terra. The game was modified to a large degree. Both graphics (mainly character graphics) and text were modified. One character was even changed into a totally new character. The text was changed from a base script of J2E’s translation of the game. The game is now more female related. It is also a bit lesbian in nature, centering on the relationship of Celes and Terra.",
-   "patching": "Header (SNES)",
-   "header": "required",
-   "base": {
-    "file_crc": "48449269",
-    "file_sha1": "3C896B9D8CCFB3433810139EE18467AA435AC2E2",
-    "rom_crc": "CAA15E97",
-    "rom_sha1": "EAC14578B3465FFCE874119005F9B244E8565A79"
-   },
-   "archive": "hacks/SNES/Final Fantasy IV/Celes + Terra___1_0/FF4TerraCeles.ZIP",
-   "shot": "hacks/SNES/Final Fantasy IV/Celes + Terra___1_0/Celes + Terra_screenshot0.png",
-   "variants": [
-    {
-     "label": "FF4-TerraCeles",
-     "member": "FF4-TerraCeles.IPS",
-     "format": "ips",
-     "size": 207710
-    }
-   ]
-  },
-  {
    "id": 3746,
    "kind": "hack",
    "title": "Automatic Sprint and Learning",
@@ -12003,40 +11428,6 @@
      "member": "bsoccer_eng10.ips",
      "format": "ips",
      "size": 23725
-    }
-   ]
-  },
-  {
-   "id": 4480,
-   "kind": "hack",
-   "title": "Rockman \u0026 Forte - Player Switching",
-   "system": "SNES",
-   "game": "Rockman \u0026 Forte",
-   "category": "Improvement",
-   "genre": "Action \u003e Platformer",
-   "author": "Puresabe",
-   "version": "0.02",
-   "released": "24 December 2016",
-   "downloads": 2120,
-   "score": "1/1",
-   "desc": "As the title suggests, you can switch between Rockman and Forte during game play. You can choose which player to start with. When the game starts, you can change characters by jumping while pressing SELECT. There might be bugs, so report it to Puresabe if found. Compatible with translation hacks, but be mindful of which order you apply this as this is for a No-Header ROM.",
-   "patching": "No-Header (SNES)",
-   "header": "none",
-   "base": {
-    "name": "Rockman \u0026 Forte (Japan)",
-    "file_crc": "5047E0D4",
-    "file_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A",
-    "rom_crc": "5047E0D4",
-    "rom_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A"
-   },
-   "archive": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Player Switching___0_02/RockFPlayerSwitching002.zip",
-   "shot": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Player Switching___0_02/Rockman \u0026 Forte - Player Switching_screenshot0.png",
-   "variants": [
-    {
-     "label": "RockFPlayerSwitching",
-     "member": "RockFPlayerSwitching002/RockFPlayerSwitching.ips",
-     "format": "ips",
-     "size": 219
     }
    ]
   },
@@ -13197,40 +12588,6 @@
    ]
   },
   {
-   "id": 4481,
-   "kind": "hack",
-   "title": "Rockman \u0026 Forte - Multiple Equipment",
-   "system": "SNES",
-   "game": "Rockman \u0026 Forte",
-   "category": "Improvement",
-   "genre": "Action \u003e Platformer",
-   "author": "Puresabe",
-   "version": "0.01",
-   "released": "24 December 2016",
-   "downloads": 1317,
-   "score": "1/1",
-   "desc": "As the title suggests, you can equip multiple upgrades that you bought from the shop. You can choose which player to start with. Once you have purchased an item that can be equipped, open the menu as usual. After selecting the icon that you want to equip, press Y button, it will be displayed on the icon with “▼ E” and it will be activated. If you press it again, the display will disappear and it will be disabled. There might be bugs, so report it to Puresabe if found. Compatible with translation hacks, but be mindful of which order you apply this as this is for a No-Header ROM.",
-   "patching": "No-Header (SNES)",
-   "header": "none",
-   "base": {
-    "name": "Rockman \u0026 Forte (Japan)",
-    "file_crc": "5047E0D4",
-    "file_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A",
-    "rom_crc": "5047E0D4",
-    "rom_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A"
-   },
-   "archive": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Multiple Equipment___0_01/RockFMultipleEquipments001.zip",
-   "shot": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Multiple Equipment___0_01/Rockman \u0026 Forte - Multiple Equipment_screenshot0.png",
-   "variants": [
-    {
-     "label": "RockFMultipleEquipments",
-     "member": "RockFMultipleEquipments001/RockFMultipleEquipments.ips",
-     "format": "ips",
-     "size": 324
-    }
-   ]
-  },
-  {
    "id": 5514,
    "kind": "hack",
    "title": "Super Mario Kart - Epic Racers",
@@ -13429,43 +12786,6 @@
      "size": 50157,
      "src_crc": "777AAC2F",
      "dst_crc": "C2E7FF86"
-    }
-   ]
-  },
-  {
-   "id": 3685,
-   "kind": "hack",
-   "title": "Enable Ryo Sakazaki and Easy move",
-   "system": "SNES",
-   "game": "Fatal Fury Special",
-   "category": "Improvement",
-   "genre": "Action \u003e Fighting",
-   "author": "Docrow",
-   "version": "1.0",
-   "released": "04 October 2017",
-   "downloads": 1229,
-   "score": "0/0",
-   "desc": "Enable Ryo Sakazaki and simplify all character moves: F, F, or D, D, punch or kick; D, F, or D, B, punch or kick; Super desperation move: D, F, D, F, punch.",
-   "patching": "Header (SNES)",
-   "header": "required",
-   "base": {
-    "file_sha1": "685FB9231520202ACFD07C385668C068B12D1F94",
-    "rom_sha1": "8113EF06DC16BF570463636094DF30C9593B2DB9"
-   },
-   "archive": "hacks/SNES/Fatal Fury Special/Enable Ryo Sakazaki and Easy move___1_0/Fatal Fury Special (Easy+ryo).zip",
-   "shot": "hacks/SNES/Fatal Fury Special/Enable Ryo Sakazaki and Easy move___1_0/Enable Ryo Sakazaki and Easy move_screenshot0.png",
-   "variants": [
-    {
-     "label": "ryo sakazaki only",
-     "member": "ryo sakazaki only.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "Fatal Fury Special (Easy)",
-     "member": "Fatal Fury Special (Easy).ips",
-     "format": "ips",
-     "size": 677
     }
    ]
   },
@@ -13883,36 +13203,6 @@
      "member": "LB2020_Final1.2.ips",
      "format": "ips",
      "size": 112122
-    }
-   ]
-  },
-  {
-   "id": 2884,
-   "kind": "hack",
-   "title": "Super CV IV - CV1 Font + HUD + Icons",
-   "system": "SNES",
-   "game": "Super Castlevania IV",
-   "category": "Improvement",
-   "genre": "Action \u003e Platformer",
-   "author": "hiro1112",
-   "version": "1.0",
-   "released": "04 June 2016",
-   "downloads": 1021,
-   "score": "1/1",
-   "desc": "This is a hack of Super Castlevania IV. It changes the HUD and font to be similar to the first Castlevania game. Simons sprite was also recolored to be a simpler color palette like the one in the first game. Weapon and item sprites were also ported and in some cases re-shaded. There is also a special edit to the final form of Dracula also. This is a more in depth hack that changes more than what was changed in the Super CV IV - CV 1 \u0026 3 Font and HUD hack. These exist separately as it’s unsure if there will be a CV3 updated version. Also because some people may only want the HUD changed.",
-   "patching": "No-Header (SNES)",
-   "header": "none",
-   "base": {
-    "file_sha1": "684C1DFAFF8E5999422C24D48054D96BB12DA2F4"
-   },
-   "archive": "hacks/SNES/Super Castlevania IV/Super CV IV - CV1 Font + HUD + Icons___1_0/SCV4-CV1 Font+Icons.zip",
-   "shot": "hacks/SNES/Super Castlevania IV/Super CV IV - CV1 Font + HUD + Icons___1_0/Super CV IV - CV1 Font + HUD + Icons_screenshot0.png",
-   "variants": [
-    {
-     "label": "Super Castlevania IV (CV1 Font+Icons) (U) [!]",
-     "member": "Super Castlevania IV (CV1 Font+Icons) (U) [!].ips",
-     "format": "ips",
-     "size": 968197
     }
    ]
   },

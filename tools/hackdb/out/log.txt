@@ -3,23 +3,34 @@
 go: downloading golang.org/x/image v0.24.0
 go: downloading golang.org/x/text v0.22.0
 + go test ./patch ./tools/hackdb
-ok  	mixtape/patch	0.004s
+ok  	mixtape/patch	0.016s
 ok  	mixtape/tools/hackdb	0.003s
 + go run ./tools/hackdb -out out/hacks.json -report out/report.txt
-13:07:39 archive https://dn721809.ca.archive.org/0/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
-13:08:07 99109 entries
-13:08:07 5312 candidate entries with info + files
-13:08:14   500/5312
-13:08:21   1000/5312
-13:08:27   1500/5312
-13:08:33   2000/5312
-13:08:40   2500/5312
-13:08:47   3000/5312
-13:08:53   3500/5312
-13:09:00   4000/5312
-13:09:07   4500/5312
-13:09:13   5000/5312
-13:09:18 chose 420 entries
-13:09:54 added 2 hand-picked entries
-13:09:54 wrote out/hacks.json: 404 entries, 18 skipped
+13:12:23 archive https://dn721809.ca.archive.org/0/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
+13:12:49 99109 entries
+13:12:49 5312 candidate entries with info + files
+13:12:56   500/5312
+13:13:07   1000/5312
+13:13:18   1500/5312
+13:13:27   2000/5312
+13:13:36   2500/5312
+13:13:45   3000/5312
+13:13:55   3500/5312
+13:14:04   4000/5312
+13:14:14   4500/5312
+13:14:23   5000/5312
+13:14:30 chose 420 entries
+13:15:07 added 2 hand-picked entries
+13:15:07 wrote out/hacks.json: 404 entries, 18 skipped
++ go run ./tools/hackdb -verify out/hacks.json -report out/verify.txt
+13:15:07   verify 0/404
+13:15:11   verify 50/404
+13:15:21   verify 100/404
+13:15:32   verify 150/404
+13:16:13   verify 200/404
+13:16:18   verify 250/404
+13:16:28   verify 300/404
+13:16:38   verify 350/404
+13:17:07   verify 400/404
+13:17:42 verified 384/404 entries download and open correctly on the device path (382 with screenshots)
 exit=0
