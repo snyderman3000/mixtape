@@ -1,0 +1,10 @@
++ set -e
++ sh tools/hackdb/explore.sh
+[sql.zip]
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of sql.zip or
+        sql.zip.zip, and cannot find sql.zip.ZIP, period.
+exit=9
