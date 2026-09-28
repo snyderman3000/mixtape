@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T13:15:07Z",
+ "generated": "2026-09-28T13:23:57Z",
  "source": "RomHacking.net archive (Internet Archive item rhdn-20210914)",
  "archive_url": "https://archive.org/download/rhdn-20210914/RHDN-20210914.zip",
  "hacks": [
@@ -1201,6 +1201,38 @@
      "size": 8328,
      "src_crc": "B681E243",
      "dst_crc": "034F5527"
+    }
+   ]
+  },
+  {
+   "id": 5792,
+   "kind": "translation",
+   "title": "Medarot 1",
+   "system": "GB",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "Cash Medal Chameleon",
+   "version": "0.5.9+txt.6",
+   "released": "02 January 2021",
+   "downloads": 1220,
+   "score": "0/0",
+   "desc": "Medarot 1 is an role playing game for the Game Boy.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Medarot - Kuwagata Version (Japan) (Rev A) (SGB Enhanced)",
+    "file_crc": "5E77E82E",
+    "file_sha1": "2262F69A89ABE0F66DC1554C1EE470FD536130A3",
+    "rom_crc": "5E77E82E",
+    "rom_sha1": "2262F69A89ABE0F66DC1554C1EE470FD536130A3"
+   },
+   "archive": "translations/Game Boy/Medarot 1/English/Cash Medal Chameleon___0_5_9+txt_6/medarot1-0.5.9+txt.6.zip",
+   "shot": "translations/Game Boy/Medarot 1/English/Cash Medal Chameleon___0_5_9+txt_6/Medarot 1_screenshot0.png",
+   "variants": [
+    {
+     "label": "m1kabuto-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814",
+     "member": "m1kabuto-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814.ips",
+     "format": "ips",
+     "size": 274775
     }
    ]
   },
@@ -3264,6 +3296,45 @@
    ]
   },
   {
+   "id": 4910,
+   "kind": "hack",
+   "title": "All-Stars + World Luigi in Super Mario Advance 2",
+   "system": "GBA",
+   "game": "Super Mario World: Super Mario Advance 2",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "JY",
+   "version": "1.0",
+   "released": "30 January 2020",
+   "downloads": 2008,
+   "score": "2/3",
+   "desc": "Super Mario Advance 2 saw the second time Nintendo decided to redraw World Luigi’s sprites, this time having him based off his appearance in the first Super Mario Advance mixed with elements of World’s art style. It’s unknown why Nintendo tried going to this extent to differentiate Luigi’s appearance from Mario’s in 2001, as they already had access to a perfectly fine set of World-style Luigi sprites from roughly seven years prior. This hack essentially undoes Nintendo’s admittedly odd decision by swapping out the existing, arguably less-appealing Luigi sprites in Super Mario Advance 2 for those found in Super Mario All-Stars + Super Mario World.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es)",
+    "file_crc": "FCFEF343",
+    "file_sha1": "199A5A01BD3F56FBA9A701062EDBCF57E1528A0C",
+    "rom_crc": "FCFEF343",
+    "rom_sha1": "199A5A01BD3F56FBA9A701062EDBCF57E1528A0C"
+   },
+   "archive": "hacks/GBA/Super Mario World_ Super Mario Advance 2/All-Stars + World Luigi in Super Mario Advance 2___1_0/All-Stars + World Luigi.zip",
+   "shot": "hacks/GBA/Super Mario World_ Super Mario Advance 2/All-Stars + World Luigi in Super Mario Advance 2___1_0/All-Stars + World Luigi in Super Mario Advance 2_screenshot0.png",
+   "variants": [
+    {
+     "label": "sma2-aswluigi-e",
+     "member": "All-Stars + World Luigi/sma2-aswluigi-e.ips",
+     "format": "ips",
+     "size": 19066
+    },
+    {
+     "label": "sma2-aswluigi-u",
+     "member": "All-Stars + World Luigi/sma2-aswluigi-u.ips",
+     "format": "ips",
+     "size": 19066
+    }
+   ]
+  },
+  {
    "id": 5538,
    "kind": "translation",
    "title": "Gyakuten Saiban 3",
@@ -3398,6 +3469,39 @@
      "member": "(US) [voice hack] Legend of Zelda, The - A Link to the Past \u0026 Four Swords (USA, Australia).ips",
      "format": "ips",
      "size": 32385
+    }
+   ]
+  },
+  {
+   "id": 3491,
+   "kind": "hack",
+   "title": "Original Sunset Wilds title card \u0026 sprites for MK - SC",
+   "system": "GBA",
+   "game": "Mario Kart: Super Circuit",
+   "category": "Improvement",
+   "genre": "Racing",
+   "author": "SCD",
+   "version": "Final",
+   "released": "16 June 2017",
+   "downloads": 1405,
+   "score": "0/0",
+   "desc": "This hack restores the original Sunset Wilds title card \u0026 sprites back to the American version of this game, so now the Shy Guys are wearing their Native American war bonnets once again. They were removed from this version because Nintendo of America were worried that they might cause a controversy if they kept them in. The 0xED hex editor was used to restore the graphics.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Mario Kart - Super Circuit (Europe)",
+    "file_crc": "20025842",
+    "file_sha1": "2CDFC94CBE7A7F4EFE00D98DD33EBB5F50CF91F0",
+    "rom_crc": "20025842",
+    "rom_sha1": "2CDFC94CBE7A7F4EFE00D98DD33EBB5F50CF91F0"
+   },
+   "archive": "hacks/GBA/Mario Kart_ Super Circuit/Original Sunset Wilds title card \u0026 sprites for MK - SC___Final/Original Sunset Wilds title card \u0026 sprites for MK - SC.zip",
+   "shot": "hacks/GBA/Mario Kart_ Super Circuit/Original Sunset Wilds title card \u0026 sprites for MK - SC___Final/Original Sunset Wilds title card \u0026 sprites for MK - SC_screenshot0.png",
+   "variants": [
+    {
+     "label": "Original Sunset Wilds title card \u0026 sprites for MK - SC",
+     "member": "Original Sunset Wilds title card \u0026 sprites for MK - SC.ips",
+     "format": "ips",
+     "size": 8967
     }
    ]
   },
@@ -3750,6 +3854,51 @@
      "size": 35571,
      "src_crc": "B857C3C5",
      "dst_crc": "96634053"
+    }
+   ]
+  },
+  {
+   "id": 5366,
+   "kind": "hack",
+   "title": "e+ Complete",
+   "system": "GBA",
+   "game": "F-Zero: GP Legend",
+   "category": "Improvement",
+   "genre": "Racing",
+   "author": "Guy Perfect",
+   "version": "1.0",
+   "released": "04 September 2020",
+   "downloads": 1068,
+   "score": "2/2",
+   "desc": "F-Zero GP Legend had e-Reader support in Japan. Cards included bonus content such as new courses, challenge ghosts and machine unlocks. This mod incorporates all of the e-Reader content directly into the game. See the readme for more information. All three versions of the game are supported.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "F-Zero - GP Legend (USA)",
+    "file_crc": "781AAB58",
+    "file_sha1": "977588D9D27B7115E0BB309FB019AE81B9F413FF",
+    "rom_crc": "781AAB58",
+    "rom_sha1": "977588D9D27B7115E0BB309FB019AE81B9F413FF"
+   },
+   "archive": "hacks/GBA/F-Zero_ GP Legend/e+ Complete___1_0/f-zero_gpl_e+_complete.zip",
+   "shot": "hacks/GBA/F-Zero_ GP Legend/e+ Complete___1_0/e+ Complete_screenshot0.png",
+   "variants": [
+    {
+     "label": "e+_complete_usa",
+     "member": "e+_complete_usa.ips",
+     "format": "ips",
+     "size": 18133
+    },
+    {
+     "label": "e+_complete_eur",
+     "member": "e+_complete_eur.ips",
+     "format": "ips",
+     "size": 28167
+    },
+    {
+     "label": "e+_complete_jpn",
+     "member": "e+_complete_jpn.ips",
+     "format": "ips",
+     "size": 18238
     }
    ]
   },
@@ -4351,6 +4500,41 @@
    ]
   },
   {
+   "id": 5156,
+   "kind": "hack",
+   "title": "FE1 + FE2",
+   "system": "GBA",
+   "game": "Fire Emblem: The Sacred Stones",
+   "category": "Complete",
+   "genre": "Strategy \u003e Turn Based",
+   "author": "Binary Team",
+   "version": "1.0",
+   "released": "03 February 2016",
+   "downloads": 491,
+   "score": "0/0",
+   "desc": "This hack is based on the Japanese version of Sacred Stones. It serves to recreate the two NES entries of the Fire Emblem series in a single hack. While the Dark Dragon and the Sword Light recreation is faithful to the original game, the Gaiden remake opts to replace the original game’s maps with larger, more sprawling areas. These more represent compressed versions of the acts of the original game. Some notes: Due to technical limitations, some empty chapters will play and complete before the game selection menu appears. Though the Tower of Valni appears, it can be ignored. Marth’s death does not cause Game Over, due to a bug. See the Fire Emblem Universe thread for more information.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Fire Emblem - Seima no Kouseki (Japan)",
+    "file_crc": "9D76826F",
+    "file_sha1": "7DA0456035366AA18414FAA79D8FE7649F03C1ED",
+    "rom_crc": "9D76826F",
+    "rom_sha1": "7DA0456035366AA18414FAA79D8FE7649F03C1ED"
+   },
+   "archive": "hacks/GBA/Fire Emblem_ The Sacred Stones/FE1 + FE2___1_0/FE1+2_GBA.zip",
+   "shot": "hacks/GBA/Fire Emblem_ The Sacred Stones/FE1 + FE2___1_0/FE1 + FE2_screenshot0.png",
+   "variants": [
+    {
+     "label": "FE1+2_GBA",
+     "member": "FE1+2_GBA.UPS",
+     "format": "ups",
+     "size": 12757027,
+     "src_crc": "9D76826F",
+     "dst_crc": "A995E809"
+    }
+   ]
+  },
+  {
    "id": 6037,
    "kind": "translation",
    "title": "Nekketsu Monogatari Advance",
@@ -4911,6 +5095,39 @@
    ]
   },
   {
+   "id": 5686,
+   "kind": "hack",
+   "title": "Final Fantasy 1 Angel Ring as a Drop",
+   "system": "GBA",
+   "game": "Final Fantasy I \u0026 II: Dawn of Souls",
+   "category": "Bug Fix",
+   "genre": "Role Playing",
+   "author": "Rabite",
+   "version": "1.0",
+   "released": "27 January 2021",
+   "downloads": 280,
+   "score": "1/1",
+   "desc": "There’s an annoying bug in Final Fantasy 1 on GBA where one of the better pieces of equipment will never be possible to get legit. The Angel Ring can only be found on one floor in the 10th treasure chest. Unfortunately that floor cannot have a layout that supports 10 chests. So in vanilla FF1 this item is impossible to get without Game Genie. The Angel Ring is not just any piece of equipment either. It can be equipped by any mage or wizard and will restore 10% of their max HP at the end of a turn. It’s stats are nothing to sneeze at either with some of the best absorb or evade possible on that armor slot. So this patch enables you to get the Angel Ring as a 10% chance drop from Holy Dragons.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Final Fantasy I \u0026 II - Dawn of Souls (USA)",
+    "file_crc": "1B39CDAB",
+    "file_sha1": "6472695D69661490F78245E2982E1E676C080BE7",
+    "rom_crc": "1B39CDAB",
+    "rom_sha1": "6472695D69661490F78245E2982E1E676C080BE7"
+   },
+   "archive": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Final Fantasy 1 Angel Ring as a Drop___1_0/Angel Ring as drop.zip",
+   "shot": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Final Fantasy 1 Angel Ring as a Drop___1_0/Final Fantasy 1 Angel Ring as a Drop_screenshot0.png",
+   "variants": [
+    {
+     "label": "ff1 angel ring as drop",
+     "member": "ff1 angel ring as drop.ips",
+     "format": "ips",
+     "size": 2464
+    }
+   ]
+  },
+  {
    "id": 4931,
    "kind": "hack",
    "title": "Pokemon : swaprald verison",
@@ -4974,6 +5191,39 @@
      "member": "AW2KartalminiWarRoom2020.ips",
      "format": "ips",
      "size": 6989
+    }
+   ]
+  },
+  {
+   "id": 5685,
+   "kind": "hack",
+   "title": "Improved Equipment Stat Viewing",
+   "system": "GBA",
+   "game": "Final Fantasy I \u0026 II: Dawn of Souls",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "Rabite",
+   "version": "1.0",
+   "released": "27 January 2021",
+   "downloads": 253,
+   "score": "0/0",
+   "desc": "One of the biggest problems the new equipment in Dawn of Souls had was that some weapons had properties that were hidden from the player. Murasame casts Protect. Lightbringer casts Holy. Rune Axe casts Curaga. But all it tells you when you select the equipment in question is who can use it. Well that’s great. But what about the resistances of Genji Armor? What’s the critical hit rate of a Kikuichimonji? Is the Rune Sword better or worse than the Great Sword? This patch fixes those questions (mostly). It will show resistances of armor and show the benefits of each weapon.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Final Fantasy I \u0026 II - Dawn of Souls (USA)",
+    "file_crc": "1B39CDAB",
+    "file_sha1": "6472695D69661490F78245E2982E1E676C080BE7",
+    "rom_crc": "1B39CDAB",
+    "rom_sha1": "6472695D69661490F78245E2982E1E676C080BE7"
+   },
+   "archive": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Improved Equipment Stat Viewing___1_0/Improved Equipment Stat Viewing.zip",
+   "shot": "hacks/GBA/Final Fantasy I \u0026 II_ Dawn of Souls/Improved Equipment Stat Viewing___1_0/Improved Equipment Stat Viewing_screenshot0.png",
+   "variants": [
+    {
+     "label": "Improved Equipment Stat Viewing",
+     "member": "Improved Equipment Stat Viewing.ips",
+     "format": "ips",
+     "size": 1140
     }
    ]
   },
@@ -5207,6 +5457,36 @@
      "member": "FF Restored/Final Fantasy Restored - 1.0.ips",
      "format": "ips",
      "size": 59712
+    }
+   ]
+  },
+  {
+   "id": 1186,
+   "kind": "hack",
+   "title": "Metroid + Saving",
+   "system": "NES",
+   "game": "Metroid",
+   "category": "Improvement",
+   "genre": "Action Adventure",
+   "author": "snarfblam",
+   "version": "0.3",
+   "released": "09 March 2014",
+   "downloads": 9055,
+   "score": "9/10",
+   "desc": "This hack replaces Metroid’s password system with a saving system, offering three save files. The file selection menu shows the player’s equipment, and as an added bonus, the player’s health is now saved (no need to grind for health every time you resume your game). The save system can be a handy addition for those who don’t like to use save-states, or those playing on a flash-cart. Included is a scrollable map when the game is paused and the ability to combine wave and ice beams. Version 0.3 fixes a bug that could prevent the game from booting correctly in some cases. The hack has been tested and confirmed to work on the PowerPak as well as a normal cart.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "9901E0B53828475CD77B4B684E0590252CB762D8",
+    "rom_sha1": "FDBFC7871962F72A1EF57E5A7E456164FB93430B"
+   },
+   "archive": "hacks/NES/Metroid/Metroid + Saving___0_3/Metroid Plus Saving 0.3.zip",
+   "shot": "hacks/NES/Metroid/Metroid + Saving___0_3/Metroid + Saving_screenshot0.png",
+   "variants": [
+    {
+     "label": "Metroid Plus",
+     "member": "Metroid Plus.ips",
+     "format": "ips",
+     "size": 205226
     }
    ]
   },
@@ -5995,39 +6275,6 @@
    ]
   },
   {
-   "id": 3793,
-   "kind": "translation",
-   "title": "Crystalis",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing \u003e Action RPG",
-   "author": "Stardust Crusaders",
-   "version": "1.02",
-   "released": "28 August 2020",
-   "downloads": 4006,
-   "score": "2/2",
-   "desc": "Crystalis is an action role playing game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "718FD0AF",
-    "file_sha1": "8A4B0201D54B090C49383468111E1141BA078877",
-    "rom_crc": "79698B98",
-    "rom_sha1": "A9989F97B18D676B39E282FFC32483C0DFDFCAFA"
-   },
-   "archive": "translations/Nintendo Entertainment System/Crystalis/English/Stardust Crusaders___1_02/Godslayer.zip",
-   "shot": "translations/Nintendo Entertainment System/Crystalis/English/Stardust Crusaders___1_02/Crystalis_screenshot0.png",
-   "variants": [
-    {
-     "label": "God Slayer - Sonata of the Distant Heavens",
-     "member": "Godslayer/God Slayer - Sonata of the Distant Heavens.bps",
-     "format": "bps",
-     "size": 40265,
-     "src_crc": "718FD0AF",
-     "dst_crc": "F929B5CE"
-    }
-   ]
-  },
-  {
    "id": 5110,
    "kind": "hack",
    "title": "Super Mario Bros. 3 Classic",
@@ -6251,68 +6498,6 @@
    ]
   },
   {
-   "id": 3388,
-   "kind": "translation",
-   "title": "Biohazard",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "pacnsacdave",
-   "version": "1.0",
-   "released": "06 January 2018",
-   "downloads": 3416,
-   "score": "2/2",
-   "desc": "This is a Chinese bootleg of the original Biohazard game (known as Resident Evil). There are quite a few games ported to the NES; Final Fantasy 7, Chrono Trigger, etc. An elite police group called Stars is sent to investigate a mysterious mansion. Play as Jill Valentine or Chris Redfield to uncover the conspiracy.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "B4C8012D",
-    "file_sha1": "5111785776C606E649FD229B1DB1633B980C9AB5",
-    "rom_crc": "2E27E0AF",
-    "rom_sha1": "3703C3F28174D5544F10B8D5AB8AA6660F1C1B7D"
-   },
-   "archive": "translations/Nintendo Entertainment System/Biohazard/English/pacnsacdave___1_0/bio_hazard__unl__ips.zip",
-   "shot": "translations/Nintendo Entertainment System/Biohazard/English/pacnsacdave___1_0/Biohazard_screenshot0.png",
-   "variants": [
-    {
-     "label": "Bio Hazard (Unl)",
-     "member": "Bio Hazard (Unl).ips",
-     "format": "ips",
-     "size": 45271
-    }
-   ]
-  },
-  {
-   "id": 3703,
-   "kind": "translation",
-   "title": "Takahashi Meijin no Bouken Jima IV",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Platformer",
-   "author": "Zynk Oxhyde",
-   "version": "1.0",
-   "released": "14 July 2018",
-   "downloads": 3368,
-   "score": "1/1",
-   "desc": "Takahashi Meijin no Bouken Jima IV is an action platformer game for the Nintendo Entertainment System. The game was not released in the West where it could have received an official title as Adventure Island IV. On his 4th adventure, Master Higgins lives peacefully on an island with his girlfriend Tina and his dinosaur friends. Suddenly, a mysterious evil face appeared and kidnapped the dinosaurs. Master Higgins is set to rescue them and defeat the island bosses. The gameplay is quite different from previous games where the player just clears a stage from point A to point B.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "5ECFD3DC",
-    "file_sha1": "E73EFD3E932B9E3501CE9C77418BDBF0D59D75CD",
-    "rom_crc": "7BD8F902",
-    "rom_sha1": "60BA08558D5316686195F8F0B9765B4EE8B4543A"
-   },
-   "archive": "translations/Nintendo Entertainment System/Takahashi Meijin no Bouken Jima IV/English/Demiforce___1_00/ai4e.zip",
-   "shot": "translations/Nintendo Entertainment System/Takahashi Meijin no Bouken Jima IV/English/Zynk Oxhyde___1_0/Takahashi Meijin no Bouken Jima IV_screenshot0.png",
-   "variants": [
-    {
-     "label": "AI4E",
-     "member": "AI4E.IPS",
-     "format": "ips",
-     "size": 4449
-    }
-   ]
-  },
-  {
    "id": 1993,
    "kind": "hack",
    "title": "Legend of Zelda Challenge Outlands- Zed Edition",
@@ -6342,37 +6527,6 @@
      "member": "LOZ1-OutlandsZedEdition115.ips",
      "format": "ips",
      "size": 34832
-    }
-   ]
-  },
-  {
-   "id": 4868,
-   "kind": "translation",
-   "title": "Final Fantasy",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "Chaos Rush",
-   "version": "1.3",
-   "released": "24 October 2019",
-   "downloads": 3290,
-   "score": "1/1",
-   "desc": "Final Fantasy is a role playing game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "92B1B80A",
-    "file_sha1": "0D4F34ADA26DBE20F6D6372F9B72980DF455121E",
-    "rom_crc": "F71E7EDD",
-    "rom_sha1": "C4C46C1BE3EBF607E31010CC63258F22A5D98F84"
-   },
-   "archive": "translations/Nintendo Entertainment System/Final Fantasy/English/Chaos Rush___1_3/FF1Translationv1.3.zip",
-   "shot": "translations/Nintendo Entertainment System/Final Fantasy/English/Chaos Rush___1_3/Final Fantasy_screenshot0.png",
-   "variants": [
-    {
-     "label": "FF1TranslationChaosEditionv1.3",
-     "member": "FF1Translationv1.3/FF1TranslationChaosEditionv1.3.ips",
-     "format": "ips",
-     "size": 25157
     }
    ]
   },
@@ -6496,72 +6650,6 @@
      "size": 20600,
      "src_crc": "1D714F05",
      "dst_crc": "75B54C6A"
-    }
-   ]
-  },
-  {
-   "id": 1591,
-   "kind": "translation",
-   "title": "Spelunker II: Yuushahe no Chousen",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing \u003e Action RPG",
-   "author": "Stardust Crusaders",
-   "version": "1.0",
-   "released": "18 February 2011",
-   "downloads": 3091,
-   "score": "0/0",
-   "desc": "Did anyone ever play the original Spelunker? That really old game where you ran around in a cave and died if you fell four feet? Or if you ran into a smallish hill? Yeah, great game. Fortunately Spelunker 2 is a little bit better. This game introduces the concept of Health. Sure, you can fall from a ways and lose health, but it isn’t as ridiculous as the first game. Sure, you can still lose health if you run into a smallish mound of dirt. Well, that’s still stupid, I’ll have to give you that. You can choose from three heroes in this game: the Explorer, the Priest, and the ESPer. I can’t really tell the difference, but they have different items and stuff.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Spelunker II - Yuusha e no Chousen (Japan)",
-    "file_crc": "F076F168",
-    "file_sha1": "E8DF29FCBA07CEB539FDEDEECCD87193A02A0B41",
-    "rom_crc": "C37F225C",
-    "rom_sha1": "413B860B0F4513DF89D60041637632B4CFAC0C31"
-   },
-   "archive": "translations/Nintendo Entertainment System/Spelunker II_ Yuushahe no Chousen/English/Stardust Crusaders___1_0/Spelunker2.zip",
-   "shot": "translations/Nintendo Entertainment System/Spelunker II_ Yuushahe no Chousen/English/Stardust Crusaders___1_0/Spelunker II_ Yuushahe no Chousen_screenshot0.png",
-   "variants": [
-    {
-     "label": "Spelunker 2",
-     "member": "Spelunker2/Spelunker 2.bps",
-     "format": "bps",
-     "size": 5921,
-     "src_crc": "F076F168",
-     "dst_crc": "72A28744"
-    }
-   ]
-  },
-  {
-   "id": 576,
-   "kind": "translation",
-   "title": "The Krion Conquest",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Platformer",
-   "author": "Video Smash Excellent",
-   "version": "1.00",
-   "released": "20 July 2002",
-   "downloads": 3072,
-   "score": "2/2",
-   "desc": "The first thing you will say (besides “hey, that Doropie chick is a hottie”) is “God damn, this game is a lot like Megaman”. Well, that’s because it is. A lot. Especially in the “run and jump and shoot at things” department. There are some notable differences of course, the biggest being the fact that Megaman was never this difficult. In the Megaman games you could, say, regain your health sometimes. And if you died, you wouldn’t start over at the beginning of the level, every damn freakin’ time. And you have different weapons at the outset of the game, though all you’ll use are the bouncy ball and Rush. Err not Rush, I mean the broom. Haha, how silly of me.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Magical Kid's Doropie (Japan)",
-    "file_crc": "5455FFC9",
-    "file_sha1": "F46C65C21104CD25FA04AD28E18CC24C9C4A356E",
-    "rom_crc": "7EC6F75B",
-    "rom_sha1": "EB861BE7181AE1D19BA991D4EBE0E06A5CFAE0CF"
-   },
-   "archive": "translations/Nintendo Entertainment System/The Krion Conquest/English/Video Smash Excellent___1_00/mde-v100.zip",
-   "shot": "translations/Nintendo Entertainment System/The Krion Conquest/English/Video Smash Excellent___1_00/The Krion Conquest_screenshot0.png",
-   "variants": [
-    {
-     "label": "MDE-V100",
-     "member": "MDE-V100.IPS",
-     "format": "ips",
-     "size": 5647
     }
    ]
   },
@@ -6838,67 +6926,6 @@
    ]
   },
   {
-   "id": 3145,
-   "kind": "translation",
-   "title": "The Legend of Zelda: San Shen Zhi Li",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing \u003e Action RPG",
-   "author": "pacnsacdave",
-   "version": "1.1",
-   "released": "30 November 2018",
-   "downloads": 2743,
-   "score": "0/0",
-   "desc": "The Legend of Zelda: San Shen Zhi Li is an action role playing game for the Nintendo Entertainment System. It is a bootleg NES version of the game The Legend of Zelda: A Link to the Past for the SNES.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "6E07687F9E45A4E79D5E95A34537C76F2485AF11"
-   },
-   "archive": "translations/Nintendo Entertainment System/The Legend of Zelda_ San Shen Zhi Li/English/pacnsacdave___1_1/the_legend_of_zelda_-_triforce_of_the_gods_ips.zip",
-   "shot": "translations/Nintendo Entertainment System/The Legend of Zelda_ San Shen Zhi Li/English/pacnsacdave___1_1/The Legend of Zelda_ San Shen Zhi Li_screenshot0.png",
-   "variants": [
-    {
-     "label": "The Legend of Zelda - Triforce of the Gods",
-     "member": "The Legend of Zelda - Triforce of the Gods.ips",
-     "format": "ips",
-     "size": 154849
-    }
-   ]
-  },
-  {
-   "id": 3751,
-   "kind": "translation",
-   "title": "Jajamaru Ninpou Chou",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "aishsha",
-   "version": "1.02",
-   "released": "08 December 2020",
-   "downloads": 2693,
-   "score": "0/0",
-   "desc": "Jajamaru Ninpou Chou is a role playing game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "0DCF07B3",
-    "file_sha1": "4553B470240615842BA2DBFD1680A8A44D3A43EC",
-    "rom_crc": "12F048DF",
-    "rom_sha1": "D97027BC6666DB7C5251CE05CC3B92328C59D71F"
-   },
-   "archive": "translations/Nintendo Entertainment System/Jajamaru Ninpou Chou/English/aishsha___1_02/Jajamaru Ninpo Chou.zip",
-   "shot": "translations/Nintendo Entertainment System/Jajamaru Ninpou Chou/English/aishsha___1_02/Jajamaru Ninpou Chou_screenshot0.png",
-   "variants": [
-    {
-     "label": "Jajamaru Ninpou Chou (J) [!]",
-     "member": "Jajamaru Ninpo Chou/Jajamaru Ninpou Chou (J) [!].bps",
-     "format": "bps",
-     "size": 42664,
-     "src_crc": "0DCF07B3",
-     "dst_crc": "D78842E5"
-    }
-   ]
-  },
-  {
    "id": 2886,
    "kind": "hack",
    "title": "SMB3_Battery Hack",
@@ -6959,6 +6986,45 @@
      "size": 6010,
      "src_crc": "3337EC46",
      "dst_crc": "59A714FD"
+    }
+   ]
+  },
+  {
+   "id": 3980,
+   "kind": "hack",
+   "title": "Battletoads \u0026 Double Dragon 4 players",
+   "system": "NES",
+   "game": "Battletoads \u0026 Double Dragon: The Ultimate Team",
+   "category": "Complete",
+   "genre": "Action \u003e Beat 'Em Up",
+   "author": "NakeuD2007",
+   "version": "2.1-4stage",
+   "released": "26 October 2018",
+   "downloads": 2620,
+   "score": "0/0",
+   "desc": "Mod/hack adds fourth (and third) player to Battletoads \u0026 Double Dragon (NES, U-version) to make possible to play the game with four people at the same time. Also: New moves, character levels system, enemy multiplier, new mechanics, lives share mode. To play as it intended, use moded emulator (with extended capacity or “blast processing”) with 256_spr rom. https://www.patreon.com/posts/moded-emulator-34560541 https://www.emu-land.net/forum/index.php/topic,77237.0.html Project topic YouTube Channel",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Battletoads-Double Dragon (USA)",
+    "file_crc": "53B02F3D",
+    "file_sha1": "61832D0F955CFF169FF059BD557BE4F522B15B7C",
+    "rom_crc": "CEB65B06",
+    "rom_sha1": "A14563325B0F33C358142E7363D31614722FDDB1"
+   },
+   "archive": "hacks/NES/Battletoads \u0026 Double Dragon_ The Ultimate Team/Battletoads \u0026 Double Dragon 4 players___2_1-4stage/[NES] Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_v0.9_v2.1-4stages [IPS].zip",
+   "shot": "hacks/NES/Battletoads \u0026 Double Dragon_ The Ultimate Team/Battletoads \u0026 Double Dragon 4 players___2_1-4stage/Battletoads \u0026 Double Dragon 4 players_screenshot0.jpg",
+   "variants": [
+    {
+     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages",
+     "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages.ips",
+     "format": "ips",
+     "size": 68491
+    },
+    {
+     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr",
+     "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr.ips",
+     "format": "ips",
+     "size": 69966
     }
    ]
   },
@@ -7409,6 +7475,36 @@
    ]
   },
   {
+   "id": 4109,
+   "kind": "hack",
+   "title": "Metal Gear MSX + Style",
+   "system": "NES",
+   "game": "Metal Gear",
+   "category": "Improvement",
+   "genre": "Action",
+   "author": "Mister Xiado",
+   "version": "1.0",
+   "released": "08 August 2018",
+   "downloads": 2176,
+   "score": "1/1",
+   "desc": "This hack for Metal Gear (NES) corrects the numerous spelling, grammatical, and punctuation errors that were present in many early NES titles. In addition to these changes, several errors resulting from a rushed port, such as the wrong location given for the EOD suit, have been corrected. Background tiles and palettes have been changed to more closely match the MSX original, barring any changes that would cause unintended chaos, as POWs and equipment pickups share a single palette. The title screen has been changed to be more like the original, including a translation of the original logo style, albeit parallel, rather than the original canted alignment of the title.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "9AAA7C001465311AE79D84644AA5FCE1F9766860",
+    "rom_sha1": "2783BEF3CC207E9BF57A65EEA5AB9B68E2214AF0"
+   },
+   "archive": "hacks/NES/Metal Gear/Metal Gear MSX + Style___1_0/Metal Gear MSX + Style.zip",
+   "shot": "hacks/NES/Metal Gear/Metal Gear MSX + Style___1_0/Metal Gear MSX + Style_screenshot0.png",
+   "variants": [
+    {
+     "label": "Metal Gear MSX + Style",
+     "member": "Metal Gear MSX + Style.ips",
+     "format": "ips",
+     "size": 5053
+    }
+   ]
+  },
+  {
    "id": 4925,
    "kind": "hack",
    "title": "Legend of Zelda Winter Solstice",
@@ -7474,38 +7570,6 @@
    ]
   },
   {
-   "id": 5321,
-   "kind": "translation",
-   "title": "LaSalle Ishii's Childs Quest",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "Woolsey Fan Company",
-   "version": "1.0",
-   "released": "20 December 2019",
-   "downloads": 2135,
-   "score": "2/2",
-   "desc": "LaSalle Ishii is a parody RPG for the Famicom. In the game, you play as a Manager of the real-life Idol group called Childs, working for real-life TV producer LaSalle Ishii’s talent agency. With the band, you can perform concerts at the various town halls. You must also prevent the Idols’ Fumando (dissatisfaction percentage) from reaching 100 by making careful decisions throughout the game.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Lasalle Ishii no Child's Quest (Japan)",
-    "file_crc": "9DC91AD9",
-    "file_sha1": "D53D643622793DC365AA18F76B278C464B053FFB",
-    "rom_crc": "D97C31B0",
-    "rom_sha1": "136EE001E85EEBA653CA11BC2378BD4D219969CB"
-   },
-   "archive": "translations/Nintendo Entertainment System/LaSalle Ishii's Childs Quest/English/Woolsey Fan Company___1_0/Stardom Warriors (USA).zip",
-   "shot": "translations/Nintendo Entertainment System/LaSalle Ishii's Childs Quest/English/Woolsey Fan Company___1_0/LaSalle Ishii's Childs Quest_screenshot0.png",
-   "variants": [
-    {
-     "label": "Stardom Warriors (USA)",
-     "member": "Stardom Warriors (USA).ips",
-     "format": "ips",
-     "size": 51098
-    }
-   ]
-  },
-  {
    "id": 4443,
    "kind": "hack",
    "title": "Fuji Mario Bros.",
@@ -7567,35 +7631,6 @@
      "member": "Smash Bros.ips",
      "format": "ips",
      "size": 1727
-    }
-   ]
-  },
-  {
-   "id": 4223,
-   "kind": "translation",
-   "title": "RPG Jinsei Game",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "Nebulous Translations",
-   "version": "1.0",
-   "released": "02 February 2019",
-   "downloads": 2068,
-   "score": "0/0",
-   "desc": "RPG Jinsei Game is a Japan-only role playing game for the Family Computer that is similar to Jinsei Game, which is the Japanese version of The Game of Life. It’s a charming little RPG/gambling game/board game hybrid, where you need to find your way around various cities (mostly located in Japan, with a few exceptions) and find your true calling.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "13AEE28588290CA6DDC3EF232E159B3AB309BE2D",
-    "rom_sha1": "68D5E40403FF09FAE745FDF419F9244C9BCA507A"
-   },
-   "archive": "translations/Nintendo Entertainment System/RPG Jinsei Game/English/Nebulous Translations___1_0/gameoflife1.0.zip",
-   "shot": "translations/Nintendo Entertainment System/RPG Jinsei Game/English/Nebulous Translations___1_0/RPG Jinsei Game_screenshot0.png",
-   "variants": [
-    {
-     "label": "gameoflife1.0",
-     "member": "gameoflife1.0.ips",
-     "format": "ips",
-     "size": 65794
     }
    ]
   },
@@ -7686,34 +7721,6 @@
      "member": "megamansimplified_v2.ips",
      "format": "ips",
      "size": 3955
-    }
-   ]
-  },
-  {
-   "id": 228,
-   "kind": "translation",
-   "title": "Time Zone",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Platformer",
-   "author": "KingMike's Translations",
-   "version": "1.3",
-   "released": "13 April 2013",
-   "downloads": 1998,
-   "score": "0/0",
-   "desc": "Time Zone is one of those seemingly hallucinogenically inspired japanese platform games that never saw the light of day in western markets. You take on the role of some little kid who’s girlfriend is kidnapped by the evil Professor Time (Oooooh!), for reasons not quite mentioned. Is he a perverted kidnapper? A lonely old man looking for a surrogate granddaughter? Perhaps the world will never know, but his ass needs kicked regardless. Unfortunatly, Dr. Time has a habit of dropping large rocks on your head and jumping into different time periods, which of course you end up going to as well.",
-   "patching": "No Special Requirements",
-   "base": {
-    "rom_crc": "E305202E"
-   },
-   "archive": "translations/Nintendo Entertainment System/Time Zone/English/KingMike's Translations___1_3/timezone13.zip",
-   "shot": "translations/Nintendo Entertainment System/Time Zone/English/KingMike's Translations___1_3/Time Zone_screenshot0.gif",
-   "variants": [
-    {
-     "label": "timezone13",
-     "member": "timezone13.ips",
-     "format": "ips",
-     "size": 6819
     }
    ]
   },
@@ -7822,43 +7829,6 @@
    ]
   },
   {
-   "id": 4281,
-   "kind": "translation",
-   "title": "Faxanadu",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing \u003e Action RPG",
-   "author": "Unsavory Maggot",
-   "version": "1.04",
-   "released": "27 January 2019",
-   "downloads": 1949,
-   "score": "2/2",
-   "desc": "Someone or something has poisoned the water supply in Eolis. Our hero must find the water source and solve this mystery before it’s too late.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "F9E6E6AD",
-    "file_sha1": "476FE6630E237296A533F39EA01DBB1BF463F816",
-    "rom_crc": "A80FA181",
-    "rom_sha1": "6501F61FD717AE603C2265D0DF074AC2A4DCB8C7"
-   },
-   "archive": "translations/Nintendo Entertainment System/Faxanadu/English/Unsavory Maggot___1_04/Faxanadu (J) Retranslation (T-Eng) v1.04.zip",
-   "shot": "translations/Nintendo Entertainment System/Faxanadu/English/Unsavory Maggot___1_04/Faxanadu_screenshot0.png",
-   "variants": [
-    {
-     "label": "Faxanadu (J) Retranslation (FCEU) (T-Eng) v1.04",
-     "member": "Faxanadu (J) Retranslation (FCEU) (T-Eng) v1.04.ips",
-     "format": "ips",
-     "size": 37667
-    },
-    {
-     "label": "Faxanadu (J) Retranslation (NES) (T-Eng) v1.04",
-     "member": "Faxanadu (J) Retranslation (NES) (T-Eng) v1.04.ips",
-     "format": "ips",
-     "size": 38426
-    }
-   ]
-  },
-  {
    "id": 3385,
    "kind": "hack",
    "title": "Adventure Island Abridged",
@@ -7885,35 +7855,6 @@
      "member": "Adventure Island (U) [Speedrun Version by Nesrocks v12].ips",
      "format": "ips",
      "size": 2916
-    }
-   ]
-  },
-  {
-   "id": 2241,
-   "kind": "translation",
-   "title": "Chik Bik Ji Jin: Saam Gwok Ji",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Beat 'Em Up",
-   "author": "pacnsacdave",
-   "version": "1.1",
-   "released": "22 November 2018",
-   "downloads": 1934,
-   "score": "0/0",
-   "desc": "Chik Bik Ji Jin: Saam Gwok Ji is an action beat ‘em up game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "8EC07A2841D3FB671AFD11013643063BDA9FA7F3",
-    "rom_sha1": "CA4FF4383B7800CE1950067C5B408A3BAE4BEE88"
-   },
-   "archive": "translations/Nintendo Entertainment System/Chik Bik Ji Jin_ Saam Gwok Ji/English/pacnsacdave___1_1/three_kingdoms_-_battle_of_red_cliffs__unl__ips.zip",
-   "shot": "translations/Nintendo Entertainment System/Chik Bik Ji Jin_ Saam Gwok Ji/English/pacnsacdave___1_1/Chik Bik Ji Jin_ Saam Gwok Ji_screenshot0.png",
-   "variants": [
-    {
-     "label": "Three Kingdoms - Battle of Red Cliffs (Unl)",
-     "member": "Three Kingdoms - Battle of Red Cliffs (Unl).ips",
-     "format": "ips",
-     "size": 37831
     }
    ]
   },
@@ -8050,44 +7991,6 @@
      "member": "Zelda-III-The-Wrath-of-Ganon1.3.ips",
      "format": "ips",
      "size": 15939
-    }
-   ]
-  },
-  {
-   "id": 941,
-   "kind": "translation",
-   "title": "Eggerland: Meikyuu no Fukkatsu",
-   "system": "NES",
-   "game": "",
-   "genre": "Puzzle",
-   "author": "Kapow",
-   "version": "1.0",
-   "released": "20 August 2020",
-   "downloads": 1910,
-   "score": "0/0",
-   "desc": "The Western release of Adventures of Lolo 1 was partially based on this game. However, the map was replaced with a linear series of levels, and the four gods and the final battle sequence were removed. These features have never appeared in a Lolo/Eggerland game outside of Japan.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Eggerland - Meikyuu no Fukkatsu (Japan)",
-    "file_crc": "FAE5A5C0",
-    "file_sha1": "B8CC12AF8916C229122136506FE951EA9196063F",
-    "rom_crc": "77DCBBA3",
-    "rom_sha1": "55E97984252FDD37ED8F95343792A41A4906D291"
-   },
-   "archive": "translations/Nintendo Entertainment System/Eggerland_ Meikyuu no Fukkatsu/English/Kapow___1_0/eggerlandmnf-1.0.zip",
-   "shot": "translations/Nintendo Entertainment System/Eggerland_ Meikyuu no Fukkatsu/English/Kapow___1_0/Eggerland_ Meikyuu no Fukkatsu_screenshot0.png",
-   "variants": [
-    {
-     "label": "eggerlandmnf-1.0",
-     "member": "eggerlandmnf-1.0.ips",
-     "format": "ips",
-     "size": 6781
-    },
-    {
-     "label": "eggerlandmnf-password",
-     "member": "eggerlandmnf-password.ips",
-     "format": "ips",
-     "size": 466
     }
    ]
   },
@@ -8353,230 +8256,6 @@
      "member": "dk.ips",
      "format": "ips",
      "size": 7181
-    }
-   ]
-  },
-  {
-   "id": 2196,
-   "kind": "translation",
-   "title": "Dragon Knife",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Beat 'Em Up",
-   "author": "pacnsacdave",
-   "version": "1.0",
-   "released": "12 May 2014",
-   "downloads": 1730,
-   "score": "0/0",
-   "desc": "Dragon Knife is an action beat ‘em up game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "FC87ABB1",
-    "file_sha1": "AB21B5FBA23F7D6337FBFCD2E80A9114D752112D",
-    "rom_crc": "9C596EC8",
-    "rom_sha1": "1BE2977CA26B33DF1B9871628340693FE9B8D7F5"
-   },
-   "archive": "translations/Nintendo Entertainment System/Dragon Knife/English/pacnsacdave___1_0/dragon_knife_unl__ips.zip",
-   "shot": "translations/Nintendo Entertainment System/Dragon Knife/English/pacnsacdave___1_0/Dragon Knife_screenshot0.png",
-   "variants": [
-    {
-     "label": "Dragon Knife",
-     "member": "Dragon Knife.ips",
-     "format": "ips",
-     "size": 12064
-    }
-   ]
-  },
-  {
-   "id": 3133,
-   "kind": "translation",
-   "title": "Mississippi Satsujin Jiken",
-   "system": "NES",
-   "game": "",
-   "genre": "Adventure",
-   "author": "GAFF Translations",
-   "version": "1.00",
-   "released": "20 July 2017",
-   "downloads": 1665,
-   "score": "0/0",
-   "desc": "Mississippi Satsujin Jiken is an adventure game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "5D003EAD",
-    "file_sha1": "A2381D01B3DF97764FB1674C159428A4B67236D3"
-   },
-   "archive": "translations/Nintendo Entertainment System/Mississippi Satsujin Jiken/English/GAFF Translations___1_00/missatsu.zip",
-   "shot": "translations/Nintendo Entertainment System/Mississippi Satsujin Jiken/English/GAFF Translations___1_00/Mississippi Satsujin Jiken_screenshot0.png",
-   "variants": [
-    {
-     "label": "missatsu",
-     "member": "missatsu.ips",
-     "format": "ips",
-     "size": 38313
-    }
-   ]
-  },
-  {
-   "id": 5386,
-   "kind": "translation",
-   "title": "Yuu Yuu Hakusho: Bakutou Ankoku Bujutsu Kai",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Fighting",
-   "author": "Stardust Crusaders",
-   "version": "1.01",
-   "released": "28 August 2020",
-   "downloads": 1643,
-   "score": "0/0",
-   "desc": "Yū Yū Hakusho: Bakutō Ankoku Bujutsue Kai (translated as “Ghost Reports: Invitation to the Dark Tournament”) is a fighting game for the Nintendo NES based on the popular anime/manga created by Yoshihiro Togashi. It’s also one of six games (all based on popular licenses) released for DATACH, an accessory created by Bandai that uses collectible cards with barcodes to unlock characters and items.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Datach - Yu Yu Hakusho - Bakutou Ankoku Bujutsukai (Japan)",
-    "file_crc": "44070CFA",
-    "file_sha1": "4430F96F46EEE3BE92EA7F6ECCEE0076118189D1",
-    "rom_crc": "F51A7F46",
-    "rom_sha1": "74218AAE93E4FEBFB2284BCF15811453418A2029"
-   },
-   "archive": "translations/Nintendo Entertainment System/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai/English/Stardust Crusaders___1_01/YYH.zip",
-   "shot": "translations/Nintendo Entertainment System/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai/English/Stardust Crusaders___1_01/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai_screenshot0.png",
-   "variants": [
-    {
-     "label": "YYH",
-     "member": "YYH/YYH.bps",
-     "format": "bps",
-     "size": 22000,
-     "src_crc": "44070CFA",
-     "dst_crc": "F9AA4D81"
-    }
-   ]
-  },
-  {
-   "id": 4972,
-   "kind": "translation",
-   "title": "Idol Hakkenden",
-   "system": "NES",
-   "game": "",
-   "genre": "Adventure",
-   "author": "Woolsey Fan Company",
-   "version": "1.1",
-   "released": "10 April 2020",
-   "downloads": 1639,
-   "score": "0/0",
-   "desc": "Idol Hakkenden is an adventure game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Idol Hakkenden (Japan)",
-    "file_crc": "E017C417",
-    "file_sha1": "D3731FDF1E6F954C566E46A32456F5835985DE68",
-    "rom_crc": "8DA4E539",
-    "rom_sha1": "9E90A1E4B24A68AA006B09DB607479C2FEB19FC0"
-   },
-   "archive": "translations/Nintendo Entertainment System/Idol Hakkenden/English/Woolsey Fan Company___1_1/Pop Star Debut (USA).zip",
-   "shot": "translations/Nintendo Entertainment System/Idol Hakkenden/English/Woolsey Fan Company___1_1/Idol Hakkenden_screenshot0.png",
-   "variants": [
-    {
-     "label": "Pop Star Debut (USA)",
-     "member": "Pop Star Debut (USA).ips",
-     "format": "ips",
-     "size": 57468
-    }
-   ]
-  },
-  {
-   "id": 4630,
-   "kind": "translation",
-   "title": "Pizza Pop!",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Platformer",
-   "author": "pacnsacdave",
-   "version": "1.0",
-   "released": "02 June 2019",
-   "downloads": 1591,
-   "score": "0/0",
-   "desc": "Pizza Pop! is an action platformer game for the Nintendo Entertainment System.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_sha1": "181921A0B34BEF08C3C0A6880D3B7E03AC850152",
-    "rom_sha1": "F81FC442A1C5B3F1D8216A0779F706C69B6A3F35"
-   },
-   "archive": "translations/Nintendo Entertainment System/Pizza Pop!/English/pacnsacdave___1_0/pizza_pop__ips.zip",
-   "shot": "translations/Nintendo Entertainment System/Pizza Pop!/English/pacnsacdave___1_0/Pizza Pop!_screenshot0.png",
-   "variants": [
-    {
-     "label": "Pizza Pop!",
-     "member": "Pizza Pop!.ips",
-     "format": "ips",
-     "size": 1721
-    }
-   ]
-  },
-  {
-   "id": 5416,
-   "kind": "translation",
-   "title": "Dragon Warrior",
-   "system": "NES",
-   "game": "",
-   "genre": "Role Playing",
-   "author": "Polinym",
-   "version": "1.3",
-   "released": "19 March 2020",
-   "downloads": 1561,
-   "score": "2/3",
-   "desc": "The first in the long running series of games, beginning with the Nintendo Entertainment System and spanning the SNES, the Gameboy, and even the Playstation, as well as having mini-spinoffs which are a lot like Pokémon. This, the original Dragon Warrior, starts you off in the throne room of the King of Tantegel Castle. He names you the descendant of the legendary Erdrick, who once possessed the Ball of Light. It has been stolen, the Dragonlord’s minions roam the lands, and the Princess is kidnapped. You, the descendant of the legendary hero, must confront evil and save the continent. This game features a single-character interface with single-monster battles.",
-   "patching": "No Special Requirements",
-   "base": {
-    "name": "Dragon Quest (Japan)",
-    "file_crc": "C72E2739",
-    "file_sha1": "17AA26ECD1197A2CD2B5F02D71AEC3342B229D25",
-    "rom_crc": "88053D25",
-    "rom_sha1": "4E72277DC2AB3B70B29086C0664014CAF6E16CB2"
-   },
-   "archive": "translations/Nintendo Entertainment System/Dragon Warrior/English/Polinym___1_3/Dragon Quest (Japan) [English by Polinym].zip",
-   "shot": "translations/Nintendo Entertainment System/Dragon Warrior/English/Polinym___1_3/Dragon Warrior_screenshot0.png",
-   "variants": [
-    {
-     "label": "Dragon Quest (Japan) [En by Polinym] (Quick EXP Hack)",
-     "member": "Dragon Quest (Japan) [En by Polinym] (Quick EXP Hack).ips",
-     "format": "ips",
-     "size": 12511
-    },
-    {
-     "label": "Dragon Quest (Japan) [En by Polinym]",
-     "member": "Dragon Quest (Japan) [En by Polinym].ips",
-     "format": "ips",
-     "size": 12376
-    }
-   ]
-  },
-  {
-   "id": 4434,
-   "kind": "translation",
-   "title": "Dragon Ball Z: Super Butouden 2 (NES)",
-   "system": "NES",
-   "game": "",
-   "genre": "Action \u003e Fighting",
-   "author": "Green Jerry",
-   "version": "1.0.1",
-   "released": "21 April 2019",
-   "downloads": 1496,
-   "score": "0/0",
-   "desc": "Dragon Ball Z: Super Butouden 2 is a fighting game for the Nintendo Entertainment System. The game is a bootleg port of a SNES game.",
-   "patching": "No Special Requirements",
-   "base": {
-    "file_crc": "2490D360",
-    "file_sha1": "8478C3B233EBD81527E09839656283FC6F912999",
-    "rom_crc": "673F88AD",
-    "rom_sha1": "A157613BA202194EC7E0A9C46D9DCFD2235BAB8D"
-   },
-   "archive": "translations/Nintendo Entertainment System/Dragon Ball Z_ Super Butouden 2 (NES)/English/Green Jerry___1_0_1/DBZSB2 (NES) EN V1_0_1.zip",
-   "shot": "translations/Nintendo Entertainment System/Dragon Ball Z_ Super Butouden 2 (NES)/English/Green Jerry___1_0_1/Dragon Ball Z_ Super Butouden 2 (NES)_screenshot0.png",
-   "variants": [
-    {
-     "label": "Dragon Ball Z - Super Butouden 2 (Unl) [T+Eng1.0.1_Green Jerry]",
-     "member": "Dragon Ball Z - Super Butouden 2 (Unl) [T+Eng1.0.1_Green Jerry].ips",
-     "format": "ips",
-     "size": 5511
     }
    ]
   },
@@ -8985,6 +8664,37 @@
      "member": "smbdx/smbdx.ips",
      "format": "ips",
      "size": 1387244
+    }
+   ]
+  },
+  {
+   "id": 3691,
+   "kind": "hack",
+   "title": "Chrono Trigger+",
+   "system": "SNES",
+   "game": "Chrono Trigger",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "ThegreatBen",
+   "version": "2.4",
+   "released": "26 March 2020",
+   "downloads": 16375,
+   "score": "5/5",
+   "desc": "This hack adds a ton of cut content back into the game, allows access to previously unexplorable areas, fixes some bugs and offers some options to remove the linearity from the game. Full list of changes in the readme. In addition 1999 is fully explorable and offers tons of stuff to do. As well as more Easter eggs and quality of life improvements. More stuff carries over like names money, fair prizes and cats. The optional patches are explained in the readme.",
+   "patching": "No-Header (SNES)",
+   "header": "none",
+   "base": {
+    "file_crc": "2D206BF7",
+    "file_sha1": "DE5822F4F2F7A55ACB8926D4C0EAA63D5D989312"
+   },
+   "archive": "hacks/SNES/Chrono Trigger/Chrono Trigger+___2_4/CT+.zip",
+   "shot": "hacks/SNES/Chrono Trigger/Chrono Trigger+___2_4/Chrono Trigger+_screenshot0.png",
+   "variants": [
+    {
+     "label": "Auto-run+",
+     "member": "Auto-run+.ips",
+     "format": "ips",
+     "size": 64
     }
    ]
   },
@@ -9895,6 +9605,45 @@
      "size": 42538,
      "src_crc": "A88A5FF0",
      "dst_crc": "6EAF6626"
+    }
+   ]
+  },
+  {
+   "id": 4164,
+   "kind": "hack",
+   "title": "Super Mario World: Bowsette Edition",
+   "system": "SNES",
+   "game": "Super Mario World",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "Moltz",
+   "version": "1.2",
+   "released": "01 October 2018",
+   "downloads": 4710,
+   "score": "1/1",
+   "desc": "Ever wanted to play a Super Mario game where you could both fight AND rescue Princess Bowser/Bowsette? If your answer is yes, then this might be EXACTLY what you’ve been looking for. Super Mario World: Bowsette Edition is a ROM Hack that swaps the graphics of Bowser and Princess Peach with Bowsette; a female lookalike of Princess Peach with draconic features that’s actually Bowser wearing the Super Crown from NSMBUDX. In order for the hack to be more than just some graphic swaps, “freebies” of sorts have been added: Unique graphics for Luigi (taken from Super Mario All Stars + Super Mario World). Some misc. enemies \u0026 places use graphics from Super Mario Maker. A “mostly” animated overworld.",
+   "patching": "Header (SNES)",
+   "header": "required",
+   "base": {
+    "file_crc": "2C36C43E",
+    "file_sha1": "15B51DA40ED5D1F868EDFCB9A2B73784CFA0A326",
+    "rom_crc": "B19ED489",
+    "rom_sha1": "6B47BB75D16514B6A476AA0C73A683A2A4C18765"
+   },
+   "archive": "hacks/SNES/Super Mario World/Super Mario World_ Bowsette Edition___1_2/smw+princess+bowser+edition+1.2.zip",
+   "shot": "hacks/SNES/Super Mario World/Super Mario World_ Bowsette Edition___1_2/Super Mario World_ Bowsette Edition_screenshot0.png",
+   "variants": [
+    {
+     "label": "SMW Bowsette Edition -A-1.2",
+     "member": "SMW Bowsette Edition -A-1.2.ips",
+     "format": "ips",
+     "size": 397838
+    },
+    {
+     "label": "SMW Bowsette Edition -B-1.2",
+     "member": "SMW Bowsette Edition -B-1.2.ips",
+     "format": "ips",
+     "size": 398094
     }
    ]
   },
@@ -11126,6 +10875,39 @@
    ]
   },
   {
+   "id": 46,
+   "kind": "hack",
+   "title": "Celes + Terra",
+   "system": "SNES",
+   "game": "Final Fantasy IV",
+   "category": "Complete",
+   "genre": "Role Playing",
+   "author": "Drum Solo",
+   "version": "1.0",
+   "released": "14 September 2002",
+   "downloads": 2402,
+   "score": "1/2",
+   "desc": "This ROM hack alters the game into a story mostly centered on characters from at least one other game in the Final Fantasy series, notably Celes and Terra. The game was modified to a large degree. Both graphics (mainly character graphics) and text were modified. One character was even changed into a totally new character. The text was changed from a base script of J2E’s translation of the game. The game is now more female related. It is also a bit lesbian in nature, centering on the relationship of Celes and Terra.",
+   "patching": "Header (SNES)",
+   "header": "required",
+   "base": {
+    "file_crc": "48449269",
+    "file_sha1": "3C896B9D8CCFB3433810139EE18467AA435AC2E2",
+    "rom_crc": "CAA15E97",
+    "rom_sha1": "EAC14578B3465FFCE874119005F9B244E8565A79"
+   },
+   "archive": "hacks/SNES/Final Fantasy IV/Celes + Terra___1_0/FF4TerraCeles.ZIP",
+   "shot": "hacks/SNES/Final Fantasy IV/Celes + Terra___1_0/Celes + Terra_screenshot0.png",
+   "variants": [
+    {
+     "label": "FF4-TerraCeles",
+     "member": "FF4-TerraCeles.IPS",
+     "format": "ips",
+     "size": 207710
+    }
+   ]
+  },
+  {
    "id": 3746,
    "kind": "hack",
    "title": "Automatic Sprint and Learning",
@@ -11428,6 +11210,40 @@
      "member": "bsoccer_eng10.ips",
      "format": "ips",
      "size": 23725
+    }
+   ]
+  },
+  {
+   "id": 4480,
+   "kind": "hack",
+   "title": "Rockman \u0026 Forte - Player Switching",
+   "system": "SNES",
+   "game": "Rockman \u0026 Forte",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "Puresabe",
+   "version": "0.02",
+   "released": "24 December 2016",
+   "downloads": 2120,
+   "score": "1/1",
+   "desc": "As the title suggests, you can switch between Rockman and Forte during game play. You can choose which player to start with. When the game starts, you can change characters by jumping while pressing SELECT. There might be bugs, so report it to Puresabe if found. Compatible with translation hacks, but be mindful of which order you apply this as this is for a No-Header ROM.",
+   "patching": "No-Header (SNES)",
+   "header": "none",
+   "base": {
+    "name": "Rockman \u0026 Forte (Japan)",
+    "file_crc": "5047E0D4",
+    "file_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A",
+    "rom_crc": "5047E0D4",
+    "rom_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A"
+   },
+   "archive": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Player Switching___0_02/RockFPlayerSwitching002.zip",
+   "shot": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Player Switching___0_02/Rockman \u0026 Forte - Player Switching_screenshot0.png",
+   "variants": [
+    {
+     "label": "RockFPlayerSwitching",
+     "member": "RockFPlayerSwitching002/RockFPlayerSwitching.ips",
+     "format": "ips",
+     "size": 219
     }
    ]
   },
@@ -12293,36 +12109,6 @@
    ]
   },
   {
-   "id": 3398,
-   "kind": "translation",
-   "title": "Bastard!!: Ankoku no Hakaishin",
-   "system": "SNES",
-   "game": "",
-   "genre": "Action \u003e Fighting",
-   "author": "Docrow",
-   "version": "1.0",
-   "released": "09 October 2017",
-   "downloads": 1475,
-   "score": "0/0",
-   "desc": "Bastard!!: Ankoku no Hakaishin is an action fighting game for the Super Nintendo. Based on a manga/anime with the same title.",
-   "patching": "Header (SNES)",
-   "header": "required",
-   "base": {
-    "file_sha1": "0ED6B0E2F3E7DFE439282648299B355F827A525F",
-    "rom_sha1": "C8E698170B6BF36B2382348AD839C2F39A7CD88D"
-   },
-   "archive": "translations/Super Nintendo/Bastard!!_ Ankoku no Hakaishin/English/Docrow___1_0/Bastard easy spells.zip",
-   "shot": "translations/Super Nintendo/Bastard!!_ Ankoku no Hakaishin/English/Docrow___1_0/Bastard!!_ Ankoku no Hakaishin_screenshot0.png",
-   "variants": [
-    {
-     "label": "Bastard!! - Ankoku no Hakai-shin (U) easy spells",
-     "member": "Bastard!! - Ankoku no Hakai-shin (U) easy spells.ips",
-     "format": "ips",
-     "size": 1132743
-    }
-   ]
-  },
-  {
    "id": 1624,
    "kind": "hack",
    "title": "Super Metroid - Melancholia IV",
@@ -12588,6 +12374,40 @@
    ]
   },
   {
+   "id": 4481,
+   "kind": "hack",
+   "title": "Rockman \u0026 Forte - Multiple Equipment",
+   "system": "SNES",
+   "game": "Rockman \u0026 Forte",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "Puresabe",
+   "version": "0.01",
+   "released": "24 December 2016",
+   "downloads": 1317,
+   "score": "1/1",
+   "desc": "As the title suggests, you can equip multiple upgrades that you bought from the shop. You can choose which player to start with. Once you have purchased an item that can be equipped, open the menu as usual. After selecting the icon that you want to equip, press Y button, it will be displayed on the icon with “▼ E” and it will be activated. If you press it again, the display will disappear and it will be disabled. There might be bugs, so report it to Puresabe if found. Compatible with translation hacks, but be mindful of which order you apply this as this is for a No-Header ROM.",
+   "patching": "No-Header (SNES)",
+   "header": "none",
+   "base": {
+    "name": "Rockman \u0026 Forte (Japan)",
+    "file_crc": "5047E0D4",
+    "file_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A",
+    "rom_crc": "5047E0D4",
+    "rom_sha1": "BCD2FC38B4E4BF6B811B00301F349E85CA48FE1A"
+   },
+   "archive": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Multiple Equipment___0_01/RockFMultipleEquipments001.zip",
+   "shot": "hacks/SNES/Rockman \u0026 Forte/Rockman \u0026 Forte - Multiple Equipment___0_01/Rockman \u0026 Forte - Multiple Equipment_screenshot0.png",
+   "variants": [
+    {
+     "label": "RockFMultipleEquipments",
+     "member": "RockFMultipleEquipments001/RockFMultipleEquipments.ips",
+     "format": "ips",
+     "size": 324
+    }
+   ]
+  },
+  {
    "id": 5514,
    "kind": "hack",
    "title": "Super Mario Kart - Epic Racers",
@@ -12786,6 +12606,43 @@
      "size": 50157,
      "src_crc": "777AAC2F",
      "dst_crc": "C2E7FF86"
+    }
+   ]
+  },
+  {
+   "id": 3685,
+   "kind": "hack",
+   "title": "Enable Ryo Sakazaki and Easy move",
+   "system": "SNES",
+   "game": "Fatal Fury Special",
+   "category": "Improvement",
+   "genre": "Action \u003e Fighting",
+   "author": "Docrow",
+   "version": "1.0",
+   "released": "04 October 2017",
+   "downloads": 1229,
+   "score": "0/0",
+   "desc": "Enable Ryo Sakazaki and simplify all character moves: F, F, or D, D, punch or kick; D, F, or D, B, punch or kick; Super desperation move: D, F, D, F, punch.",
+   "patching": "Header (SNES)",
+   "header": "required",
+   "base": {
+    "file_sha1": "685FB9231520202ACFD07C385668C068B12D1F94",
+    "rom_sha1": "8113EF06DC16BF570463636094DF30C9593B2DB9"
+   },
+   "archive": "hacks/SNES/Fatal Fury Special/Enable Ryo Sakazaki and Easy move___1_0/Fatal Fury Special (Easy+ryo).zip",
+   "shot": "hacks/SNES/Fatal Fury Special/Enable Ryo Sakazaki and Easy move___1_0/Enable Ryo Sakazaki and Easy move_screenshot0.png",
+   "variants": [
+    {
+     "label": "ryo sakazaki only",
+     "member": "ryo sakazaki only.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "Fatal Fury Special (Easy)",
+     "member": "Fatal Fury Special (Easy).ips",
+     "format": "ips",
+     "size": 677
     }
    ]
   },
@@ -13203,6 +13060,36 @@
      "member": "LB2020_Final1.2.ips",
      "format": "ips",
      "size": 112122
+    }
+   ]
+  },
+  {
+   "id": 2884,
+   "kind": "hack",
+   "title": "Super CV IV - CV1 Font + HUD + Icons",
+   "system": "SNES",
+   "game": "Super Castlevania IV",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "hiro1112",
+   "version": "1.0",
+   "released": "04 June 2016",
+   "downloads": 1021,
+   "score": "1/1",
+   "desc": "This is a hack of Super Castlevania IV. It changes the HUD and font to be similar to the first Castlevania game. Simons sprite was also recolored to be a simpler color palette like the one in the first game. Weapon and item sprites were also ported and in some cases re-shaded. There is also a special edit to the final form of Dracula also. This is a more in depth hack that changes more than what was changed in the Super CV IV - CV 1 \u0026 3 Font and HUD hack. These exist separately as it’s unsure if there will be a CV3 updated version. Also because some people may only want the HUD changed.",
+   "patching": "No-Header (SNES)",
+   "header": "none",
+   "base": {
+    "file_sha1": "684C1DFAFF8E5999422C24D48054D96BB12DA2F4"
+   },
+   "archive": "hacks/SNES/Super Castlevania IV/Super CV IV - CV1 Font + HUD + Icons___1_0/SCV4-CV1 Font+Icons.zip",
+   "shot": "hacks/SNES/Super Castlevania IV/Super CV IV - CV1 Font + HUD + Icons___1_0/Super CV IV - CV1 Font + HUD + Icons_screenshot0.png",
+   "variants": [
+    {
+     "label": "Super Castlevania IV (CV1 Font+Icons) (U) [!]",
+     "member": "Super Castlevania IV (CV1 Font+Icons) (U) [!].ips",
+     "format": "ips",
+     "size": 968197
     }
    ]
   },

@@ -3,34 +3,33 @@
 go: downloading golang.org/x/image v0.24.0
 go: downloading golang.org/x/text v0.22.0
 + go test ./patch ./tools/hackdb
-ok  	mixtape/patch	0.016s
-ok  	mixtape/tools/hackdb	0.003s
+ok  	mixtape/patch	0.007s
+ok  	mixtape/tools/hackdb	0.002s
 + go run ./tools/hackdb -out out/hacks.json -report out/report.txt
-13:12:23 archive https://dn721809.ca.archive.org/0/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
-13:12:49 99109 entries
-13:12:49 5312 candidate entries with info + files
-13:12:56   500/5312
-13:13:07   1000/5312
-13:13:18   1500/5312
-13:13:27   2000/5312
-13:13:36   2500/5312
-13:13:45   3000/5312
-13:13:55   3500/5312
-13:14:04   4000/5312
-13:14:14   4500/5312
-13:14:23   5000/5312
-13:14:30 chose 420 entries
-13:15:07 added 2 hand-picked entries
-13:15:07 wrote out/hacks.json: 404 entries, 18 skipped
+13:19:41 archive https://dn721809.ca.archive.org/0/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
+13:20:12 99109 entries
+13:20:12 5312 candidate entries with info + files
+13:20:19   500/5312
+13:20:26   1000/5312
+13:20:34   1500/5312
+13:20:41   2000/5312
+13:20:49   2500/5312
+13:20:55   3000/5312
+13:21:02   3500/5312
+13:21:09   4000/5312
+13:21:16   4500/5312
+13:21:24   5000/5312
+13:21:29 chose 420 entries
+13:23:57 added 2 hand-picked entries
+13:23:57 wrote out/hacks.json: 382 entries, 40 skipped
 + go run ./tools/hackdb -verify out/hacks.json -report out/verify.txt
-13:15:07   verify 0/404
-13:15:11   verify 50/404
-13:15:21   verify 100/404
-13:15:32   verify 150/404
-13:16:13   verify 200/404
-13:16:18   verify 250/404
-13:16:28   verify 300/404
-13:16:38   verify 350/404
-13:17:07   verify 400/404
-13:17:42 verified 384/404 entries download and open correctly on the device path (382 with screenshots)
+13:23:57   verify 0/382
+13:24:01   verify 50/382
+13:24:11   verify 100/382
+13:24:21   verify 150/382
+13:24:31   verify 200/382
+13:24:41   verify 250/382
+13:24:50   verify 300/382
+13:25:01   verify 350/382
+13:25:08 verified 379/382 entries download and open correctly on the device path (377 with screenshots)
 exit=0
