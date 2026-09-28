@@ -307,8 +307,13 @@ func isPokemon(s string) bool {
 func main() {
 	out := flag.String("out", "hacks.json", "output file")
 	report := flag.String("report", "report.txt", "human-readable build report")
+	verify := flag.String("verify", "", "download every entry in this catalog the way the device does, and drop broken ones")
 	flag.Parse()
 	log.SetFlags(log.Ltime)
+	if *verify != "" {
+		verifyCatalog(*verify, *report)
+		return
+	}
 
 	rem, err := openRemote(archiveURL)
 	if err != nil {
@@ -697,4 +702,127 @@ func URL(p string) string {
 		parts[i] = url.PathEscape(s)
 	}
 	return archiveURL + "/" + strings.Join(parts, "/")
+}
+
+// ---------- verification (device-style downloads) ----------
+
+func deviceURL(p string) string {
+	if strings.HasPrefix(p, "https://") {
+		return p
+	}
+	return URL(p)
+}
+
+func get(u string, limit int64) ([]byte, int, error) {
+	cl := &http.Client{Timeout: 2 * time.Minute}
+	var lastErr error
+	for attempt := 0; attempt < 4; attempt++ {
+		req, _ := http.NewRequest("GET", u, nil)
+		req.Header.Set("User-Agent", "Mixtape/verify")
+		resp, err := cl.Do(req)
+		if err != nil {
+			lastErr = err
+			time.Sleep(time.Duration(attempt+1) * 3 * time.Second)
+			continue
+		}
+		b, err := io.ReadAll(io.LimitReader(resp.Body, limit))
+		resp.Body.Close()
+		if resp.StatusCode >= 500 || resp.StatusCode == 429 {
+			lastErr = fmt.Errorf("status %d", resp.StatusCode)
+			time.Sleep(time.Duration(attempt+1) * 5 * time.Second)
+			continue
+		}
+		return b, resp.StatusCode, err
+	}
+	return nil, 0, lastErr
+}
+
+func verifyCatalog(file, report string) {
+	b, err := os.ReadFile(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+	var cat Catalog
+	if err := json.Unmarshal(b, &cat); err != nil {
+		log.Fatal(err)
+	}
+	type result struct {
+		ok   bool
+		why  string
+		shot bool
+	}
+	res := make([]result, len(cat.Hacks))
+	idx := make(chan int)
+	var wg sync.WaitGroup
+	for w := 0; w < 8; w++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for i := range idx {
+				h := cat.Hacks[i]
+				data, code, err := get(deviceURL(h.Archive), 40<<20)
+				if err != nil || code != 200 {
+					res[i] = result{why: fmt.Sprintf("download: status %d %v", code, err)}
+					continue
+				}
+				zr, err := zip.NewReader(bytes.NewReader(data), int64(len(data)))
+				if err != nil {
+					res[i] = result{why: "not a zip (" + strconv.Itoa(len(data)) + " bytes)"}
+					continue
+				}
+				found := 0
+				for _, v := range h.Variants {
+					for _, f := range zr.File {
+						if f.Name == v.Member {
+							rc, _ := f.Open()
+							pb, _ := io.ReadAll(rc)
+							rc.Close()
+							if _, err := patch.Inspect(pb); err == nil {
+								found++
+							}
+						}
+					}
+				}
+				if found != len(h.Variants) {
+					res[i] = result{why: fmt.Sprintf("%d of %d patch options found", found, len(h.Variants))}
+					continue
+				}
+				r := result{ok: true}
+				if h.Screenshot != "" {
+					img, code, err := get(deviceURL(h.Screenshot), 4<<20)
+					r.shot = err == nil && code == 200 && len(img) > 100
+				}
+				res[i] = r
+			}
+		}()
+	}
+	for i := range cat.Hacks {
+		if i%50 == 0 {
+			log.Printf("  verify %d/%d", i, len(cat.Hacks))
+		}
+		idx <- i
+	}
+	close(idx)
+	wg.Wait()
+	var keep []Hack
+	var lines []string
+	shots := 0
+	for i, h := range cat.Hacks {
+		if res[i].ok {
+			if !res[i].shot {
+				h.Screenshot = ""
+			} else {
+				shots++
+			}
+			keep = append(keep, h)
+		} else {
+			lines = append(lines, fmt.Sprintf("DROP %-4s %s — %s", h.System, h.Title, res[i].why))
+		}
+	}
+	summary := fmt.Sprintf("verified %d/%d entries download and open correctly on the device path (%d with screenshots)", len(keep), len(cat.Hacks), shots)
+	log.Print(summary)
+	cat.Hacks = keep
+	out, _ := json.MarshalIndent(cat, "", " ")
+	os.WriteFile(file, out, 0o644)
+	os.WriteFile(report, []byte(summary+"\n"+strings.Join(lines, "\n")+"\n"), 0o644)
 }
