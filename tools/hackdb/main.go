@@ -231,6 +231,7 @@ type Variant struct {
 	Size      int    `json:"size"`
 	SourceCRC string `json:"src_crc,omitempty"` // from BPS/UPS header
 	TargetCRC string `json:"dst_crc,omitempty"`
+	Header    string `json:"header,omitempty"` // SNES IPS: "none" | "required" when the file name says so
 }
 
 type Hack struct {
@@ -556,6 +557,15 @@ func build(g *group) (*Hack, string) {
 			continue
 		}
 		v := Variant{Member: c.member, Format: string(inf.Format), Size: len(c.data), Label: label(c.member)}
+		if g.system == "SNES" && inf.Format == patch.IPS {
+			l := strings.ToLower(c.member)
+			switch {
+			case strings.Contains(l, "unheadered") || strings.Contains(l, "no header") || strings.Contains(l, "noheader") || strings.Contains(l, "no-header") || strings.Contains(l, "headerless"):
+				v.Header = "none"
+			case strings.Contains(l, "headered") || strings.Contains(l, "header"):
+				v.Header = "required"
+			}
+		}
 		if inf.HasCRC {
 			v.SourceCRC = fmt.Sprintf("%08X", inf.SourceCRC)
 			v.TargetCRC = fmt.Sprintf("%08X", inf.TargetCRC)
@@ -570,6 +580,23 @@ func build(g *group) (*Hack, string) {
 	}
 	// order: likely-main first
 	sort.SliceStable(vars, func(i, j int) bool { return rank(vars[i], p.Title) > rank(vars[j], p.Title) })
+	// Keep only options that are plainly the hack itself: a BPS/UPS made for the listed
+	// base ROM, or a patch named after the hack. Add-ons meant to be stacked on top of
+	// the patched game (extras, sound packs, save fixes) are dropped.
+	if len(vars) > 1 {
+		baseCRC := map[string]bool{strings.ToUpper(p.FileCRC): true, strings.ToUpper(p.ROMCRC): true}
+		var keep []Variant
+		for _, v := range vars {
+			standalone := v.SourceCRC != "" && baseCRC[v.SourceCRC]
+			if standalone || (titleHit(v.Member, p.Title) && !addon(v.Member)) {
+				keep = append(keep, v)
+			}
+		}
+		if len(keep) == 0 {
+			keep = vars[:1]
+		}
+		vars = keep
+	}
 
 	h := &Hack{
 		Kind: g.kind, Title: clean(p.Title), System: g.system, Game: clean(p.HackOf), Category: p.Category, Genre: p.Genre,
@@ -615,6 +642,28 @@ func rank(v Variant, title string) int {
 		s += 1 // carries its own checksums
 	}
 	return s
+}
+
+func titleHit(member, title string) bool {
+	l := strings.ToLower(path.Base(member))
+	for _, w := range strings.FieldsFunc(strings.ToLower(title), func(r rune) bool { return !(r >= 'a' && r <= 'z' || r >= '0' && r <= '9') }) {
+		if len(w) > 2 && w != "the" && w != "and" && w != "version" && w != "hack" && strings.Contains(l, w) {
+			return true
+		}
+	}
+	return false
+}
+
+var addonWords = []string{"extra", "addon", "add-on", "optional", "wardrobe", "sound", "cries", "music", "save compat", "savefix", "save fix", "learnset", "patch for", "fix for", "font", "title screen", "bonus", "cheat", "debug"}
+
+func addon(member string) bool {
+	l := strings.ToLower(member)
+	for _, w := range addonWords {
+		if strings.Contains(l, w) {
+			return true
+		}
+	}
+	return false
 }
 
 func label(member string) string {
