@@ -1,12 +1,12 @@
-generated 2026-09-28T13:23:57Z: 382 entries (38 Pokémon), 40 skipped
+generated 2026-09-28T13:29:29Z: 404 entries (38 Pokémon), 18 skipped
   hack/GB            51
   hack/GBA           70
   hack/NES           84
   hack/SNES          109
   translation/GB     23
   translation/GBA    7
-  translation/NES    11
-  translation/SNES   27
+  translation/NES    32
+  translation/SNES   28
 
 OK   hack        GB    59130  Pokemon Perfect Crystal - Original Version  [ips:Pokemon Perfect Crystal.ips]  base=
 OK   hack        GB    54717  Super Mario Land DX  [ips:smldx.ips]  base=
@@ -80,8 +80,8 @@ OK   translation GB      282  Hugo 2 1/2  [ips:Hugo 2.5 English - V1.ips]  base=
 OK   translation GB      262  Masakari Densetsu - Kintarou Action Hen  [ips:Masakari Densetsu Kintaro Action Hen.ips]  base=Masakari Densetsu - Kintarou Action Hen (Japan)
 OK   translation GB      250  GB Memory Multi Menu  [ips:NP M-MENU English Patch v1.0.ips]  base=
 OK   translation GB       90  Mobile Golf  [bps:mobile_golf_en_vanilla_unlock.bps, bps:mobile_golf_en.bps]  base=Mobile Golf (Japan)
-OK   hack        GB        0  Pokémon Crystal Legacy  [bps:Pokemon_Crystal_Legacy_USA_1.0_Patch.bps, bps:Pokemon_Crystal_Legacy_USA_1.1_Patch.bps]  base=Pokemon - Crystal Version (USA, Europe) (Rev A) / (USA)
 OK   hack        GB        0  Pokémon Yellow Legacy  [bps:Pokemon Yellow Legacy V1.0.10 Patch.bps]  base=Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (GBC,SGB Enhanced)
+OK   hack        GB        0  Pokémon Crystal Legacy  [bps:Pokemon_Crystal_Legacy_USA_1.0_Patch.bps, bps:Pokemon_Crystal_Legacy_USA_1.1_Patch.bps]  base=Pokemon - Crystal Version (USA, Europe) (Rev A) / (USA)
 OK   hack        GBA   23540  Pokémon Throwback  [bps:Pokemon Throwback v210717.bps, ips:Pokemon Throwback v210717.ips]  base=Pokemon - FireRed Version (USA)
 OK   hack        GBA   10396  Super Mario Advance Color Restoration  [ips:0050 - Super Mario Advance (UE).ips]  base=Super Mario Advance (USA, Europe)
 OK   hack        GBA    9687  Void's Blitzarre Adventure  [ups:Blitz v1_16.ups]  base=
@@ -190,16 +190,22 @@ OK   translation NES    4297  Saiyuuki World  [ips:Saiyuuki World (v.0.95).ips] 
 OK   hack        NES    4249  Super Pitfall 30th Anniversary Edition  [ips:Super Pitfall 30th Anniversary Edition - nesrocks (English).ips, ips:Super Pitfall 30th Anniversary Edition - nesrocks (Portuguese).ips]  base=
 OK   hack        NES    4231  Batman: The Dark Knight  [ips:The Dark Knight.ips]  base=Batman - The Video Game (USA)
 OK   hack        NES    4230  Battletoads 4 players  [ips:Battletoads_4_players_-_BT4p_2.2.ips, ips:Battletoads_4_players_-_BT4p_2.3_256_spr.ips]  base=
+OK   translation NES    4006  Crystalis  [bps:God Slayer - Sonata of the Distant Heavens.bps]  base=
 OK   hack        NES    3934  Super Mario Bros. 3 Classic  [ips:Super Mario Bros. 3 Classic.ips]  base=Super Mario Bros. 3 (USA) (Rev A)
 OK   hack        NES    3701  NEW Super Mario Bros. 3 Returns  [ips:nsmb3returns1.ips]  base=
 OK   hack        NES    3574  Super Mario Bros. 4: The Undiscovered Zones  [ips:Super Mario Bros. 4 - The Undiscovered Zones.ips]  base=
 OK   hack        NES    3568  The Legend of Zelda - Perils of Darkness  [ips:(EASY)TLoZ-PerilsofDarkness v1-5.ips, ips:(HARD)TLoZ-PerilsofDarkness v1-5.ips, ips:(NORMAL)TLoZ-PerilsofDarkness v1-5.ips]  base=Legend of Zelda, The (USA) --- PRG0 VERSION
 OK   hack        NES    3545  Rockman/Mega Man 2 - Slide and Charge Shot  [ips:Megaman2 Slide-Charge v1.1.ips, ips:Rockman2 Slide-Charge v1.1.ips]  base=
 OK   hack        NES    3489  Castlevania 2: Improved Controls  [ips:cv2-controls-bisqwit.ips, ips:cv2-controls.ips, ips:cv2-controls-bisqwit-novcancel.ips, ips:cv2-controls-novcancel.ips]  base=
+OK   translation NES    3416  Biohazard  [ips:Bio Hazard (Unl).ips]  base=
+OK   translation NES    3368  Takahashi Meijin no Bouken Jima IV  [ips:AI4E.IPS]  base=
 OK   hack        NES    3322  Legend of Zelda Challenge Outlands- Zed Edition  [ips:LOZ1-OutlandsZedEdition115.ips]  base=Legend of Zelda, The (USA)
+OK   translation NES    3290  Final Fantasy  [ips:FF1TranslationChaosEditionv1.3.ips]  base=
 OK   hack        NES    3161  SMB3 - Extended Edition  [ips:SMB3 - Extended Edition (USA) (Rev A) (PRG0).ips, ips:SMB3 - Extended Edition (USA) (Rev A) (PRG1).ips]  base=
 OK   hack        NES    3123  The Legend of Zelda - Trial of Courage  [ips:(1)TLoZ-TrialofCourage1-6(NEWBIE).ips, ips:(2)TLoZ-TrialofCourage1-6(CASUAL).ips, ips:(3)TLoZ-TrialofCourage1-6(VETERAN).ips, ips:(4)TLoZ-TrialofCourage1-6(MASTER).ips]  base=
 OK   hack        NES    3114  Super Smash Bros. (NES)  [bps:Super Smash Bros.bps]  base=Nekketsu Kakutou Densetsu (Japan)
+OK   translation NES    3091  Spelunker II: Yuushahe no Chousen  [bps:Spelunker 2.bps]  base=Spelunker II - Yuusha e no Chousen (Japan)
+OK   translation NES    3072  The Krion Conquest  [ips:MDE-V100.IPS]  base=Magical Kid's Doropie (Japan)
 OK   hack        NES    3068  Rockman 6: Unique Harassment  [ips:Rockman6UH_ver1.1.ips, ips:Rockman6UH_ver1.2.ips, ips:Rockman6UH.ips]  base=Rockman 6 - Shijou Saidai no Tatakai!! (Japan)
 OK   hack        NES    3002  SMB3 RELOADED  [ips:smb3 Reloaded.ips]  base=Super Mario Bros. 3 (USA) (Rev A)
 OK   hack        NES    2987  Kirby's Halloween Adventure  [bps:Kirby's Halloween Adventure 1.3.bps]  base=Kirby's Adventure (USA) (Rev 1)
@@ -209,6 +215,8 @@ OK   hack        NES    2876  Super Mario Bros. Continued  [ips:SMBCont.ips]  ba
 OK   hack        NES    2813  Mario Kart  [ips:Mario Kart.ips]  base=R.C. Pro-Am (USA) (Rev A)
 OK   hack        NES    2780  Mario's Keep  [ips:MARIO'S KEEP 1,21.ips, ips:MARIO'S KEEP 1,3.ips]  base=Super Mario Bros. (World)
 OK   hack        NES    2757  SMB3 (Definitive Edition)  [ips:Super Mario Bros. 3 (Definitive Edition v1.3).ips]  base=Super Mario Bros. 3 (USA)
+OK   translation NES    2743  The Legend of Zelda: San Shen Zhi Li  [ips:The Legend of Zelda - Triforce of the Gods.ips]  base=
+OK   translation NES    2693  Jajamaru Ninpou Chou  [bps:Jajamaru Ninpou Chou (J) [!].bps]  base=
 OK   hack        NES    2683  SMB3_Battery Hack  [ips:Super Mario Bros. 3 (U) (PRG1) [!].ips]  base=
 OK   hack        NES    2670  Uncle Mario Bros.  [bps:Uncle Mario Bros. (JU) [!].bps]  base=
 OK   hack        NES    2620  Battletoads & Double Dragon 4 players  [ips:Battletoads & Double Dragon_4_players_-_BTDD4p_2.1-4stages.ips, ips:Battletoads & Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr.ips]  base=Battletoads-Double Dragon (USA)
@@ -226,18 +234,24 @@ OK   hack        NES    2188  The Legend of Zelda: Triforce Power  [ips:The Lege
 OK   hack        NES    2176  Metal Gear MSX + Style  [ips:Metal Gear MSX + Style.ips]  base=
 OK   hack        NES    2167  Legend of Zelda Winter Solstice  [ips:Legend_of_Zelda_Winter_Solstice-v1.1.ips]  base=Zelda II - The Adventure of Link (USA)
 OK   hack        NES    2162  Rockman: Spirits of Hackers  [ips:RockmanSoH.ips]  base=
+OK   translation NES    2135  LaSalle Ishii's Childs Quest  [ips:Stardom Warriors (USA).ips]  base=Lasalle Ishii no Child's Quest (Japan)
 OK   hack        NES    2095  Fuji Mario Bros.  [bps:Fuji Mario Bros..bps]  base=Super Mario Bros. (World)
 OK   hack        NES    2083  Smash Bros.  [ips:Smash Bros.ips]  base=
+OK   translation NES    2068  RPG Jinsei Game  [ips:gameoflife1.0.ips]  base=
 OK   hack        NES    2061  Insectduel's SMB1 Hack 6th Anniversary Edition  [ips:ISD6thAnni (SMB1 Hack).ips]  base=
 OK   hack        NES    2057  Dragon Quest II: Delocalized  [ips:dq2_delocalized_114.ips]  base=
 OK   hack        NES    2039  Mega Man Simplified  [ips:megamansimplified_v2.ips]  base=
+OK   translation NES    1998  Time Zone  [ips:timezone13.ips]  base=
 OK   hack        NES    1988  Tetris - Actually Useful Statistics (TAUS)  [ips:taus-1-4-0.ips, ips:taus-1-4-0-pal.ips]  base=Tetris (Europe)
 OK   hack        NES    1981  SMB Special - 35th Anniversary Edition  [ips:SMB Special - 35th Anniversary v1.2.ips]  base=Super Mario Bros. (World)
 OK   hack        NES    1960  Dr. Wario  [ips:DrWario.ips]  base=
+OK   translation NES    1949  Faxanadu  [ips:Faxanadu (J) Retranslation (FCEU) (T-Eng) v1.04.ips, ips:Faxanadu (J) Retranslation (NES) (T-Eng) v1.04.ips]  base=
 OK   hack        NES    1941  Adventure Island Abridged  [ips:Adventure Island (U) [Speedrun Version by Nesrocks v12].ips]  base=
+OK   translation NES    1934  Chik Bik Ji Jin: Saam Gwok Ji  [ips:Three Kingdoms - Battle of Red Cliffs (Unl).ips]  base=
 OK   hack        NES    1927  Ghostbusters Remastered (The Real)  [ips:Ghostbusters Remastered (The Real) v1.1.ips]  base=
 OK   hack        NES    1925  Secondary Weapon Slot and Remote Barrier  [bps:Contra (USA) Secondary Weapon Slot and Remote Barrier (1.2) [7BDAD8B4A7A56A634C9649D20BD3011B].bps, bps:Probotector (Europe) Secondary Weapon Slot and Remote Barrier (1.2) [7127F616C13B58087481DD9E93AEB2FF].bps, bps:Contra (Japan) Secondary Weapon Slot and Remote Barrier (1.2) [0E40BC1B049C16C5D7246CC28399CB5D].bps, ips:Contra (Japan) Secondary Weapon Slot and Remote Barrier (1.2) [0E40BC1B049C16C5D7246CC28399CB5D].ips, ips:Contra (USA) Secondary Weapon Slot and Remote Barrier (1.2) [7BDAD8B4A7A56A634C9649D20BD3011B] [Expanded ROM].ips, ips:Contra (USA) Secondary Weapon Slot and Remote Barrier (1.2) [7BDAD8B4A7A56A634C9649D20BD3011B].ips, ips:Probotector (Europe) Secondary Weapon Slot and Remote Barrier (1.2) [7127F616C13B58087481DD9E93AEB2FF].ips]  base=
 OK   hack        NES    1913  Zelda III - The Wrath of Ganon  [ips:Zelda-III-The-Wrath-of-Ganon1.3.ips]  base=
+OK   translation NES    1910  Eggerland: Meikyuu no Fukkatsu  [ips:eggerlandmnf-1.0.ips, ips:eggerlandmnf-password.ips]  base=Eggerland - Meikyuu no Fukkatsu (Japan)
 OK   hack        NES    1883  Dragon Warrior 3 Hardtype  [ips:Dragon Warrior 3 Hardtype v2.2.2.ips]  base=
 OK   hack        NES    1877  Metroid Automap  [ips:Automap.ips]  base=
 OK   hack        NES    1850  Mini Kaizo Bros. 3  [ips:MiniKaizoBros.3 (PRG0).ips, ips:MiniKaizoBros.3 (PRG1).ips]  base=not found
@@ -246,6 +260,13 @@ OK   hack        NES    1822  Super Mario Bros. Resprited  [ips:SMB1 Resprited 1
 OK   hack        NES    1810  Super Contra - updated  [ips:Super Contra - updated v1'1 boss final version 1.ips, ips:Super Contra - updated v1'1 boss final version 2.ips]  base=
 OK   hack        NES    1784  Mario Bros. Untold  [ips:SUPER MARIO UNTOLD.ips]  base=
 OK   hack        NES    1781  Donkey Kong Redux  [ips:dk.ips]  base=
+OK   translation NES    1730  Dragon Knife  [ips:Dragon Knife.ips]  base=
+OK   translation NES    1665  Mississippi Satsujin Jiken  [ips:missatsu.ips]  base=
+OK   translation NES    1643  Yuu Yuu Hakusho: Bakutou Ankoku Bujutsu Kai  [bps:YYH.bps]  base=Datach - Yu Yu Hakusho - Bakutou Ankoku Bujutsukai (Japan)
+OK   translation NES    1639  Idol Hakkenden  [ips:Pop Star Debut (USA).ips]  base=Idol Hakkenden (Japan)
+OK   translation NES    1591  Pizza Pop!  [ips:Pizza Pop!.ips]  base=
+OK   translation NES    1561  Dragon Warrior  [ips:Dragon Quest (Japan) [En by Polinym] (Quick EXP Hack).ips, ips:Dragon Quest (Japan) [En by Polinym].ips]  base=Dragon Quest (Japan)
+OK   translation NES    1496  Dragon Ball Z: Super Butouden 2 (NES)  [ips:Dragon Ball Z - Super Butouden 2 (Unl) [T+Eng1.0.1_Green Jerry].ips]  base=
 OK   translation NES    1429  Princess Tomato in the Salad Kingdom  [bps:Princess Tomato in the Salad Kingdom.bps]  base=Salad no Kuni no Tomato Hime (Japan)
 OK   translation NES    1245  Youkai Douchuuki  [ips:Youkai Douchuuki (ENG) [!].ips]  base=
 OK   translation NES    1118  Game Party  [ips:Game Party E.ips]  base=
@@ -355,6 +376,7 @@ OK   hack        SNES   1565  Fire Emblem 4: Overpowered  [ips:Fire Emblem 4 Ove
 OK   hack        SNES   1523  Chrono Trigger Platinum  [ips:Chrono Trigger Platinum.ips]  base=
 OK   hack        SNES   1517  Mario Forever: SMW Edition  [bps:Mario Forever.bps]  base=Super Mario World (USA)
 OK   hack        SNES   1482  Final Fantasy 6: Divergent Paths  [ips:DivergentPaths_Header_1.1.ips, ips:DivergentPaths_NoHeader 1.1.ips]  base=Final Fantasy III (USA)
+OK   translation SNES   1475  Bastard!!: Ankoku no Hakaishin  [ips:Bastard!! - Ankoku no Hakai-shin (U) easy spells.ips]  base=
 OK   hack        SNES   1438  Super Metroid - Melancholia IV  [ips:Super Metroid  - Melancholia IV.IPS]  base=
 OK   hack        SNES   1401  Mega Man X2 Relocalization Addendum  [ips:MMX2_Rockman.ips]  base=Mega Man X2 (USA)
 OK   hack        SNES   1373  Minish Cap Zelda  [ips:Zelda3_Minish_Zelda_(Gender_F).ips]  base=
@@ -400,33 +422,11 @@ SKIP hack   NES    6776  Zelda 2 Redux — 52 patch files — too many to choose
 SKIP hack   SNES   1983  EarthBound Consistency patch — no IPS/BPS/UPS patch inside
 SKIP translation GB     1324  X — xdelta only (not supported yet)
 SKIP translation NES    1163  Kaiketsu Yanchamaru 2: Karakuri Land — no IPS/BPS/UPS patch inside
-SKIP translation NES    1496  Dragon Ball Z: Super Butouden 2 (NES) — can't open download: range 3644325888+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1561  Dragon Warrior — can't open download: range 3644850176+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1591  Pizza Pop! — can't open download: range 3647471616+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1639  Idol Hakkenden — can't open download: range 3656646656+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1643  Yuu Yuu Hakusho: Bakutou Ankoku Bujutsu Kai — can't open download: range 3671326720+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1657  Sherlock Holmes: Hakushaku Reijou Yuukai Jiken — can't open download: range 3614703616+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1660  SWAT: Special Weapons and Tactics — can't open download: range 3719036928+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1665  Mississippi Satsujin Jiken — can't open download: range 3761766400+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1730  Dragon Knife — can't open download: range 3644588032+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1910  Eggerland: Meikyuu no Fukkatsu — can't open download: range 3694395392+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1934  Chik Bik Ji Jin: Saam Gwok Ji — can't open download: range 3661365248+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1949  Faxanadu — can't open download: range 3603693568+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    1998  Time Zone — can't open download: range 3654025216+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    2068  RPG Jinsei Game — can't open download: range 3763339264+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    2135  LaSalle Ishii's Childs Quest — can't open download: range 3748397056+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    2693  Jajamaru Ninpou Chou — can't open download: range 3720871936+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    2743  The Legend of Zelda: San Shen Zhi Li — can't open download: range 3670016000+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    3072  The Krion Conquest — can't open download: range 3668967424+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    3091  Spelunker II: Yuushahe no Chousen — can't open download: range 3724804096+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    3290  Final Fantasy — can't open download: range 3604217856+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    3368  Takahashi Meijin no Bouken Jima IV — can't open download: range 3719561216+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    3416  Biohazard — can't open download: range 3646423040+262144: status 500, got 170 bytes (<nil>)
-SKIP translation NES    4006  Crystalis — can't open download: range 3612082176+262144: status 500, got 170 bytes (<nil>)
+SKIP translation NES    1657  Sherlock Holmes: Hakushaku Reijou Yuukai Jiken — xdelta only (not supported yet)
+SKIP translation NES    1660  SWAT: Special Weapons and Tactics — xdelta only (not supported yet)
 SKIP translation SNES     14  Soreyuke Ebisumaru Karakuri Meiro - Kieta Goemon no Nazo!! — no IPS/BPS/UPS patch inside
 SKIP translation SNES     58  Ganbare Goemon 4 - Boku ga Dancer ni Natta Riyuu - Kirakira Douchuu — no IPS/BPS/UPS patch inside
 SKIP translation SNES   1167  Super Chinese Fighter — no IPS/BPS/UPS patch inside
-SKIP translation SNES   1475  Bastard!!: Ankoku no Hakaishin — read: range 6047399936+262144: status 500, got 170 bytes (<nil>)
 SKIP translation SNES   1696  Bushi Seiryuuden: Futari no Yuusha — no IPS/BPS/UPS patch inside
 SKIP translation SNES   1707  Tetris Battle Gaiden — no IPS/BPS/UPS patch inside
 SKIP translation SNES   7948  Radical Dreamers: Nusumenai Houseki — no IPS/BPS/UPS patch inside

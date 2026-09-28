@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T13:23:57Z",
+ "generated": "2026-09-28T13:29:29Z",
  "source": "RomHacking.net archive (Internet Archive item rhdn-20210914)",
  "archive_url": "https://archive.org/download/rhdn-20210914/RHDN-20210914.zip",
  "hacks": [
@@ -2464,6 +2464,37 @@
   {
    "id": 0,
    "kind": "hack",
+   "title": "Pokémon Yellow Legacy",
+   "system": "GB",
+   "game": "Pokémon Yellow Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "TheSmithPlays",
+   "version": "1.0.10",
+   "released": "19 December 2024",
+   "downloads": 0,
+   "pokemon": true,
+   "desc": "TheSmithPlays' remaster of Pokémon Yellow in the same spirit as Crystal Legacy: bug fixes and quality-of-life polish that stay true to Generation 1.",
+   "patching": "BPS — for Pokémon Yellow (USA, Europe)",
+   "base": {
+    "name": "Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (GBC,SGB Enhanced)"
+   },
+   "archive": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy/releases/download/V1.0.10/Pokemon.Yellow.Legacy.V1.0.10.Patches.zip",
+   "home": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy",
+   "variants": [
+    {
+     "label": "Yellow Legacy",
+     "member": "Pokemon Yellow Legacy V1.0.10 Patches/Pokemon Yellow Legacy V1.0.10 Patch.bps",
+     "format": "bps",
+     "size": 168176,
+     "src_crc": "7D527D62",
+     "dst_crc": "E7D07A3F"
+    }
+   ]
+  },
+  {
+   "id": 0,
+   "kind": "hack",
    "title": "Pokémon Crystal Legacy",
    "system": "GB",
    "game": "Pokémon Crystal Version",
@@ -2497,37 +2528,6 @@
      "size": 263738,
      "src_crc": "3358E30A",
      "dst_crc": "12E97FB4"
-    }
-   ]
-  },
-  {
-   "id": 0,
-   "kind": "hack",
-   "title": "Pokémon Yellow Legacy",
-   "system": "GB",
-   "game": "Pokémon Yellow Version",
-   "category": "Improvement",
-   "genre": "Role Playing",
-   "author": "TheSmithPlays",
-   "version": "1.0.10",
-   "released": "19 December 2024",
-   "downloads": 0,
-   "pokemon": true,
-   "desc": "TheSmithPlays' remaster of Pokémon Yellow in the same spirit as Crystal Legacy: bug fixes and quality-of-life polish that stay true to Generation 1.",
-   "patching": "BPS — for Pokémon Yellow (USA, Europe)",
-   "base": {
-    "name": "Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (GBC,SGB Enhanced)"
-   },
-   "archive": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy/releases/download/V1.0.10/Pokemon.Yellow.Legacy.V1.0.10.Patches.zip",
-   "home": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy",
-   "variants": [
-    {
-     "label": "Yellow Legacy",
-     "member": "Pokemon Yellow Legacy V1.0.10 Patches/Pokemon Yellow Legacy V1.0.10 Patch.bps",
-     "format": "bps",
-     "size": 168176,
-     "src_crc": "7D527D62",
-     "dst_crc": "E7D07A3F"
     }
    ]
   },
@@ -6275,6 +6275,39 @@
    ]
   },
   {
+   "id": 3793,
+   "kind": "translation",
+   "title": "Crystalis",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing \u003e Action RPG",
+   "author": "Stardust Crusaders",
+   "version": "1.02",
+   "released": "28 August 2020",
+   "downloads": 4006,
+   "score": "2/2",
+   "desc": "Crystalis is an action role playing game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "718FD0AF",
+    "file_sha1": "8A4B0201D54B090C49383468111E1141BA078877",
+    "rom_crc": "79698B98",
+    "rom_sha1": "A9989F97B18D676B39E282FFC32483C0DFDFCAFA"
+   },
+   "archive": "translations/Nintendo Entertainment System/Crystalis/English/Stardust Crusaders___1_02/Godslayer.zip",
+   "shot": "translations/Nintendo Entertainment System/Crystalis/English/Stardust Crusaders___1_02/Crystalis_screenshot0.png",
+   "variants": [
+    {
+     "label": "God Slayer - Sonata of the Distant Heavens",
+     "member": "Godslayer/God Slayer - Sonata of the Distant Heavens.bps",
+     "format": "bps",
+     "size": 40265,
+     "src_crc": "718FD0AF",
+     "dst_crc": "F929B5CE"
+    }
+   ]
+  },
+  {
    "id": 5110,
    "kind": "hack",
    "title": "Super Mario Bros. 3 Classic",
@@ -6498,6 +6531,68 @@
    ]
   },
   {
+   "id": 3388,
+   "kind": "translation",
+   "title": "Biohazard",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "pacnsacdave",
+   "version": "1.0",
+   "released": "06 January 2018",
+   "downloads": 3416,
+   "score": "2/2",
+   "desc": "This is a Chinese bootleg of the original Biohazard game (known as Resident Evil). There are quite a few games ported to the NES; Final Fantasy 7, Chrono Trigger, etc. An elite police group called Stars is sent to investigate a mysterious mansion. Play as Jill Valentine or Chris Redfield to uncover the conspiracy.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "B4C8012D",
+    "file_sha1": "5111785776C606E649FD229B1DB1633B980C9AB5",
+    "rom_crc": "2E27E0AF",
+    "rom_sha1": "3703C3F28174D5544F10B8D5AB8AA6660F1C1B7D"
+   },
+   "archive": "translations/Nintendo Entertainment System/Biohazard/English/pacnsacdave___1_0/bio_hazard__unl__ips.zip",
+   "shot": "translations/Nintendo Entertainment System/Biohazard/English/pacnsacdave___1_0/Biohazard_screenshot0.png",
+   "variants": [
+    {
+     "label": "Bio Hazard (Unl)",
+     "member": "Bio Hazard (Unl).ips",
+     "format": "ips",
+     "size": 45271
+    }
+   ]
+  },
+  {
+   "id": 3703,
+   "kind": "translation",
+   "title": "Takahashi Meijin no Bouken Jima IV",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Platformer",
+   "author": "Zynk Oxhyde",
+   "version": "1.0",
+   "released": "14 July 2018",
+   "downloads": 3368,
+   "score": "1/1",
+   "desc": "Takahashi Meijin no Bouken Jima IV is an action platformer game for the Nintendo Entertainment System. The game was not released in the West where it could have received an official title as Adventure Island IV. On his 4th adventure, Master Higgins lives peacefully on an island with his girlfriend Tina and his dinosaur friends. Suddenly, a mysterious evil face appeared and kidnapped the dinosaurs. Master Higgins is set to rescue them and defeat the island bosses. The gameplay is quite different from previous games where the player just clears a stage from point A to point B.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "5ECFD3DC",
+    "file_sha1": "E73EFD3E932B9E3501CE9C77418BDBF0D59D75CD",
+    "rom_crc": "7BD8F902",
+    "rom_sha1": "60BA08558D5316686195F8F0B9765B4EE8B4543A"
+   },
+   "archive": "translations/Nintendo Entertainment System/Takahashi Meijin no Bouken Jima IV/English/Demiforce___1_00/ai4e.zip",
+   "shot": "translations/Nintendo Entertainment System/Takahashi Meijin no Bouken Jima IV/English/Zynk Oxhyde___1_0/Takahashi Meijin no Bouken Jima IV_screenshot0.png",
+   "variants": [
+    {
+     "label": "AI4E",
+     "member": "AI4E.IPS",
+     "format": "ips",
+     "size": 4449
+    }
+   ]
+  },
+  {
    "id": 1993,
    "kind": "hack",
    "title": "Legend of Zelda Challenge Outlands- Zed Edition",
@@ -6527,6 +6622,37 @@
      "member": "LOZ1-OutlandsZedEdition115.ips",
      "format": "ips",
      "size": 34832
+    }
+   ]
+  },
+  {
+   "id": 4868,
+   "kind": "translation",
+   "title": "Final Fantasy",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "Chaos Rush",
+   "version": "1.3",
+   "released": "24 October 2019",
+   "downloads": 3290,
+   "score": "1/1",
+   "desc": "Final Fantasy is a role playing game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "92B1B80A",
+    "file_sha1": "0D4F34ADA26DBE20F6D6372F9B72980DF455121E",
+    "rom_crc": "F71E7EDD",
+    "rom_sha1": "C4C46C1BE3EBF607E31010CC63258F22A5D98F84"
+   },
+   "archive": "translations/Nintendo Entertainment System/Final Fantasy/English/Chaos Rush___1_3/FF1Translationv1.3.zip",
+   "shot": "translations/Nintendo Entertainment System/Final Fantasy/English/Chaos Rush___1_3/Final Fantasy_screenshot0.png",
+   "variants": [
+    {
+     "label": "FF1TranslationChaosEditionv1.3",
+     "member": "FF1Translationv1.3/FF1TranslationChaosEditionv1.3.ips",
+     "format": "ips",
+     "size": 25157
     }
    ]
   },
@@ -6650,6 +6776,72 @@
      "size": 20600,
      "src_crc": "1D714F05",
      "dst_crc": "75B54C6A"
+    }
+   ]
+  },
+  {
+   "id": 1591,
+   "kind": "translation",
+   "title": "Spelunker II: Yuushahe no Chousen",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing \u003e Action RPG",
+   "author": "Stardust Crusaders",
+   "version": "1.0",
+   "released": "18 February 2011",
+   "downloads": 3091,
+   "score": "0/0",
+   "desc": "Did anyone ever play the original Spelunker? That really old game where you ran around in a cave and died if you fell four feet? Or if you ran into a smallish hill? Yeah, great game. Fortunately Spelunker 2 is a little bit better. This game introduces the concept of Health. Sure, you can fall from a ways and lose health, but it isn’t as ridiculous as the first game. Sure, you can still lose health if you run into a smallish mound of dirt. Well, that’s still stupid, I’ll have to give you that. You can choose from three heroes in this game: the Explorer, the Priest, and the ESPer. I can’t really tell the difference, but they have different items and stuff.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Spelunker II - Yuusha e no Chousen (Japan)",
+    "file_crc": "F076F168",
+    "file_sha1": "E8DF29FCBA07CEB539FDEDEECCD87193A02A0B41",
+    "rom_crc": "C37F225C",
+    "rom_sha1": "413B860B0F4513DF89D60041637632B4CFAC0C31"
+   },
+   "archive": "translations/Nintendo Entertainment System/Spelunker II_ Yuushahe no Chousen/English/Stardust Crusaders___1_0/Spelunker2.zip",
+   "shot": "translations/Nintendo Entertainment System/Spelunker II_ Yuushahe no Chousen/English/Stardust Crusaders___1_0/Spelunker II_ Yuushahe no Chousen_screenshot0.png",
+   "variants": [
+    {
+     "label": "Spelunker 2",
+     "member": "Spelunker2/Spelunker 2.bps",
+     "format": "bps",
+     "size": 5921,
+     "src_crc": "F076F168",
+     "dst_crc": "72A28744"
+    }
+   ]
+  },
+  {
+   "id": 576,
+   "kind": "translation",
+   "title": "The Krion Conquest",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Platformer",
+   "author": "Video Smash Excellent",
+   "version": "1.00",
+   "released": "20 July 2002",
+   "downloads": 3072,
+   "score": "2/2",
+   "desc": "The first thing you will say (besides “hey, that Doropie chick is a hottie”) is “God damn, this game is a lot like Megaman”. Well, that’s because it is. A lot. Especially in the “run and jump and shoot at things” department. There are some notable differences of course, the biggest being the fact that Megaman was never this difficult. In the Megaman games you could, say, regain your health sometimes. And if you died, you wouldn’t start over at the beginning of the level, every damn freakin’ time. And you have different weapons at the outset of the game, though all you’ll use are the bouncy ball and Rush. Err not Rush, I mean the broom. Haha, how silly of me.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Magical Kid's Doropie (Japan)",
+    "file_crc": "5455FFC9",
+    "file_sha1": "F46C65C21104CD25FA04AD28E18CC24C9C4A356E",
+    "rom_crc": "7EC6F75B",
+    "rom_sha1": "EB861BE7181AE1D19BA991D4EBE0E06A5CFAE0CF"
+   },
+   "archive": "translations/Nintendo Entertainment System/The Krion Conquest/English/Video Smash Excellent___1_00/mde-v100.zip",
+   "shot": "translations/Nintendo Entertainment System/The Krion Conquest/English/Video Smash Excellent___1_00/The Krion Conquest_screenshot0.png",
+   "variants": [
+    {
+     "label": "MDE-V100",
+     "member": "MDE-V100.IPS",
+     "format": "ips",
+     "size": 5647
     }
    ]
   },
@@ -6922,6 +7114,67 @@
      "member": "Super Mario Bros. 3 (Definitive Edition v1.3).ips",
      "format": "ips",
      "size": 42756
+    }
+   ]
+  },
+  {
+   "id": 3145,
+   "kind": "translation",
+   "title": "The Legend of Zelda: San Shen Zhi Li",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing \u003e Action RPG",
+   "author": "pacnsacdave",
+   "version": "1.1",
+   "released": "30 November 2018",
+   "downloads": 2743,
+   "score": "0/0",
+   "desc": "The Legend of Zelda: San Shen Zhi Li is an action role playing game for the Nintendo Entertainment System. It is a bootleg NES version of the game The Legend of Zelda: A Link to the Past for the SNES.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "6E07687F9E45A4E79D5E95A34537C76F2485AF11"
+   },
+   "archive": "translations/Nintendo Entertainment System/The Legend of Zelda_ San Shen Zhi Li/English/pacnsacdave___1_1/the_legend_of_zelda_-_triforce_of_the_gods_ips.zip",
+   "shot": "translations/Nintendo Entertainment System/The Legend of Zelda_ San Shen Zhi Li/English/pacnsacdave___1_1/The Legend of Zelda_ San Shen Zhi Li_screenshot0.png",
+   "variants": [
+    {
+     "label": "The Legend of Zelda - Triforce of the Gods",
+     "member": "The Legend of Zelda - Triforce of the Gods.ips",
+     "format": "ips",
+     "size": 154849
+    }
+   ]
+  },
+  {
+   "id": 3751,
+   "kind": "translation",
+   "title": "Jajamaru Ninpou Chou",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "aishsha",
+   "version": "1.02",
+   "released": "08 December 2020",
+   "downloads": 2693,
+   "score": "0/0",
+   "desc": "Jajamaru Ninpou Chou is a role playing game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "0DCF07B3",
+    "file_sha1": "4553B470240615842BA2DBFD1680A8A44D3A43EC",
+    "rom_crc": "12F048DF",
+    "rom_sha1": "D97027BC6666DB7C5251CE05CC3B92328C59D71F"
+   },
+   "archive": "translations/Nintendo Entertainment System/Jajamaru Ninpou Chou/English/aishsha___1_02/Jajamaru Ninpo Chou.zip",
+   "shot": "translations/Nintendo Entertainment System/Jajamaru Ninpou Chou/English/aishsha___1_02/Jajamaru Ninpou Chou_screenshot0.png",
+   "variants": [
+    {
+     "label": "Jajamaru Ninpou Chou (J) [!]",
+     "member": "Jajamaru Ninpo Chou/Jajamaru Ninpou Chou (J) [!].bps",
+     "format": "bps",
+     "size": 42664,
+     "src_crc": "0DCF07B3",
+     "dst_crc": "D78842E5"
     }
    ]
   },
@@ -7570,6 +7823,38 @@
    ]
   },
   {
+   "id": 5321,
+   "kind": "translation",
+   "title": "LaSalle Ishii's Childs Quest",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "Woolsey Fan Company",
+   "version": "1.0",
+   "released": "20 December 2019",
+   "downloads": 2135,
+   "score": "2/2",
+   "desc": "LaSalle Ishii is a parody RPG for the Famicom. In the game, you play as a Manager of the real-life Idol group called Childs, working for real-life TV producer LaSalle Ishii’s talent agency. With the band, you can perform concerts at the various town halls. You must also prevent the Idols’ Fumando (dissatisfaction percentage) from reaching 100 by making careful decisions throughout the game.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Lasalle Ishii no Child's Quest (Japan)",
+    "file_crc": "9DC91AD9",
+    "file_sha1": "D53D643622793DC365AA18F76B278C464B053FFB",
+    "rom_crc": "D97C31B0",
+    "rom_sha1": "136EE001E85EEBA653CA11BC2378BD4D219969CB"
+   },
+   "archive": "translations/Nintendo Entertainment System/LaSalle Ishii's Childs Quest/English/Woolsey Fan Company___1_0/Stardom Warriors (USA).zip",
+   "shot": "translations/Nintendo Entertainment System/LaSalle Ishii's Childs Quest/English/Woolsey Fan Company___1_0/LaSalle Ishii's Childs Quest_screenshot0.png",
+   "variants": [
+    {
+     "label": "Stardom Warriors (USA)",
+     "member": "Stardom Warriors (USA).ips",
+     "format": "ips",
+     "size": 51098
+    }
+   ]
+  },
+  {
    "id": 4443,
    "kind": "hack",
    "title": "Fuji Mario Bros.",
@@ -7631,6 +7916,35 @@
      "member": "Smash Bros.ips",
      "format": "ips",
      "size": 1727
+    }
+   ]
+  },
+  {
+   "id": 4223,
+   "kind": "translation",
+   "title": "RPG Jinsei Game",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "Nebulous Translations",
+   "version": "1.0",
+   "released": "02 February 2019",
+   "downloads": 2068,
+   "score": "0/0",
+   "desc": "RPG Jinsei Game is a Japan-only role playing game for the Family Computer that is similar to Jinsei Game, which is the Japanese version of The Game of Life. It’s a charming little RPG/gambling game/board game hybrid, where you need to find your way around various cities (mostly located in Japan, with a few exceptions) and find your true calling.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "13AEE28588290CA6DDC3EF232E159B3AB309BE2D",
+    "rom_sha1": "68D5E40403FF09FAE745FDF419F9244C9BCA507A"
+   },
+   "archive": "translations/Nintendo Entertainment System/RPG Jinsei Game/English/Nebulous Translations___1_0/gameoflife1.0.zip",
+   "shot": "translations/Nintendo Entertainment System/RPG Jinsei Game/English/Nebulous Translations___1_0/RPG Jinsei Game_screenshot0.png",
+   "variants": [
+    {
+     "label": "gameoflife1.0",
+     "member": "gameoflife1.0.ips",
+     "format": "ips",
+     "size": 65794
     }
    ]
   },
@@ -7721,6 +8035,34 @@
      "member": "megamansimplified_v2.ips",
      "format": "ips",
      "size": 3955
+    }
+   ]
+  },
+  {
+   "id": 228,
+   "kind": "translation",
+   "title": "Time Zone",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Platformer",
+   "author": "KingMike's Translations",
+   "version": "1.3",
+   "released": "13 April 2013",
+   "downloads": 1998,
+   "score": "0/0",
+   "desc": "Time Zone is one of those seemingly hallucinogenically inspired japanese platform games that never saw the light of day in western markets. You take on the role of some little kid who’s girlfriend is kidnapped by the evil Professor Time (Oooooh!), for reasons not quite mentioned. Is he a perverted kidnapper? A lonely old man looking for a surrogate granddaughter? Perhaps the world will never know, but his ass needs kicked regardless. Unfortunatly, Dr. Time has a habit of dropping large rocks on your head and jumping into different time periods, which of course you end up going to as well.",
+   "patching": "No Special Requirements",
+   "base": {
+    "rom_crc": "E305202E"
+   },
+   "archive": "translations/Nintendo Entertainment System/Time Zone/English/KingMike's Translations___1_3/timezone13.zip",
+   "shot": "translations/Nintendo Entertainment System/Time Zone/English/KingMike's Translations___1_3/Time Zone_screenshot0.gif",
+   "variants": [
+    {
+     "label": "timezone13",
+     "member": "timezone13.ips",
+     "format": "ips",
+     "size": 6819
     }
    ]
   },
@@ -7829,6 +8171,43 @@
    ]
   },
   {
+   "id": 4281,
+   "kind": "translation",
+   "title": "Faxanadu",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing \u003e Action RPG",
+   "author": "Unsavory Maggot",
+   "version": "1.04",
+   "released": "27 January 2019",
+   "downloads": 1949,
+   "score": "2/2",
+   "desc": "Someone or something has poisoned the water supply in Eolis. Our hero must find the water source and solve this mystery before it’s too late.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "F9E6E6AD",
+    "file_sha1": "476FE6630E237296A533F39EA01DBB1BF463F816",
+    "rom_crc": "A80FA181",
+    "rom_sha1": "6501F61FD717AE603C2265D0DF074AC2A4DCB8C7"
+   },
+   "archive": "translations/Nintendo Entertainment System/Faxanadu/English/Unsavory Maggot___1_04/Faxanadu (J) Retranslation (T-Eng) v1.04.zip",
+   "shot": "translations/Nintendo Entertainment System/Faxanadu/English/Unsavory Maggot___1_04/Faxanadu_screenshot0.png",
+   "variants": [
+    {
+     "label": "Faxanadu (J) Retranslation (FCEU) (T-Eng) v1.04",
+     "member": "Faxanadu (J) Retranslation (FCEU) (T-Eng) v1.04.ips",
+     "format": "ips",
+     "size": 37667
+    },
+    {
+     "label": "Faxanadu (J) Retranslation (NES) (T-Eng) v1.04",
+     "member": "Faxanadu (J) Retranslation (NES) (T-Eng) v1.04.ips",
+     "format": "ips",
+     "size": 38426
+    }
+   ]
+  },
+  {
    "id": 3385,
    "kind": "hack",
    "title": "Adventure Island Abridged",
@@ -7855,6 +8234,35 @@
      "member": "Adventure Island (U) [Speedrun Version by Nesrocks v12].ips",
      "format": "ips",
      "size": 2916
+    }
+   ]
+  },
+  {
+   "id": 2241,
+   "kind": "translation",
+   "title": "Chik Bik Ji Jin: Saam Gwok Ji",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Beat 'Em Up",
+   "author": "pacnsacdave",
+   "version": "1.1",
+   "released": "22 November 2018",
+   "downloads": 1934,
+   "score": "0/0",
+   "desc": "Chik Bik Ji Jin: Saam Gwok Ji is an action beat ‘em up game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "8EC07A2841D3FB671AFD11013643063BDA9FA7F3",
+    "rom_sha1": "CA4FF4383B7800CE1950067C5B408A3BAE4BEE88"
+   },
+   "archive": "translations/Nintendo Entertainment System/Chik Bik Ji Jin_ Saam Gwok Ji/English/pacnsacdave___1_1/three_kingdoms_-_battle_of_red_cliffs__unl__ips.zip",
+   "shot": "translations/Nintendo Entertainment System/Chik Bik Ji Jin_ Saam Gwok Ji/English/pacnsacdave___1_1/Chik Bik Ji Jin_ Saam Gwok Ji_screenshot0.png",
+   "variants": [
+    {
+     "label": "Three Kingdoms - Battle of Red Cliffs (Unl)",
+     "member": "Three Kingdoms - Battle of Red Cliffs (Unl).ips",
+     "format": "ips",
+     "size": 37831
     }
    ]
   },
@@ -7991,6 +8399,44 @@
      "member": "Zelda-III-The-Wrath-of-Ganon1.3.ips",
      "format": "ips",
      "size": 15939
+    }
+   ]
+  },
+  {
+   "id": 941,
+   "kind": "translation",
+   "title": "Eggerland: Meikyuu no Fukkatsu",
+   "system": "NES",
+   "game": "",
+   "genre": "Puzzle",
+   "author": "Kapow",
+   "version": "1.0",
+   "released": "20 August 2020",
+   "downloads": 1910,
+   "score": "0/0",
+   "desc": "The Western release of Adventures of Lolo 1 was partially based on this game. However, the map was replaced with a linear series of levels, and the four gods and the final battle sequence were removed. These features have never appeared in a Lolo/Eggerland game outside of Japan.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Eggerland - Meikyuu no Fukkatsu (Japan)",
+    "file_crc": "FAE5A5C0",
+    "file_sha1": "B8CC12AF8916C229122136506FE951EA9196063F",
+    "rom_crc": "77DCBBA3",
+    "rom_sha1": "55E97984252FDD37ED8F95343792A41A4906D291"
+   },
+   "archive": "translations/Nintendo Entertainment System/Eggerland_ Meikyuu no Fukkatsu/English/Kapow___1_0/eggerlandmnf-1.0.zip",
+   "shot": "translations/Nintendo Entertainment System/Eggerland_ Meikyuu no Fukkatsu/English/Kapow___1_0/Eggerland_ Meikyuu no Fukkatsu_screenshot0.png",
+   "variants": [
+    {
+     "label": "eggerlandmnf-1.0",
+     "member": "eggerlandmnf-1.0.ips",
+     "format": "ips",
+     "size": 6781
+    },
+    {
+     "label": "eggerlandmnf-password",
+     "member": "eggerlandmnf-password.ips",
+     "format": "ips",
+     "size": 466
     }
    ]
   },
@@ -8256,6 +8702,230 @@
      "member": "dk.ips",
      "format": "ips",
      "size": 7181
+    }
+   ]
+  },
+  {
+   "id": 2196,
+   "kind": "translation",
+   "title": "Dragon Knife",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Beat 'Em Up",
+   "author": "pacnsacdave",
+   "version": "1.0",
+   "released": "12 May 2014",
+   "downloads": 1730,
+   "score": "0/0",
+   "desc": "Dragon Knife is an action beat ‘em up game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "FC87ABB1",
+    "file_sha1": "AB21B5FBA23F7D6337FBFCD2E80A9114D752112D",
+    "rom_crc": "9C596EC8",
+    "rom_sha1": "1BE2977CA26B33DF1B9871628340693FE9B8D7F5"
+   },
+   "archive": "translations/Nintendo Entertainment System/Dragon Knife/English/pacnsacdave___1_0/dragon_knife_unl__ips.zip",
+   "shot": "translations/Nintendo Entertainment System/Dragon Knife/English/pacnsacdave___1_0/Dragon Knife_screenshot0.png",
+   "variants": [
+    {
+     "label": "Dragon Knife",
+     "member": "Dragon Knife.ips",
+     "format": "ips",
+     "size": 12064
+    }
+   ]
+  },
+  {
+   "id": 3133,
+   "kind": "translation",
+   "title": "Mississippi Satsujin Jiken",
+   "system": "NES",
+   "game": "",
+   "genre": "Adventure",
+   "author": "GAFF Translations",
+   "version": "1.00",
+   "released": "20 July 2017",
+   "downloads": 1665,
+   "score": "0/0",
+   "desc": "Mississippi Satsujin Jiken is an adventure game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "5D003EAD",
+    "file_sha1": "A2381D01B3DF97764FB1674C159428A4B67236D3"
+   },
+   "archive": "translations/Nintendo Entertainment System/Mississippi Satsujin Jiken/English/GAFF Translations___1_00/missatsu.zip",
+   "shot": "translations/Nintendo Entertainment System/Mississippi Satsujin Jiken/English/GAFF Translations___1_00/Mississippi Satsujin Jiken_screenshot0.png",
+   "variants": [
+    {
+     "label": "missatsu",
+     "member": "missatsu.ips",
+     "format": "ips",
+     "size": 38313
+    }
+   ]
+  },
+  {
+   "id": 5386,
+   "kind": "translation",
+   "title": "Yuu Yuu Hakusho: Bakutou Ankoku Bujutsu Kai",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Fighting",
+   "author": "Stardust Crusaders",
+   "version": "1.01",
+   "released": "28 August 2020",
+   "downloads": 1643,
+   "score": "0/0",
+   "desc": "Yū Yū Hakusho: Bakutō Ankoku Bujutsue Kai (translated as “Ghost Reports: Invitation to the Dark Tournament”) is a fighting game for the Nintendo NES based on the popular anime/manga created by Yoshihiro Togashi. It’s also one of six games (all based on popular licenses) released for DATACH, an accessory created by Bandai that uses collectible cards with barcodes to unlock characters and items.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Datach - Yu Yu Hakusho - Bakutou Ankoku Bujutsukai (Japan)",
+    "file_crc": "44070CFA",
+    "file_sha1": "4430F96F46EEE3BE92EA7F6ECCEE0076118189D1",
+    "rom_crc": "F51A7F46",
+    "rom_sha1": "74218AAE93E4FEBFB2284BCF15811453418A2029"
+   },
+   "archive": "translations/Nintendo Entertainment System/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai/English/Stardust Crusaders___1_01/YYH.zip",
+   "shot": "translations/Nintendo Entertainment System/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai/English/Stardust Crusaders___1_01/Yuu Yuu Hakusho_ Bakutou Ankoku Bujutsu Kai_screenshot0.png",
+   "variants": [
+    {
+     "label": "YYH",
+     "member": "YYH/YYH.bps",
+     "format": "bps",
+     "size": 22000,
+     "src_crc": "44070CFA",
+     "dst_crc": "F9AA4D81"
+    }
+   ]
+  },
+  {
+   "id": 4972,
+   "kind": "translation",
+   "title": "Idol Hakkenden",
+   "system": "NES",
+   "game": "",
+   "genre": "Adventure",
+   "author": "Woolsey Fan Company",
+   "version": "1.1",
+   "released": "10 April 2020",
+   "downloads": 1639,
+   "score": "0/0",
+   "desc": "Idol Hakkenden is an adventure game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Idol Hakkenden (Japan)",
+    "file_crc": "E017C417",
+    "file_sha1": "D3731FDF1E6F954C566E46A32456F5835985DE68",
+    "rom_crc": "8DA4E539",
+    "rom_sha1": "9E90A1E4B24A68AA006B09DB607479C2FEB19FC0"
+   },
+   "archive": "translations/Nintendo Entertainment System/Idol Hakkenden/English/Woolsey Fan Company___1_1/Pop Star Debut (USA).zip",
+   "shot": "translations/Nintendo Entertainment System/Idol Hakkenden/English/Woolsey Fan Company___1_1/Idol Hakkenden_screenshot0.png",
+   "variants": [
+    {
+     "label": "Pop Star Debut (USA)",
+     "member": "Pop Star Debut (USA).ips",
+     "format": "ips",
+     "size": 57468
+    }
+   ]
+  },
+  {
+   "id": 4630,
+   "kind": "translation",
+   "title": "Pizza Pop!",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Platformer",
+   "author": "pacnsacdave",
+   "version": "1.0",
+   "released": "02 June 2019",
+   "downloads": 1591,
+   "score": "0/0",
+   "desc": "Pizza Pop! is an action platformer game for the Nintendo Entertainment System.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "181921A0B34BEF08C3C0A6880D3B7E03AC850152",
+    "rom_sha1": "F81FC442A1C5B3F1D8216A0779F706C69B6A3F35"
+   },
+   "archive": "translations/Nintendo Entertainment System/Pizza Pop!/English/pacnsacdave___1_0/pizza_pop__ips.zip",
+   "shot": "translations/Nintendo Entertainment System/Pizza Pop!/English/pacnsacdave___1_0/Pizza Pop!_screenshot0.png",
+   "variants": [
+    {
+     "label": "Pizza Pop!",
+     "member": "Pizza Pop!.ips",
+     "format": "ips",
+     "size": 1721
+    }
+   ]
+  },
+  {
+   "id": 5416,
+   "kind": "translation",
+   "title": "Dragon Warrior",
+   "system": "NES",
+   "game": "",
+   "genre": "Role Playing",
+   "author": "Polinym",
+   "version": "1.3",
+   "released": "19 March 2020",
+   "downloads": 1561,
+   "score": "2/3",
+   "desc": "The first in the long running series of games, beginning with the Nintendo Entertainment System and spanning the SNES, the Gameboy, and even the Playstation, as well as having mini-spinoffs which are a lot like Pokémon. This, the original Dragon Warrior, starts you off in the throne room of the King of Tantegel Castle. He names you the descendant of the legendary Erdrick, who once possessed the Ball of Light. It has been stolen, the Dragonlord’s minions roam the lands, and the Princess is kidnapped. You, the descendant of the legendary hero, must confront evil and save the continent. This game features a single-character interface with single-monster battles.",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Dragon Quest (Japan)",
+    "file_crc": "C72E2739",
+    "file_sha1": "17AA26ECD1197A2CD2B5F02D71AEC3342B229D25",
+    "rom_crc": "88053D25",
+    "rom_sha1": "4E72277DC2AB3B70B29086C0664014CAF6E16CB2"
+   },
+   "archive": "translations/Nintendo Entertainment System/Dragon Warrior/English/Polinym___1_3/Dragon Quest (Japan) [English by Polinym].zip",
+   "shot": "translations/Nintendo Entertainment System/Dragon Warrior/English/Polinym___1_3/Dragon Warrior_screenshot0.png",
+   "variants": [
+    {
+     "label": "Dragon Quest (Japan) [En by Polinym] (Quick EXP Hack)",
+     "member": "Dragon Quest (Japan) [En by Polinym] (Quick EXP Hack).ips",
+     "format": "ips",
+     "size": 12511
+    },
+    {
+     "label": "Dragon Quest (Japan) [En by Polinym]",
+     "member": "Dragon Quest (Japan) [En by Polinym].ips",
+     "format": "ips",
+     "size": 12376
+    }
+   ]
+  },
+  {
+   "id": 4434,
+   "kind": "translation",
+   "title": "Dragon Ball Z: Super Butouden 2 (NES)",
+   "system": "NES",
+   "game": "",
+   "genre": "Action \u003e Fighting",
+   "author": "Green Jerry",
+   "version": "1.0.1",
+   "released": "21 April 2019",
+   "downloads": 1496,
+   "score": "0/0",
+   "desc": "Dragon Ball Z: Super Butouden 2 is a fighting game for the Nintendo Entertainment System. The game is a bootleg port of a SNES game.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "2490D360",
+    "file_sha1": "8478C3B233EBD81527E09839656283FC6F912999",
+    "rom_crc": "673F88AD",
+    "rom_sha1": "A157613BA202194EC7E0A9C46D9DCFD2235BAB8D"
+   },
+   "archive": "translations/Nintendo Entertainment System/Dragon Ball Z_ Super Butouden 2 (NES)/English/Green Jerry___1_0_1/DBZSB2 (NES) EN V1_0_1.zip",
+   "shot": "translations/Nintendo Entertainment System/Dragon Ball Z_ Super Butouden 2 (NES)/English/Green Jerry___1_0_1/Dragon Ball Z_ Super Butouden 2 (NES)_screenshot0.png",
+   "variants": [
+    {
+     "label": "Dragon Ball Z - Super Butouden 2 (Unl) [T+Eng1.0.1_Green Jerry]",
+     "member": "Dragon Ball Z - Super Butouden 2 (Unl) [T+Eng1.0.1_Green Jerry].ips",
+     "format": "ips",
+     "size": 5511
     }
    ]
   },
@@ -12105,6 +12775,36 @@
      "format": "ips",
      "size": 892770,
      "header": "none"
+    }
+   ]
+  },
+  {
+   "id": 3398,
+   "kind": "translation",
+   "title": "Bastard!!: Ankoku no Hakaishin",
+   "system": "SNES",
+   "game": "",
+   "genre": "Action \u003e Fighting",
+   "author": "Docrow",
+   "version": "1.0",
+   "released": "09 October 2017",
+   "downloads": 1475,
+   "score": "0/0",
+   "desc": "Bastard!!: Ankoku no Hakaishin is an action fighting game for the Super Nintendo. Based on a manga/anime with the same title.",
+   "patching": "Header (SNES)",
+   "header": "required",
+   "base": {
+    "file_sha1": "0ED6B0E2F3E7DFE439282648299B355F827A525F",
+    "rom_sha1": "C8E698170B6BF36B2382348AD839C2F39A7CD88D"
+   },
+   "archive": "translations/Super Nintendo/Bastard!!_ Ankoku no Hakaishin/English/Docrow___1_0/Bastard easy spells.zip",
+   "shot": "translations/Super Nintendo/Bastard!!_ Ankoku no Hakaishin/English/Docrow___1_0/Bastard!!_ Ankoku no Hakaishin_screenshot0.png",
+   "variants": [
+    {
+     "label": "Bastard!! - Ankoku no Hakai-shin (U) easy spells",
+     "member": "Bastard!! - Ankoku no Hakai-shin (U) easy spells.ips",
+     "format": "ips",
+     "size": 1132743
     }
    ]
   },

@@ -1,4 +1,4 @@
-verified 379/382 entries download and open correctly on the device path (377 with screenshots)
+verified 401/404 entries download and open correctly on the device path (399 with screenshots)
 DROP GBA  Pokémon - Faria Version — 0 of 1 patch options found
 DROP NES  Rockman 6: Unique Harassment — 2 of 3 patch options found
 DROP SNES SMW The Crown Tale — 1 of 2 patch options found
