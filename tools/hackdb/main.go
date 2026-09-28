@@ -59,7 +59,7 @@ func openRemote(u string) (*remote, error) {
 
 func (r *remote) fetch(off, n int64) ([]byte, error) {
 	var lastErr error
-	for attempt := 0; attempt < 5; attempt++ {
+	for attempt := 0; attempt < 9; attempt++ {
 		req, _ := http.NewRequest("GET", r.url, nil)
 		req.Header.Set("User-Agent", "mixtape-hackdb (+https://github.com/snyderman3000/mixtape)")
 		req.Header.Set("Range", fmt.Sprintf("bytes=%d-%d", off, off+n-1))
@@ -73,7 +73,7 @@ func (r *remote) fetch(off, n int64) ([]byte, error) {
 			err = fmt.Errorf("range %d+%d: status %d, got %d bytes (%v)", off, n, resp.StatusCode, len(b), err2)
 		}
 		lastErr = err
-		time.Sleep(time.Duration(attempt+1) * 2 * time.Second)
+		time.Sleep(time.Duration(attempt+1) * 4 * time.Second)
 	}
 	return nil, lastErr
 }
@@ -411,7 +411,7 @@ func main() {
 	var mu sync.Mutex
 	var hacks []Hack
 	var rep []string
-	parallel(chosen, 12, func(g *group) {
+	parallel(chosen, 6, func(g *group) {
 		h, why := build(g)
 		mu.Lock()
 		defer mu.Unlock()
