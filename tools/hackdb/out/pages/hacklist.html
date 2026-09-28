@@ -1,0 +1,2488 @@
+ 
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Classic video game modifications, fan translations, homebrew, utilities, and learning resources.">
+		<meta property="og:url" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:site_name" content="ROMhacking.net">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="Classic video game modifications, fan translations, homebrew, utilities, and learning resources.">
+        <link rel="alternate" type="application/rss+xml" title="ROMhacking.net" href="../romhackingdotnet.rss">
+    	<link rel="stylesheet" type="text/css" href="../themes/default/css/default.css">
+		<link rel="stylesheet" type="text/css" href="../themes/boss/boss.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="../themes/default/css/simpleLightbox.css">
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> 
+		<link rel="image_src" href="../images/rhdnfacebook.jpg">
+		<title>Romhacking.net - Hacks</title>
+		<script src="../javascript/jquery.min.js"></script>
+		<script src="../themes/default/scripts/javascript.js" ></script>
+		<script src="../javascript/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../themes/default/scripts/simpleLightbox.js" ></script>
+        <script src="../hash/hasher.js"></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YQFMXSTY6"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-9YQFMXSTY6');
+		</script>
+	</head>
+	<body>
+		<div id="top">
+			<span id="topleft"></span>
+			<span id="topright"></span>
+			<a href="../index.html">
+				<img id="logo" src="../themes/boss/logo.png" alt="logo" />
+			</a>
+			<div id="navbar_wrap">
+                <label for="show-menu" class="show-menu"></label>
+                <input type="checkbox" id="show-menu" />
+                <ul id="navbar">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../forum/index.html">Forum</a></li>
+                    <li><a href="index.html#Sections">Sections</a>
+                        <ul>
+                            <li><a href="../documents/index.html">Documents</a></li>
+                            <li><a href="../utilities/index.html">Utilities</a></li>
+                            <li><a href="../translations/index.html">Translations</a></li>
+                            <li><a href="index.html">ROM Hacks</a></li>
+                            <li><a href="../games/index.html">Games</a></li>
+                            <li><a href="../homebrew/index.html">Homebrew</a></li>
+                            <li><a href="../fonts/index.html">Fonts</a></li>
+                            <li><a href="../abandoned/index.html">Abandoned</a></li>
+                            <li><a href="../news/index.html">News Archive</a></li>
+                        </ul>
+                    </li>	
+                    <li><a href="index.html#Community">Community</a>
+                        <ul>
+                            <li><a href="../forum/index.html">Forum</a></li>
+                            <li><a href="../wiki/index.html">Wiki</a></li>
+                            <li><a href="../transhistory/index.html">Community History</a></li>
+                            <li><a href="../community/index.html">Community Database</a></li>
+                            <li><a href="../links/index.html">Links</a></li>
+                        </ul>
+                    </li>	
+                    <li><a href="index.html#Submissions">Submissions</a>
+                        <ul>
+                            <li><a href="../submissions/index.html">Submit Files</a></li>
+                            <li><a href="../submitnews/index.html">Submit News</a></li>
+                            <li><a href="../submissions/QueueStatus/index.html">Queue Status</a></li>
+                            <li><a href="../maintenance/PublicMaint/index.html">Public Maintenance</a></li>
+                            <li><a href="../scratchpad/index.html">The Scratchpad</a></li>
+                            <li><a href="../patch.html">Online ROM Patcher</a></li>
+                            <li><a href="../hash/index.html">Online ROM Hasher</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#Changes">Changes</a>
+                        <ul>
+                            <li><a href="../submissions/recent/index.html">Change Log</a></li>
+							<li><a href="../submissions/extdocsubmissions/index.html">Latest Documents</a></li>
+                            <li><a href="../submissions/extutilsubmissions/index.html">Latest Utilities</a></li>
+                            <li><a href="../submissions/exttranssubmissions/index.html">Latest Translations</a></li>
+                            <li><a href="../submissions/exthacksubmissions/index.html">Latest Hacks</a></li>
+                            <li><a href="../submissions/extreviewsubmissions/index.html">Latest Reviews</a></li>
+                            <li><a href="../submissions/searchpage/index.html">Advanced Search</a></li>
+                        </ul>
+                    </li>
+					<li><a href="index.html#Seach">Search</a>
+                        <ul>
+                            <li><form class="" method="get" action="https://www.google.com/search" accept-charset="UTF-8"><div>
+		<label for="q"><span class="formhelp" data-tooltip=""></span></label><input type="text" name="q" id="q"  value="" maxlength="150"  />
+		<input type="submit" name="btnG" id="btnG"  value="Search"  />
+		<input type="hidden" name="sitesearch" id="sitesearch"  value="www.romhacking.net"  />
+	</div>
+</form></li>
+                        </ul>
+                    </li>						
+                    <li id="NavBarHelp"><a href="index.html#Help">Help</a>
+                        <ul>
+                            <li><a href="../about/index.html">About this Site</a></li>
+                            <li><a href="../start/index.html">Getting Started</a></li>
+                            <li><a href="../policy/index.html">RHDN Policy</a></li>
+                            <li><a href="../dictionary/index.html">Dictionary</a></li>
+                            <li><a href="../faq/index.html">FAQ</a></li>
+                            <li><a href="../contact/index.html">Contact Staff</a></li>
+                        </ul>
+                    </li>	
+                    <li><a class="social_media" href="https://facebook.com/Romhacking.net"><img src="../images/facebook_logo.png" alt="Follow us on Facebook" title="Follow us on Facebook"/></a></li>                
+                </ul>
+                <br class="clear" />
+            </div>
+        </div>    
+        <div id="wrapper">
+		<div id="leftbar">
+            <div class="newsitem">
+                <div class="topbar">
+                    <h2>Sections</h2>
+                </div>
+                <div class="newsbody">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../documents/index.html">Documents</a></li>
+                        <li><a href="../utilities/index.html">Utilities</a></li>
+                        <li><a href="../translations/index.html">Translations</a></li>
+                        <li><a href="index.html">ROM Hacks</a></li>
+                        <li><a href="../games/index.html">Games</a></li>
+                        <li><a href="../homebrew/index.html">Homebrew</a></li>
+                        <li><a href="../fonts/index.html">Fonts</a></li>
+                        <li><a href="../abandoned/index.html">Abandoned</a></li>
+                        <li><a href="../news/index.html">News Archive</a></li>
+                    </ul>
+                </div>
+            </div>
+                
+            <div class="newsitem">
+                <div class="topbar">
+                    <h2>Community</h2>
+                </div>
+                <div class="newsbody">
+                    <ul>
+                        <li><a href="../forum/index.html">Forum</a></li>
+                        <li><a href="../wiki/index.html">Wiki</a></li>
+                        <li><a href="../transhistory/index.html">History</a></li>
+                        <li><a href="../community/index.html">Community Database</a></li>
+                        <li><a href="../links/index.html">Links</a></li>
+                    </ul>
+                </div>
+            </div>
+			<div class="newsitem">
+                <div class="topbar">
+                    <h2>Submissions</h2>
+                </div>
+                <div class="newsbody">
+                    <ul>
+                        <li><a href="../submissions/index.html">Submit Files</a></li>
+                        <li><a href="../submitnews/index.html">Submit News</a></li>
+                        <li><a href="../submissions/QueueStatus/index.html">Queue Status</a></li>
+                        <li><a href="../maintenance/PublicMaint/index.html">Public Maintenance</a></li>
+                        <li><a href="../scratchpad/index.html">The Scratchpad</a></li>
+                        <li><a href="../patch.html">Online ROM Patcher</a></li>
+                        <li><a href="../hash/index.html">Online ROM Hasher</a></li>
+                    </ul>
+                </div>
+            </div>
+			<div class="newsitem">
+                <div class="topbar">
+                    <h2>Help</h2>
+                </div>
+                <div class="newsbody">
+                    <ul>
+                        <li><a href="../about/index.html">About this Site</a></li>
+                        <li><a href="../start/index.html">Getting Started</a></li>
+                        <li><a href="../policy/index.html">RHDN Policy</a></li>
+                        <li><a href="../dictionary/index.html">Dictionary</a></li>
+                        <li><a href="../faq/index.html">FAQ</a></li>
+                        <li><a href="../contact/index.html">Contact Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+			            
+        </div>    
+		<div id="right_container">
+        	<div id="rightbar">
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Newest Hacks</h2>
+					</div>
+					<div class="newsbody">
+													<a href="8788/index.html"><img class="quad" alt="SMB3 Mario in SMB1" title="SMB3 Mario in SMB1" src="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/nes/images/titles/8788titlescreen.png" onClick="ga('send', 'event', 'Newest hacks', 'Click Image', 'SMB3 Mario in SMB1', '8788');" /></a>													<a href="8787/index.html"><img class="quad" alt="Pokemon Emerald - 386" title="Pokemon Emerald - 386" src="https://s3-external-1.amazonaws.com/romhacking-hacks/translations/gba/images/titles/1912titlescreen.png" onClick="ga('send', 'event', 'Newest hacks', 'Click Image', 'Pokemon Emerald - 386', '8787');" /></a>												<ul>
+															<li>
+									<div class="column_link"><a href="8788/index.html" onClick="ga('send', 'event', 'Newest hacks', 'Click', 'SMB3 Mario in SMB1', '8788');">SMB3 Mario in SMB1</a></div>
+									<div class="column_text">Improvement | NES</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="8787/index.html" onClick="ga('send', 'event', 'Newest hacks', 'Click', 'Pokemon Emerald - 386', '8787');">Pokemon Emerald - 386</a></div>
+									<div class="column_text">Improvement | GBA</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="8786/index.html" onClick="ga('send', 'event', 'Newest hacks', 'Click', 'Pumkin Tower', '8786');">Pumkin Tower</a></div>
+									<div class="column_text">Complete | N64</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="8785/index.html" onClick="ga('send', 'event', 'Newest hacks', 'Click', 'Pokémon FireRed: Bill&#039;s Secret Garden', '8785');">Pokémon FireRed: Bill&#039;s Secret Garden</a></div>
+									<div class="column_text">Improvement | GBA</div>
+								</li>
+													</ul>
+					</div>
+					<h3 class="rellink"><a href="../submissions/exthacksubmissions/index.html">See More Hacks...</a></h3>
+				</div>
+				
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Newest Translations</h2>
+					</div>
+					<div class="newsbody">
+													<a href="../translations/7365/index.html"><img class="quad" alt="From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (Japan)" title="From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (Japan)" src="https://s3-external-1.amazonaws.com/romhacking-hacks/translations/gameboy/images/titles/5375titlescreen.png" onClick="ga('send', 'event', 'Newest translations', 'Click Image', 'From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (Japan)', '7365');" /></a>													<a href="../translations/7364/index.html"><img class="quad" alt="Dragon Slayer: The Legend of Heroes" title="Dragon Slayer: The Legend of Heroes" src="https://s3-external-1.amazonaws.com/romhacking-hacks/translations/pc98/images/7364titlescreen.png" onClick="ga('send', 'event', 'Newest translations', 'Click Image', 'Dragon Slayer: The Legend of Heroes', '7364');" /></a>												<ul>
+															<li>
+									<div class="column_link"><a href="../translations/7365/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (Japan)', '7365');">From TV Animation One Piece - Yume no Luffy Kaizokudan Tanjou! (Japan)</a></div>
+									<div class="column_text">English | Addendum | GB</div>
+								</li>	
+															<li>
+									<div class="column_link"><a href="../translations/7364/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'Dragon Slayer: The Legend of Heroes', '7364');">Dragon Slayer: The Legend of Heroes</a></div>
+									<div class="column_text">English | Fully Playable | PC98</div>
+								</li>	
+															<li>
+									<div class="column_link"><a href="../translations/7363/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'SonSon', '7363');">SonSon</a></div>
+									<div class="column_text">Greek | Fully Playable | ARC</div>
+								</li>	
+															<li>
+									<div class="column_link"><a href="../translations/7362/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'Dragon Ball Z: Super Butouden 2 (NES)', '7362');">Dragon Ball Z: Super Butouden 2 (NES)</a></div>
+									<div class="column_text">Spanish | Fully Playable | NES</div>
+								</li>	
+													</ul>
+					</div>
+					<h3 class="rellink"><a href="../submissions/exttranssubmissions/index.html">See More Translations...</a></h3>
+				</div>
+				
+				<!--<div class="newsitem">
+					<div class="topbar">
+						<h2>Newest Utilities</h2>
+					</div>
+																	
+					<div class="newsbody">
+						<ul>
+															<li>
+									<div class="column_link"></div>
+									<div class="column_text"> | </div>
+								</li>	
+													</ul>
+				   </div>
+				   <h3 class="rellink"><a href="/submissions/extutilsubmissions/">See More Utilities...</a></h3>     
+				</div>  --> 
+				
+				<!-- <div class="newsitem">
+					<div class="topbar">
+						<h2>Newest Documents</h2>
+					</div>
+					<div class="newsbody">
+						<ul>
+													<li>
+								<div class="column_link"></div>
+								<div class="column_text"> | </div>
+							</li>	
+												</ul>
+					</div>
+					 <h3 class="rellink"><a href="/submissions/extdocsubmissions/">See More Documents...</a></h3>
+				</div> -->
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Newest Reviews</h2>
+					</div>
+											<a href="../reviews/12149/index.html#review"><img class="quad" alt="Wario Land 4: Jungle Rumble!" title="Wario Land 4: Jungle Rumble!" src="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/gba/images/titles/8027titlescreen.png" onClick="ga('send', 'event', 'Newest hacks', 'Click Image', 'Wario Land 4: Jungle Rumble!', '8027');" /></a>											<a href="../reviews/12148/index.html#review"><img class="quad" alt="Metroid Fusion: Special Edition" title="Metroid Fusion: Special Edition" src="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/gba/images/titles/6115titlescreen.png" onClick="ga('send', 'event', 'Newest hacks', 'Click Image', 'Metroid Fusion: Special Edition', '6115');" /></a>						
+					<div class="newsbody">
+						<ul>
+													<li>
+								<div class="column_link"><a href="../reviews/12149/index.html#review" onClick="ga('send', 'event', 'Newest reviews', 'Click', 'Made an already incredible game even more incredible!', '12149');">Made an already incredible game even more incredible!</a></div>
+								<div class="column_text">Hacks | Wario Land 4: Jungle Rumble!</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../reviews/12148/index.html#review" onClick="ga('send', 'event', 'Newest reviews', 'Click', 'Has replaced Vanilla Fusion in my eyes.', '12148');">Has replaced Vanilla Fusion in my eyes.</a></div>
+								<div class="column_text">Hacks | Metroid Fusion: Special Edition</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../reviews/12147/index.html#review" onClick="ga('send', 'event', 'Newest reviews', 'Click', '17 years later and this translation is still great!', '12147');">17 years later and this translation is still great!</a></div>
+								<div class="column_text">Translations | Pulseman</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../reviews/12146/index.html#review" onClick="ga('send', 'event', 'Newest reviews', 'Click', 'Okay...But Why?', '12146');">Okay...But Why?</a></div>
+								<div class="column_text">Hacks | Space Invaders 4Color</div>
+							</li>	
+												</ul>
+					</div>
+					 <h3 class="rellink">
+					 <a href="../submissions/extreviewsubmissions/index.html">See More Reviews...</a>
+					 </h3>
+				</div>
+			</div>
+			<div id="rightbar2">
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Featured Hack Images</h2>
+					</div>
+					<div class="newsbody">
+													<a href="365/index.html"><img class="quad" alt="Purgatory Double EXP and Meseta" title="Purgatory Double EXP and Meseta" src="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/genesis/images/365screenshot1.gif" onClick="ga('send', 'event', 'Featured hacks', 'Click', 'Purgatory Double EXP and Meseta', '365');" /></a>													<a href="1382/index.html"><img class="quad" alt="Darkwing Duck New Levels" title="Darkwing Duck New Levels" src="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/nes/images/1382screenshot3.png" onClick="ga('send', 'event', 'Featured hacks', 'Click', 'Darkwing Duck New Levels', '1382');" /></a>							
+						<ul>
+															<li>
+									<div class="column_link"><a href="365/index.html" onClick="ga('send', 'event', 'Featured hacks', 'Click', 'Purgatory Double EXP and Meseta', '365');">Purgatory Double EXP and Meseta</a></div>
+									<div class="column_text">Improvement | GEN</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="1382/index.html" onClick="ga('send', 'event', 'Featured hacks', 'Click', 'Darkwing Duck New Levels', '1382');">Darkwing Duck New Levels</a></div>
+									<div class="column_text">Complete | NES</div>
+								</li>
+													</ul>
+					</div>
+				</div>
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Featured Translation Images</h2>
+					</div>
+					<div class="newsbody">
+													<a href="../translations/496/index.html"><img class="quad" alt="Wizardry I-II-III: Story of Llylgamyn" title="Wizardry I-II-III: Story of Llylgamyn" src="https://s3-external-1.amazonaws.com/romhacking-hacks/translations/snes/images/496screenshot3.png" onClick="ga('send', 'event', 'Featured translations', 'Click', 'Wizardry I-II-III: Story of Llylgamyn', '496');" /></a>													<a href="../translations/1213/index.html"><img class="quad" alt="Ninja Gaiden Trilogy" title="Ninja Gaiden Trilogy" src="https://s3-external-1.amazonaws.com/romhacking-hacks/translations/snes/images/1213screenshot1.png" onClick="ga('send', 'event', 'Featured translations', 'Click', 'Ninja Gaiden Trilogy', '1213');" /></a>												<ul>
+															<li>
+									<div class="column_link"><a href="../translations/496/index.html" onClick="ga('send', 'event', 'Featured translations', 'Click', 'Wizardry I-II-III: Story of Llylgamyn', '496');">Wizardry I-II-III: Story of Llylgamyn</a></div>
+									<div class="column_text">English | Fully Playable | SNES</div>
+								</li>	
+															<li>
+									<div class="column_link"><a href="../translations/1213/index.html" onClick="ga('send', 'event', 'Featured translations', 'Click', 'Ninja Gaiden Trilogy', '1213');">Ninja Gaiden Trilogy</a></div>
+									<div class="column_text">Arabic | Unfinished | SNES</div>
+								</li>	
+													</ul>
+					</div>
+				</div>    				
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Recent Forum Posts</h2>
+					</div>
+					<div class="newsbody">
+						<ul>
+															<li>
+									<div class="column_link"><a href="../forum/index.php?msg=460422.html#new" rel="nofollow" onClick="ga('send', 'event', 'Recent Posts', 'Click', 'ROM Hacks: Donkey Konga 2 (Japan) - Play the songs from the Japanese version!');">ROM Hacks: Donkey Konga 2 (Japan) - Play the songs from the Japanese version!</a></div>
+									<div class="column_text"><a href="../forum/index.php?board=8.0.html">News Submissions</a></div>
+									<div class="column_text"><strong>Today</strong> at 04:01:07 PM</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="../forum/index.php?msg=460420.html#new" rel="nofollow" onClick="ga('send', 'event', 'Recent Posts', 'Click', 'Site: ROMhacking.net Moves to News Only, Database and File Archive Released to Internet Archive');">Site: ROMhacking.net Moves to News Only, Database and File Archive Released to Internet Archive</a></div>
+									<div class="column_text"><a href="../forum/index.php?board=8.0.html">News Submissions</a></div>
+									<div class="column_text"><strong>Today</strong> at 03:53:47 PM</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="../forum/index.php?msg=460415.html#new" rel="nofollow" onClick="ga('send', 'event', 'Recent Posts', 'Click', 'Just one question');">Just one question</a></div>
+									<div class="column_text"><a href="../forum/index.php?board=13.0.html">Newcomer's Board</a></div>
+									<div class="column_text"><strong>Today</strong> at 03:28:14 PM</div>
+								</li>
+															<li>
+									<div class="column_link"><a href="../forum/index.php?msg=460412.html#new" rel="nofollow" onClick="ga('send', 'event', 'Recent Posts', 'Click', 'So... what now?');">So... what now?</a></div>
+									<div class="column_text"><a href="../forum/index.php?board=13.0.html">Newcomer's Board</a></div>
+									<div class="column_text"><strong>Today</strong> at 03:12:02 PM</div>
+								</li>
+								           
+						</ul>
+					 </div>
+					 <h3 class="rellink">
+					 <a href="../forum/index.html">See More Forum Topics...</a>
+					 </h3>
+				</div>    
+				<div class="newsitem">
+					<div class="topbar">
+						<h2>Recent Updates</h2>
+					</div>
+				   <div class="newsbody">
+						<ul>
+													<li>
+								<div class="column_link"><a href="../games/1065/index.html" onClick="ga('send', 'event', 'Newest games', 'Click', 'Ouritsu Edoma Enjin', '1065');">Ouritsu Edoma Enjin</a></div>
+								<div class="column_text">Games</div>
+								<div class="column_text">Swapped titles</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../translations/7329/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'Resident Evil', '7329');">Resident Evil</a></div>
+								<div class="column_text">Translations</div>
+								<div class="column_text">Patch updated to version 4.2, with a full dub included.</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../translations/1403/index.html" onClick="ga('send', 'event', 'Newest translations', 'Click', 'Resident Evil: Director&#039;s Cut', '1403');">Resident Evil: Director&#039;s Cut</a></div>
+								<div class="column_text">Translations</div>
+								<div class="column_text">Beautifying the text, changing the link to match the Saturn release.</div>
+							</li>	
+													<li>
+								<div class="column_link"><a href="../community/8473/index.html" onClick="ga('send', 'event', 'Newest community', 'Click', 'EpicSignal', '8473');">EpicSignal</a></div>
+								<div class="column_text">Community</div>
+								<div class="column_text">Updated profile picture.</div>
+							</li>	
+												</ul>
+					</div>
+					 <h3 class="rellink">
+					 <a href="../submissions/recent/index.html">See More Changes...</a>
+					 </h3>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+	<div id="topforms">
+		<ul>
+							<li><a href="../index.html?page=faq.html#question1">What do I do with these?</a></li>
+				
+		</ul>
+	</div>
+<form class="filter" method="get" action="../index.html" accept-charset="UTF-8">
+	<div class="newsitem">
+		<div class="topbar">Hacks</div>
+		
+		<fieldset >
+			<legend class="">General Information</legend>
+			<ol>
+				<li><input type="hidden" name="page" id="page"  value="hacks"  /></li>
+				<li><label for="category"><span class="formhelp" data-tooltip=""></span>Category</label><select id="category" name="category">
+<option value="">None Selected</option>
+<option value="6">Addendum</option>
+<option value="4">Bug Fix</option>
+<option value="1">Complete</option>
+<option value="5">Improvement</option>
+</select></li>
+				<li><label for="platform"><span class="formhelp" data-tooltip=""></span>Platform</label><select id="platform" name="platform">
+<option value="">None Selected</option>
+<option value="46">3DO Interactive Multiplayer</option>
+<option value="26">Arcade</option>
+<option value="37">Atari 2600</option>
+<option value="42">Atari 5200</option>
+<option value="43">Atari 7800</option>
+<option value="28">Atari Jaguar</option>
+<option value="52">Atari Lynx</option>
+<option value="53">ColecoVision</option>
+<option value="14">Dreamcast</option>
+<option value="7">Family Computer Disk System</option>
+<option value="8">Game Boy</option>
+<option value="10">Game Boy Advance</option>
+<option value="19">MSX</option>
+<option value="25">Multi-Platform</option>
+<option value="15">Neo-Geo CD</option>
+<option value="16">Neo-Geo Pocket Color</option>
+<option value="51">Nintendo 3DS</option>
+<option value="27">Nintendo 64</option>
+<option value="23">Nintendo DS</option>
+<option value="1">Nintendo Entertainment System</option>
+<option value="33">Nintendo GameCube</option>
+<option value="24">Not Applicable</option>
+<option value="20">PC</option>
+<option value="45">PC Engine SuperGrafx</option>
+<option value="35">PC-6x01</option>
+<option value="2">PC-8x01</option>
+<option value="3">PC-98</option>
+<option value="6">PC-FX</option>
+<option value="50">Philips CD-i</option>
+<option value="17">PlayStation</option>
+<option value="18">PlayStation 2</option>
+<option value="47">PlayStation 3</option>
+<option value="44">PlayStation Portable</option>
+<option value="54">Playstation Vita</option>
+<option value="41">Pokémon mini</option>
+<option value="31">Sega 32X</option>
+<option value="29">Sega CD</option>
+<option value="12">Sega Game Gear</option>
+<option value="11">Sega Genesis</option>
+<option value="22">Sega Master System</option>
+<option value="13">Sega Saturn</option>
+<option value="34">SG-1000/SC-3000</option>
+<option value="9">Super Nintendo</option>
+<option value="4">Turbografx-16</option>
+<option value="5">Turbografx-CD</option>
+<option value="32">Virtual Boy</option>
+<option value="36">Wii</option>
+<option value="49">Wii U</option>
+<option value="21">Wonderswan</option>
+<option value="30">X68000</option>
+<option value="38">Xbox</option>
+<option value="48">Xbox 360</option>
+<option value="55">Zeebo</option>
+</select></li>
+				<li><label for="game"><span class="formhelp" data-tooltip=""></span>Game</label><select id="game" name="game">
+<option value="">None Selected</option>
+<option value="2910">007: Agent Under Fire (GC)</option>
+<option value="3877">007: Nightfire (GC)</option>
+<option value="1225">1942 (NES)</option>
+<option value="1515">1943: The Battle of Midway (NES)</option>
+<option value="4913">2002 Bomberman (NES)</option>
+<option value="1283">40 Winks (N64)</option>
+<option value="1248">8 Eyes (NES)</option>
+<option value="2147">999: Nine Hours, Nine Persons, Nine Doors (NDS)</option>
+<option value="4422">A Week of Garfield (NES)</option>
+<option value="4881">Aaahh!!! Real Monsters (GEN)</option>
+<option value="1887">Abadox: The Deadly Inner War (NES)</option>
+<option value="1337">Ace Combat 3: Electrosphere (PSX)</option>
+<option value="3967">Action 52 (NES)</option>
+<option value="962">ActRaiser (SNES)</option>
+<option value="1835">ActRaiser 2 (SNES)</option>
+<option value="4145">Addams Family Values (SNES)</option>
+<option value="4356">Addams Family Values (GEN)</option>
+<option value="3574">ADK Tamashii (PS2)</option>
+<option value="1379">Advance Wars (GBA)</option>
+<option value="934">Advance Wars 2: Black Hole Rising (GBA)</option>
+<option value="1272">Advance Wars: Days of Ruin (NDS)</option>
+<option value="4768">Advance Wars: Dual Strike (NDS)</option>
+<option value="2286">Adventure Island (NES)</option>
+<option value="1910">Adventure Island II (NES)</option>
+<option value="4045">Adventure Island II: Aliens in Paradise (GB)</option>
+<option value="1087">Adventure Island III (NES)</option>
+<option value="3018">Adventures of Dino Riki (NES)</option>
+<option value="735">Adventures of Lolo (NES)</option>
+<option value="978">Adventures of Lolo 2 (NES)</option>
+<option value="789">Adventures of Lolo 3 (NES)</option>
+<option value="1603">Air Fortress (NES)</option>
+<option value="1661">Airball (NES)</option>
+<option value="2778">AirRace Championship (PSX)</option>
+<option value="4619">Akumajou Dracula X: Gekka no Yasoukyoku (SAT)</option>
+<option value="149">Akumajou Special: Boku Dracula-kun (NES)</option>
+<option value="2150">Aladdin (NES)</option>
+<option value="2244">Aleck Bordon Adventure 4th Story: Tower &amp; Shaft (N64)</option>
+<option value="2228">Alex Kidd in Miracle World (SMS)</option>
+<option value="3412">Alex Kidd: The Lost Stars (SMS)</option>
+<option value="906">Alien 3 (SNES)</option>
+<option value="3020">Alien 3 (GEN)</option>
+<option value="1171">Alien 3 (NES)</option>
+<option value="18">Alien Resurrection (PSX)</option>
+<option value="2644">Alien Soldier (GEN)</option>
+<option value="3066">Alien Storm (GEN)</option>
+<option value="3021">Alien Syndrome (NES)</option>
+<option value="2980">Aliens: Alien 2 (FDS)</option>
+<option value="2787">All Night Nippon Super Mario Bros. (FDS)</option>
+<option value="4060">Alleyway (GB)</option>
+<option value="2408">Altered Beast (GEN)</option>
+<option value="3036">Altered Space: A 3-D Alien Adventure (GB)</option>
+<option value="3057">Alundra (PSX)</option>
+<option value="2471">Amagon (NES)</option>
+<option value="4811">Amazing Penguin (GB)</option>
+<option value="1007">American Dream (NES)</option>
+<option value="2636">American Gladiators (NES)</option>
+<option value="4867">Animal Crossing: Wild World (NDS)</option>
+<option value="2966">Animamundi: Dark Alchemist (PC)</option>
+<option value="3011">Animaniacs (GEN)</option>
+<option value="671">Antarctic Adventure (NES)</option>
+<option value="5162">Anticipation (NES)</option>
+<option value="435">Arabian Nights: Sabaku no Seirei Ou (SNES)</option>
+<option value="1708">Arc the Lad (PSX)</option>
+<option value="4730">Arcade Classic No. 3: Galaga / Galaxian (GB)</option>
+<option value="5314">Arcade&#039;s Greatest Hits: The Atari Collection 1 (SNES)</option>
+<option value="1655">Arcana (SNES)</option>
+<option value="736">Arkanoid (NES)</option>
+<option value="2615">Arkanoid II (NES)</option>
+<option value="1904">Arkanoid: Doh It Again (SNES)</option>
+<option value="2654">Arkista&#039;s Ring (NES)</option>
+<option value="5187">Armored Core 2 (PS2)</option>
+<option value="5017">Armored Core: Last Raven (PS2)</option>
+<option value="3425">Armorines: Project S.W.A.R.M. (PSX)</option>
+<option value="4355">Art of Fighting (SNES)</option>
+<option value="2276">Art of Fighting (GEN)</option>
+<option value="3540">Art of Fighting Anthology (PS2)</option>
+<option value="2512">Asder 20-in-1 (NES)</option>
+<option value="4834">Assault Suits Valken (PS2)</option>
+<option value="5303">Astal (SAT)</option>
+<option value="2525">Asterix &amp; Obelix XXL (GC)</option>
+<option value="4142">Astérix &amp; The Great Rescue (SMS)</option>
+<option value="5295">Asteroids (GB)</option>
+<option value="4156">Astroblast (2600)</option>
+<option value="796">Astyanax (NES)</option>
+<option value="5214">Asuka 120% Excellent: Burning Fest. Excellent (PSX)</option>
+<option value="2307">Asuka 120% Limited: Burning Fest. (SAT)</option>
+<option value="5212">Asuka 120% Special BURNING Fest. (PSX)</option>
+<option value="840">Atlantis no Nazo (NES)</option>
+<option value="4712">ATP Tour Championship Tennis (GEN)</option>
+<option value="4284">Aussie Rules Footy (NES)</option>
+<option value="4874">Avengers in Galactic Storm (ARC)</option>
+<option value="1525">Awesome Possum... Kicks Dr. Machino&#039;s Butt (GEN)</option>
+<option value="1644">Ayrton Senna&#039;s Super Monaco GP II (GEN)</option>
+<option value="1471">B-Wings (NES)</option>
+<option value="2409">Back to the Future (NES)</option>
+<option value="3216">Back to the Future Part III (GEN)</option>
+<option value="1472">Bad Dudes (NES)</option>
+<option value="1853">Balloon Fight (NES)</option>
+<option value="4884">Ballz 3D (SNES)</option>
+<option value="1214">Banana (NES)</option>
+<option value="531">Banana Prince (NES)</option>
+<option value="2723">Bandit Kings of Ancient China (NES)</option>
+<option value="1341">Banjo-Kazooie (N64)</option>
+<option value="4765">Banjo-Tooie (N64)</option>
+<option value="1729">Baseball Simulator 1.000 (NES)</option>
+<option value="1728">Baseball Stars (NES)</option>
+<option value="1631">Baten Kaitos Origins (GC)</option>
+<option value="5213">Batman Begins (PS2)</option>
+<option value="4529">Batman Forever (GEN)</option>
+<option value="265">Batman Returns (NES)</option>
+<option value="3345">Batman Returns (GEN)</option>
+<option value="2222">Batman: Return of The Joker (NES)</option>
+<option value="4475">Batman: Revenge of the Joker (GEN)</option>
+<option value="873">Batman: The Video Game (NES)</option>
+<option value="2867">Batman: The Video Game (GEN)</option>
+<option value="1037">Battle Ace (SGFX)</option>
+<option value="4785">Battle Arena Toshinden (GB)</option>
+<option value="777">Battle City (NES)</option>
+<option value="4604">Battle Frenzy (GEN)</option>
+<option value="5364">Battle Gear 3 (PS2)</option>
+<option value="1918">Battle Kid: Fortress of Peril (NES)</option>
+<option value="985">Battle Mania Daiginjou (GEN)</option>
+<option value="4840">Battle Rush: Build Up Robot Tournament (NES)</option>
+<option value="3417">Battletech: A Game of Armored Combat (GEN)</option>
+<option value="1998">Battletoads (NES)</option>
+<option value="1340">Battletoads &amp; Double Dragon: The Ultimate Team (GEN)</option>
+<option value="2091">Battletoads/Double Dragon: The Ultimate Team (NES)</option>
+<option value="4390">Battlezone 2000 (LYNX)</option>
+<option value="2555">BB Car (NES)</option>
+<option value="3040">Beavis and Butt-Head (GEN)</option>
+<option value="1556">Beyond Oasis (GEN)</option>
+<option value="2069">Beyond Zero Tolerance (GEN)</option>
+<option value="3182">Bible Adventures (NES)</option>
+<option value="1155">Binary Land (NES)</option>
+<option value="523">Bio Miracle Baby Upa!! (NES)</option>
+<option value="1923">Biohazard (NES)</option>
+<option value="3261">Biohazard 2 (PC)</option>
+<option value="2997">BioMetal (SNES)</option>
+<option value="5009">Bionic Commando (GB)</option>
+<option value="797">Bionic Commando (NES)</option>
+<option value="4851">Bishoujo Senshi Sailor Moon (SNES)</option>
+<option value="349">Bishoujo Senshi Sailor Moon R (SNES)</option>
+<option value="5254">Bishoujo Senshi Sailor Moon S: Jougai Rantou!? Shuyaku Soudatsusen (SNES)</option>
+<option value="3672">Bishoujo Senshi Sailor Moon Super S: Zenin Sanka!! Shuyaku Soudatsusen (SNES)</option>
+<option value="333">Bishoujo Senshi Sailor Moon: Another Story (SNES)</option>
+<option value="4735">Black Sigil: Blade of the Exiled (NDS)</option>
+<option value="2697">Blackthorne (SNES)</option>
+<option value="2853">Blackthorne (GBA)</option>
+<option value="1660">Blades of Steel (NES)</option>
+<option value="3109">Blades of Vengeance (GEN)</option>
+<option value="977">Blaster Master (NES)</option>
+<option value="2732">Blaster Master: Enemy Below (GB)</option>
+<option value="4697">Bloody Roar 2: Bringer of the New Age (PSX)</option>
+<option value="4707">Bloody Roar 3 (PS2)</option>
+<option value="2890">Bloody Wolf (TG16)</option>
+<option value="2229">Bokosuka Wars (NES)</option>
+<option value="1207">Bomb Jack (SG1K)</option>
+<option value="1850">Bomb Jack (GB)</option>
+<option value="1290">Bomberman (NES)</option>
+<option value="5024">Bomberman Generation (GC)</option>
+<option value="5294">Bomberman Hero (N64)</option>
+<option value="1411">Bomberman II (NES)</option>
+<option value="619">Bomberman Quest (GB)</option>
+<option value="1053">Bonk&#039;s Adventure (TG16)</option>
+<option value="2348">Bonk&#039;s Revenge (GB)</option>
+<option value="4942">Boogerman: A Pick and Flick Adventure (SNES)</option>
+<option value="4947">Boogerman: A Pick and Flick Adventure (GEN)</option>
+<option value="737">Boulder Dash (NES)</option>
+<option value="4920">Boxxle II (GB)</option>
+<option value="4470">Bram Stoker&#039;s Dracula (GEN)</option>
+<option value="1351">Brandish (SNES)</option>
+<option value="4950">Bravesoft Windows 2000 (NES)</option>
+<option value="4929">Break Time: The National Pool Tour (NES)</option>
+<option value="1737">Breath of Fire (GBA)</option>
+<option value="1043">Breath of Fire (SNES)</option>
+<option value="680">Breath of Fire II (SNES)</option>
+<option value="1690">Breath of Fire II (GBA)</option>
+<option value="2052">Breath of Fire III (PSX)</option>
+<option value="1407">Breath of Fire IV (PSX)</option>
+<option value="4401">Brigandine (PSX)</option>
+<option value="2936">Brutal: Paws of Fury (SNES)</option>
+<option value="2400">BS F-Zero Grand Prix 1 (SNES)</option>
+<option value="2410">BS Super Mario Collection (SNES)</option>
+<option value="638">BS Super Mario USA (SNES)</option>
+<option value="262">BS Zelda no Densetsu (SNES)</option>
+<option value="605">BS Zelda no Densetsu: Inishie no Sekiban (SNES)</option>
+<option value="1263">BS Zelda no Densetsu: Map 2 (SNES)</option>
+<option value="3903">Bubba &#039;n&#039; Stix (GEN)</option>
+<option value="1397">Bubble Bath Babes (NES)</option>
+<option value="1545">Bubble Bobble (ARC)</option>
+<option value="738">Bubble Bobble (NES)</option>
+<option value="2108">Bubble Bobble (SMS)</option>
+<option value="3818">Bubsy in Claws Encounters of the Furred Kind (GEN)</option>
+<option value="898">Bucky O&#039;Hare (NES)</option>
+<option value="3104">Bump &#039;n&#039; Jump (NES)</option>
+<option value="5292">Burger Time Deluxe (GB)</option>
+<option value="391">BurgerTime (NES)</option>
+<option value="754">Bust-A-Move (SNES)</option>
+<option value="5286">Bust-A-Move (ARC)</option>
+<option value="1188">Buzz &amp; Waldog (NES)</option>
+<option value="2904">Cacoma Knight in Bizyland (SNES)</option>
+<option value="3042">Cadash (GEN)</option>
+<option value="3482">Cannon Fodder (GEN)</option>
+<option value="2032">Captain America and the Avengers (NES)</option>
+<option value="2220">Captain America and the Avengers (GEN)</option>
+<option value="3111">Captain Commando (SNES)</option>
+<option value="5097">Captain Tsubasa J-Get in the Tomorrow (PSX)</option>
+<option value="92">Captain Tsubasa Vol. II: Super Striker (NES)</option>
+<option value="3464">Castelian (NES)</option>
+<option value="3462">Castlequest (NES)</option>
+<option value="739">Castlevania (NES)</option>
+<option value="4973">Castlevania (Nintendo 64) (N64)</option>
+<option value="3294">Castlevania Chronicles (PSX)</option>
+<option value="993">Castlevania II: Belmont’s Revenge (GB)</option>
+<option value="710">Castlevania II: Simon’s Quest (NES)</option>
+<option value="822">Castlevania III: Dracula’s Curse (NES)</option>
+<option value="992">Castlevania Legends (GB)</option>
+<option value="830">Castlevania: Aria of Sorrow (GBA)</option>
+<option value="2158">Castlevania: Bloodlines (GEN)</option>
+<option value="2443">Castlevania: Circle of the Moon (GBA)</option>
+<option value="2668">Castlevania: Dawn of Sorrow (NDS)</option>
+<option value="967">Castlevania: Dracula X (SNES)</option>
+<option value="4982">Castlevania: Harmony of Despair (PS3)</option>
+<option value="1106">Castlevania: Harmony of Dissonance (GBA)</option>
+<option value="2680">Castlevania: Order of Ecclesia (NDS)</option>
+<option value="2549">Castlevania: Portrait of Ruin (NDS)</option>
+<option value="1070">Castlevania: Symphony of the Night (PSX)</option>
+<option value="971">Castlevania: The Adventure (GB)</option>
+<option value="4139">Castlevania: The Adventure ReBirth (WII)</option>
+<option value="2523">Castlevania: The Dracula X Chronicles (PSP)</option>
+<option value="4723">Centipede (USA) (GB)</option>
+<option value="2815">Chack&#039;n Pop (NES)</option>
+<option value="3568">Chakan: The Forever Man (GEN)</option>
+<option value="2809">Challenger (NES)</option>
+<option value="2635">Championship Bowling (NES)</option>
+<option value="2571">Championship Lode Runner (NES)</option>
+<option value="2932">Chaos Break (PSX)</option>
+<option value="4939">Chase H.Q. (TG16)</option>
+<option value="1566">Cheetahmen II (NES)</option>
+<option value="5154">Chessmaster (GBA)</option>
+<option value="2502">Chiki Chiki Boys (GEN)</option>
+<option value="899">Chip &#039;n Dale: Rescue Rangers 2 (NES)</option>
+<option value="4910">Chip&#039;s Challenge (LYNX)</option>
+<option value="2707">Chip&#039;s Challenge (NES)</option>
+<option value="3770">Choujikuu Yousai Macross - Scrambled Valkyrie (SNES)</option>
+<option value="2399">Choujikuu Yousai: Macross (NES)</option>
+<option value="95">Choujin Sentai Jetman (NES)</option>
+<option value="726">Chrono Cross (PSX)</option>
+<option value="2148">Chrono Trigger (NDS)</option>
+<option value="268">Chrono Trigger (SNES)</option>
+<option value="2510">Circus Caper (NES)</option>
+<option value="2981">Clash at Demonhead (NES)</option>
+<option value="4927">Clay Fighter 2: Judgment Clay (SNES)</option>
+<option value="4962">Clay Fighter: Sculptor&#039;s Cut (N64)</option>
+<option value="4974">ClayFighter 63⅓ (N64)</option>
+<option value="3114">ClayFighter: Tournament Edition (SNES)</option>
+<option value="1610">Cliffhanger (GEN)</option>
+<option value="2350">Cliffhanger (NES)</option>
+<option value="269">Clock Tower (SNES)</option>
+<option value="5036">Clock Tower II: The Struggle Within (PSX)</option>
+<option value="2740">Clu Clu Land (NES)</option>
+<option value="1926">Clu Clu Land: Welcome to New Clu Clu Land (FDS)</option>
+<option value="3546">Clue (SNES)</option>
+<option value="98">Cocoron (NES)</option>
+<option value="2921">Code Name: Viper (NES)</option>
+<option value="552">CodeName: Tenka (PSX)</option>
+<option value="1105">Colin McRae Rally 2.0 (PSX)</option>
+<option value="4241">Color a Dinosaur (NES)</option>
+<option value="2480">Columns (GEN)</option>
+<option value="2041">Comix Zone (GEN)</option>
+<option value="2216">Conan (NES)</option>
+<option value="904">Conquest of the Crystal Palace (NES)</option>
+<option value="137">Contra (NES)</option>
+<option value="2283">Contra Force (NES)</option>
+<option value="321">Contra III: The Alien Wars (SNES)</option>
+<option value="5116">Contra Spirits (NES) (NES)</option>
+<option value="1205">Contra: Hard Corps (GEN)</option>
+<option value="4167">Cooly Skunk (SNES)</option>
+<option value="5197">Cosmo Gang: The Puzzle (SNES)</option>
+<option value="4236">Crack Down (GEN)</option>
+<option value="4686">Crackout (NES)</option>
+<option value="5343">Crash Bandicoot (PSX)</option>
+<option value="5120">Crash Bandicoot 2: Cortex Strikes Back (PSX)</option>
+<option value="4634">Crash Bandicoot: The Huge Adventure (GBA)</option>
+<option value="5037">Crash Team Racing (PSX)</option>
+<option value="1287">Cross Fire (NES)</option>
+<option value="1685">Crystal Beans from Dungeon Explorer (SNES)</option>
+<option value="740">Crystalis (NES)</option>
+<option value="1219">Custom Robo (N64)</option>
+<option value="4986">Custom Robo (GC)</option>
+<option value="2339">Custom Robo Arena (NDS)</option>
+<option value="5126">Custom Robo GX (GBA)</option>
+<option value="596">Cybernator (SNES)</option>
+<option value="4991">CyberTiger (N64)</option>
+<option value="5206">D-Force (SNES)</option>
+<option value="1145">Dahna: Megami Tanjou (GEN)</option>
+<option value="1035">Dai Makaimura (SGFX)</option>
+<option value="196">Dai-2-Ji Super Robot Taisen (NES)</option>
+<option value="4759">Dai-2-Ji Super Robot Taisen G (GB)</option>
+<option value="367">Dai-3-Ji Super Robot Taisen (SNES)</option>
+<option value="368">Dai-4-Ji Super Robot Taisen (SNES)</option>
+<option value="5020">Dangun Feveron (ARC)</option>
+<option value="5035">Darius Twin (SNES)</option>
+<option value="2673">Dark Cloud (PS2)</option>
+<option value="4966">Dark Rift (N64)</option>
+<option value="5263">Dark Seed (NES)</option>
+<option value="4447">Darkstalkers 3 (PSX)</option>
+<option value="1819">Darkwing Duck (NES)</option>
+<option value="4960">Daytona USA 2001 (DC)</option>
+<option value="3452">Dead or Alive 2 (DC)</option>
+<option value="4977">Deadly Arts (N64)</option>
+<option value="1517">Deadly Towers (NES)</option>
+<option value="2969">Decap Attack (GEN)</option>
+<option value="477">Deep Dungeon: Madou Senki (FDS)</option>
+<option value="1476">Deep Dungeon: Yuushi no Monshou (FDS)</option>
+<option value="2816">Defender II (NES)</option>
+<option value="4510">Deja Vu (NES)</option>
+<option value="4141">Deltarune Chapter 1 (PC)</option>
+<option value="4724">Demolition Man (GEN)</option>
+<option value="1852">Demon&#039;s Crest (SNES)</option>
+<option value="4747">Dennis The Menace (SNES)</option>
+<option value="4629">Derby Stallion 64 (N64)</option>
+<option value="2666">Desert Strike: Return to the Gulf (GEN)</option>
+<option value="1122">Destiny of an Emperor (NES)</option>
+<option value="241">Devil World (NES)</option>
+<option value="3270">Devilish: The Next Possession (GEN)</option>
+<option value="1288">Devilman (NES)</option>
+<option value="110">Dezaemon (NES)</option>
+<option value="982">Dicing Knight. (WS)</option>
+<option value="925">Dick Tracy (GEN)</option>
+<option value="2392">Dick Tracy (NES)</option>
+<option value="4828">Diddy Kong Pilot (GBA)</option>
+<option value="4728">Diddy Kong Racing (N64)</option>
+<option value="1812">Die Hard (NES)</option>
+<option value="1855">Dig Dug (NES)</option>
+<option value="1945">Dig Dug II: Trouble in Paradise (NES)</option>
+<option value="4537">Digimon Anode/Cathode Tamer: Veedramon Version (WS)</option>
+<option value="5290">Digimon Digital Card Battle (PSX)</option>
+<option value="2297">Digimon Rumble Arena (PSX)</option>
+<option value="1646">Digimon World (PSX)</option>
+<option value="2386">Digimon World 2 (PSX)</option>
+<option value="5178">Digimon World 3 (PSX)</option>
+<option value="5354">Digimon World Data Squad (PS2)</option>
+<option value="3352">Dino Crisis (PSX)</option>
+<option value="1239">Disney Adventures in the Magic Kingdom (NES)</option>
+<option value="2994">Disney&#039;s Aladdin (NES)</option>
+<option value="2696">Disney&#039;s Aladdin (SNES)</option>
+<option value="2992">Disney&#039;s Aladdin (GEN)</option>
+<option value="909">Disney&#039;s Chip &#039;n Dale: Rescue Rangers (NES)</option>
+<option value="2055">Disney&#039;s Goof Troop (SNES)</option>
+<option value="3547">Disney&#039;s Pinocchio (32X)</option>
+<option value="3548">Disney&#039;s Pinocchio (GEN)</option>
+<option value="3123">Diver&#039;s Dream (PSX)</option>
+<option value="1632">Dizzy the Adventurer (NES)</option>
+<option value="4745">DK: King Of Swing (GBA)</option>
+<option value="3736">Doctor Hauzer (3DO)</option>
+<option value="1756">Don Doko Don 2 (NES)</option>
+<option value="3966">Donald in Maui Mallard (GEN)</option>
+<option value="2583">Donald Land (NES)</option>
+<option value="2833">Donkey Kong (FDS)</option>
+<option value="4361">Donkey Kong (ARC)</option>
+<option value="1083">Donkey Kong (NES)</option>
+<option value="3673">Donkey Kong (GB) (GB)</option>
+<option value="2022">Donkey Kong 3 (NES)</option>
+<option value="4183">Donkey Kong 64 (N64)</option>
+<option value="1937">Donkey Kong Classics (NES)</option>
+<option value="1686">Donkey Kong Country (SNES)</option>
+<option value="3178">Donkey Kong Country (GBA)</option>
+<option value="1787">Donkey Kong Country 2: Diddy&#039;s Kong Quest (SNES)</option>
+<option value="5324">Donkey Kong Country 3 (GBA)</option>
+<option value="2693">Donkey Kong Country 3: Dixie Kong&#039;s Double Trouble (SNES)</option>
+<option value="1546">Donkey Kong Country 4 (NES)</option>
+<option value="1051">Donkey Kong Jr. (NES)</option>
+<option value="4932">Donkey Kong Jr. (FDS)</option>
+<option value="3852">Donkey Kong Jr. + Jr. Sansuu Lesson (NES)</option>
+<option value="2743">Donkey Kong Jr. Math (NES)</option>
+<option value="4190">Donkey Kong Land (GB)</option>
+<option value="3025">Donkey Kong Land 2 (GB)</option>
+<option value="1229">Donkey Kong Land III (GB)</option>
+<option value="1368">DOOM (32X)</option>
+<option value="1232">DOOM (GBA)</option>
+<option value="4300">DOOM (SNES)</option>
+<option value="4382">Doom 64 (N64)</option>
+<option value="2881">Doom II (GBA)</option>
+<option value="112">Doraemon (NES)</option>
+<option value="113">Doraemon: Giga Zombie no Gyakushuu (NES)</option>
+<option value="2526">Doshin the Giant (GC)</option>
+<option value="878">Double Dragon (NES)</option>
+<option value="1964">Double Dragon (GEN)</option>
+<option value="3240">Double Dragon 3: The Rosetta Stone (GEN)</option>
+<option value="4250">Double Dragon II - The Revenge (GEN)</option>
+<option value="1126">Double Dragon II: The Revenge (NES)</option>
+<option value="1018">Double Dragon III: The Sacred Stones (NES)</option>
+<option value="2941">Double Dragon V: The Shadow Falls (SNES)</option>
+<option value="2940">Double Dragon V: The Shadow Falls (GEN)</option>
+<option value="4294">Double Dribble (NES)</option>
+<option value="1505">Doubutsu no Mori (N64)</option>
+<option value="1877">Dr. Mario (GB)</option>
+<option value="5219">Dr. Mario (SNES)</option>
+<option value="1408">Dr. Mario (NES)</option>
+<option value="3035">Dr. Mario 64 (N64)</option>
+<option value="3670">Dr. Robotnik&#039;s Mean Bean Machine (GEN)</option>
+<option value="4888">Dragon Ball Z: Budokai (PS2)</option>
+<option value="5065">Dragon Ball Z: Budokai 2 (GC)</option>
+<option value="5317">Dragon Ball Z: Budokai 3 (PS2)</option>
+<option value="4946">Dragon Ball Z: Budokai Tenkachi 2 (PS2)</option>
+<option value="4669">Dragon Ball Z: Budokai Tenkaichi 3 (PS2)</option>
+<option value="63">Dragon Ball Z: Buyuu Retsuden (GEN)</option>
+<option value="2863">Dragon Ball Z: Gekitou Tenkaichi Budokai (NES)</option>
+<option value="119">Dragon Ball Z: Kyoushuu! Saiya Jin (NES)</option>
+<option value="4489">Dragon Ball Z: Legacy of Goku (GBA)</option>
+<option value="288">Dragon Ball Z: Super Butouden (SNES)</option>
+<option value="289">Dragon Ball Z: Super Butouden 2 (SNES)</option>
+<option value="290">Dragon Ball Z: Super Butouden 3 (SNES)</option>
+<option value="286">Dragon Ball Z: Super Saiya Densetsu (SNES)</option>
+<option value="5072">Dragon Ball: Advanced Adventure (GBA)</option>
+<option value="3094">Dragon Ball: Raging Blast (XB360)</option>
+<option value="3093">Dragon Ball: Raging Blast (PS3)</option>
+<option value="3102">Dragon Ball: Raging Blast 2 (PS3)</option>
+<option value="3103">Dragon Ball: Raging Blast 2 (XB360)</option>
+<option value="2719">Dragon Buster (NES)</option>
+<option value="3855">Dragon Crystal (SMS)</option>
+<option value="2058">Dragon Fighter (NES)</option>
+<option value="120">Dragon Power (NES)</option>
+<option value="291">Dragon Quest I+II (SNES)</option>
+<option value="292">Dragon Quest III: Soshite Densetsu e... (SNES)</option>
+<option value="4970">Dragon Quest IV: Chapters of the Chosen (NDS)</option>
+<option value="1693">Dragon Quest V: Hand of the Heavenly Bride (NDS)</option>
+<option value="293">Dragon Quest V: Tenkuu no Hanayome (SNES)</option>
+<option value="3584">Dragon Slayer (PC88)</option>
+<option value="2505">Dragon View (SNES)</option>
+<option value="719">Dragon Warrior (NES)</option>
+<option value="3024">Dragon Warrior I &amp; II (GB)</option>
+<option value="1178">Dragon Warrior II (NES)</option>
+<option value="1309">Dragon Warrior III (GB)</option>
+<option value="121">Dragon Warrior III (NES)</option>
+<option value="1097">Dragon Warrior IV (NES)</option>
+<option value="1170">Dragon Warrior Monsters (GB)</option>
+<option value="2057">Dragon Warrior Monsters 2: Cobi&#039;s Journey (GB)</option>
+<option value="2849">Dragon&#039;s Fury (GEN)</option>
+<option value="2299">Dragon&#039;s Lair (NES)</option>
+<option value="5140">Dragon&#039;s Lair (SNES)</option>
+<option value="4091">Dragon&#039;s Revenge (GEN)</option>
+<option value="1568">Dreamworld Pogie (NES)</option>
+<option value="2252">Driver 2 (PSX)</option>
+<option value="4764">Druid: Kyoufu no Tobira (FDS)</option>
+<option value="938">Duck Hunt (NES)</option>
+<option value="1916">Duck Hunt (VS) (ARC)</option>
+<option value="4358">Duck Maze (NES)</option>
+<option value="1679">DuckTales (GB)</option>
+<option value="900">DuckTales (NES)</option>
+<option value="2963">DuckTales 2 (GB)</option>
+<option value="2012">DuckTales 2 (NES)</option>
+<option value="3221">Dudes with Attitude (NES)</option>
+<option value="4533">Duke Nukem 64 (N64)</option>
+<option value="3860">Duke Nukem: Zero Hour (N64)</option>
+<option value="2075">Dune: The Battle for Arrakis (GEN)</option>
+<option value="836">DynamiTracer (SNES)</option>
+<option value="2829">E.V.O.: Search for Eden (SNES)</option>
+<option value="437">Earth Defense Force (SNES)</option>
+<option value="727">EarthBound (SNES)</option>
+<option value="918">EarthBound Beginnings (NES)</option>
+<option value="3249">Earthworm Jim (GEN)</option>
+<option value="2354">Earthworm Jim 2 (GEN)</option>
+<option value="3009">Earthworm Jim 2 (PSX)</option>
+<option value="4348">Earthworm Jim 3 (NES)</option>
+<option value="3302">Ecco the Dolphin (GEN)</option>
+<option value="4919">Echo Night: Beyond (PS2)</option>
+<option value="4668">Eek! The Cat (SNES)</option>
+<option value="862">Eggerland: Meikyuu no Fukkatsu (NES)</option>
+<option value="1487">El Viento (GEN)</option>
+<option value="5077">Electroplankton (NDS)</option>
+<option value="2176">Elevator Action (NES)</option>
+<option value="4863">Eliminator Boat Duel (NES)</option>
+<option value="5265">Elite (NES)</option>
+<option value="4836">Emeraldia (ARC)</option>
+<option value="4826">Erika to Satoru no Yume Bouken (NES)</option>
+<option value="4275">Eternal Champions (GEN)</option>
+<option value="4286">Eternal Champions: Challenge from the Dark Side (SegaCD)</option>
+<option value="4798">Evolution Worlds (GC)</option>
+<option value="1612">Ex-Mutants (GEN)</option>
+<option value="1663">Excitebike (NES)</option>
+<option value="4849">Excitebike 64 (N64)</option>
+<option value="908">Exile (GEN)</option>
+<option value="3008">Exodus: Journey to the Promised Land (NES)</option>
+<option value="2067">F-1 Race (NES)</option>
+<option value="4565">F-1 Sensation (NES)</option>
+<option value="1056">F-Zero (SNES)</option>
+<option value="979">F-Zero Climax (GBA)</option>
+<option value="4472">F-Zero GX (GC)</option>
+<option value="1008">F-Zero X (N64)</option>
+<option value="4334">F-Zero: GP Legend (GBA)</option>
+<option value="5313">F-Zero: Maximum Velocity (GBA)</option>
+<option value="4552">F1 Pole Position (GB)</option>
+<option value="5223">F1: World Championship Edition (GEN)</option>
+<option value="5053">Faceball 2000 (SNES)</option>
+<option value="4584">Faceball 2000 (GB)</option>
+<option value="2540">Fahrenheit (SegaCD)</option>
+<option value="4855">Family Basic V3 (NES)</option>
+<option value="5321">Fantasia (GEN)</option>
+<option value="3069">Fantasy Zone (NES)</option>
+<option value="2544">Fantasy Zone: The Maze (SMS)</option>
+<option value="2241">Fatal Fury 2 (GEN)</option>
+<option value="4994">Fatal Fury 2 (SNES)</option>
+<option value="2352">Fatal Fury Special (SNES)</option>
+<option value="3527">Fatal Fury: Battle Archives Volume 1 (PS2)</option>
+<option value="3530">Fatal Fury: Battle Archives Volume 2 (PS2)</option>
+<option value="4443">Fate/Extra (PSP)</option>
+<option value="842">Faxanadu (NES)</option>
+<option value="1559">Felix the Cat (NES)</option>
+<option value="2852">Felix the Cat (GEN)</option>
+<option value="2272">Fester&#039;s Quest (NES)</option>
+<option value="4305">FIFA Soccer 95 (GEN)</option>
+<option value="4375">Fighter&#039;s History (SNES)</option>
+<option value="3685">Fighting Force (PSX)</option>
+<option value="4232">Fighting Simulator: 2-in-1 Flying Warriors (GB)</option>
+<option value="561">Final Fantasy (NES)</option>
+<option value="2083">Final Fantasy (MSX)</option>
+<option value="1177">Final Fantasy Adventure (GB)</option>
+<option value="2529">Final Fantasy Crystal Chronicles (GC)</option>
+<option value="820">Final Fantasy I &amp; II: Dawn of Souls (GBA)</option>
+<option value="125">Final Fantasy I+II (NES)</option>
+<option value="300">Final Fantasy II (SNES)</option>
+<option value="126">Final Fantasy II (NES)</option>
+<option value="127">Final Fantasy III (NES)</option>
+<option value="302">Final Fantasy III (SNES)</option>
+<option value="2995">Final Fantasy IV (SNES)</option>
+<option value="817">Final Fantasy IV Advance (GBA)</option>
+<option value="2269">Final Fantasy IV: The Complete Collection (PSP)</option>
+<option value="2059">Final Fantasy IX (PSX)</option>
+<option value="968">Final Fantasy Legend (GB)</option>
+<option value="964">Final Fantasy Legend II (GB)</option>
+<option value="1116">Final Fantasy Legend III (GB)</option>
+<option value="1130">Final Fantasy Tactics (PSX)</option>
+<option value="1419">Final Fantasy Tactics Advance (GBA)</option>
+<option value="1707">Final Fantasy Tactics: The War of the Lions (PSP)</option>
+<option value="301">Final Fantasy V (SNES)</option>
+<option value="818">Final Fantasy V Advance (GBA)</option>
+<option value="819">Final Fantasy VI Advance (GBA)</option>
+<option value="869">Final Fantasy VII (PSX)</option>
+<option value="2002">Final Fantasy VII (NES)</option>
+<option value="2889">Final Fantasy VIII (PSX)</option>
+<option value="928">Final Fantasy: Mystic Quest (SNES)</option>
+<option value="614">Final Fight (SNES)</option>
+<option value="3380">Final Fight 2 (SNES)</option>
+<option value="2516">Final Fight 3 (NES)</option>
+<option value="2221">Final Fight 3 (SNES)</option>
+<option value="2145">Final Fight CD (SegaCD)</option>
+<option value="2850">Final Fight Guy (SNES)</option>
+<option value="1962">Final Fight One (GBA)</option>
+<option value="2081">Final Lap Twin (TG16)</option>
+<option value="1804">Fire Dragon (NES)</option>
+<option value="1196">Fire Emblem (GBA)</option>
+<option value="661">Fire Emblem: Fuuin no Tsurugi (GBA)</option>
+<option value="303">Fire Emblem: Monshou no Nazo (SNES)</option>
+<option value="304">Fire Emblem: Seisen no Keifu (SNES)</option>
+<option value="1200">Fire Emblem: Shadow Dragon (NDS)</option>
+<option value="128">Fire Emblem: Shadow Dragon and the Blade of Light (NES)</option>
+<option value="2839">Fire Emblem: The Sacred Stones (GBA)</option>
+<option value="441">Fire Emblem: Thracia 776 (SNES)</option>
+<option value="5238">Fire Mustang (GEN)</option>
+<option value="2533">Fire Pro Wrestling (GBA)</option>
+<option value="624">Fire Pro Wrestling 2 (GBA)</option>
+<option value="1108">Fire ‘N Ice (NES)</option>
+<option value="2808">Flappy (NES)</option>
+<option value="4596">Flashback (JAG)</option>
+<option value="1828">Fleet Commander 2 (MSX)</option>
+<option value="3155">Flicky (GEN)</option>
+<option value="4806">Flipull (GB)</option>
+<option value="4593">Flying Dragon: The Secret Scroll (NES)</option>
+<option value="4648">Forbidden Siren 2 (PS2)</option>
+<option value="3668">Forsaken (PSX)</option>
+<option value="4921">Fossil Fighters (NDS)</option>
+<option value="4923">Fossil Fighters: Champions (NDS)</option>
+<option value="1237">Friday the 13th (NES)</option>
+<option value="4065">Frogger (GEN)</option>
+<option value="1715">Front Line (NES)</option>
+<option value="5104">Fur Fighters: Viggo&#039;s Revenge (PS2)</option>
+<option value="4311">Fushigi no Dungeon: Fuurai no Shiren 2 - Oni Shuurai! Shiren Jou! (N64)</option>
+<option value="132">Fuzzical Fighter (NES)</option>
+<option value="3075">G.O.D.: Mezameyo to Yobu Koe ga Kikoe (SNES)</option>
+<option value="2757">Gaiares (GEN)</option>
+<option value="3208">Gain Ground (GEN)</option>
+<option value="2403">Galaga (NES)</option>
+<option value="1630">Galaxian (NES)</option>
+<option value="2546">Galaxy 5000: Racing in the 51st Century (NES)</option>
+<option value="2175">Game &amp; Watch Gallery 4 (GBA)</option>
+<option value="860">Game Boy Wars 3 (GB)</option>
+<option value="20">Game Boy Wars Turbo (GB)</option>
+<option value="2365">Game Party (NES)</option>
+<option value="3233">Ganbare Goemon Gaiden 2: Tenka no Zaihou (NES)</option>
+<option value="2794">Ganbare Goemon Gaiden: Kieta Ougon Kiseru (NES)</option>
+<option value="4327">Ganbare Goemon: Kirakira Douchuu - Boku ga Dancer ni Natta Riyuu (SNES)</option>
+<option value="4777">Gardman (NES)</option>
+<option value="4616">Garfield: Caught in the Act (GEN)</option>
+<option value="2315">Gargoyle&#039;s Quest II (NES)</option>
+<option value="3479">Gargoyle&#039;s Quest: Ghosts’N Goblins (GB)</option>
+<option value="2918">Gargoyles (GEN)</option>
+<option value="857">Gate of Thunder (TGCD)</option>
+<option value="1048">Gauntlet (NES)</option>
+<option value="4618">Gauntlet IV (GEN)</option>
+<option value="4388">Gemfire (SNES)</option>
+<option value="1769">Genghis Khan II: Clan of the Gray Wolf (SNES)</option>
+<option value="134">Getsu Fuuma Den (NES)</option>
+<option value="5119">Getter Love!! Panda Love Unit (N64)</option>
+<option value="2758">Ghost Chaser Densei (SNES)</option>
+<option value="2165">Ghostbusters (GEN)</option>
+<option value="2095">Ghostbusters (NES)</option>
+<option value="2077">Ghosts &#039;n Goblins (NES)</option>
+<option value="3095">Ghouls &#039;n Ghosts (GEN)</option>
+<option value="4626">Glover (N64)</option>
+<option value="4624">Glover 2 (N64)</option>
+<option value="1754">Go! Go! Cosmo Cops! (NDS)</option>
+<option value="3752">Gods (GEN)</option>
+<option value="2679">Godzilla: Monster of Monsters! (NES)</option>
+<option value="1058">Golden Axe (GEN)</option>
+<option value="2790">Golden Axe (SMS)</option>
+<option value="1090">Golden Axe II (GEN)</option>
+<option value="1094">Golden Axe III (GEN)</option>
+<option value="1826">Golden Axe Warrior (SMS)</option>
+<option value="859">Golden Sun (GBA)</option>
+<option value="5211">Golden Sun Dark Dawn (NDS)</option>
+<option value="1293">Golden Sun: The Lost Age (GBA)</option>
+<option value="974">GoldenEye 007 (N64)</option>
+<option value="2046">Golf (NES)</option>
+<option value="2593">Golvellius: Valley of Doom (SMS)</option>
+<option value="986">Gorby no Pipeline Daisakusen (NES)</option>
+<option value="5149">Gouketsuji Ichizoku (GEN)</option>
+<option value="1938">Gradius (NES)</option>
+<option value="1829">Gradius 2 (MSX)</option>
+<option value="1970">Gradius II (NES)</option>
+<option value="3487">Gradius III (SNES)</option>
+<option value="4824">Gran Turismo (PSX)</option>
+<option value="5079">Gran Turismo 2 (PSX)</option>
+<option value="4138">Grand Theft Auto: The Director&#039;s Cut (PSX)</option>
+<option value="1389">Grandia (PSX)</option>
+<option value="4280">Grind Stormer (GEN)</option>
+<option value="2691">Guerrilla War (NES)</option>
+<option value="1803">Gumshoe (NES)</option>
+<option value="2585">Gun-Nac (NES)</option>
+<option value="744">Gun.Smoke (NES)</option>
+<option value="2268">Gurumin: A Monstrous Adventure (PSP)</option>
+<option value="2209">Gyromite (NES)</option>
+<option value="4687">Gyruss (NES)</option>
+<option value="2760">Gyruss (FDS)</option>
+<option value="1791">Hal Wrestling (GB)</option>
+<option value="4336">Halo: Combat Evolved (XBOX)</option>
+<option value="2246">Hanabi de Don! (Aleck64) (N64)</option>
+<option value="5045">Happy Camper (NES)</option>
+<option value="4544">Harry Potter and the Philosopher&#039;s Stone (PS2)</option>
+<option value="728">Harvest Moon (SNES)</option>
+<option value="1882">Harvest Moon (GB)</option>
+<option value="4606">Harvest Moon Animal Parade (WII)</option>
+<option value="2964">Harvest Moon DS (NDS)</option>
+<option value="2968">Harvest Moon DS Cute (NDS)</option>
+<option value="4063">Harvest Moon: A Wonderful Life (GC)</option>
+<option value="4319">Hashire Hebereke (SNES)</option>
+<option value="2356">Heavy Barrel (NES)</option>
+<option value="4353">Hebereke no Oishii Puzzle (SNES)</option>
+<option value="5082">Hebereke&#039;s Popoitto (SNES)</option>
+<option value="4318">Hebereke&#039;s Popoon (SNES)</option>
+<option value="3649">Hellfire (GEN)</option>
+<option value="139">Hello Kitty World (NES)</option>
+<option value="627">Heracles no Eikou IV: Kamigami Kara no Okurimono (SNES)</option>
+<option value="1590">Hero Quest (NES)</option>
+<option value="1159">Herzog Zwei (GEN)</option>
+<option value="2018">High Seas Havoc (GEN)</option>
+<option value="498">Hiryuu no Ken III: 5 Nin no Ryuu Senshi (NES)</option>
+<option value="2068">Hogan&#039;s Alley (NES)</option>
+<option value="3543">Hokuto no Ken 3: Shin Seiki Souzou Seiken Restuden (NES)</option>
+<option value="4839">Hokuto no Ken: Shinpan no Sososei - Kengo Retsuden (PS2)</option>
+<option value="1017">Holy Diver (NES)</option>
+<option value="4980">Home Alone (SNES)</option>
+<option value="2576">Home Alone (NES)</option>
+<option value="1858">Home Improvement (SNES)</option>
+<option value="1212">Honey Peach (NES)</option>
+<option value="2900">Hook (SNES)</option>
+<option value="1086">Hoshi wo Miru Hito (NES)</option>
+<option value="375">Hourai Gakuen no Bouken!: Tenkousei Scramble (SNES)</option>
+<option value="3393">Huang Di: Zhuo Lu Zhi Zhan (NES)</option>
+<option value="2572">Human Sports Festival (TGCD)</option>
+<option value="4911">Hunter On Ice (NES)</option>
+<option value="1953">Hydlide (NES)</option>
+<option value="4059">Hyper Lode Runner (GB)</option>
+<option value="2888">Hyper Street Fighter II: The Anniversary Edition (ARC)</option>
+<option value="844">Ice Climber (NES)</option>
+<option value="910">Ice Hockey (NES)</option>
+<option value="4691">Igo Shinen &#039;93 (NES)</option>
+<option value="2328">Ikari III: The Rescue (NES)</option>
+<option value="810">Ikari Warriors (NES)</option>
+<option value="199">Ike Ike! Nekketsu Hockey Bu: Subette Koronde Dairantou (NES)</option>
+<option value="2779">Ikki (NES)</option>
+<option value="2429">Illusion of Gaia (SNES)</option>
+<option value="2359">Incoming (DC)</option>
+<option value="5291">Indiana Jones&#039; Greatest Adventures (SNES)</option>
+<option value="4218">Initial D Another Stage (GBA)</option>
+<option value="2372">Innsmouth no Yakata (VB)</option>
+<option value="2527">International Superstar Soccer Deluxe (SNES)</option>
+<option value="2835">Iron Tank (NES)</option>
+<option value="4484">J-League Pro Striker 2 (GEN)</option>
+<option value="1260">J-League: Winning Goal (NES)</option>
+<option value="4872">J.B. Harold Murder Club (NES)</option>
+<option value="5115">J.R.R. Tolkien&#039;s The Lord of the Rings - Volume 1 (SNES)</option>
+<option value="2379">Jack Bros. (VB)</option>
+<option value="2627">Jackal (NES)</option>
+<option value="2445">Jackie Chan&#039;s Action Kung Fu (NES)</option>
+<option value="1279">Jade Cocoon 2 (PS2)</option>
+<option value="1591">James Bond Jr. (NES)</option>
+<option value="1959">James Pond 2: Codename: RoboCod (GEN)</option>
+<option value="1500">James Pond 3: Operation Starfish (GEN)</option>
+<option value="1808">Jeopardy! 25th Anniversary Edition (NES)</option>
+<option value="1509">Jet Force Gemini (N64)</option>
+<option value="2901">Jewel Master (GEN)</option>
+<option value="4631">Jim Power - The Lost Dimension in 3D (SNES)</option>
+<option value="571">JJ: Tobidase Daisakusen Part II (NES)</option>
+<option value="2214">Joe &amp; Mac (GEN)</option>
+<option value="2401">Joe &amp; Mac (NES)</option>
+<option value="5025">Joe &amp; Mac (SNES)</option>
+<option value="3065">Joshua &amp; the Battle of Jericho (NES)</option>
+<option value="1673">Journey to Silius (NES)</option>
+<option value="1820">Joust (NES)</option>
+<option value="143">Joy Mech Fight (NES)</option>
+<option value="1740">Jr. Pac-Man (7800)</option>
+<option value="4740">Judge Dredd (GEN)</option>
+<option value="3579">Jun Classic C.C. &amp; Ropé Club (PSX)</option>
+<option value="4466">Jungle Strike - The Sequel to Desert Strike (GEN)</option>
+<option value="4751">Jurassic Park (SNES)</option>
+<option value="2948">Justice League Task Force (GEN)</option>
+<option value="2495">Kaettekita Mario Bros. (FDS)</option>
+<option value="501">Kaiketsu Yanchamaru 3: Taiketsu! Zouringen (NES)</option>
+<option value="2656">Karate Champ (NES)</option>
+<option value="864">Karnov (NES)</option>
+<option value="3763">Karous (DC)</option>
+<option value="602">Kart Fighter (NES)</option>
+<option value="4949">Kawasaki Superbike Challenge (GEN)</option>
+<option value="1922">Keisan Game: Sansuu 1 Toshi (NES)</option>
+<option value="4128">Keith Courage in Alpha Zones (TG16)</option>
+<option value="2949">Kendo Rage (SNES)</option>
+<option value="3082">Kenseiden (SMS)</option>
+<option value="147">Kero Kero Keroppi no Daibouken 2: Donuts Ike ha Oosawagi! (NES)</option>
+<option value="3156">Kick Master (NES)</option>
+<option value="1206">Kid Chameleon (GEN)</option>
+<option value="2733">Kid Dracula (GB)</option>
+<option value="745">Kid Icarus (NES)</option>
+<option value="1677">Kid Icarus: Of Myths and Monsters (GB)</option>
+<option value="3316">Kid Kool and the Quest for the 7 Wonder Herbs (NES)</option>
+<option value="5003">Kidou Senshi Gundam: Gundam vs. Gundam NEXT PLUS (PSP)</option>
+<option value="1930">Killer Instinct (SNES)</option>
+<option value="4978">Killer Instinct Gold (N64)</option>
+<option value="5300">King Fishing (NES)</option>
+<option value="4784">King James Bible (GB)</option>
+<option value="3813">King of Fighters: Maximum Impact - Maniax (PS2)</option>
+<option value="2676">King&#039;s Quest V: Absence Makes the Heart Go Yonder (NES)</option>
+<option value="1830">King&#039;s Valley II (MSX)</option>
+<option value="874">Kingdom Hearts: Chain of Memories (GBA)</option>
+<option value="5195">Kirby &amp; The Amazing Mirror (GBA)</option>
+<option value="1859">Kirby Super Star (SNES)</option>
+<option value="2393">Kirby Super Star Ultra (NDS)</option>
+<option value="994">Kirby&#039;s Adventure (NES)</option>
+<option value="1865">Kirby&#039;s Avalanche (SNES)</option>
+<option value="1783">Kirby&#039;s Dream Course (SNES)</option>
+<option value="4279">Kirby&#039;s Dream Land (GB)</option>
+<option value="5084">Kirby&#039;s Dream Land 2 (GB)</option>
+<option value="4307">Kirby&#039;s Dream Land 3 (SNES)</option>
+<option value="4574">Kirby&#039;s Pinball Land (GB)</option>
+<option value="5233">Kirby: Nightmare In Dream Land (GBA)</option>
+<option value="4277">Kirby: Squeak Squad (NDS)</option>
+<option value="4717">Kirby: Tilt &#039;n&#039; Tumble (GB)</option>
+<option value="2433">Kiteretsu Daihyakka (NES)</option>
+<option value="3288">Klax (NES)</option>
+<option value="2422">Klonoa 2: Dream Champ Tournament (GBA)</option>
+<option value="2431">Knight Rider (NES)</option>
+<option value="950">Knuckles&#039; Chaotix (32X)</option>
+<option value="2301">Konami GB Collection Vol. 1 (GB)</option>
+<option value="3064">Konami GB Collection Vol. 2 (GB)</option>
+<option value="2302">Konami GB Collection Vol. 4 (GB)</option>
+<option value="153">Konami Wai Wai World (NES)</option>
+<option value="1831">Konami&#039;s Soccer (MSX)</option>
+<option value="1807">Kung Fu (NES)</option>
+<option value="2288">Kung-Fu Heroes (NES)</option>
+<option value="2561">Kunio 8-in-1 (NES)</option>
+<option value="155">Kunio Kun no Nekketsu Soccer League (NES)</option>
+<option value="2245">KuruKuru Fever (N64)</option>
+<option value="183">Kyattou Ninden Teyandee (NES)</option>
+<option value="1296">Kyoryu Sentai ZyuRanger (NES)</option>
+<option value="2699">Lagoon (SNES)</option>
+<option value="156">Lagrange Point (NES)</option>
+<option value="4856">Land Maker (ARC)</option>
+<option value="991">Landstalker: The Treasures of King Nole (GEN)</option>
+<option value="2394">Last Armageddon (NES)</option>
+<option value="3091">Last Bible III (SNES)</option>
+<option value="2675">Layla (NES)</option>
+<option value="4767">Lee Trevino&#039;s Fighting Golf (NES)</option>
+<option value="4492">Legacy of Kain Soul Reaver (PSX)</option>
+<option value="711">Legacy of the Wizard (NES)</option>
+<option value="5175">Legend of Legaia (PSX)</option>
+<option value="850">Legend of Mana (PSX)</option>
+<option value="5018">Legend of the Ghost Lion (NES)</option>
+<option value="5368">Legend of the River King 2 (GB)</option>
+<option value="2660">Legend of the River King GB (GB)</option>
+<option value="1856">Legendary Wings (NES)</option>
+<option value="4695">LEGO Battles (NDS)</option>
+<option value="4983">LEGO Indiana Jones: The Original Adventures (NDS)</option>
+<option value="1691">Lei Dian Huang: Bi Ka Qiu Chuan Shuo (NES)</option>
+<option value="3266">Lemmings (NES)</option>
+<option value="5086">Lemmings (GEN)</option>
+<option value="5199">Lemmings (SNES)</option>
+<option value="4563">Lethal Weapon (NES)</option>
+<option value="5288">Libble Rabble (SNES)</option>
+<option value="4272">Liberty or Death (SNES)</option>
+<option value="4260">Liberty or Death (GEN)</option>
+<option value="1995">Life Force (NES)</option>
+<option value="1493">Light Crusader (GEN)</option>
+<option value="2860">Lightening Force: Quest for the Darkstar (GEN)</option>
+<option value="5274">Linus Spacehead&#039;s Cosmic Crusade (NES)</option>
+<option value="4931">Little League Baseball: Championship Series (NES)</option>
+<option value="807">Little Nemo: The Dream Master (NES)</option>
+<option value="3554">Little Samson (NES)</option>
+<option value="5169">Lock &#039;n&#039; Chase (GB)</option>
+<option value="1016">Lode Runner (NES)</option>
+<option value="4249">Lords of Thunder (TGCD)</option>
+<option value="4176">Lords of Thunder (SegaCD)</option>
+<option value="2807">Lot Lot (NES)</option>
+<option value="4471">Lotus II (GEN)</option>
+<option value="2347">Low G Man: The Low Gravity Man (NES)</option>
+<option value="861">Lufia &amp; the Fortress of Doom (SNES)</option>
+<option value="941">Lufia II: Rise of the Sinistrals (SNES)</option>
+<option value="1639">Lufia: The Legend Returns (GB)</option>
+<option value="2013">Luigi&#039;s Mansion (GC)</option>
+<option value="5164">Luigi&#039;s Mansion 3D (3DS)</option>
+<option value="5054">Luminous Arc (NDS)</option>
+<option value="1996">Lunar Pool (NES)</option>
+<option value="4414">Lunar: Eternal Blue (SegaCD)</option>
+<option value="2242">Lunar: Silver Star Harmony (PSP)</option>
+<option value="1701">Lunar: Silver Star Story - Complete (PSX)</option>
+<option value="159">Lupin Sansei: Pandora no Isan (NES)</option>
+<option value="1792">M.C. Kids (NES)</option>
+<option value="1264">M.U.S.C.L.E. (NES)</option>
+<option value="2658">M.U.S.H.A.: Metallic Uniframe Super Hybrid Armor (GEN)</option>
+<option value="4963">Mace: The Dark Age (N64)</option>
+<option value="2291">Magic Carpet 1001 (NES)</option>
+<option value="2396">Magic Dragon (NES)</option>
+<option value="4166">Magic Jewelry (NES)</option>
+<option value="1328">Magic Jewelry II (NES)</option>
+<option value="3908">Magic Sword (SNES)</option>
+<option value="5273">Magical Drop 3 (ARC)</option>
+<option value="510">Magical Pop'n (SNES)</option>
+<option value="4675">Magical Tetris Challenge (Arcade) (ARC)</option>
+<option value="160">Majou Densetsu II: Daimashikyou Galious (NES)</option>
+<option value="1784">Makai Island (NES)</option>
+<option value="4893">Maken X - Feb 9 2000 Prototype (DC)</option>
+<option value="3147">Maniac Mansion (NES)</option>
+<option value="1042">Mappy (NES)</option>
+<option value="2167">Marble Madness (NES)</option>
+<option value="5151">Marble Madness (GEN)</option>
+<option value="4340">Mario &amp; Luigi: Partners in Time (NDS)</option>
+<option value="4040">Mario &amp; Luigi: Superstar Saga (GBA)</option>
+<option value="1985">Mario &amp; Wario (SNES)</option>
+<option value="1222">Mario Bros. (NES)</option>
+<option value="2369">Mario Clash (VB)</option>
+<option value="4168">Mario Golf (N64)</option>
+<option value="2530">Mario Golf: Toadstool Tour (GC)</option>
+<option value="3002">Mario Kart 64 (N64)</option>
+<option value="2557">Mario Kart DS (NDS)</option>
+<option value="4585">Mario Kart: Double Dash!! (GC)</option>
+<option value="2020">Mario Kart: Super Circuit (GBA)</option>
+<option value="4719">Mario Paint (SNES)</option>
+<option value="1633">Mario Party (N64)</option>
+<option value="4679">Mario Party 3 (N64)</option>
+<option value="2531">Mario Party 4 (GC)</option>
+<option value="2532">Mario Party 5 (GC)</option>
+<option value="2534">Mario Party 6 (GC)</option>
+<option value="2535">Mario Party 7 (GC)</option>
+<option value="4933">Mario Tennis (GB)</option>
+<option value="3898">Mario Tennis: Power Tour (GBA)</option>
+<option value="1353">Mario&#039;s Picross (GB)</option>
+<option value="2029">Marusa no Onna (NES)</option>
+<option value="2491">Marvel Super Heroes vs. Street Fighter (PSX)</option>
+<option value="3878">Marvel vs. Capcom 2 (PS2)</option>
+<option value="2376">Master of Monsters: Disciples of Gaia (PSX)</option>
+<option value="4814">Maui Mallard in Cold Shadow (SNES)</option>
+<option value="5365">Mazin Saga: Mutant Fighter (GEN)</option>
+<option value="2817">McDonald&#039;s Treasure Land Adventure (GEN)</option>
+<option value="4469">Mega Bomberman (GEN)</option>
+<option value="774">Mega Man (NES)</option>
+<option value="1871">Mega Man (GG)</option>
+<option value="3549">Mega Man &amp; Bass (GBA)</option>
+<option value="795">Mega Man 2 (NES)</option>
+<option value="746">Mega Man 3 (NES)</option>
+<option value="1074">Mega Man 4 (NES)</option>
+<option value="706">Mega Man 5 (NES)</option>
+<option value="747">Mega Man 6 (NES)</option>
+<option value="849">Mega Man 7 (SNES)</option>
+<option value="2223">Mega Man Anniversary Collection (GC)</option>
+<option value="4842">Mega Man Battle Chip Challenge (GBA)</option>
+<option value="1049">Mega Man Battle Network (GBA)</option>
+<option value="3480">Mega Man Battle Network 2 (GBA)</option>
+<option value="1720">Mega Man Battle Network 3: White (GBA)</option>
+<option value="2208">Mega Man Battle Network 4: Red Sun (GBA)</option>
+<option value="2930">Mega Man Battle Network 5: Double Team DS (NDS)</option>
+<option value="922">Mega Man II (GB)</option>
+<option value="923">Mega Man III (GB)</option>
+<option value="920">Mega Man IV (GB)</option>
+<option value="808">Mega Man Legends (PSX)</option>
+<option value="5309">Mega Man Legends 2 (PSX)</option>
+<option value="4545">Mega Man Star Force (NDS)</option>
+<option value="4718">Mega Man Star Force 2 (NDS)</option>
+<option value="926">Mega Man V (GB)</option>
+<option value="931">Mega Man X (SNES)</option>
+<option value="957">Mega Man X2 (SNES)</option>
+<option value="1210">Mega Man X3 (PSX)</option>
+<option value="784">Mega Man X3 (SNES)</option>
+<option value="2713">Mega Man X4 (PSX)</option>
+<option value="2718">Mega Man X5 (PSX)</option>
+<option value="2053">Mega Man X6 (PSX)</option>
+<option value="4486">Mega Man X: Command Mission (GC)</option>
+<option value="880">Mega Man Xtreme (GB)</option>
+<option value="1884">Mega Man Xtreme 2 (GB)</option>
+<option value="879">Mega Man Zero (GBA)</option>
+<option value="1649">Mega Man Zero 2 (GBA)</option>
+<option value="2922">Mega Man Zero 3 (GBA)</option>
+<option value="2309">Mega Man Zero 4 (GBA)</option>
+<option value="3973">Mega Man ZX (NDS)</option>
+<option value="2999">Mega Man ZX Advent (NDS)</option>
+<option value="1767">Mega Man&#039;s Soccer (SNES)</option>
+<option value="921">Mega Man: Dr. Wily&#039;s Revenge (GB)</option>
+<option value="4672">Mega Man: Maverick Hunter X (PSP)</option>
+<option value="1266">Mega Man: The Wily Wars (GEN)</option>
+<option value="2458">Mega SWIV (GEN)</option>
+<option value="24">Megami Tensei Gaiden: Last Bible II (GB)</option>
+<option value="4694">Meitantei Conan: Chika Yuuenchi Satsujin Jiken (GB)</option>
+<option value="3237">Mendel Palace (NES)</option>
+<option value="4335">Mercenaries: Playground of Destruction (PS2)</option>
+<option value="2545">Metal Force (NES)</option>
+<option value="998">Metal Gear (NES)</option>
+<option value="649">Metal Gear (MSX2) (MSX)</option>
+<option value="74">Metal Gear 2: Solid Snake (MSX)</option>
+<option value="3537">Metal Slader Glory: Director&#039;s Cut (SNES)</option>
+<option value="4908">Metal Slug - Super Vehicle-001 (SAT)</option>
+<option value="3139">Metal Slug 2 (NGCD)</option>
+<option value="2325">Metal Slug 2 (ARC)</option>
+<option value="4795">Metal Slug X (PSX)</option>
+<option value="4988">Metal Slug XX (PSP)</option>
+<option value="911">Metal Warriors (SNES)</option>
+<option value="805">Metroid (NES)</option>
+<option value="1542">Metroid Fusion (GBA)</option>
+<option value="732">Metroid II: Return of Samus (GB)</option>
+<option value="4546">Metroid Prime (GC)</option>
+<option value="4213">Metroid Prime 2: Echoes (GC)</option>
+<option value="4214">Metroid Prime Trilogy (WII)</option>
+<option value="788">Metroid: Zero Mission (GBA)</option>
+<option value="958">Michael Jackson&#039;s Moonwalker (GEN)</option>
+<option value="2819">Mickey Mania (SNES)</option>
+<option value="2582">Mickey Mousecapade (NES)</option>
+<option value="436">Mickey to Donald: Magical Adventure 3 (SNES)</option>
+<option value="5006">Mickey&#039;s Speedway USA (N64)</option>
+<option value="3017">Mickey&#039;s Wild Adventure (PSX)</option>
+<option value="2141">Midnight Resistance (GEN)</option>
+<option value="1158">Might and Magic III: Isles of Terra (SNES)</option>
+<option value="2218">Might and Magic: Secret of the Inner Sanctum (NES)</option>
+<option value="1821">Mighty Final Fight (NES)</option>
+<option value="3224">Mighty Morphin Power Rangers (GEN)</option>
+<option value="4894">Mighty Morphin Power Rangers: The Fighting Edition (SNES)</option>
+<option value="2473">Mighty Morphin Power Rangers: The Movie (GEN)</option>
+<option value="4682">Mighty Morphin Power Rangers: The Movie (SNES)</option>
+<option value="956">Mike Tyson&#039;s Punch-Out!! (NES)</option>
+<option value="2064">Millipede (NES)</option>
+<option value="5055">Milon&#039;s Secret Castle (NES)</option>
+<option value="163">Mini Putt (NES)</option>
+<option value="198">Minna no Taabou no Nakayoshi Daisakusen (NES)</option>
+<option value="2161">Miracle Warriors: Seal of the Dark Lord (SMS)</option>
+<option value="165">Mitsume ga Tooru (NES)</option>
+<option value="166">Moai Kun (NES)</option>
+<option value="4273">Mobile Suit Gundam: Earth Federation vs. Zeon (DC)</option>
+<option value="2426">Mole Mania (GB)</option>
+<option value="5071">Monster Hunter Portable 2nd G (PSP)</option>
+<option value="2541">Monster in My Pocket (NES)</option>
+<option value="1428">Monster Party (NES)</option>
+<option value="2783">Monster Rancher 2 (PSX)</option>
+<option value="71">Monster World IV (GEN)</option>
+<option value="167">Moon Crystal (NES)</option>
+<option value="2194">Mortal Kombat (SNES)</option>
+<option value="930">Mortal Kombat (GEN)</option>
+<option value="1336">Mortal Kombat 2 (GEN)</option>
+<option value="2754">Mortal Kombat 2 (SMS)</option>
+<option value="1281">Mortal Kombat 2 (SNES)</option>
+<option value="1765">Mortal Kombat 3 (SNES)</option>
+<option value="3179">Mortal Kombat 3 (NES)</option>
+<option value="2225">Mortal Kombat 4 (PSX)</option>
+<option value="4371">Mortal Kombat II (32X)</option>
+<option value="3189">Mortal Kombat II Special (NES)</option>
+<option value="2537">Mortal Kombat Mythologies: Sub-Zero (PSX)</option>
+<option value="4222">Mortal Kombat Trilogy (PSX)</option>
+<option value="2786">Mortal Kombat Trilogy (SAT)</option>
+<option value="4965">Mortal Kombat Trilogy (N64)</option>
+<option value="674">Mother 1+2 (GBA)</option>
+<option value="1215">Mother 3 (GBA)</option>
+<option value="1262">Mottomo Abunai Deka (NES)</option>
+<option value="3652">Mr. Chin&#039;s Gourmet Paradise (GB)</option>
+<option value="1405">Mr. Do! (ARC)</option>
+<option value="4862">Mr. Driller (USA) (GB)</option>
+<option value="532">Mr. Driller Ace (GBA)</option>
+<option value="1144">Mr. Gimmick (NES)</option>
+<option value="3705">Mr. Nutz (GEN)</option>
+<option value="716">Ms. Pac-Man (Namco) (NES)</option>
+<option value="717">Ms. Pac-Man (Tengen) (NES)</option>
+<option value="707">Multiple Games (N/A)</option>
+<option value="2264">Musashi no Ken: Tadaima Shugyou Chuu (NES)</option>
+<option value="329">Mystic Ark (SNES)</option>
+<option value="5016">Mystical Ninja 2 Starring Goemon (N64)</option>
+<option value="704">N/A (N/A)</option>
+<option value="2300">Nanotek Warrior (PSX)</option>
+<option value="2251">NARC (NES)</option>
+<option value="4427">Naruto: Gekitou Ninja Taisen! 4 (GC)</option>
+<option value="4938">Natsuki Crisis Battle (SNES)</option>
+<option value="4185">NBA Jam (GEN)</option>
+<option value="4452">NBA Jam T.E. (PSX)</option>
+<option value="4859">NBA Jam T.E. (ARC)</option>
+<option value="1913">NBA Jam Tournament Edition (SNES)</option>
+<option value="890">NBA Live ‘96 (GEN)</option>
+<option value="2457">Need For Speed: High Stakes (PSX)</option>
+<option value="181">Nekketsu Kakutou Densetsu (NES)</option>
+<option value="172">Nekketsu! Street Basket: Ganbare Dunk Heroes (NES)</option>
+<option value="4302">Neutopia (TG16)</option>
+<option value="4473">Neutopia II (TG16)</option>
+<option value="1753">New Ghostbusters II (NES)</option>
+<option value="1068">New Super Mario Bros. (NDS)</option>
+<option value="1982">New Super Mario Bros. Wii (WII)</option>
+<option value="2092">NHL &#039;94 (GEN)</option>
+<option value="5329">NHL 07 (PSP)</option>
+<option value="5015">NHL 94 (GEN)</option>
+<option value="5011">NHL 95 (GEN)</option>
+<option value="5014">NHL 96 (GEN)</option>
+<option value="5008">NHL 97 (GEN)</option>
+<option value="5010">NHL 98 (GEN)</option>
+<option value="4453">Nigel Mansell&#039;s World Championship Racing (SNES)</option>
+<option value="5312">Nightmare Busters (SNES)</option>
+<option value="2238">Nightmare Creatures II (PSX)</option>
+<option value="2634">Nightshade (NES)</option>
+<option value="2798">Ninja Crusaders (NES)</option>
+<option value="4714">Ninja Five-O (GBA)</option>
+<option value="782">Ninja Gaiden (NES)</option>
+<option value="5363">Ninja Gaiden Beta (Gen) (GEN)</option>
+<option value="4448">NINJA GAIDEN Black (XBOX)</option>
+<option value="1000">Ninja Gaiden II: The Dark Sword of Chaos (NES)</option>
+<option value="1314">Ninja Gaiden III: The Ancient Ship of Doom (NES)</option>
+<option value="1847">Ninja Gaiden Shadow (GB)</option>
+<option value="1354">Ninja Jajamaru-kun (NES)</option>
+<option value="479">Ninja Jajamaru: Ginga Daisakusen (NES)</option>
+<option value="2122">Ninja Kun: Majou no Bouken (NES)</option>
+<option value="4021">Ninja Spirit (TG16)</option>
+<option value="4623">Nintendo World Championships 1990 (NES)</option>
+<option value="4094">Nintendo World Cup (GB)</option>
+<option value="1180">Nintendo World Cup (NES)</option>
+<option value="943">Nuts &amp; Milk (NES)</option>
+<option value="1301">Ogre Battle 64: Person of Lordly Caliber (N64)</option>
+<option value="1244">Ogre Battle: The March of the Black Queen (SNES)</option>
+<option value="5356">Ojarumaru: Gekkou Machi Sanpo de Ojaru (GBA)</option>
+<option value="4418">Okage: Shadow King (PS2)</option>
+<option value="3843">On the Ball (SNES)</option>
+<option value="2961">Operation C (GB)</option>
+<option value="3909">Operation Wolf (NES)</option>
+<option value="26">Operation: Secret Storm (NES)</option>
+<option value="2991">Opoona (WII)</option>
+<option value="5339">Out of This World (SNES)</option>
+<option value="2142">OutRun (GEN)</option>
+<option value="5062">OutRun 2 (XBOX)</option>
+<option value="3434">OutRunners (GEN)</option>
+<option value="1198">P.O.W.: Prisoners of War (NES)</option>
+<option value="5100">Pac-Attack (GEN)</option>
+<option value="1951">Pac-Land (NES)</option>
+<option value="3577">Pac-Man (ARC)</option>
+<option value="3278">Pac-Man (GB)</option>
+<option value="2190">Pac-Man (NES)</option>
+<option value="4430">Pac-Man 2: The New Adventures (GEN)</option>
+<option value="4518">Pac-Man 2: The New Adventures (SNES)</option>
+<option value="4283">Pac-Man Championship Edition (NES)</option>
+<option value="4685">Pac-Man Collection (GBA)</option>
+<option value="2589">Pac-Mania (GEN)</option>
+<option value="2626">Pachi Com (NES)</option>
+<option value="2965">Pachinko 365 Nichi (N64)</option>
+<option value="1654">Paladin&#039;s Quest (SNES)</option>
+<option value="2380">Panic Bomber (VB)</option>
+<option value="171">Panic Restaurant (NES)</option>
+<option value="2104">Paper Mario (N64)</option>
+<option value="2105">Paper Mario: The Thousand-Year Door (GC)</option>
+<option value="2285">Paperboy (NES)</option>
+<option value="3437">Paperboy II (GEN)</option>
+<option value="954">Parasite Eve (PSX)</option>
+<option value="4703">Parodius: Non-Sense Fantasy (SNES)</option>
+<option value="5315">Pepenga Pengo (GEN)</option>
+<option value="975">Perfect Dark (N64)</option>
+<option value="1735">Perfect Weapon (PSX)</option>
+<option value="4748">Persona (PSP)</option>
+<option value="2547">Persona 2: Eternal Punishment (PSX)</option>
+<option value="1136">Persona 2: Innocent Sin (PSX)</option>
+<option value="4651">Persona 3 Portable (PSP)</option>
+<option value="877">Pescatore (NES)</option>
+<option value="5058">Phalanx (SNES)</option>
+<option value="871">Phantasy Star (SMS)</option>
+<option value="66">Phantasy Star II (GEN)</option>
+<option value="67">Phantasy Star III: Generations of Doom (GEN)</option>
+<option value="1062">Phantasy Star IV: The End of the Millennium (GEN)</option>
+<option value="4809">Phantom 2040 (GEN)</option>
+<option value="990">Phoenix Wright: Ace Attorney (NDS)</option>
+<option value="4463">Pictionary: The Game of Video Quick Draw (NES)</option>
+<option value="2536">Pikmin (GC)</option>
+<option value="4655">Pikmin 2 (GC)</option>
+<option value="4846">Pilotwings (SNES)</option>
+<option value="2233">Pinball (NES)</option>
+<option value="1520">Pinball Dreams (SNES)</option>
+<option value="1518">Pinball Fantasies (SNES)</option>
+<option value="1514">Pinball Quest (NES)</option>
+<option value="4864">Pipe Dream (GB)</option>
+<option value="1582">Pirates! Gold (GEN)</option>
+<option value="5170">Pit Fighter (GEN)</option>
+<option value="4715">Pitfall: The Mayan Adventure (SNES) (SNES)</option>
+<option value="3737">Pizza Pop! (NES)</option>
+<option value="3928">Plok! (SNES)</option>
+<option value="2614">Pocket Bomberman (GB)</option>
+<option value="4810">Pocket Fighter (WS)</option>
+<option value="3344">Pocket no Naka no Oukoku (GB)</option>
+<option value="4953">Pocky &amp; Rocky (SNES)</option>
+<option value="5341">Pocohontos (NES)</option>
+<option value="2440">Poké Tetris (NES)</option>
+<option value="4599">Pokémon Colosseum (GC)</option>
+<option value="5215">Pokémon Mystery Dungeon: Blue Rescue Team (NDS)</option>
+<option value="4658">Pokémon Mystery Dungeon: Explorers of Sky (NDS)</option>
+<option value="2322">Pokémon Mystery Dungeon: Red Rescue Team (GBA)</option>
+<option value="4352">Pokémon Picross (GB)</option>
+<option value="4627">Pokémon Pinball: Ruby &amp; Sapphire (GBA)</option>
+<option value="1903">Pokémon Puzzle Challenge (GB)</option>
+<option value="4903">Pokémon Ranger (NDS)</option>
+<option value="3043">Pokémon Stadium (N64)</option>
+<option value="3615">Pokémon Stadium 2 (N64)</option>
+<option value="4916">Pokémon Tetris (PMINI)</option>
+<option value="1499">Pokémon Trading Card Game (GB)</option>
+<option value="2121">Pokémon: Black Version (NDS)</option>
+<option value="1972">Pokémon: Black Version 2 (NDS)</option>
+<option value="1338">Pokémon: Blue Version (GB)</option>
+<option value="708">Pokémon: Crystal Version (GB)</option>
+<option value="1912">Pokémon: Emerald Version (GBA)</option>
+<option value="1072">Pokémon: FireRed Version (GBA)</option>
+<option value="1530">Pokémon: Gold Version (GB)</option>
+<option value="1977">Pokémon: HeartGold Version (NDS)</option>
+<option value="2078">Pokémon: LeafGreen Version (GBA)</option>
+<option value="5264">Pokémon: Pearl Version (NDS)</option>
+<option value="1968">Pokémon: Platinum Version (NDS)</option>
+<option value="876">Pokémon: Red Version (GB)</option>
+<option value="936">Pokémon: Ruby Version (GBA)</option>
+<option value="3056">Pokémon: Sapphire Version (GBA)</option>
+<option value="912">Pokémon: Silver Version (GB)</option>
+<option value="4654">Pokémon: SoulSilver Version (NDS)</option>
+<option value="1973">Pokémon: White Version 2 (NDS)</option>
+<option value="718">Pokémon: Yellow Version - Special Pikachu Edition (GB)</option>
+<option value="2811">Pooyan (NES)</option>
+<option value="5102">Pop&#039;n Music 3 - Append Disc (DC)</option>
+<option value="5103">Pop&#039;n Music 4 - Append Disc (DC)</option>
+<option value="2234">Pop&#039;n TwinBee (SNES)</option>
+<option value="2003">Pop&#039;n TwinBee: Rainbow Bell Adventures (SNES)</option>
+<option value="2764">Popeye (NES)</option>
+<option value="1788">Power Blade (NES)</option>
+<option value="2192">Power Blade 2 (NES)</option>
+<option value="1216">Power Quest (GB)</option>
+<option value="4895">Power Stone 2 (ARC)</option>
+<option value="3448">Predator (NES)</option>
+<option value="3892">Predator 2 (GEN)</option>
+<option value="939">Prince of Persia (SNES)</option>
+<option value="3891">Prince of Persia (GEN)</option>
+<option value="2047">Prince of Persia (NES)</option>
+<option value="2942">Prince of Persia 2: The Shadow and the Flame (GEN)</option>
+<option value="5080">Prism Land Story (PSX)</option>
+<option value="2090">Pro Wrestling (NES)</option>
+<option value="3140">Project S-11 (GB)</option>
+<option value="2267">Psycho Fox (SMS)</option>
+<option value="5345">Psycho Pinball (GEN)</option>
+<option value="944">Pulseman (GEN)</option>
+<option value="2231">Puyo Pop Fever (NDS)</option>
+<option value="179">Puyo Puyo (NES)</option>
+<option value="4205">Puyo Puyo Sun 64 (N64)</option>
+<option value="4901">Puyo Puyo Tsuu (GEN)</option>
+<option value="4783">Puyo Puyo~n Party (N64)</option>
+<option value="5349">Puzzle Bobble 3 (ARC)</option>
+<option value="5220">Puzzle Nintama Rantarou (SNES)</option>
+<option value="1473">Pyokotan no Dai Meiro (NES)</option>
+<option value="2293">Q*Bert (NES)</option>
+<option value="4564">Qix (NES)</option>
+<option value="4968">Quake (N64)</option>
+<option value="15">Quake II (PSX)</option>
+<option value="1658">Quarth (NES)</option>
+<option value="1190">Quattro Arcade (NES)</option>
+<option value="4758">Quest 64 (N64)</option>
+<option value="3629">R-Type (TG16)</option>
+<option value="3406">R-Type (SMS)</option>
+<option value="1548">R.B.I Baseball &#039;94 (GEN)</option>
+<option value="2453">R.C. Pro-Am (NES)</option>
+<option value="5073">R.C. Pro-Am II (NES)</option>
+<option value="2750">Race America (NES)</option>
+<option value="2062">Rad Racer (NES)</option>
+<option value="1325">Rad Racer II (NES)</option>
+<option value="5228">Radiant Silvergun (SAT)</option>
+<option value="2070">Raid on Bungeling Bay (NES)</option>
+<option value="2842">Raiden Trad (GEN)</option>
+<option value="4676">Rainbow Islands: Putty&#039;s Party (WS)</option>
+<option value="3232">Rainbow Islands: The Story of Bubble Bobble 2 (SMS)</option>
+<option value="2652">Rakuga Kids (N64)</option>
+<option value="2664">Rally de Africa (PSX)</option>
+<option value="5249">Rampage (NES)</option>
+<option value="4964">Rampage 2: Universal Tour (N64)</option>
+<option value="5331">Rampart (GEN)</option>
+<option value="4880">Rampart (Jaleco) (NES)</option>
+<option value="3428">Ranger-X (GEN)</option>
+<option value="5272">Ranma 1/2 - Ougi Jaanken (SNES)</option>
+<option value="3076">Ranma 1/2: Chougi Ranbu Hen (SNES)</option>
+<option value="4854">Rayman (PSX)</option>
+<option value="4483">Rayman (SAT)</option>
+<option value="4844">Rayman 2 (PSX)</option>
+<option value="5081">Rayman 3 (GBA)</option>
+<option value="722">RBI Baseball (NES)</option>
+<option value="2189">Record of Lodoss War (DC)</option>
+<option value="2382">Red Alarm (VB)</option>
+<option value="4415">Red Zone (GEN)</option>
+<option value="4820">Rendering Ranger R2 (SNES)</option>
+<option value="690">Renegade (NES)</option>
+<option value="5355">Rescue Shot (PSX)</option>
+<option value="3987">Resident Evil (PC)</option>
+<option value="1681">Resident Evil (GB)</option>
+<option value="4800">Resident Evil 2 (GC)</option>
+<option value="4242">Resident Evil 2: DualShock Ver. (PSX)</option>
+<option value="4245">Resident Evil 3: Nemesis (PSX)</option>
+<option value="989">Resident Evil: Director&#039;s Cut (PSX)</option>
+<option value="2734">Resident Evil: Survivor (PSX)</option>
+<option value="4050">Retro Game Challenge (NDS)</option>
+<option value="1550">Revelations: The Demon Slayer (GB)</option>
+<option value="5002">Revenge Of The Gator (GB)</option>
+<option value="4405">Rhyme Rider Kerorican (WS)</option>
+<option value="4143">Rhythm Heaven (NDS)</option>
+<option value="5188">Ridge Racer (PSX)</option>
+<option value="5250">Ridge Racer Revolution (PSX)</option>
+<option value="2050">Ring King (NES)</option>
+<option value="1128">Rings of Power (GEN)</option>
+<option value="948">Ristar (GEN)</option>
+<option value="2978">Ristar (GG)</option>
+<option value="806">River City Ransom (NES)</option>
+<option value="2071">Road Fighter (NES)</option>
+<option value="2031">Road Rash (GEN)</option>
+<option value="4343">Road Rash (SegaCD)</option>
+<option value="4567">Road Rash (GB)</option>
+<option value="4887">Road Rash 3 (GEN)</option>
+<option value="1346">Road Rash II (GEN)</option>
+<option value="2861">Road Rash: Jailbreak (PSX)</option>
+<option value="3505">RoadBlasters (NES)</option>
+<option value="2538">Robin Hood: Prince of Thieves (NES)</option>
+<option value="3512">Robo Warrior (NES)</option>
+<option value="2543">RoboCop (NES)</option>
+<option value="2522">RoboCop 2 (NES)</option>
+<option value="1595">RoboCop 3 (NES)</option>
+<option value="2465">RoboCop 3 (GEN)</option>
+<option value="2720">RoboCop Versus The Terminator (GEN)</option>
+<option value="5269">Robopon 2 Ring Version (GBA)</option>
+<option value="4972">Robotron 64 (N64)</option>
+<option value="1695">Rock and Roll Racing (GBA)</option>
+<option value="1983">Rock n&#039; Roll Racing (GEN)</option>
+<option value="2236">Rock N&#039; Roll Racing (SNES)</option>
+<option value="3158">Rocket Knight Adventures (GEN)</option>
+<option value="5239">Rocket: Robot on Wheels (N64)</option>
+<option value="1889">Rockin&#039; Kats (NES)</option>
+<option value="338">Rockman &amp; Forte (SNES)</option>
+<option value="970">Rockman EXE 4.5: Real Operation (GBA)</option>
+<option value="3915">RockMan: Power Battle Fighters (PS2)</option>
+<option value="4317">Roll Away (PSX)</option>
+<option value="1146">Rolling Thunder (NES)</option>
+<option value="3089">Rolling Thunder 3 (GEN)</option>
+<option value="2180">Romance of the Three Kingdoms II (SNES)</option>
+<option value="342">Romancing SaGa 3 (SNES)</option>
+<option value="2477">Route-16 Turbo (NES)</option>
+<option value="38">RPG Tsukuru GB (GB)</option>
+<option value="348">Rudra no Hihou (SNES)</option>
+<option value="3812">Rumble Roses (PS2)</option>
+<option value="4652">Rune Factory 3 (NDS)</option>
+<option value="778">Rush&#039;n Attack (NES)</option>
+<option value="2747">Rusty (PC98)</option>
+<option value="748">Rygar (NES)</option>
+<option value="1300">S.C.A.T.: Special Cybernetic Attack Team (NES)</option>
+<option value="4943">S.C.I. - Special Criminal Investigation (TG16)</option>
+<option value="4821">SA1 Demonstration Program (SNES)</option>
+<option value="2174">SaGa Frontier (PSX)</option>
+<option value="3088">Sagaia (GB)</option>
+<option value="3087">Sagaia (SMS)</option>
+<option value="2452">Sagaia (GEN)</option>
+<option value="5208">Saint Seiya: The Sanctuary (PS2)</option>
+<option value="5267">Sakura Wars: So Long, My Love (WII)</option>
+<option value="1834">Salamander (MSX)</option>
+<option value="2271">Samurai Shodown (GEN)</option>
+<option value="3968">Samurai Shodown (SNES)</option>
+<option value="2678">Samurai Shodown (GB)</option>
+<option value="3727">Samurai Shodown (GG)</option>
+<option value="3575">Samurai Shodown Anthology (PS2)</option>
+<option value="4538">Samurai Spirits Zero (PS2)</option>
+<option value="4612">San Guo Zhi 4 - Chi Bi Feng Yun (NES)</option>
+<option value="3265">Sanma no Meitantei (NES)</option>
+<option value="351">Sanrio World Smash Ball! (SNES)</option>
+<option value="3864">Saturday Night Slam Masters (SNES)</option>
+<option value="4681">School Fighter (GB)</option>
+<option value="2511">Scooby-Doo Mystery (GEN)</option>
+<option value="4954">SD Gundam G Generation: Gather Beat 2 (WS)</option>
+<option value="352">SD Gundam G Next (SNES)</option>
+<option value="4961">SD Gundam: G Generation - Monoeye Gundams (WS)</option>
+<option value="2273">SD Hero Soukessen: Taose! Aku no Gundan (NES)</option>
+<option value="4595">SD Hiryuu no Ken EX (GB)</option>
+<option value="802">Secret of Evermore (SNES)</option>
+<option value="799">Secret of Mana (SNES)</option>
+<option value="1135">Secret of the Stars (SNES)</option>
+<option value="5337">Sega Ages: OutRun (SAT)</option>
+<option value="4803">Sega Arcade Gallery (GBA)</option>
+<option value="5142">Sega Classics Arcade Collection 5-In-1 Limited Edition (USA) (SegaCD)</option>
+<option value="4837">Sega Rally Championship 1995 (PS2)</option>
+<option value="4157">Sega Smash Pack (GBA)</option>
+<option value="1949">Seicross (NES)</option>
+<option value="354">Seiken Densetsu 3 (SNES)</option>
+<option value="8">Seiken Psycho Caliber: Maju no Mori Densetsu (FDS)</option>
+<option value="3580">Sengoku Anthology (PS2)</option>
+<option value="4838">Sengoku Basara X (PS2)</option>
+<option value="917">Shadow Dancer (GEN)</option>
+<option value="4148">Shadow Man: 2econd Coming (PS2)</option>
+<option value="2207">Shadow of the Beast (GEN)</option>
+<option value="2213">Shadow of the Beast II (GEN)</option>
+<option value="896">Shadow of the Ninja (NES)</option>
+<option value="816">Shadowgate (NES)</option>
+<option value="3129">Shadowhawk (SNES)</option>
+<option value="1700">Shadowrun (SNES)</option>
+<option value="1305">Shadowrun (GEN)</option>
+<option value="2769">Shantae (GB)</option>
+<option value="1712">Shaq Fu (SNES)</option>
+<option value="203">Shatterhand (NES)</option>
+<option value="447">Shin Kidou Senki Gundam W: Endless Duel (SNES)</option>
+<option value="444">Shin Megami Tensei (SNES)</option>
+<option value="426">Shin Megami Tensei if... (SNES)</option>
+<option value="5158">Shin Megami Tensei: Devil Survivor (NDS)</option>
+<option value="5132">Shin Megami Tensei: Digital Devil Saga (PS2)</option>
+<option value="5123">Shin Megami Tensei: Digital Devil Saga 2 (PS2)</option>
+<option value="2663">Shin Megami Tensei: Nocturne (PS2)</option>
+<option value="1598">Shin Seikoku: La Wares (SNES)</option>
+<option value="872">Shining Force (GEN)</option>
+<option value="919">Shining Force II (GEN)</option>
+<option value="2110">Shining in the Darkness (GEN)</option>
+<option value="2030">Shinobi (NES)</option>
+<option value="4944">Shinobi (TG16)</option>
+<option value="1015">Shinobi III: Return of the Ninja Master (GEN)</option>
+<option value="4566">Shinobi Legions (SAT)</option>
+<option value="5095">Shuffle Fight (NES)</option>
+<option value="4702">Sid Meier&#039;s Civilization (SNES)</option>
+<option value="5205">Silent Hill 4: The Room (PS2)</option>
+<option value="5180">Silhouette Mirage (SAT)</option>
+<option value="2066">Silkworm (NES)</option>
+<option value="2248">Silver Surfer (NES)</option>
+<option value="5050">SimAnt: The Electronic Ant Colony (SNES)</option>
+<option value="2203">SimCity (SNES)</option>
+<option value="783">Sin and Punishment (N64)</option>
+<option value="4254">Skate or Die (NES)</option>
+<option value="1539">Skies of Arcadia Legends (GC)</option>
+<option value="2215">Sky Kid (NES)</option>
+<option value="903">Skyblazer (SNES)</option>
+<option value="3341">Slap Fight MD (GEN)</option>
+<option value="3571">Sled Storm (PSX)</option>
+<option value="4368">Smash Ping Pong (FDS)</option>
+<option value="2795">Smash Tennis (SNES)</option>
+<option value="1806">Snake Rattle &#039;n&#039; Roll (NES)</option>
+<option value="2397">Snake&#039;s Revenge (NES)</option>
+<option value="733">Snoopy&#039;s Magic Show (GB)</option>
+<option value="676">Snoopy&#039;s Silly Sports Spectacular! (NES)</option>
+<option value="3225">Snow Bros.: Nick &amp; Tom (GEN)</option>
+<option value="2637">Snow Brothers (NES)</option>
+<option value="555">Soccer (NES)</option>
+<option value="4984">Socket (GEN)</option>
+<option value="5125">Soldam (ARC)</option>
+<option value="5129">Solomon no Kagi (FDS)</option>
+<option value="3234">Solomon no Kagi: Oujo Rihita no Namida (SMS)</option>
+<option value="1780">Solomon&#039;s Key (NES)</option>
+<option value="3173">Solstice: The Quest for the Staff of Demnos (NES)</option>
+<option value="2311">Somari the Adventurer (NES)</option>
+<option value="412">Son Son (NES)</option>
+<option value="1772">Sonic &amp; Knuckles (GEN)</option>
+<option value="969">Sonic 3 &amp; Knuckles (GEN)</option>
+<option value="947">Sonic 3D Blast (GEN)</option>
+<option value="5210">Sonic 3D Blast (SAT)</option>
+<option value="981">Sonic Advance (GBA)</option>
+<option value="4738">Sonic Advance 2 (GBA)</option>
+<option value="1502">Sonic Advance 3 (GBA)</option>
+<option value="1776">Sonic CD (SegaCD)</option>
+<option value="2199">Sonic CD 2011 (PC)</option>
+<option value="1778">Sonic Drift 2 (GG)</option>
+<option value="4885">Sonic Heroes (GC)</option>
+<option value="5222">Sonic Jam (SAT)</option>
+<option value="863">Sonic the Hedgehog (GEN)</option>
+<option value="2880">Sonic the Hedgehog (GG)</option>
+<option value="959">Sonic the Hedgehog (SMS)</option>
+<option value="3340">Sonic the Hedgehog 2 (GG)</option>
+<option value="1766">Sonic the Hedgehog 2 (SMS)</option>
+<option value="790">Sonic the Hedgehog 2 (GEN)</option>
+<option value="1771">Sonic the Hedgehog 3 (GEN)</option>
+<option value="2492">Sonic the Hedgehog Spinball (GEN)</option>
+<option value="1770">Sonic the Hedgehog: Triple Trouble (GG)</option>
+<option value="2920">Soul Blade (PSX)</option>
+<option value="2694">Soul Blazer (SNES)</option>
+<option value="4922">SoulCalibur 1 (DC)</option>
+<option value="3842">SoulCalibur III (PS2)</option>
+<option value="4278">South Park (GB)</option>
+<option value="3099">Space Harrier II (GEN)</option>
+<option value="1948">Space Invaders (NES)</option>
+<option value="4915">Space Invasion (GB)</option>
+<option value="1501">Space Manbow (MSX)</option>
+<option value="1537">Space Megaforce (SNES)</option>
+<option value="2370">Space Pinball (VB)</option>
+<option value="2902">Space Station Silicon Valley (N64)</option>
+<option value="683">Spanky&#039;s Quest (GB)</option>
+<option value="3160">Sparkster (SNES)</option>
+<option value="3851">Spectral VS Generation (PS2)</option>
+<option value="3026">Speedy Gonzales in Los Gatos Bandidos (SNES)</option>
+<option value="2864">Spellcaster (SMS)</option>
+<option value="2810">Spelunker (NES)</option>
+<option value="3172">Spider-Man and Venom: Maximum Carnage (GEN)</option>
+<option value="3053">Spider-Man vs. The Kingpin (GEN)</option>
+<option value="4410">Spider-Man/X-Men - Arcade&#039;s Revenge (GEN)</option>
+<option value="2327">Spider-Man: Return of the Sinister Six (NES)</option>
+<option value="1270">Splatterhouse (TG16)</option>
+<option value="2478">Splatterhouse 2 (GEN)</option>
+<option value="1589">Splatterhouse 3 (GEN)</option>
+<option value="187">Splatterhouse: Wanpaku Graffiti (NES)</option>
+<option value="2287">Spy Hunter (NES)</option>
+<option value="4797">Spyro 2: Ripto&#039;s Rage! (PSX)</option>
+<option value="4725">Spyro: Season of Ice (GBA)</option>
+<option value="1383">Sqoon (NES)</option>
+<option value="4749">SSX Tricky (GC)</option>
+<option value="2405">Star Force (NES)</option>
+<option value="1247">Star Fox (SNES)</option>
+<option value="636">Star Fox 2 (SNES)</option>
+<option value="2722">Star Fox 64 (N64)</option>
+<option value="4819">Star Hearts: Hoshi to Daichi no Shisha (WS)</option>
+<option value="359">Star Ocean (SNES)</option>
+<option value="1721">Star Ocean: First Departure (PSP)</option>
+<option value="2341">Star Soldier (NES)</option>
+<option value="2247">Star Soldier: Vanishing Earth (N64)</option>
+<option value="3360">Star Wars (JVC) (NES)</option>
+<option value="3538">Star Wars: The Empire Strikes Back (NES)</option>
+<option value="5157">Starflight (GEN)</option>
+<option value="1246">StarTropics (NES)</option>
+<option value="4737">Startropics II: Zoda&#039;s Revenge (NES)</option>
+<option value="192">STED: Iseki Wakusei no Yabou (NES)</option>
+<option value="5133">Steel Empire (GBA)</option>
+<option value="4503">Stellar Assault (32X)</option>
+<option value="1004">Stormlord (GEN)</option>
+<option value="2988">Street Fighter Alpha 2 (SNES)</option>
+<option value="5130">Street Fighter Alpha 2 (ARC)</option>
+<option value="4362">Street Fighter Alpha 3 (PSX)</option>
+<option value="2908">Street Fighter Alpha Warriors&#039; Dreams (ARC)</option>
+<option value="4332">Street Fighter Anniversary Collection (PS2)</option>
+<option value="5334">Street Fighter EX plus Alpha (PSX)</option>
+<option value="3597">Street Fighter EX2 Plus (PSX)</option>
+<option value="3831">Street Fighter EX3 (PS2)</option>
+<option value="5026">Street Fighter II (SMS)</option>
+<option value="1955">Street Fighter II (SNES)</option>
+<option value="2884">Street Fighter II Hyper Fighting (ARC)</option>
+<option value="4354">Street Fighter II Turbo (SNES)</option>
+<option value="1984">Street Fighter II&#039;: Special Champion Edition (GEN)</option>
+<option value="2878">Street Fighter II: Champion Edition (ARC)</option>
+<option value="2873">Street Fighter II: The World Warrior (ARC)</option>
+<option value="4490">Street Fighter III: 3rd Strike (PS2)</option>
+<option value="4289">Street Fighter IV (Unl) (NES)</option>
+<option value="1927">Streets of Rage (GEN)</option>
+<option value="1925">Streets of Rage 2 (GEN)</option>
+<option value="1276">Streets of Rage 3 (GEN)</option>
+<option value="4801">Strider (ARC)</option>
+<option value="1809">Strider (NES)</option>
+<option value="2923">Strider 2 (PSX)</option>
+<option value="868">Stunt Race FX (SNES)</option>
+<option value="4297">Sub-Terrania (GEN)</option>
+<option value="1805">Suikoden (PSX)</option>
+<option value="2667">Suikoden II (PSX)</option>
+<option value="484">Summer Carnival &#039;92 RECCA (NES)</option>
+<option value="4753">Summon Night Swordcraft Story (GBA)</option>
+<option value="4398">Summon Night: Swordcraft Story 2 (GBA)</option>
+<option value="2060">Sunman (NES)</option>
+<option value="2224">Sunset Riders (GEN)</option>
+<option value="3714">Sunsoft Collection (PS2)</option>
+<option value="1669">Super Adventure Island (SNES)</option>
+<option value="2284">Super Arabian (NES)</option>
+<option value="1672">Super Back to the Future Part II (SNES)</option>
+<option value="5063">Super Bomberman (SNES)</option>
+<option value="1790">Super Bomberman 2 (SNES)</option>
+<option value="2704">Super Bomberman 3 (SNES)</option>
+<option value="1356">Super Bomberman 4 (SNES)</option>
+<option value="589">Super Bomberman 5 (SNES)</option>
+<option value="5278">Super Bombliss (SNES)</option>
+<option value="2342">Super Boy 4 (SMS)</option>
+<option value="4411">Super Bubble Bobble (GEN)</option>
+<option value="2606">Super Bust-A-Move (GBA)</option>
+<option value="1954">Super C (NES)</option>
+<option value="1235">Super Castlevania IV (SNES)</option>
+<option value="814">Super Dodge Ball (NES)</option>
+<option value="976">Super Double Dragon (SNES)</option>
+<option value="2619">Super F1 Circus 2 (SNES)</option>
+<option value="4055">Super Fighter III (NES)</option>
+<option value="4308">Super Fire Pro Wrestling (SNES)</option>
+<option value="5159">Super Fire Pro Wrestling - Final Bout (SNES)</option>
+<option value="4721">Super Fire Pro Wrestling 2 (SNES)</option>
+<option value="4722">Super Fire Pro Wrestling III - Easy Type (SNES)</option>
+<option value="363">Super Fire Pro Wrestling X Premium (SNES)</option>
+<option value="4455">Super Game Boy (SNES)</option>
+<option value="4456">Super Game Boy 2 (SNES)</option>
+<option value="2824">Super Ghouls &#039;n Ghosts (GBA)</option>
+<option value="2503">Super Ghouls &#039;n Ghosts (SNES)</option>
+<option value="2266">Super Glove Ball (NES)</option>
+<option value="2895">Super Hang-On (GEN)</option>
+<option value="4670">Super Hydlide (GEN)</option>
+<option value="847">Super Mario 64 (N64)</option>
+<option value="1496">Super Mario 64 DS (NDS)</option>
+<option value="1731">Super Mario Advance (GBA)</option>
+<option value="1399">Super Mario Advance 4: Super Mario Bros. 3 (GBA)</option>
+<option value="854">Super Mario All-Stars (SNES)</option>
+<option value="2474">Super Mario All-Stars + Super Mario World (SNES)</option>
+<option value="1963">Super Mario Bros. (FDS)</option>
+<option value="709">Super Mario Bros. (NES)</option>
+<option value="963">Super Mario Bros. 2 (FDS)</option>
+<option value="749">Super Mario Bros. 2 (NES)</option>
+<option value="750">Super Mario Bros. 3 (NES)</option>
+<option value="734">Super Mario Bros. Deluxe (GB)</option>
+<option value="1143">Super Mario Bros. Special (PC88)</option>
+<option value="755">Super Mario Kart (SNES)</option>
+<option value="829">Super Mario Land (GB)</option>
+<option value="891">Super Mario Land 2: 6 Golden Coins (GB)</option>
+<option value="804">Super Mario RPG: Legend of the Seven Stars (SNES)</option>
+<option value="2739">Super Mario Sunshine (GC)</option>
+<option value="714">Super Mario World (SNES)</option>
+<option value="2599">Super Mario World (Unl) (NES)</option>
+<option value="800">Super Mario World 2: Yoshi’s Island (SNES)</option>
+<option value="1226">Super Mario World: Super Mario Advance 2 (GBA)</option>
+<option value="729">Super Metroid (SNES)</option>
+<option value="2337">Super Monaco GP (GEN)</option>
+<option value="4462">Super Ninja Boy (SNES)</option>
+<option value="2428">Super Pitfall (NES)</option>
+<option value="3253">Super Punch-Out!! (SNES)</option>
+<option value="2605">Super Puzzle Fighter II (GBA)</option>
+<option value="2604">Super Puzzle Fighter II Turbo (ARC)</option>
+<option value="4058">Super Racing (SMS)</option>
+<option value="4611">Super Real Mahjong VS (ARC)</option>
+<option value="2685">Super Robin Hood (NES)</option>
+<option value="4739">Super Robot Taisen A (GBA)</option>
+<option value="4760">Super Robot Taisen Compact 2 dai 1-bu: Chijo gekido-hen (WS)</option>
+<option value="4762">Super Robot Taisen Compact 3 (WS)</option>
+<option value="4752">Super Robot Taisen Compact for WonderSwanColor (WS)</option>
+<option value="1233">Super Robot Taisen D (GBA)</option>
+<option value="1230">Super Robot Taisen EX (SNES)</option>
+<option value="1234">Super Robot Taisen J (GBA)</option>
+<option value="462">Super Robot Taisen R (GBA)</option>
+<option value="4756">Super Robot Taisen W (NDS)</option>
+<option value="5088">Super Robot Taisen: Original Generation (GBA)</option>
+<option value="5089">Super Robot Taisen: Original Generation 2 (GBA)</option>
+<option value="4744">Super Robot Wars 64 (N64)</option>
+<option value="4229">Super Smash Bros. (N64)</option>
+<option value="5032">Super Smash T.V. (SNES)</option>
+<option value="1012">Super Soccer (SNES)</option>
+<option value="4871">Super Star Wars (SNES)</option>
+<option value="5247">Super Street Fighter II Turbo (ARC)</option>
+<option value="882">Super Street Fighter II Turbo Revival (GBA)</option>
+<option value="2171">Super Street Fighter II: The New Challengers (GEN)</option>
+<option value="2185">Super Street Fighter II: The New Challengers (SNES)</option>
+<option value="2885">Super Street Fighter II: The New Challengers (ARC)</option>
+<option value="5277">Super Tetris 3 (SNES)</option>
+<option value="4325">Super Thunder Blade (GEN)</option>
+<option value="2205">Super Turrican (NES)</option>
+<option value="1920">Superman (NES)</option>
+<option value="3078">Superman (GEN)</option>
+<option value="2082">Supreme Warrior (3DO)</option>
+<option value="1897">Swamp Thing (NES)</option>
+<option value="3059">SWAT: Special Weapons and Tactics (NES)</option>
+<option value="3004">Switchblade II (LYNX)</option>
+<option value="3704">Sword Master (NES)</option>
+<option value="1044">Sword of Mana (GBA)</option>
+<option value="3213">Sword of Vermilion (GEN)</option>
+<option value="3800">T2: The Arcade Game (SNES)</option>
+<option value="682">T2: The Arcade Game (GEN)</option>
+<option value="5333">Tactics Ogre: Let Us Cling Together (PSX)</option>
+<option value="2418">Tactics Ogre: The Knight of Lodis (GBA)</option>
+<option value="2411">Taito Chase H.Q. (NES)</option>
+<option value="80">Takahashi Meijin no Bouken Jima IV (NES)</option>
+<option value="1905">Tales of Eternia (PSP)</option>
+<option value="4049">Tales of Legendia (PS2)</option>
+<option value="547">Tales of Phantasia (GBA)</option>
+<option value="669">Tales of the World: Narikiri Dungeon 3 (GBA)</option>
+<option value="1560">TaleSpin (NES)</option>
+<option value="3382">Target Earth (GEN)</option>
+<option value="2469">Task Force Harrier EX (GEN)</option>
+<option value="5372">Tasmania Story (GB)</option>
+<option value="4454">Tatsujin Ou (ARC)</option>
+<option value="3006">Taz in Escape from Mars (GEN)</option>
+<option value="2016">Taz-Mania (GEN)</option>
+<option value="724">Tecmo Bowl (NES)</option>
+<option value="725">Tecmo Super Bowl (NES)</option>
+<option value="1088">Tecmo World Cup Soccer (NES)</option>
+<option value="3408">Teddy Boy (SMS)</option>
+<option value="1494">Teenage Mutant Ninja Turtles (NES)</option>
+<option value="2063">Teenage Mutant Ninja Turtles II: The Arcade Game (NES)</option>
+<option value="2065">Teenage Mutant Ninja Turtles III: The Manhattan Project (NES)</option>
+<option value="1755">Teenage Mutant Ninja Turtles IV: Turtles in Time (SNES)</option>
+<option value="3326">Teenage Mutant Ninja Turtles: Fall of the Foot Clan (GB)</option>
+<option value="2249">Teenage Mutant Ninja Turtles: The Hyperstone Heist (GEN)</option>
+<option value="2200">Teenage Mutant Ninja Turtles: Tournament Fighters (GEN)</option>
+<option value="1866">Teenage Mutant Ninja Turtles: Tournament Fighters (SNES)</option>
+<option value="2255">Teenage Mutant Ninja Turtles: Tournament Fighters (NES)</option>
+<option value="5330">Tekken (ARC)</option>
+<option value="2989">Tekken 2 (PSX)</option>
+<option value="2672">Tekken 3 (PSX)</option>
+<option value="3713">Tekken 5 (PS2)</option>
+<option value="5304">Tempo (32X)</option>
+<option value="374">Tenchi Muyo!: Game Hen (SNES)</option>
+<option value="1183">Tenchu: Stealth Assassins (PSX)</option>
+<option value="2897">Tengai Makyou Zero (SNES)</option>
+<option value="4034">Terminator 2: Judgment Day (GEN)</option>
+<option value="3176">Terminator 2: Judgment Day (GB)</option>
+<option value="2404">Terra Cresta (NES)</option>
+<option value="897">Terranigma (SNES)</option>
+<option value="3098">Terrifying 911 (GB)</option>
+<option value="2622">Tetris (GB)</option>
+<option value="940">Tetris (NES)</option>
+<option value="2254">Tetris &amp; Dr. Mario (SNES)</option>
+<option value="4265">Tetris (Famicom) (NES)</option>
+<option value="2389">Tetris (Tengen) (NES)</option>
+<option value="4763">Tetris 2 (NES)</option>
+<option value="4835">Tetris 2 + Bombliss (NES)</option>
+<option value="1040">Tetris Attack (SNES)</option>
+<option value="4389">Tetris Attack (GB)</option>
+<option value="2587">Tetris Battle Gaiden (SNES)</option>
+<option value="2237">Tetris DX (GB)</option>
+<option value="4996">Tetris The Absolute The Grand Master 2 PLUS (ARC)</option>
+<option value="4412">Tetris: The Grand Master (ARC)</option>
+<option value="5296">Tetrisphere (N64)</option>
+<option value="4698">The 3-D Battles of WorldRunner (NES)</option>
+<option value="1046">The 7th Saga (SNES)</option>
+<option value="3113">The Addams Family (GEN)</option>
+<option value="3112">The Addams Family (SNES)</option>
+<option value="1670">The Addams Family (NES)</option>
+<option value="3595">The Adventures of Batman &amp; Robin (SNES)</option>
+<option value="1523">The Adventures of Batman &amp; Robin (GEN)</option>
+<option value="1477">The Adventures of Bayou Billy (NES)</option>
+<option value="3194">The Adventures of Captain Comic (NES)</option>
+<option value="4878">The Adventures of Kid Kleets (SNES)</option>
+<option value="5258">The Bard&#039;s Tale: Tales of the Unknown (NES)</option>
+<option value="2846">The Battle of Olympus (NES)</option>
+<option value="2464">The Blues Brothers (NES)</option>
+<option value="951">The Bugs Bunny Crazy Castle (NES)</option>
+<option value="1315">The Bugs Bunny Crazy Castle II (GB)</option>
+<option value="2461">The Chaos Engine (GEN)</option>
+<option value="3917">The Chessmaster (GG)</option>
+<option value="1841">The Chessmaster (GB)</option>
+<option value="3185">The Death and Return of Superman (SNES)</option>
+<option value="1179">The Fantastic Adventures of Dizzy (NES)</option>
+<option value="2711">The Firemen (SNES)</option>
+<option value="4934">The Flintstones: King Rock Treasure Island (GB)</option>
+<option value="4203">The Flintstones: The Rescue of Dino &amp; Hoppy (NES)</option>
+<option value="2351">The Flintstones: The Surprise at Dinosaur Peak! (NES)</option>
+<option value="743">The Goonies II (NES)</option>
+<option value="792">The Guardian Legend (NES)</option>
+<option value="3409">The Hunt for Red October (NES)</option>
+<option value="621">The Immortal (NES)</option>
+<option value="5236">The Incredible Hulk (GEN)</option>
+<option value="2607">The Jetsons: Cogswell&#039;s Caper! (NES)</option>
+<option value="4364">The Jetsons: Invasion of the Planet Pirates (SNES)</option>
+<option value="2358">The Jungle Book (NES)</option>
+<option value="2813">The Karate Kid (NES)</option>
+<option value="5344">The King of Fighters &#039;94 (ARC)</option>
+<option value="3581">The King of Fighters 2000 (PS2)</option>
+<option value="3627">The King of Fighters 2001 (PS2)</option>
+<option value="3578">The King of Fighters Neowave (PS2)</option>
+<option value="3495">The King of Fighters NESTS Collection (PS2)</option>
+<option value="3477">The King of Fighters: The Orochi Saga (PS2)</option>
+<option value="451">The Krion Conquest (NES)</option>
+<option value="5289">The Last Blade (ARC)</option>
+<option value="2120">The Last Ninja (NES)</option>
+<option value="697">The Legend of Dragoon (PSX)</option>
+<option value="1250">The Legend of Oasis (SAT)</option>
+<option value="2700">The Legend of the Mystical Ninja (SNES)</option>
+<option value="712">The Legend of Zelda (NES)</option>
+<option value="4657">The Legend of Zelda: A Link Between Worlds (3DS)</option>
+<option value="715">The Legend of Zelda: A Link to the Past (SNES)</option>
+<option value="2375">The Legend of Zelda: A Link to the Past and Four Swords (GBA)</option>
+<option value="884">The Legend of Zelda: Link&#039;s Awakening DX (GB)</option>
+<option value="2521">The Legend of Zelda: Majora&#039;s Mask (N64)</option>
+<option value="5107">The Legend of Zelda: Majora&#039;s Mask 3D (3DS)</option>
+<option value="955">The Legend of Zelda: Ocarina of Time (N64)</option>
+<option value="5160">The Legend of Zelda: Ocarina of Time 3D (3DS)</option>
+<option value="1421">The Legend of Zelda: Oracle of Ages (GB)</option>
+<option value="791">The Legend of Zelda: Oracle of Seasons (GB)</option>
+<option value="1577">The Legend of Zelda: Phantom Hourglass (NDS)</option>
+<option value="2204">The Legend of Zelda: Spirit Tracks (NDS)</option>
+<option value="1064">The Legend of Zelda: The Minish Cap (GBA)</option>
+<option value="4155">The Legend of Zelda: The Wind Waker (GC)</option>
+<option value="2181">The Lion King (GEN)</option>
+<option value="4012">The Lion King (NES)</option>
+<option value="2831">The Lost Vikings (GBA)</option>
+<option value="2702">The Lost Vikings II (SNES)</option>
+<option value="3347">The Lost World: Jurassic Park (GEN)</option>
+<option value="3131">The Magic of Scheherazade (NES)</option>
+<option value="2703">The Magical Quest Starring Mickey Mouse (SNES)</option>
+<option value="1832">The Maze of Galious (MSX)</option>
+<option value="4179">The Misadventures of Flink (SegaCD)</option>
+<option value="4172">The Misadventures of Flink (GEN)</option>
+<option value="3588">The New Zealand Story (GEN)</option>
+<option value="1498">The Ninja Warriors (SNES)</option>
+<option value="4701">The Ooze (GEN)</option>
+<option value="2548">The Penguin &amp; Seal (NES)</option>
+<option value="3324">The Pirates of Dark Water (SNES)</option>
+<option value="573">The Punisher (NES)</option>
+<option value="1966">The Quest of Ki (NES)</option>
+<option value="916">The Revenge of Shinobi (GEN)</option>
+<option value="4729">The Secret of Monkey Island (SegaCD)</option>
+<option value="3814">The Shadow (SNES)</option>
+<option value="5346">The Simpsons (ARC)</option>
+<option value="4515">The Simpsons - Bart&#039;s Nightmare (GEN)</option>
+<option value="3205">The Simpsons: Bart vs. The Space Mutants (GEN)</option>
+<option value="1485">The Terminator (GEN)</option>
+<option value="821">The Terminator (NES)</option>
+<option value="2402">The Tower of Druaga (NES)</option>
+<option value="2802">The Twisted Tales of Spike McFang (SNES)</option>
+<option value="2612">The Ultimate Stuntman (NES)</option>
+<option value="1789">The Uncanny X-Men (NES)</option>
+<option value="2406">The Universe Soldiers (NES)</option>
+<option value="4666">The Wizard of Oz (SNES)</option>
+<option value="4905">Thin Ice (NES)</option>
+<option value="5028">Thrash Rally (ARC)</option>
+<option value="2166">Thunder Pro Wrestling Retsuden (GEN)</option>
+<option value="5201">Thunder Spirits (SNES)</option>
+<option value="2196">Thundercade (NES)</option>
+<option value="1814">Tiles of Fate (NES)</option>
+<option value="2659">Time Lord (NES)</option>
+<option value="945">Tiny Toon Adventures (NES)</option>
+<option value="4781">Tiny Toon Adventures 2: Trouble in Wackyland (NES)</option>
+<option value="1211">Tiny Toon Adventures: Buster Busts Loose! (SNES)</option>
+<option value="1785">Tiny Toon Adventures: Buster&#039;s Hidden Treasure (GEN)</option>
+<option value="3260">ToeJam &amp; Earl in Panic on Funkotron (GEN)</option>
+<option value="1412">Toki (NES)</option>
+<option value="2724">Toki: Going Ape Spit (GEN)</option>
+<option value="3913">Tokyo Xtreme Racer 2 (DC)</option>
+<option value="5245">Tokyo Xtreme Racer 3 (PS2)</option>
+<option value="2558">Tom &amp; Jerry: The Ultimate Game of Cat and Mouse! (NES)</option>
+<option value="4309">Tom and Jerry - Frantic Antics (GEN)</option>
+<option value="2825">Tomb Raider (SAT)</option>
+<option value="4969">Tomb Raider Chronicles (PSX)</option>
+<option value="72">Tomb Raider: The Last Revelation (PSX)</option>
+<option value="1606">Top Gear (SNES)</option>
+<option value="2274">Top Gear 2 (SNES)</option>
+<option value="3880">Top Gun (NES)</option>
+<option value="5353">Torneko Adventures 3: Mysterious Dungeon (PS2)</option>
+<option value="5240">Toryumon (ARC)</option>
+<option value="1506">Totally Rad (NES)</option>
+<option value="1651">Toukon Club (NES)</option>
+<option value="5044">Towers: Lord Baniff&#039;s Deceit (GB)</option>
+<option value="3388">Toxic Crusaders (NES)</option>
+<option value="3120">Toy Story (GEN)</option>
+<option value="5260">Toy Story (NES)</option>
+<option value="2033">Track and Field (NES)</option>
+<option value="204">Transformer: Convoy no Nazo (NES)</option>
+<option value="5336">Transformers: Beast Wars Transmetals (N64)</option>
+<option value="4391">Trauma Center: Under the Knife (NDS)</option>
+<option value="2061">Trauma Center: Under the Knife 2 (NDS)</option>
+<option value="4511">Trax (GB)</option>
+<option value="4197">Trip World (GB)</option>
+<option value="4198">Trog! (NES)</option>
+<option value="2566">Trojan (NES)</option>
+<option value="2475">Truxton (GEN)</option>
+<option value="4788">Tsuyoshi Shikkari Shinasai - Taisen Puzzle Dama (SNES)</option>
+<option value="3467">Turbo Outrun (GEN)</option>
+<option value="5110">Turok - Battle of the Bionosaurs (GB)</option>
+<option value="5108">Turok 2: Seeds of Evil (GB)</option>
+<option value="4625">Turok 3: Shadow of Oblivion (N64)</option>
+<option value="2362">Turrican (GEN)</option>
+<option value="2803">Twin Cobra (NES)</option>
+<option value="686">Twin Cobra (GEN)</option>
+<option value="2674">Twin Hawk (GEN)</option>
+<option value="1203">TwinBee (NES)</option>
+<option value="1009">Twinkle Tale (GEN)</option>
+<option value="5155">Twisted Metal Head-On - Extra Twisted Edition (PS2)</option>
+<option value="1801">U-four-ia: The Saga (NES)</option>
+<option value="4079">U.N. Squadron (SNES)</option>
+<option value="2456">Uchuu Senkan Gomora (GEN)</option>
+<option value="1688">Ultima: Exodus (NES)</option>
+<option value="516">Ultima: Runes of Virtue (GB)</option>
+<option value="2856">Ultimate Mortal Kombat 3 (SNES)</option>
+<option value="1002">Ultimate Mortal Kombat 3 (GEN)</option>
+<option value="5207">Ultraman (SNES)</option>
+<option value="5174">Um Jammer Lammy (PSX)</option>
+<option value="382">Umihara Kawase (SNES)</option>
+<option value="1431">Uninvited (NES)</option>
+<option value="3313">Uniracers (SNES)</option>
+<option value="1815">Urban Champion (NES)</option>
+<option value="4467">Urban Strike (GEN)</option>
+<option value="1291">Urusei Yatsura: Lum no Wedding Bell (NES)</option>
+<option value="5299">Utchan Nanchan no Hono no Challenger - Denryuu Ira Ira Bou (N64)</option>
+<option value="4958">V-Rally 3 (GBA)</option>
+<option value="999">Vagrant Story (PSX)</option>
+<option value="1041">Valis: The Fantasm Soldier (NES)</option>
+<option value="82">Valkyrie no Bouken: Toki no Kagi Densetsu (NES)</option>
+<option value="2485">Valkyrie no Densetsu (TG16)</option>
+<option value="1833">Vampire Killer (MSX)</option>
+<option value="4341">Vandal Hearts II (PSX)</option>
+<option value="2296">Vapor Trail: Hyper Offence Formation (GEN)</option>
+<option value="4817">Vay (SegaCD)</option>
+<option value="4474">Vectorman (GEN)</option>
+<option value="4070">Vectorman 2 (GEN)</option>
+<option value="3607">Venom - Spider-Man: Separation Anxiety (GEN)</option>
+<option value="2383">Vertical Force (VB)</option>
+<option value="5352">Vib-Ribbon (PSX)</option>
+<option value="1921">Vice: Project Doom (NES)</option>
+<option value="563">Vigilante (SMS)</option>
+<option value="3616">Virtua Fighter 4: Evolution (PS2)</option>
+<option value="4396">Virtua Racing (GEN)</option>
+<option value="4395">Virtua Racing Deluxe (32X)</option>
+<option value="4505">Virtual Bart (GEN)</option>
+<option value="2384">Virtual Bowling (VB)</option>
+<option value="3181">Virtual Lab (VB)</option>
+<option value="2385">Virtual League Baseball (VB)</option>
+<option value="5200">Virtual Pro Wrestling 64 (N64)</option>
+<option value="607">Vixen 357 (GEN)</option>
+<option value="1892">Volleyball (NES)</option>
+<option value="4485">VS Wrecking Crew (ARC)</option>
+<option value="3478">Vs. Dr. Mario (ARC)</option>
+<option value="590">Vs. Excitebike (FDS)</option>
+<option value="3475">Vs. Ice Climber (ARC)</option>
+<option value="1764">Vs. Super Mario Bros. (NES)</option>
+<option value="4967">War Gods (N64)</option>
+<option value="2493">War in the Gulf (NES)</option>
+<option value="474">Wardner (GEN)</option>
+<option value="1747">Wario Land 3 (GB)</option>
+<option value="2715">Wario Land 4 (GBA)</option>
+<option value="2212">Wario Land II (GB)</option>
+<option value="1738">Wario Land: Super Mario Land 3 (GB)</option>
+<option value="4794">Wario World (GC)</option>
+<option value="1071">Wario&#039;s Woods (NES)</option>
+<option value="2076">WarioWare, Inc.: Mega Microgame$! (GBA)</option>
+<option value="3748">Warlock (GEN)</option>
+<option value="2482">Warpman (NES)</option>
+<option value="5021">Warriors of Fate (ARC)</option>
+<option value="1161">Warsong (GEN)</option>
+<option value="4761">Waterworld (GEN)</option>
+<option value="4638">Waterworld (SNES)</option>
+<option value="4726">Wave Race 64 (N64)</option>
+<option value="4161">Wayne Gretzky Hockey (NES)</option>
+<option value="5285">WCW vs. nWo World Tour (N64)</option>
+<option value="2177">WCW World Championship Wrestling (NES)</option>
+<option value="5282">WCW/nWo Revenge (N64)</option>
+<option value="3560">WeaponLord (SNES)</option>
+<option value="3165">Wendy: Every Witch Way (GB)</option>
+<option value="1413">Werewolf: The Last Warrior (NES)</option>
+<option value="3361">Wheel of Fortune (NES)</option>
+<option value="4402">Where&#039;s Waldo? (NES)</option>
+<option value="645">Whomp &#039;Em (NES)</option>
+<option value="2278">Wild Arms 2 (PSX)</option>
+<option value="2232">Wild Gunman (NES)</option>
+<option value="5034">Wild Guns (SNES)</option>
+<option value="1284">Willow (NES)</option>
+<option value="502">Wit&#039;s (NES)</option>
+<option value="2243">Wizardry Empire (GB)</option>
+<option value="48">Wizardry Empire: Fukkatsu no Tsue (GB)</option>
+<option value="385">Wizardry I-II-III: Story of Llylgamyn (SNES)</option>
+<option value="4417">Wizardry Scenario #1: Proving Grounds of the Mad Overlord (WS)</option>
+<option value="858">Wizardry: Bane of the Cosmic Forge (SNES)</option>
+<option value="1294">Wizardry: Proving Grounds of the Mad Overlord (NES)</option>
+<option value="3275">Wizards &amp; Warriors III - Kuros: Visions of Power (NES)</option>
+<option value="4602">Wolfchild (SegaCD)</option>
+<option value="4438">Wolfenstein 3D (Jaguar) (JAG)</option>
+<option value="1678">Wolverine (NES)</option>
+<option value="4581">Wolverine: Adamantium Rage (GEN)</option>
+<option value="3401">Wonder Boy (SMS)</option>
+<option value="2687">Wonder Boy III: Monster Lair (GEN)</option>
+<option value="2780">Wonder Boy III: The Dragon&#039;s Trap (SMS)</option>
+<option value="3193">Wonder Boy in Monster Land (SMS)</option>
+<option value="1131">Wonder Boy in Monster World (GEN)</option>
+<option value="2872">Wonder Boy in Monster World (SMS)</option>
+<option value="3503">Wonder Boy: The Dragon&#039;s Trap (GG)</option>
+<option value="2211">Wonder Momo (TG16)</option>
+<option value="3721">World Heroes (SNES)</option>
+<option value="3632">World Heroes 2 (SNES)</option>
+<option value="5087">World Heroes 2 Jet (GB)</option>
+<option value="3596">World Heroes Anthology (PS2)</option>
+<option value="1079">World Soccer Winning Eleven 2002 (PSX)</option>
+<option value="2459">Worms (GB)</option>
+<option value="752">Wrecking Crew (NES)</option>
+<option value="4793">WWF Raw (GEN)</option>
+<option value="4487">WWF Royal Rumble (GEN)</option>
+<option value="5284">WWF Wrestlemania 2000 (N64)</option>
+<option value="2868">X (GB)</option>
+<option value="4429">X-Men (GEN)</option>
+<option value="2669">X-Men 2: Clone Wars (GEN)</option>
+<option value="3582">X-Men Mutant Apocalypse (SNES)</option>
+<option value="4833">X-Men vs. Street Fighter (ARC)</option>
+<option value="5371">X-Men: Mutant Academy (PSX)</option>
+<option value="4930">Xardion (SNES)</option>
+<option value="953">Xenogears (PSX)</option>
+<option value="2513">Xenon 2: Megablast (GEN)</option>
+<option value="4992">Xenosaga Episode III: Also sprach Zarathustra (PS2)</option>
+<option value="4607">Xerd no Densetsu (GB)</option>
+<option value="2398">Xevious (NES)</option>
+<option value="2990">Xexyz (NES)</option>
+<option value="2567">Xiao Ma Li (NES)</option>
+<option value="3199">Yie Ar Kung-Fu (NES)</option>
+<option value="5033">Yoshi (GB)</option>
+<option value="905">Yoshi (NES)</option>
+<option value="3372">Yoshi&#039;s Cookie (SNES)</option>
+<option value="3010">Yoshi&#039;s Island DS (NDS)</option>
+<option value="2368">Yoshi&#039;s Island: Super Mario Advance 3 (GBA)</option>
+<option value="4766">Yoshi&#039;s Safari (SNES)</option>
+<option value="3859">Youkai Hana Asobi (PSX)</option>
+<option value="212">Ys (NES)</option>
+<option value="4617">Ys III (GEN)</option>
+<option value="1322">Ys: The Vanished Omens (SMS)</option>
+<option value="4150">Yu Yu Hakusho Final: Makai Saikyou Retsuden (SNES)</option>
+<option value="5186">Yu-Gi-Oh! Reshef of Destruction (GBA)</option>
+<option value="4292">Yu-Gi-Oh! The Duelists of The Roses (PS2)</option>
+<option value="5255">Yu-Gi-Oh! The Falsebound Kingdom (GC)</option>
+<option value="4304">Yu-Gi-Oh! The Sacred Cards (GBA)</option>
+<option value="1329">Yuu Yuu Hakusho: Bakutou Ankoku Bujutsu Kai (NES)</option>
+<option value="1894">Zanac (NES)</option>
+<option value="5209">Zatch Bell! Electric Arena (GBA)</option>
+<option value="753">Zelda II: The Adventure of Link (NES)</option>
+<option value="2735">Zelda no Densetsu: The Hyrule Fantasy (FDS)</option>
+<option value="4153">Zenkoku Juudan Ultra Shinri Game (SNES)</option>
+<option value="1302">Zero Tolerance (GEN)</option>
+<option value="1080">Zero Wing (GEN)</option>
+<option value="569">Zettai Muteki Raijin-Oh (GB)</option>
+<option value="1199">Zillion (SMS)</option>
+<option value="2777">Zippy Race (NES)</option>
+<option value="987">Zippy Race (SG1K)</option>
+<option value="2381">Zoids Densetsu (GB)</option>
+<option value="427">Zombie Hunter (NES)</option>
+<option value="812">Zombies Ate My Neighbors (SNES)</option>
+<option value="4450">Zombies Ate My Neighbors (GEN)</option>
+<option value="1914">Zui Zhong Huan Xiang X1-X3 (NES)</option>
+<option value="1388">Zunou Senkan Galg (NES)</option>
+</select></li>
+				<li>
+		<fieldset class="horizontal">
+			<legend class=""><span class="formhelp" data-tooltip=""></span>Modifications</legend>
+			<ol>
+				<li><input type="checkbox" name="Graphics" id="Graphics" /><label for="Graphics">Graphics</label></li>
+				<li><input type="checkbox" name="Sound" id="Sound" /><label for="Sound">Sound</label></li>
+				<li><input type="checkbox" name="Levels" id="Levels" /><label for="Levels">Levels</label></li>
+				<li><input type="checkbox" name="Text" id="Text" /><label for="Text">Text</label></li>
+				<li><input type="checkbox" name="Gameplay" id="Gameplay" /><label for="Gameplay">Gameplay</label></li>
+				<li><input type="checkbox" name="Other" id="Other" /><label for="Other">Other</label></li>
+			</ol>
+		</fieldset></li>
+				<li><label for="perpage"><span class="formhelp" data-tooltip=""></span>Results Per Page</label><select id="perpage" name="perpage">
+<option value="">None Selected</option>
+<option value="10">10</option>
+<option selected="selected" value="20">20</option>
+<option value="30">30</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+</select></li>
+				<li><label for="order"><span class="formhelp" data-tooltip=""></span>Sort By</label><select id="order" name="order">
+<option value="">None Selected</option>
+<option value="Title">Title</option>
+<option value="Date">Date</option>
+<option value="Downloads">Downloads</option>
+<option value="Added">Added</option>
+</select></li>
+				<li><label for="title"><span class="formhelp" data-tooltip=""></span>Search Hack Title</label><input type="text" name="title" id="title"  value="" maxlength="150"  /></li>
+				<li><label for="dir"><span class="formhelp" data-tooltip=""></span>Order By</label><select id="dir" name="dir">
+<option value="">None Selected</option>
+<option value="0">Ascending</option>
+<option value="1">Descending</option>
+</select></li>
+			</ol>
+		</fieldset>
+		
+		<fieldset class="submit">
+			<legend class="">Button</legend>
+			<ol>
+				<li><input type="submit" name="hacksearch" id="hacksearch"  value="Go"  /></li>
+			</ol>
+		</fieldset>
+	</div>
+</form><br />
+<table><caption>(1 to 20) of 8220 Results</caption><thead><tr class="tablecol"><th class="col_1 Title" ><a href="../index.html?page=hacks&amp;order=Title.html">Title</a></th><th class="col_2 Released By" >Released By</th><th class="col_3 Original Game" >Original Game</th><th class="col_4 Genre" >Genre</th><th class="col_5 Platform" >Platform</th><th class="col_6 Mods" >Mods</th><th class="col_7 Category" >Category</th><th class="col_8 Ver" >Ver</th><th class="col_9 Date" ><a href="../index.html?page=hacks&amp;dir=0&amp;order=Date.html">Date <img src="../images/down.gif" alt="Descending" /></a></th></tr></thead><tbody><tr class="even"><td class="col_1 Title"><a href="8788/index.html">SMB3 Mario in SMB1</a></td><td class="col_2 Released By"><a href="../community/8719/index.html">Zeehacker</a></td><td class="col_3 Original Game">Super Mario Bros.</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> G</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">01 Aug 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8787/index.html">Pokemon Emerald - 386</a></td><td class="col_2 Released By"><a href="../community/6608/index.html">Razormime</a></td><td class="col_3 Original Game">Pokémon: Emerald Version</td><td class="col_4 Genre">Role Playing</td><td class="col_5 Platform">GBA</td><td class="col_6 Mods"> G, L, T, GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">01 Aug 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8781/index.html">Super Bhop Bros</a></td><td class="col_2 Released By"><a href="../community/8712/index.html">8BitPlumber</a></td><td class="col_3 Original Game">Super Mario Bros.</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> G, S, L, GP</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.1</td><td class="col_9 Date">01 Aug 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="6960/index.html">Zombies Ate My Roguelike</a></td><td class="col_2 Released By"><a href="../community/5637/index.html">BillyTime! Games</a></td><td class="col_3 Original Game">Zombies Ate My Neighbors</td><td class="col_4 Genre">Action</td><td class="col_5 Platform">GEN</td><td class="col_6 Mods"> G, T, GP, O</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">4.0</td><td class="col_9 Date">01 Aug 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8786/index.html">Pumkin Tower</a></td><td class="col_2 Released By"><a href="../community/8714/index.html">Chadlight</a></td><td class="col_3 Original Game">The Legend of Zelda: Majora&#039;s Mask</td><td class="col_4 Genre">Action Adventure</td><td class="col_5 Platform">N64</td><td class="col_6 Mods"> G, S, L, T, GP, O</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.1.1</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8785/index.html">Pokémon FireRed: Bill&#039;s Secret Garden</a></td><td class="col_2 Released By"><a href="../community/8713/index.html">TibJib</a></td><td class="col_3 Original Game">Pokémon: FireRed Version</td><td class="col_4 Genre">Role Playing</td><td class="col_5 Platform">GBA</td><td class="col_6 Mods"> G, GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8784/index.html">Gimmick! No Background Music Hack</a></td><td class="col_2 Released By"><a href="../community/7960/index.html">Heemin</a></td><td class="col_3 Original Game">Mr. Gimmick</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> S</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8783/index.html">Streets of Rage - Bad End 1P</a></td><td class="col_2 Released By"><a href="../community/5637/index.html">BillyTime! Games</a></td><td class="col_3 Original Game">Streets of Rage</td><td class="col_4 Genre">Action > Beat 'Em Up</td><td class="col_5 Platform">GEN</td><td class="col_6 Mods"> GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8782/index.html">Mortal Kombat II - Simple Stage Fatals</a></td><td class="col_2 Released By"><a href="../community/5637/index.html">BillyTime! Games</a></td><td class="col_3 Original Game">Mortal Kombat 2</td><td class="col_4 Genre">Action > Fighting</td><td class="col_5 Platform">GEN</td><td class="col_6 Mods"> GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8780/index.html">Megaman the Wily Wars Redux/Definitive Edition</a></td><td class="col_2 Released By"><a href="../community/5437/index.html">darthvaderx</a></td><td class="col_3 Original Game">Mega Man: The Wily Wars</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">GEN</td><td class="col_6 Mods"> G, GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8770/index.html">Ranma 1/2: Chougi Ranbu Hen - Big Framerate Improvement</a></td><td class="col_2 Released By"><a href="../community/4564/index.html">upsilandre</a></td><td class="col_3 Original Game">Ranma 1/2: Chougi Ranbu Hen</td><td class="col_4 Genre">Action > Fighting</td><td class="col_5 Platform">SNES</td><td class="col_6 Mods"> O</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.1</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8550/index.html">Toadette over Mario</a></td><td class="col_2 Released By"><a href="../community/8570/index.html">Acht05</a></td><td class="col_3 Original Game">Paper Mario</td><td class="col_4 Genre">Role Playing > Action RPG</td><td class="col_5 Platform">N64</td><td class="col_6 Mods"> G, T</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.3</td><td class="col_9 Date">31 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8779/index.html">Space Invaders 4Color</a></td><td class="col_2 Released By"><a href="../community/5368/index.html">verme</a></td><td class="col_3 Original Game">N/A</td><td class="col_4 Genre">Unknown</td><td class="col_5 Platform">N/A</td><td class="col_6 Mods"> G, O</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">30 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8539/index.html">Suikoden - The Last Hope</a></td><td class="col_2 Released By"><a href="../community/4471/index.html">Shadow501</a></td><td class="col_3 Original Game">Suikoden</td><td class="col_4 Genre">Role Playing</td><td class="col_5 Platform">PSX</td><td class="col_6 Mods"> S, L, T, GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">8.2</td><td class="col_9 Date">30 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8269/index.html">Zelda II: Paracosm</a></td><td class="col_2 Released By"><a href="../community/8163/index.html">Feistygandhi</a></td><td class="col_3 Original Game">Zelda II: The Adventure of Link</td><td class="col_4 Genre">Role Playing > Action RPG</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> G, L, T, GP</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.6</td><td class="col_9 Date">30 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8179/index.html">Costume Corrections for Virtual Pro Wrestling 64</a></td><td class="col_2 Released By"><a href="../community/1868/index.html">SCD</a></td><td class="col_3 Original Game">Virtual Pro Wrestling 64</td><td class="col_4 Genre">Sports</td><td class="col_5 Platform">N64</td><td class="col_6 Mods"> G</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.2</td><td class="col_9 Date">30 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="6887/index.html">Megaman 1 - Speed Bomber</a></td><td class="col_2 Released By"><a href="../community/6317/index.html">Timaeus</a></td><td class="col_3 Original Game">Mega Man</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> G, S, L, T, GP</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.2</td><td class="col_9 Date">30 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8778/index.html">Mega Bomberman - Battle Randomizer</a></td><td class="col_2 Released By"><a href="../community/5637/index.html">BillyTime! Games</a></td><td class="col_3 Original Game">Mega Bomberman</td><td class="col_4 Genre">Action</td><td class="col_5 Platform">GEN</td><td class="col_6 Mods"> GP</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">29 Jul 2024</td></tr><tr class="even"><td class="col_1 Title"><a href="8777/index.html">Flipull 4Color</a></td><td class="col_2 Released By"><a href="../community/5368/index.html">verme</a></td><td class="col_3 Original Game">Flipull</td><td class="col_4 Genre">Puzzle</td><td class="col_5 Platform">GB</td><td class="col_6 Mods"> G, O</td><td class="col_7 Category">Improvement</td><td class="col_8 Ver">1.0</td><td class="col_9 Date">29 Jul 2024</td></tr><tr class="odd"><td class="col_1 Title"><a href="8380/index.html">Maximum Mario</a></td><td class="col_2 Released By"><a href="../community/8483/index.html">Scrapz</a></td><td class="col_3 Original Game">Super Mario Bros.</td><td class="col_4 Genre">Action > Platformer</td><td class="col_5 Platform">NES</td><td class="col_6 Mods"> G, L</td><td class="col_7 Category">Complete</td><td class="col_8 Ver">1.1</td><td class="col_9 Date">29 Jul 2024</td></tr></tbody></table><div class="pages"> [1]  <a href="../index.html?page=hacks&amp;startpage=2.html">2</a> <a href="../index.html?page=hacks&amp;startpage=3.html">3</a> <a href="../index.html?page=hacks&amp;startpage=4.html">4</a> <a href="../index.html?page=hacks&amp;startpage=5.html">5</a> ... <a href="../index.html?page=hacks&amp;startpage=11.html">11</a> <a href="../index.html?page=hacks&amp;startpage=51.html">51</a> <a href="../index.html?page=hacks&amp;startpage=101.html">101</a> <a href="../index.html?page=hacks&amp;startpage=411.html">411</a> <a href="../index.html?page=hacks&amp;startpage=2.html">Next</a></div>﻿﻿</div>
+</div>
+<div id="footer">
+	©2005-2024 RHDN 3.0.0 by Nightcrawler. All Rights Reserved.
+	<br />Execution time - 0.0039 sec. - Number of Queries: 2<br />
+	<a href="../about/index.html">About Us</a>
+	| <a href="../policy/index.html">RHDN Policy</a>
+	| <a href="https://validator.w3.org/check?uri=referer">HTML5</a>
+	| <a href="https://jigsaw.w3.org/css-validator/check/referer?profile=css3">CSS</a>
+    <br />
+    <a href="https://twitter.com/romhackingnet"><img src="../images/twitter_logo.png" alt="Follow us on Twitter" title="Follow us on Twitter" /></a>
+    <a href="https://facebook.com/Romhacking.net"><img src="../images/facebook_logo.png" alt="Follow us on Facebook" title="Follow us on Facebook" /></a>                
+    <a href="https://discord.gg/uAufcgz"><img src="../images/discord_logo.png" alt="Chat with us on Discord" title="Chat with us on Discord" /></a>
+	<!-- <a href="https://www.romhacking.net/about/patrons/"><img src="/images/patreon_logo.png" alt="Support us on Patreon" title="Support us on Patreon"/></a> -->
+</div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8ad2e20aad751078',t:'MTcyMjY1MjE5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

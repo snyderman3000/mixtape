@@ -1,105 +1,72 @@
 + set -e
 + sh tools/hackdb/explore.sh
-===== romhackingbackup08102024
-romhackingbackup08102024_archive.torrent 65129 
-romhackingbackup08102024_files.xml None 
-romhackingbackup08102024_meta.sqlite 20480 
-romhackingbackup08102024_meta.xml 930 
-www.romhacking.net.zip 13244947677 
-files: 5
-===== rhdn-20210914
-RHDN-20210914.zip 6562337739 
-rhdn-20210914_archive.torrent 33136 
-rhdn-20210914_files.xml None 
-rhdn-20210914_meta.sqlite 20480 
-rhdn-20210914_meta.xml 1099 
-files: 5
-===== rom-hack-patch-archive
-Disc Hack Archive.7z 1235866245 
-English Disc Translations.7z 791062974 
-English PSP Translations.7z 1068545849 
-English ROM Translations.7z 1092450836 
-English Saturn Translations.7z 1041483014 
-GBA Fire Emblem - The Sacred Stones (UA) Hacks.7z 1222524447 
-GBA Fire Emblem Hacks.7z 1122827930 
-GBA Hacks.7z 988983772 
-GBA Pokemon - Emerald Version (UE) Hacks 1.7z 971436282 
-GBA Pokemon - Emerald Version (UE) Hacks 2.7z 1032402267 
-GBA Pokemon - FireRed Version (U) Hacks 1.7z 909427366 
-GBA Pokemon - FireRed Version (U) Hacks 2.7z 827392958 
-GC Pokemon XD (U)/Pokemon XG v1.0.7.7z 783633965 
-GC Pokemon XD (U)/Pokemon XG v1.1.6-2.7z 1183515060 
-GC Pokemon XD (U)/Pokemon XG v1.1.8-3.7z 395084093 
-GC Pokemon XD (U)/Pokemon XG v1.2.1-3.7z 279165446 
-GameCube Hacks.7z 997673049 
-Genesis-MD Hacks.7z 552012344 
-N64 Hacks 1.7z 1205721419 
-N64 Hacks 2.7z 1055294664 
-N64 Mario Party 1, 2, 3 (U) Hacks.7z 477321390 
-N64 Super Mario 64 (U) Hacks Part 1.7z 1196049161 
-N64 Super Mario 64 (U) Hacks Part 2.7z 1150219479 
-N64 Super Mario 64 (U) Hacks Part 3.7z 988155235 
-N64 Super Mario 64 (U) Hacks Part 4.7z 1111152698 
-NDS Hacks 1.7z 764984102 
-NDS Hacks 2.7z 720062253 
-NDS New Super Mario Bros. (U) Hacks.7z 548089358 
-NES-FC Hacks.7z 657923640 
-PSP.7z 830246329 
-PSX Grandia Undub Patches.7z 724416453 
-PSX Hacks.7z 1147632402 
-PSX Mortal Kombat 4 (U) Hardcore Attack (Hack).7z 397665234 
-PSX Resident Evil - Director's Cut - Dual Shock Ver. (U) Hacks.7z 1023850281 
-PSX Xenogears (U) Hacks.7z 388813854 
-ROM Hack Archive 1.7z 863442025 
-ROM Hack Archive 2.7z 761885800 
-SNES-SFC Hacks 1.7z 1034465397 
-SNES-SFC Hacks 2.7z 601412485 
-SNES-SFC Super Mario World Hacks.7z 479454076 
-Saturn - Grandia (J) English.7z 665324990 
-Saturn - Lunar - Silver Star Story (J) English.7z 1636407287 
-Wii Hacks.7z 722938092 
-rom-hack-patch-archive_archive.torrent 371728 
-rom-hack-patch-archive_files.xml None 
-rom-hack-patch-archive_meta.sqlite 89088 
-rom-hack-patch-archive_meta.xml 3208 
-rom-hack-patch-archive_reviews.xml 6539 
-files: 48
-===== inner file tests
---- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/index.html
- 
-<!DOCTYPE html> 
-<html lang="en">
-.<head>
-..<meta charset="utf-8"> 
-..<meta name="viewport" content="width=device-width, initial-scale=1.0">
-..<meta name="description" content="A nation just over a rebellion by their own psychic soldiers is attacked by an alien being in a gian">
-..<meta property="og:url" content="https://www.romhacking.net/hacks/1/">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Dragoon X Omega - Gold Edition">
-        <meta property="og:site_name" content="ROMhacking.net">
-        <meta property="og:image" content="https://s3-external-1.amazonaws.com/romhacking-hacks/hacks/nes/images/titles/1titlescreen.png">
-        <meta property="og:description" content="A nation just over a rebellion by their own psychic soldiers is attacked by an alien being in a gian">
-        <link rel="alternate" type="application/rss+xml" titletr: write error: Broken pipe
+dl1 37759
+list 153690
+s3 img http=403
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>VP23RQHV5VJRF67J</RequestId><HostId>jXov0hh3eIdWMePaqvhWoovcLaIE7uaORA5pJlbJFavN9Ny7g8kgTEMyeNbndxmHOZpviJNIpKQ=</HostId></Error>
+s3 list http=403
 
---- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/www.romhacking.net/hacks/1/
-
-http=200 type=application/octet-stream size=0
-
---- https://archive.org/download/romhackingbackup08102024/www.romhacking.net.zip/
-<!DOCTYPE html>
-<html lang="en">
-<!-- __ _ _ _ __| |_ (_)__ _____
-    / _` | '_/ _| ' \| |\ V / -_)
-    \__,_|_| \__|_||_|_| \_/\___| -->
-  <head data-release=-202640- data-node="ia800104.us.archive.org">
-    <title>Internet Archive: View Archive</title>
-
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-        <meta name="google-site-verification" content="Q2YSouphkkgHkFNP7FgAkc4TmBs1Gmag3uGNndb53B8" />
-    <meta name="google-site-verification" content="bpjKvUvsX0lxfmjg19TLblckWkDpnptZEYsBntApxUk" />
-
-    <meta name="baggage" content="sentry-trace_id=0f6c9be5431a49d181a679c3a4ae0d1f,sentry-sample_rate=0.001,sentry-transaction=%2Fview_archive.php,sentry-public_key=94bf3037c1e245c8a927aaa4daad2dbb,sentry-environment=production,sentry-sampled=false,sentry-sample_rand=0.866462"/>    <meta name="sentry-trace" content="0f6c9be5431a49d181a679c3a4ae0d1f-bbftr: write error: Broken pipe
+href="//archive.org/includes/build/css/archive.min.css?v=-202640-"
+href="https://archive.org/images/glogo.jpg"
+href="#maincontent"
+href="https://www.savethearchive.com/NewsLeaders"
+href="/"
+href="#path-1"
+href="https://web.archive.org"
+href="/details/texts"
+href="/details/movies"
+href="/details/audio"
+href="/details/software"
+href="/details/image"
+href="/donate/?origin=iawww-mbhmbgrmenu"
+href="/about/"
+href="/donate/?origin=iawww-mbhrt"
+href="/signup"
+href="/account/login"
+href="/upload"
+href="/details/etree"
+href="/details/librivoxaudio"
+href="/details/audio"
+href="/details/GratefulDead"
+href="/details/netlabels"
+href="/details/oldtimeradio"
+href="/details/78rpm"
+href="/details/audio_bookspoetry"
+href="/details/audio_tech"
+href="/details/audio_music"
+href="/details/audio_news"
+href="/details/audio_religion"
+href="/details/podcasts"
+href="/details/radio"
+href="/details/metropolitanmuseumofart-gallery"
+href="/details/clevelandart"
+href="/details/image"
+href="/details/flickrcommons"
+href="/details/flickr-ows"
+href="/details/coverartarchive"
+href="/details/maps_usgs"
+href="/details/nasa"
+href="/details/solarsystemcollection"
+href="/details/amesresearchcenterimagelibrary"
+href="/details/internetarcade"
+href="/details/consolelivingroom"
+href="/details/software"
+href="/details/tosec"
+href="/details/softwarelibrary_msdos_games"
+href="/details/historicalsoftware"
+href="/details/classicpcgames"
+href="/details/softwarelibrary"
+href="/details/kodi_archive"
+href="/details/vintagesoftware"
+href="/details/apkarchive"
+href="/details/softwarelibrary_msdos"
+href="/details/cd-roms"
+href="/details/cdromsoftware"
+href="/details/softwaresites"
+href="/details/tucows"
+href="/details/cdbbsarchive"
+href="/details/softwarecapsules"
+grep: write error: Broken pipe
 curl: (23) Failure writing output to destination
-
 exit=0
