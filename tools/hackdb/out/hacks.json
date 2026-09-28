@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T13:06:23Z",
+ "generated": "2026-09-28T13:09:54Z",
  "source": "RomHacking.net archive (Internet Archive item rhdn-20210914)",
  "archive_url": "https://archive.org/download/rhdn-20210914/RHDN-20210914.zip",
  "hacks": [
@@ -1233,12 +1233,6 @@
      "member": "m1kabuto-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814.ips",
      "format": "ips",
      "size": 274775
-    },
-    {
-     "label": "m1kuwagata-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814",
-     "member": "m1kuwagata-1107-40a8cdabef2ad571f1f7be8e6f719365d039e814.ips",
-     "format": "ips",
-     "size": 273606
     }
    ]
   },
@@ -1558,12 +1552,6 @@
      "size": 2859,
      "src_crc": "B71396A6",
      "dst_crc": "959D2241"
-    },
-    {
-     "label": "Tenjin Kaisen",
-     "member": "Tenjin Kaisen.ips",
-     "format": "ips",
-     "size": 3933
     }
    ]
   },
@@ -1887,18 +1875,6 @@
      "member": "Final Fantasy Legend II - Text Update v1.02.ips",
      "format": "ips",
      "size": 2730
-    },
-    {
-     "label": "English Saga 2 title screen",
-     "member": "English Saga 2 title screen.ips",
-     "format": "ips",
-     "size": 1726
-    },
-    {
-     "label": "Japanese Saga 2 title screen",
-     "member": "Japanese Saga 2 title screen.ips",
-     "format": "ips",
-     "size": 1688
     }
    ]
   },
@@ -1966,12 +1942,6 @@
      "member": "Pokemon Blue - 151 Patch/Pokemon Blue - 151.ips",
      "format": "ips",
      "size": 1575
-    },
-    {
-     "label": "Optional MissingNo Patch › MissingNo",
-     "member": "Pokemon Blue - 151 Patch/Optional MissingNo Patch/MissingNo.ips",
-     "format": "ips",
-     "size": 92
     }
    ]
   },
@@ -2024,30 +1994,6 @@
      "member": "pokered-SWBS.ips",
      "format": "ips",
      "size": 161930
-    },
-    {
-     "label": "pokeblue-SWBS-CMBS",
-     "member": "pokeblue-SWBS-CMBS.ips",
-     "format": "ips",
-     "size": 161834
-    },
-    {
-     "label": "pokeblue-SWBS-ROBS-CMBS",
-     "member": "pokeblue-SWBS-ROBS-CMBS.ips",
-     "format": "ips",
-     "size": 175881
-    },
-    {
-     "label": "pokeblue-SWBS-ROBS",
-     "member": "pokeblue-SWBS-ROBS.ips",
-     "format": "ips",
-     "size": 175981
-    },
-    {
-     "label": "pokeblue-SWBS",
-     "member": "pokeblue-SWBS.ips",
-     "format": "ips",
-     "size": 161934
     }
    ]
   },
@@ -2144,12 +2090,6 @@
      "size": 1662,
      "src_crc": "1C2BA2A1",
      "dst_crc": "DB500FAE"
-    },
-    {
-     "label": "Fortress of Fury",
-     "member": "fury/Fortress of Fury.ips",
-     "format": "ips",
-     "size": 2527
     }
    ]
   },
@@ -2285,12 +2225,6 @@
      "size": 5849,
      "src_crc": "2D08D27F",
      "dst_crc": "293FA04B"
-    },
-    {
-     "label": "Jaja",
-     "member": "jaja/Jaja.ips",
-     "format": "ips",
-     "size": 8106
     }
    ]
   },
@@ -2636,78 +2570,6 @@
      "member": "Pokemon Throwback v210717.ips",
      "format": "ips",
      "size": 2903732
-    },
-    {
-     "label": "Save Compatibility v210717",
-     "member": "Save Compatibility v210717.ips",
-     "format": "ips",
-     "size": 944
-    },
-    {
-     "label": "Base Game (BPRE v1.0)",
-     "member": "Decapitalization Patches/Base Game (BPRE v1.0).ips",
-     "format": "ips",
-     "size": 114847
-    },
-    {
-     "label": "Catch 'em All v200611",
-     "member": "Decapitalization Patches/Catch 'em All v200611.ips",
-     "format": "ips",
-     "size": 285
-    },
-    {
-     "label": "GB Sounds v210717",
-     "member": "Decapitalization Patches/GB Sounds v210717.ips",
-     "format": "ips",
-     "size": 38
-    },
-    {
-     "label": "Catch 'em All v210311",
-     "member": "Individual Patches/Catch 'em All v210311.ips",
-     "format": "ips",
-     "size": 17530
-    },
-    {
-     "label": "Custom Learnset Changes",
-     "member": "Individual Patches/Custom Learnset Changes.ips",
-     "format": "ips",
-     "size": 13911
-    },
-    {
-     "label": "GB Sounds v210717",
-     "member": "Individual Patches/GB Sounds v210717.ips",
-     "format": "ips",
-     "size": 131592
-    },
-    {
-     "label": "Higher Quality Cries v161104",
-     "member": "Individual Patches/Higher Quality Cries v161104.ips",
-     "format": "ips",
-     "size": 2600451
-    },
-    {
-     "label": "Wardrobe v210717",
-     "member": "Individual Patches/Wardrobe v210717.ips",
-     "format": "ips",
-     "size": 28110
-    },
-    {
-     "label": "Extras v200611",
-     "member": "Decapitalization Patches/Extras v200611.ips",
-     "format": "ips",
-     "size": 558
-    },
-    {
-     "label": "Extras v210717",
-     "member": "Individual Patches/Extras v210717.ips",
-     "format": "ips",
-     "size": 16275
-    },
-    {
-     "label": "Compatibility › Extras+Wardrobe",
-     "member": "Individual Patches/Compatibility/Extras+Wardrobe.ips",
-     "format": "ips",
-     "size": 7223
     }
    ]
   },
@@ -3250,12 +3112,6 @@
      "member": "PATCH TO ORIGINAL QUARTZ HACK.ips",
      "format": "ips",
      "size": 270957
-    },
-    {
-     "label": "PATCH TO CLEAN BASE RUBY",
-     "member": "PATCH TO CLEAN BASE RUBY.ips",
-     "format": "ips",
-     "size": 1946429
     }
    ]
   },
@@ -3300,12 +3156,6 @@
      "dst_crc": "0A7D0372"
     },
     {
-     "label": "Remove-Virtual-Console",
-     "member": "Remove-Virtual-Console.ips",
-     "format": "ips",
-     "size": 263
-    },
-    {
      "label": "RockmanEXE45-JapaneseUpgradePatch-v1_1a",
      "member": "Extras/RockmanEXE45-JapaneseUpgradePatch-v1_1a.bps",
      "format": "bps",
@@ -3341,24 +3191,6 @@
      "member": "(US)sma2_restored_bongo.ips",
      "format": "ips",
      "size": 4040
-    },
-    {
-     "label": "(US)sma2_restored_horn",
-     "member": "(US)sma2_restored_horn.ips",
-     "format": "ips",
-     "size": 15
-    },
-    {
-     "label": "(EU)sma2_restored_bongo",
-     "member": "(EU)sma2_restored_bongo.ips",
-     "format": "ips",
-     "size": 4040
-    },
-    {
-     "label": "(EU)sma2_restored_horn",
-     "member": "(EU)sma2_restored_horn.ips",
-     "format": "ips",
-     "size": 15
     }
    ]
   },
@@ -3386,12 +3218,6 @@
     {
      "label": "SSF2TR",
      "member": "SSF2TR.ips",
-     "format": "ips",
-     "size": 5195
-    },
-    {
-     "label": "SSF2XR",
-     "member": "SSF2XR.ips",
      "format": "ips",
      "size": 5195
     }
@@ -4028,14 +3854,6 @@
      "size": 35571,
      "src_crc": "B857C3C5",
      "dst_crc": "96634053"
-    },
-    {
-     "label": "SMT1_2_ios",
-     "member": "SMT1_2_ios.bps",
-     "format": "bps",
-     "size": 62426,
-     "src_crc": "A3AAC34F",
-     "dst_crc": "10120CAA"
     }
    ]
   },
@@ -4115,12 +3933,6 @@
      "size": 242621,
      "src_crc": "318A1E9B",
      "dst_crc": "A8C9892E"
-    },
-    {
-     "label": "EN",
-     "member": "EN.ips",
-     "format": "ips",
-     "size": 402219
     }
    ]
   },
@@ -4187,18 +3999,6 @@
      "member": "INTpatch.ips",
      "format": "ips",
      "size": 86
-    },
-    {
-     "label": "LCKpatch",
-     "member": "LCKpatch.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "MPRegen",
-     "member": "MPRegen.ips",
-     "format": "ips",
-     "size": 43
     }
    ]
   },
@@ -4663,22 +4463,6 @@
      "size": 48043,
      "src_crc": "3A40F7D0",
      "dst_crc": "59D42FA7"
-    },
-    {
-     "label": "Fixed Drumsets (B)",
-     "member": "FE7 Drumfix/Fixed Drumsets (B).ups",
-     "format": "ups",
-     "size": 2597,
-     "src_crc": "308242A9",
-     "dst_crc": "59D42FA7"
-    },
-    {
-     "label": "Test Song (No Fix)",
-     "member": "FE7 Drumfix/Test Song (No Fix).ups",
-     "format": "ups",
-     "size": 45471,
-     "src_crc": "3A40F7D0",
-     "dst_crc": "308242A9"
     }
    ]
   },
@@ -4712,18 +4496,6 @@
      "member": "CAoS SI (enemy and equipment changes).ips",
      "format": "ips",
      "size": 137
-    },
-    {
-     "label": "CAoS SI (High Potion changes)",
-     "member": "CAoS SI (High Potion changes).ips",
-     "format": "ips",
-     "size": 188217
-    },
-    {
-     "label": "CAoS SI (music name changes)",
-     "member": "CAoS SI (music name changes).ips",
-     "format": "ips",
-     "size": 188404
     }
    ]
   },
@@ -4925,108 +4697,6 @@
      "member": "allin.ips",
      "format": "ips",
      "size": 634
-    },
-    {
-     "label": "azurill",
-     "member": "azurill.ips",
-     "format": "ips",
-     "size": 43
-    },
-    {
-     "label": "babyless",
-     "member": "babyless.ips",
-     "format": "ips",
-     "size": 148
-    },
-    {
-     "label": "badkitty",
-     "member": "badkitty.ips",
-     "format": "ips",
-     "size": 36
-    },
-    {
-     "label": "clamperl",
-     "member": "clamperl.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "dragons",
-     "member": "dragons.ips",
-     "format": "ips",
-     "size": 71
-    },
-    {
-     "label": "eevee",
-     "member": "eevee.ips",
-     "format": "ips",
-     "size": 31
-    },
-    {
-     "label": "happiness",
-     "member": "happiness.ips",
-     "format": "ips",
-     "size": 124
-    },
-    {
-     "label": "lightningbug",
-     "member": "lightningbug.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "lugia",
-     "member": "lugia.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "mrmime",
-     "member": "mrmime.ips",
-     "format": "ips",
-     "size": 21
-    },
-    {
-     "label": "nidorina",
-     "member": "nidorina.ips",
-     "format": "ips",
-     "size": 36
-    },
-    {
-     "label": "normalize",
-     "member": "normalize.ips",
-     "format": "ips",
-     "size": 49
-    },
-    {
-     "label": "pinsir",
-     "member": "pinsir.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "porygon",
-     "member": "porygon.ips",
-     "format": "ips",
-     "size": 36
-    },
-    {
-     "label": "psydark",
-     "member": "psydark.ips",
-     "format": "ips",
-     "size": 35
-    },
-    {
-     "label": "psyduck",
-     "member": "psyduck.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "purity",
-     "member": "purity.ips",
-     "format": "ips",
-     "size": 72
     }
    ]
   },
@@ -5057,108 +4727,6 @@
      "member": "allin.ips",
      "format": "ips",
      "size": 353
-    },
-    {
-     "label": "azurill",
-     "member": "azurill.ips",
-     "format": "ips",
-     "size": 21
-    },
-    {
-     "label": "babyless",
-     "member": "babyless.ips",
-     "format": "ips",
-     "size": 78
-    },
-    {
-     "label": "badkitty",
-     "member": "badkitty.ips",
-     "format": "ips",
-     "size": 28
-    },
-    {
-     "label": "clamperl",
-     "member": "clamperl.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "dragons",
-     "member": "dragons.ips",
-     "format": "ips",
-     "size": 38
-    },
-    {
-     "label": "eevee",
-     "member": "eevee.ips",
-     "format": "ips",
-     "size": 24
-    },
-    {
-     "label": "happiness",
-     "member": "happiness.ips",
-     "format": "ips",
-     "size": 66
-    },
-    {
-     "label": "lightningbug",
-     "member": "lightningbug.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "lugia",
-     "member": "lugia.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "mrmime",
-     "member": "mrmime.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "nidorina",
-     "member": "nidorina.ips",
-     "format": "ips",
-     "size": 22
-    },
-    {
-     "label": "normalize",
-     "member": "normalize.ips",
-     "format": "ips",
-     "size": 29
-    },
-    {
-     "label": "pinsir",
-     "member": "pinsir.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "porygon",
-     "member": "porygon.ips",
-     "format": "ips",
-     "size": 22
-    },
-    {
-     "label": "psydark",
-     "member": "psydark.ips",
-     "format": "ips",
-     "size": 21
-    },
-    {
-     "label": "psyduck",
-     "member": "psyduck.ips",
-     "format": "ips",
-     "size": 20
-    },
-    {
-     "label": "purity",
-     "member": "purity.ips",
-     "format": "ips",
-     "size": 32
     }
    ]
   },
@@ -5923,120 +5491,6 @@
      "member": "FF Restored/Final Fantasy Restored - 1.0.ips",
      "format": "ips",
      "size": 59712
-    },
-    {
-     "label": "Settings › Battle Speed 5",
-     "member": "FF Restored/Settings/Battle Speed 5.ips",
-     "format": "ips",
-     "size": 16
-    },
-    {
-     "label": "Settings › Battle Speed 6 (Default)",
-     "member": "FF Restored/Settings/Battle Speed 6 (Default).ips",
-     "format": "ips",
-     "size": 16
-    },
-    {
-     "label": "Settings › Battle Speed 7",
-     "member": "FF Restored/Settings/Battle Speed 7.ips",
-     "format": "ips",
-     "size": 16
-    },
-    {
-     "label": "Settings › Battle Speed 8",
-     "member": "FF Restored/Settings/Battle Speed 8.ips",
-     "format": "ips",
-     "size": 16
-    },
-    {
-     "label": "Settings › Boss HP - Double",
-     "member": "FF Restored/Settings/Boss HP - Double.ips",
-     "format": "ips",
-     "size": 97
-    },
-    {
-     "label": "Settings › Boss HP - Normal (Default)",
-     "member": "FF Restored/Settings/Boss HP - Normal (Default).ips",
-     "format": "ips",
-     "size": 97
-    },
-    {
-     "label": "Settings › M.Def Fix - All classes (Default)",
-     "member": "FF Restored/Settings/M.Def Fix - All classes (Default).ips",
-     "format": "ips",
-     "size": 25
-    },
-    {
-     "label": "Settings › M.Def Fix - MK+MA only",
-     "member": "FF Restored/Settings/M.Def Fix - MK+MA only.ips",
-     "format": "ips",
-     "size": 25
-    },
-    {
-     "label": "Settings › Menu Color - Green",
-     "member": "FF Restored/Settings/Menu Color - Green.ips",
-     "format": "ips",
-     "size": 830
-    },
-    {
-     "label": "Settings › Menu Color - Purple",
-     "member": "FF Restored/Settings/Menu Color - Purple.ips",
-     "format": "ips",
-     "size": 830
-    },
-    {
-     "label": "Settings › Menu Color - Red",
-     "member": "FF Restored/Settings/Menu Color - Red.ips",
-     "format": "ips",
-     "size": 830
-    },
-    {
-     "label": "Settings › Menu Color - Standard Blue",
-     "member": "FF Restored/Settings/Menu Color - Standard Blue.ips",
-     "format": "ips",
-     "size": 830
-    },
-    {
-     "label": "Settings › New Music Off",
-     "member": "FF Restored/Settings/New Music Off.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "Settings › New Music On (Default)",
-     "member": "FF Restored/Settings/New Music On (Default).ips",
-     "format": "ips",
-     "size": 32
-    },
-    {
-     "label": "Settings › Remove Battle Menu Color (Default)",
-     "member": "FF Restored/Settings/Remove Battle Menu Color (Default).ips",
-     "format": "ips",
-     "size": 856
-    },
-    {
-     "label": "Settings › Remove New Music + Restore Ship Game (Default)",
-     "member": "FF Restored/Settings/Remove New Music + Restore Ship Game (Default).ips",
-     "format": "ips",
-     "size": 2278
-    },
-    {
-     "label": "Settings › Remove Ship Game + Add New Music",
-     "member": "FF Restored/Settings/Remove Ship Game + Add New Music.ips",
-     "format": "ips",
-     "size": 2398
-    },
-    {
-     "label": "Settings › RNG - Improved",
-     "member": "FF Restored/Settings/RNG - Improved.ips",
-     "format": "ips",
-     "size": 639
-    },
-    {
-     "label": "Settings › RNG - Original (Default)",
-     "member": "FF Restored/Settings/RNG - Original (Default).ips",
-     "format": "ips",
-     "size": 632
     }
    ]
   },
@@ -7021,12 +6475,6 @@
      "member": "(NORMAL)TLoZ-PerilsofDarkness v1-5.ips",
      "format": "ips",
      "size": 36131
-    },
-    {
-     "label": "PoD Anti Noise patch",
-     "member": "PoD Anti Noise patch.ips",
-     "format": "ips",
-     "size": 16337
     }
    ]
   },
@@ -7239,24 +6687,6 @@
      "member": "FF1Translationv1.3/FF1TranslationChaosEditionv1.3.ips",
      "format": "ips",
      "size": 25157
-    },
-    {
-     "label": "FF1TranslationDefaultEditionv1.3",
-     "member": "FF1Translationv1.3/FF1TranslationDefaultEditionv1.3.ips",
-     "format": "ips",
-     "size": 25149
-    },
-    {
-     "label": "FontPatches › FF1FontChicago",
-     "member": "FF1Translationv1.3/FontPatches/FF1FontChicago.ips",
-     "format": "ips",
-     "size": 747
-    },
-    {
-     "label": "FontPatches › FF1FontUS",
-     "member": "FF1Translationv1.3/FontPatches/FF1FontUS.ips",
-     "format": "ips",
-     "size": 1335
     }
    ]
   },
@@ -7658,12 +7088,6 @@
      "member": "SMBCont.ips",
      "format": "ips",
      "size": 7871
-    },
-    {
-     "label": "SMBContREV1",
-     "member": "SMBContREV1.ips",
-     "format": "ips",
-     "size": 7883
     }
    ]
   },
@@ -7726,22 +7150,10 @@
    "shot": "hacks/NES/Super Mario Bros_/Mario's Keep___1_3/Mario's Keep_screenshot0.png",
    "variants": [
     {
-     "label": "MARIO'S KEEP 1,21 - NO MUSIC -",
-     "member": "MARIO'S KEEP 1,21 - NO MUSIC -.ips",
-     "format": "ips",
-     "size": 7701
-    },
-    {
      "label": "MARIO'S KEEP 1,21",
      "member": "MARIO'S KEEP 1,21.ips",
      "format": "ips",
      "size": 8030
-    },
-    {
-     "label": "MARIO'S KEEP 1,3 - NO MUSIC --",
-     "member": "MARIO'S KEEP 1,3 - NO MUSIC --.ips",
-     "format": "ips",
-     "size": 10994
     },
     {
      "label": "MARIO'S KEEP 1,3",
@@ -7978,18 +7390,6 @@
      "member": "Zelda - A New Light.ips",
      "format": "ips",
      "size": 15810
-    },
-    {
-     "label": "start_with_sword",
-     "member": "optional/start_with_sword.ips",
-     "format": "ips",
-     "size": 65
-    },
-    {
-     "label": "remove_automap",
-     "member": "optional/remove_automap.ips",
-     "format": "ips",
-     "size": 716
     }
    ]
   },
@@ -8067,18 +7467,6 @@
      "member": "Castlevania - Prince of Darkness 1'5 (USA rom).ips",
      "format": "ips",
      "size": 66832
-    },
-    {
-     "label": "easy patch",
-     "member": "easy patch.ips",
-     "format": "ips",
-     "size": 26
-    },
-    {
-     "label": "hard patch",
-     "member": "hard patch.ips",
-     "format": "ips",
-     "size": 26
     }
    ]
   },
@@ -8290,12 +7678,6 @@
      "member": "nsmb3r-prg0.ips",
      "format": "ips",
      "size": 15491
-    },
-    {
-     "label": "nsmb3r-prg1",
-     "member": "nsmb3r-prg1.ips",
-     "format": "ips",
-     "size": 12803
     }
    ]
   },
@@ -9493,12 +8875,6 @@
      "size": 22000,
      "src_crc": "44070CFA",
      "dst_crc": "F9AA4D81"
-    },
-    {
-     "label": "YYH",
-     "member": "YYH/YYH.ips",
-     "format": "ips",
-     "size": 60480
     }
    ]
   },
@@ -10068,36 +9444,6 @@
      "member": "Auto-run+.ips",
      "format": "ips",
      "size": 64
-    },
-    {
-     "label": "CT+ 2.4",
-     "member": "CT+ 2.4.ips",
-     "format": "ips",
-     "size": 868358
-    },
-    {
-     "label": "current music menu (no msu-1)",
-     "member": "current music menu (no msu-1).ips",
-     "format": "ips",
-     "size": 21
-    },
-    {
-     "label": "Magus Cape",
-     "member": "Magus Cape.ips",
-     "format": "ips",
-     "size": 46
-    },
-    {
-     "label": "Marle",
-     "member": "Marle.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "Nes Difficulty",
-     "member": "Nes Difficulty.ips",
-     "format": "ips",
-     "size": 1102
     }
    ]
   },
@@ -10348,48 +9694,6 @@
      "member": "Widescreen/Super Metroid - Redux v1.2 - Widescreen Patch v0.3.ips",
      "format": "ips",
      "size": 9097
-    },
-    {
-     "label": "Default X-Ray",
-     "member": "Optional/Default X-Ray.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "Fixed Tourian Unlocked Doors",
-     "member": "Optional/Fixed Tourian Unlocked Doors.ips",
-     "format": "ips",
-     "size": 908
-    },
-    {
-     "label": "Heavy Physics",
-     "member": "Optional/Heavy Physics.ips",
-     "format": "ips",
-     "size": 98
-    },
-    {
-     "label": "Original Elevator Speed",
-     "member": "Optional/Original Elevator Speed.ips",
-     "format": "ips",
-     "size": 56
-    },
-    {
-     "label": "Redesigned Samus",
-     "member": "Optional/Redesigned Samus.ips",
-     "format": "ips",
-     "size": 90506
-    },
-    {
-     "label": "Save Stations Refill Everything",
-     "member": "Optional/Save Stations Refill Everything.ips",
-     "format": "ips",
-     "size": 177
-    },
-    {
-     "label": "Skip Ceres - Start In Zebes",
-     "member": "Optional/Skip Ceres - Start In Zebes.ips",
-     "format": "ips",
-     "size": 24
     }
    ]
   },
@@ -10522,18 +9826,6 @@
      "member": "ff5/Final Fantasy V - GBA Script Port.ips",
      "format": "ips",
      "size": 348975
-    },
-    {
-     "label": "Bugfixes",
-     "member": "ff5/Bugfixes.ips",
-     "format": "ips",
-     "size": 93104
-    },
-    {
-     "label": "Ginger Battle Galuf",
-     "member": "ff5/Ginger Battle Galuf.ips",
-     "format": "ips",
-     "size": 360
     }
    ]
   },
@@ -10987,12 +10279,6 @@
      "member": "ctpatch-hdr.ips",
      "format": "ips",
      "size": 210957
-    },
-    {
-     "label": "ctpatch-nohdr",
-     "member": "ctpatch-nohdr.ips",
-     "format": "ips",
-     "size": 210957
     }
    ]
   },
@@ -11331,66 +10617,6 @@
      "member": "SD3 [DE30].IPS",
      "format": "ips",
      "size": 15428
-    },
-    {
-     "label": "SD3 [EN101+JP+TOM]",
-     "member": "SD3 [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 15631
-    },
-    {
-     "label": "SD3-OFFICIAL [DE30]",
-     "member": "SD3-OFFICIAL [DE30].IPS",
-     "format": "ips",
-     "size": 15428
-    },
-    {
-     "label": "SD3-OFFICIAL [EN101+JP]",
-     "member": "SD3-OFFICIAL [EN101+JP].IPS",
-     "format": "ips",
-     "size": 15631
-    },
-    {
-     "label": "SD3-OFFICIAL [TOM]",
-     "member": "SD3-OFFICIAL [TOM].IPS",
-     "format": "ips",
-     "size": 15631
-    },
-    {
-     "label": "SOM2 [DE30]",
-     "member": "SOM2 [DE30].IPS",
-     "format": "ips",
-     "size": 15428
-    },
-    {
-     "label": "SOM2 [EN101+JP+TOM]",
-     "member": "SOM2 [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 15631
-    },
-    {
-     "label": "TOM [DE30]",
-     "member": "TOM [DE30].IPS",
-     "format": "ips",
-     "size": 15635
-    },
-    {
-     "label": "TOM [EN101+JP+TOM]",
-     "member": "TOM [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 15631
-    },
-    {
-     "label": "TOM-OFFICIAL [DE30]",
-     "member": "TOM-OFFICIAL [DE30].IPS",
-     "format": "ips",
-     "size": 15635
-    },
-    {
-     "label": "TOM-OFFICIAL [EN101+JP+TOM]",
-     "member": "TOM-OFFICIAL [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 15631
     }
    ]
   },
@@ -11555,36 +10781,6 @@
      "member": "mmxcapsuleremix.ips",
      "format": "ips",
      "size": 7880
-    },
-    {
-     "label": "airdashwalljump",
-     "member": "Individual Patches/airdashwalljump.ips",
-     "format": "ips",
-     "size": 4381
-    },
-    {
-     "label": "hadouken",
-     "member": "Individual Patches/hadouken.ips",
-     "format": "ips",
-     "size": 34
-    },
-    {
-     "label": "stageedits",
-     "member": "Individual Patches/stageedits.ips",
-     "format": "ips",
-     "size": 3480
-    },
-    {
-     "label": "wolfsigma",
-     "member": "Individual Patches/wolfsigma.ips",
-     "format": "ips",
-     "size": 29
-    },
-    {
-     "label": "zerobuster",
-     "member": "Individual Patches/zerobuster.ips",
-     "format": "ips",
-     "size": 33
     }
    ]
   },
@@ -11824,7 +11020,8 @@
      "label": "MMX1_AirDash_HEADER",
      "member": "MMX1_AirDash_HEADER.ips",
      "format": "ips",
-     "size": 4381
+     "size": 4381,
+     "header": "required"
     },
     {
      "label": "MMX1_WallJump",
@@ -11836,7 +11033,8 @@
      "label": "MMX1_WallJump_HEADER",
      "member": "MMX1_WallJump_HEADER.ips",
      "format": "ips",
-     "size": 991
+     "size": 991,
+     "header": "required"
     }
    ]
   },
@@ -11871,12 +11069,6 @@
      "member": "Rock7EP_102/Rockman7EP102.ips",
      "format": "ips",
      "size": 690037
-    },
-    {
-     "label": "translating › EnableLanguageSwitching",
-     "member": "Rock7EP_102/translating/EnableLanguageSwitching.ips",
-     "format": "ips",
-     "size": 14
     }
    ]
   },
@@ -11910,13 +11102,15 @@
      "label": "ff5spoofv1.10_header",
      "member": "ff5spoofv1.10_header.ips",
      "format": "ips",
-     "size": 473427
+     "size": 473427,
+     "header": "required"
     },
     {
      "label": "ff5spoofv1.10_no_header",
      "member": "ff5spoofv1.10_no_header.ips",
      "format": "ips",
-     "size": 473427
+     "size": 473427,
+     "header": "required"
     }
    ]
   },
@@ -12022,7 +11216,8 @@
      "label": "ki us 1.1 noheader patch",
      "member": "ki us 1.1 noheader patch.ips",
      "format": "ips",
-     "size": 270
+     "size": 270,
+     "header": "none"
     }
    ]
   },
@@ -12405,12 +11600,6 @@
      "member": "coolyskunk_full.sfc.ips",
      "format": "ips",
      "size": 33834
-    },
-    {
-     "label": "mempack.dat",
-     "member": "mempack.dat.ips",
-     "format": "ips",
-     "size": 33879
     }
    ]
   },
@@ -12634,48 +11823,6 @@
     {
      "label": "TOWN-SIGNS-ICONS [DE30+EN101+JP+TOM]",
      "member": "TOWN-SIGNS-ICONS [DE30+EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 11482
-    },
-    {
-     "label": "LEVEL-UP-OFFICIAL [EN101+JP+TOM]",
-     "member": "LEVEL-UP-OFFICIAL [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 589
-    },
-    {
-     "label": "LEVEL-UP-TEXT [DE30+TOM]",
-     "member": "LEVEL-UP-TEXT [DE30+TOM].IPS",
-     "format": "ips",
-     "size": 589
-    },
-    {
-     "label": "MENU-OVERVIEW-OFFICIAL [EN101+JP]",
-     "member": "MENU-OVERVIEW-OFFICIAL [EN101+JP].IPS",
-     "format": "ips",
-     "size": 4763
-    },
-    {
-     "label": "MENU-OVERVIEW-OFFICIAL-TOM [DE30+EN101+JP]",
-     "member": "MENU-OVERVIEW-OFFICIAL-TOM [DE30+EN101+JP].IPS",
-     "format": "ips",
-     "size": 4763
-    },
-    {
-     "label": "MENU-OVERVIEW-TEXT [DE30]",
-     "member": "MENU-OVERVIEW-TEXT [DE30].IPS",
-     "format": "ips",
-     "size": 4763
-    },
-    {
-     "label": "TOWN-SIGNS-OFFICIAL [EN101+JP+TOM]",
-     "member": "TOWN-SIGNS-OFFICIAL [EN101+JP+TOM].IPS",
-     "format": "ips",
-     "size": 11482
-    },
-    {
-     "label": "TOWN-SIGNS-TEXT [DE30+TOM]",
-     "member": "TOWN-SIGNS-TEXT [DE30+TOM].IPS",
      "format": "ips",
      "size": 11482
     }
@@ -13014,7 +12161,8 @@
      "label": "project_base_0.7.3_unheadered",
      "member": "project_base_0.7.3_unheadered.IPS",
      "format": "ips",
-     "size": 662681
+     "size": 662681,
+     "header": "none"
     }
    ]
   },
@@ -13095,54 +12243,6 @@
      "member": "v1.1/MMX_Rockman (v1.1).ips",
      "format": "ips",
      "size": 17247
-    },
-    {
-     "label": "MMX_Irregular (v1.0)",
-     "member": "v1.0/MMX_Irregular (v1.0).ips",
-     "format": "ips",
-     "size": 6436
-    },
-    {
-     "label": "MMX_Irregular+Logo (v1.0)",
-     "member": "v1.0/MMX_Irregular+Logo (v1.0).ips",
-     "format": "ips",
-     "size": 16455
-    },
-    {
-     "label": "MMX_Maverick (v1.0)",
-     "member": "v1.0/MMX_Maverick (v1.0).ips",
-     "format": "ips",
-     "size": 5412
-    },
-    {
-     "label": "MMX_Maverick+Logo (v1.0)",
-     "member": "v1.0/MMX_Maverick+Logo (v1.0).ips",
-     "format": "ips",
-     "size": 15431
-    },
-    {
-     "label": "MMX_Irregular (v1.1)",
-     "member": "v1.1/MMX_Irregular (v1.1).ips",
-     "format": "ips",
-     "size": 6436
-    },
-    {
-     "label": "MMX_Irregular+Logo (v1.1)",
-     "member": "v1.1/MMX_Irregular+Logo (v1.1).ips",
-     "format": "ips",
-     "size": 16455
-    },
-    {
-     "label": "MMX_Maverick (v1.1)",
-     "member": "v1.1/MMX_Maverick (v1.1).ips",
-     "format": "ips",
-     "size": 5412
-    },
-    {
-     "label": "MMX_Maverick+Logo (v1.1)",
-     "member": "v1.1/MMX_Maverick+Logo (v1.1).ips",
-     "format": "ips",
-     "size": 15431
     }
    ]
   },
@@ -13218,66 +12318,6 @@
      "member": "FF6-RevisedOldStyleEdition_v1-06_NH.ips",
      "format": "ips",
      "size": 882754
-    },
-    {
-     "label": "FF3us-Internal-ROM-Info › FF3us-Internal-ROM-Info_H",
-     "member": "hacking/FF3us-Internal-ROM-Info/FF3us-Internal-ROM-Info_H.ips",
-     "format": "ips",
-     "size": 29
-    },
-    {
-     "label": "FF3us-Internal-ROM-Info › FF3us-Internal-ROM-Info_NH",
-     "member": "hacking/FF3us-Internal-ROM-Info/FF3us-Internal-ROM-Info_NH.ips",
-     "format": "ips",
-     "size": 29
-    },
-    {
-     "label": "FF3usME-Event-Fix › FF3usME-Event-Fix_H",
-     "member": "hacking/FF3usME-Event-Fix/FF3usME-Event-Fix_H.ips",
-     "format": "ips",
-     "size": 69
-    },
-    {
-     "label": "FF3usME-Event-Fix › FF3usME-Event-Fix_NH",
-     "member": "hacking/FF3usME-Event-Fix/FF3usME-Event-Fix_NH.ips",
-     "format": "ips",
-     "size": 69
-    },
-    {
-     "label": "Alt-DarkWorld › Alt-DarkWorld_H",
-     "member": "extras/Alt-DarkWorld/Alt-DarkWorld_H.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "Alt-DarkWorld › Alt-DarkWorld_NH",
-     "member": "extras/Alt-DarkWorld/Alt-DarkWorld_NH.ips",
-     "format": "ips",
-     "size": 14
-    },
-    {
-     "label": "Anti-Fix › FF6ROSE-Anti-Fix_v1-06_H",
-     "member": "extras/Anti-Fix/FF6ROSE-Anti-Fix_v1-06_H.ips",
-     "format": "ips",
-     "size": 4724
-    },
-    {
-     "label": "Anti-Fix › FF6ROSE-Anti-Fix_v1-06_NH",
-     "member": "extras/Anti-Fix/FF6ROSE-Anti-Fix_v1-06_NH.ips",
-     "format": "ips",
-     "size": 4724
-    },
-    {
-     "label": "Field-Main-Classes › FF6ROSE-FieldMainClasses_v1-06_H",
-     "member": "extras/Field-Main-Classes/FF6ROSE-FieldMainClasses_v1-06_H.ips",
-     "format": "ips",
-     "size": 56
-    },
-    {
-     "label": "Field-Main-Classes › FF6ROSE-FieldMainClasses_v1-06_NH",
-     "member": "extras/Field-Main-Classes/FF6ROSE-FieldMainClasses_v1-06_NH.ips",
-     "format": "ips",
-     "size": 56
     }
    ]
   },
@@ -13446,48 +12486,6 @@
      "member": "BSFE1Eng.ips",
      "format": "ips",
      "size": 14725
-    },
-    {
-     "label": "BSFE2Eng",
-     "member": "BSFE2Eng.ips",
-     "format": "ips",
-     "size": 14059
-    },
-    {
-     "label": "BSFE3Eng",
-     "member": "BSFE3Eng.ips",
-     "format": "ips",
-     "size": 13719
-    },
-    {
-     "label": "BSFE4Eng",
-     "member": "BSFE4Eng.ips",
-     "format": "ips",
-     "size": 13473
-    },
-    {
-     "label": "BSFM1",
-     "member": "fepatches/BSFM1.IPS",
-     "format": "ips",
-     "size": 24
-    },
-    {
-     "label": "BSFM2",
-     "member": "fepatches/BSFM2.IPS",
-     "format": "ips",
-     "size": 24
-    },
-    {
-     "label": "BSFM3",
-     "member": "fepatches/BSFM3.IPS",
-     "format": "ips",
-     "size": 24
-    },
-    {
-     "label": "BSFM4",
-     "member": "fepatches/BSFM4.IPS",
-     "format": "ips",
-     "size": 24
     }
    ]
   },
@@ -13647,20 +12645,6 @@
    "shot": "hacks/SNES/Fire Emblem_ Seisen no Keifu/Fire Emblem Binary_ English Translation___0_7/Fire Emblem Binary_ English Translation_screenshot0.png",
    "variants": [
     {
-     "label": "0.5 to 0.7",
-     "member": "Binary Translation 0.7/0.5 to 0.7.ips",
-     "format": "ips",
-     "size": 25881
-    },
-    {
-     "label": "0.5 to 0.7",
-     "member": "Binary Translation 0.7/0.5 to 0.7.ups",
-     "format": "ups",
-     "size": 28133,
-     "src_crc": "FCDB0BDE",
-     "dst_crc": "3D23E5D9"
-    },
-    {
      "label": "Binary 0.7",
      "member": "Binary Translation 0.7/Binary 0.7.ips",
      "format": "ips",
@@ -13672,20 +12656,6 @@
      "format": "ups",
      "size": 240522,
      "src_crc": "5F9BEF0D",
-     "dst_crc": "3D23E5D9"
-    },
-    {
-     "label": "Jp to En",
-     "member": "Binary Translation 0.7/Jp to En.ips",
-     "format": "ips",
-     "size": 55544
-    },
-    {
-     "label": "Jp to En",
-     "member": "Binary Translation 0.7/Jp to En.ups",
-     "format": "ups",
-     "size": 57949,
-     "src_crc": "C871F74E",
      "dst_crc": "3D23E5D9"
     }
    ]
@@ -13788,30 +12758,6 @@
      "member": "SC4RemixFastRomV2.1.ips",
      "format": "ips",
      "size": 1238149
-    },
-    {
-     "label": "Super Castlevania IV (U) [!] Double Boss HealthV2.1",
-     "member": "extra patches/Super Castlevania IV (U) [!] Double Boss HealthV2.1.ips",
-     "format": "ips",
-     "size": 268
-    },
-    {
-     "label": "dont move V1.1 by rainponcho",
-     "member": "extra patches/dont move V1.1 by rainponcho.ips",
-     "format": "ips",
-     "size": 94
-    },
-    {
-     "label": "old Patch › Super Castlevania IV Remix (U) [!] V1.1",
-     "member": "extra patches/old Patch/Super Castlevania IV Remix (U) [!] V1.1.ips",
-     "format": "ips",
-     "size": 1215526
-    },
-    {
-     "label": "old Patch › Super Castlevania IV Remix (U) [!]V1.0",
-     "member": "extra patches/old Patch/Super Castlevania IV Remix (U) [!]V1.0.ips",
-     "format": "ips",
-     "size": 1215400
     }
    ]
   },
@@ -13943,19 +12889,15 @@
      "label": "DivergentPaths_Header_1.1",
      "member": "DivergentPaths_Header_1.1.ips",
      "format": "ips",
-     "size": 892770
+     "size": 892770,
+     "header": "required"
     },
     {
      "label": "DivergentPaths_NoHeader 1.1",
      "member": "DivergentPaths_NoHeader 1.1.ips",
      "format": "ips",
-     "size": 892770
-    },
-    {
-     "label": "editor restoration",
-     "member": "EXTRAS/editor restoration.ips",
-     "format": "ips",
-     "size": 1184
+     "size": 892770,
+     "header": "none"
     }
    ]
   },
@@ -14050,30 +12992,6 @@
      "member": "MMX2_Rockman.ips",
      "format": "ips",
      "size": 16087
-    },
-    {
-     "label": "MMX2_Irregular+Logo",
-     "member": "MMX2_Irregular+Logo.ips",
-     "format": "ips",
-     "size": 15952
-    },
-    {
-     "label": "MMX2_Irregular",
-     "member": "MMX2_Irregular.ips",
-     "format": "ips",
-     "size": 9038
-    },
-    {
-     "label": "MMX2_Maverick+Logo",
-     "member": "MMX2_Maverick+Logo.ips",
-     "format": "ips",
-     "size": 15236
-    },
-    {
-     "label": "MMX2_Maverick",
-     "member": "MMX2_Maverick.ips",
-     "format": "ips",
-     "size": 8322
     }
    ]
   },
@@ -14548,12 +13466,6 @@
      "member": "Fatal Fury Special (Easy).ips",
      "format": "ips",
      "size": 677
-    },
-    {
-     "label": "sakazaky only-noheader",
-     "member": "sakazaky only-noheader.ips",
-     "format": "ips",
-     "size": 20
     }
    ]
   },
@@ -14743,18 +13655,6 @@
      "member": "_ALTTP_Hero_of_Hyrule.ips",
      "format": "ips",
      "size": 286971
-    },
-    {
-     "label": "_ALTTP_Hero_of_Hyrule_Redux_4OG",
-     "member": "_ALTTP_Hero_of_Hyrule_Redux_4OG.ips",
-     "format": "ips",
-     "size": 355698
-    },
-    {
-     "label": "_ALTTP_Hero_of_Hyrule_Redux_4Redux",
-     "member": "_ALTTP_Hero_of_Hyrule_Redux_4Redux.ips",
-     "format": "ips",
-     "size": 241127
     }
    ]
   },
