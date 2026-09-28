@@ -1,3 +1,5 @@
 #!/bin/sh
 set -e
-sh tools/hackdb/explore.sh
+go mod tidy
+go test ./patch ./tools/hackdb
+go run ./tools/hackdb -out out/hacks.json -report out/report.txt
