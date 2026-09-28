@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-09-28T13:00:51Z",
+ "generated": "2026-09-28T13:06:23Z",
  "source": "RomHacking.net archive (Internet Archive item rhdn-20210914)",
  "archive_url": "https://archive.org/download/rhdn-20210914/RHDN-20210914.zip",
  "hacks": [
@@ -1968,7 +1968,7 @@
      "size": 1575
     },
     {
-     "label": "MissingNo",
+     "label": "Optional MissingNo Patch › MissingNo",
      "member": "Pokemon Blue - 151 Patch/Optional MissingNo Patch/MissingNo.ips",
      "format": "ips",
      "size": 92
@@ -2524,6 +2524,190 @@
      "size": 95627,
      "src_crc": "35FC5B32",
      "dst_crc": "1E8183EB"
+    }
+   ]
+  },
+  {
+   "id": 0,
+   "kind": "hack",
+   "title": "Pokémon Crystal Legacy",
+   "system": "GB",
+   "game": "Pokémon Crystal Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "TheSmithPlays",
+   "version": "1.3.1",
+   "released": "30 August 2024",
+   "downloads": 0,
+   "pokemon": true,
+   "desc": "TheSmithPlays' remaster of Pokémon Crystal: fixes and polishes the original into a more refined experience while staying true to the vision of Generation 2. Mixtape picks the patch that matches your Crystal ROM revision.",
+   "patching": "BPS — for Pokémon Crystal (USA) or (USA, Europe) Rev 1",
+   "base": {
+    "name": "Pokemon - Crystal Version (USA, Europe) (Rev A) / (USA)"
+   },
+   "archive": "https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy/releases/download/V1.3.1/Pokemon.Crystal.Legacy.V1.3.1.Patches.zip",
+   "home": "https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy",
+   "variants": [
+    {
+     "label": "Crystal (USA)",
+     "member": "Pokemon Crystal Legacy V1.3.1 Patches/Version USA/Pokemon_Crystal_Legacy_USA_1.0_Patch.bps",
+     "format": "bps",
+     "size": 263704,
+     "src_crc": "EE6F5188",
+     "dst_crc": "12E97FB4"
+    },
+    {
+     "label": "Crystal (USA, Europe) Rev 1",
+     "member": "Pokemon Crystal Legacy V1.3.1 Patches/Version USA, Europe Rev 1/Pokemon_Crystal_Legacy_USA_1.1_Patch.bps",
+     "format": "bps",
+     "size": 263738,
+     "src_crc": "3358E30A",
+     "dst_crc": "12E97FB4"
+    }
+   ]
+  },
+  {
+   "id": 0,
+   "kind": "hack",
+   "title": "Pokémon Yellow Legacy",
+   "system": "GB",
+   "game": "Pokémon Yellow Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "TheSmithPlays",
+   "version": "1.0.10",
+   "released": "19 December 2024",
+   "downloads": 0,
+   "pokemon": true,
+   "desc": "TheSmithPlays' remaster of Pokémon Yellow in the same spirit as Crystal Legacy: bug fixes and quality-of-life polish that stay true to Generation 1.",
+   "patching": "BPS — for Pokémon Yellow (USA, Europe)",
+   "base": {
+    "name": "Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (GBC,SGB Enhanced)"
+   },
+   "archive": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy/releases/download/V1.0.10/Pokemon.Yellow.Legacy.V1.0.10.Patches.zip",
+   "home": "https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy",
+   "variants": [
+    {
+     "label": "Yellow Legacy",
+     "member": "Pokemon Yellow Legacy V1.0.10 Patches/Pokemon Yellow Legacy V1.0.10 Patch.bps",
+     "format": "bps",
+     "size": 168176,
+     "src_crc": "7D527D62",
+     "dst_crc": "E7D07A3F"
+    }
+   ]
+  },
+  {
+   "id": 1981,
+   "kind": "hack",
+   "title": "Pokémon Throwback",
+   "system": "GBA",
+   "game": "Pokémon: FireRed Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "RichterSnipes",
+   "version": "210717",
+   "released": "17 July 2021",
+   "downloads": 23540,
+   "score": "4/4",
+   "pokemon": true,
+   "desc": "Pokémon Throwback is a hack created to serve as a definitive version of the original Kanto journey. Based off of Pokémon FireRed, Throwback includes a bevy of features and fixes to make it worth using over the base games. Features: A GB Sounds item allows for players to hear the original 8-bit music in the game, as well as switch between it and the standard FR/LG music at any time. Reasonable Pokémon placement throughout the game - taking cues from all iterations of the first generation games, including Yellow and Japanese Blue - ensures that all Pokémon from the first two generations are obtainable through official-ish means (including canon evolution methods).",
+   "patching": "No Special Requirements",
+   "base": {
+    "name": "Pokemon - FireRed Version (USA)",
+    "file_crc": "DD88761C",
+    "file_sha1": "41CB23D8DCCC8EBD7C649CD8FBB58EEACE6E2FDC",
+    "rom_crc": "DD88761C",
+    "rom_sha1": "41CB23D8DCCC8EBD7C649CD8FBB58EEACE6E2FDC"
+   },
+   "archive": "hacks/GBA/Pokémon_ FireRed Version/Pokémon Throwback___210717/Pokemon Throwback v210717.zip",
+   "shot": "hacks/GBA/Pokémon_ FireRed Version/Pokémon Throwback___210717/Pokémon Throwback_screenshot0.png",
+   "variants": [
+    {
+     "label": "Pokemon Throwback v210717",
+     "member": "Pokemon Throwback v210717.bps",
+     "format": "bps",
+     "size": 2320794,
+     "src_crc": "DD88761C",
+     "dst_crc": "13FD1A97"
+    },
+    {
+     "label": "Pokemon Throwback v210717",
+     "member": "Pokemon Throwback v210717.ips",
+     "format": "ips",
+     "size": 2903732
+    },
+    {
+     "label": "Save Compatibility v210717",
+     "member": "Save Compatibility v210717.ips",
+     "format": "ips",
+     "size": 944
+    },
+    {
+     "label": "Base Game (BPRE v1.0)",
+     "member": "Decapitalization Patches/Base Game (BPRE v1.0).ips",
+     "format": "ips",
+     "size": 114847
+    },
+    {
+     "label": "Catch 'em All v200611",
+     "member": "Decapitalization Patches/Catch 'em All v200611.ips",
+     "format": "ips",
+     "size": 285
+    },
+    {
+     "label": "GB Sounds v210717",
+     "member": "Decapitalization Patches/GB Sounds v210717.ips",
+     "format": "ips",
+     "size": 38
+    },
+    {
+     "label": "Catch 'em All v210311",
+     "member": "Individual Patches/Catch 'em All v210311.ips",
+     "format": "ips",
+     "size": 17530
+    },
+    {
+     "label": "Custom Learnset Changes",
+     "member": "Individual Patches/Custom Learnset Changes.ips",
+     "format": "ips",
+     "size": 13911
+    },
+    {
+     "label": "GB Sounds v210717",
+     "member": "Individual Patches/GB Sounds v210717.ips",
+     "format": "ips",
+     "size": 131592
+    },
+    {
+     "label": "Higher Quality Cries v161104",
+     "member": "Individual Patches/Higher Quality Cries v161104.ips",
+     "format": "ips",
+     "size": 2600451
+    },
+    {
+     "label": "Wardrobe v210717",
+     "member": "Individual Patches/Wardrobe v210717.ips",
+     "format": "ips",
+     "size": 28110
+    },
+    {
+     "label": "Extras v200611",
+     "member": "Decapitalization Patches/Extras v200611.ips",
+     "format": "ips",
+     "size": 558
+    },
+    {
+     "label": "Extras v210717",
+     "member": "Individual Patches/Extras v210717.ips",
+     "format": "ips",
+     "size": 16275
+    },
+    {
+     "label": "Compatibility › Extras+Wardrobe",
+     "member": "Individual Patches/Compatibility/Extras+Wardrobe.ips",
+     "format": "ips",
+     "size": 7223
     }
    ]
   },
@@ -4715,6 +4899,270 @@
    ]
   },
   {
+   "id": 4437,
+   "kind": "hack",
+   "title": "Pokemon Retcon Micropatch Collection (FireRed)",
+   "system": "GBA",
+   "game": "Pokémon: FireRed Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "PowerPanda",
+   "version": "1.0",
+   "released": "31 March 2019",
+   "downloads": 455,
+   "score": "1/1",
+   "pokemon": true,
+   "desc": "Retcon - Short for “retroactive continuity”, a practice in media where previously-established information is changed in order to fit with a new direction that the series is going. The Pokémon Series, for the most part, does not retcon. Instead, they create elaborate reasons for why things didn’t exist before. One example of this is in Eevee’s evolutions. Rather than simply adding new evolutions, GameFreak came up with increasingly complex reasons why Eevee couldn’t evolve to new forms in previous games. First it was because of happiness, then because it must evolve in certain locations, then because it needs to know a specific move.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "41CB23D8DCCC8EBD7C649CD8FBB58EEACE6E2FDC"
+   },
+   "archive": "hacks/GBA/Pokémon_ FireRed Version/Pokemon Retcon Micropatch Collection (FireRed)___1_0/Retcon FireRed.zip",
+   "shot": "hacks/GBA/Pokémon_ FireRed Version/Pokemon Retcon Micropatch Collection (FireRed)___1_0/Pokemon Retcon Micropatch Collection (FireRed)_screenshot0.png",
+   "variants": [
+    {
+     "label": "allin",
+     "member": "allin.ips",
+     "format": "ips",
+     "size": 634
+    },
+    {
+     "label": "azurill",
+     "member": "azurill.ips",
+     "format": "ips",
+     "size": 43
+    },
+    {
+     "label": "babyless",
+     "member": "babyless.ips",
+     "format": "ips",
+     "size": 148
+    },
+    {
+     "label": "badkitty",
+     "member": "badkitty.ips",
+     "format": "ips",
+     "size": 36
+    },
+    {
+     "label": "clamperl",
+     "member": "clamperl.ips",
+     "format": "ips",
+     "size": 34
+    },
+    {
+     "label": "dragons",
+     "member": "dragons.ips",
+     "format": "ips",
+     "size": 71
+    },
+    {
+     "label": "eevee",
+     "member": "eevee.ips",
+     "format": "ips",
+     "size": 31
+    },
+    {
+     "label": "happiness",
+     "member": "happiness.ips",
+     "format": "ips",
+     "size": 124
+    },
+    {
+     "label": "lightningbug",
+     "member": "lightningbug.ips",
+     "format": "ips",
+     "size": 34
+    },
+    {
+     "label": "lugia",
+     "member": "lugia.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "mrmime",
+     "member": "mrmime.ips",
+     "format": "ips",
+     "size": 21
+    },
+    {
+     "label": "nidorina",
+     "member": "nidorina.ips",
+     "format": "ips",
+     "size": 36
+    },
+    {
+     "label": "normalize",
+     "member": "normalize.ips",
+     "format": "ips",
+     "size": 49
+    },
+    {
+     "label": "pinsir",
+     "member": "pinsir.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "porygon",
+     "member": "porygon.ips",
+     "format": "ips",
+     "size": 36
+    },
+    {
+     "label": "psydark",
+     "member": "psydark.ips",
+     "format": "ips",
+     "size": 35
+    },
+    {
+     "label": "psyduck",
+     "member": "psyduck.ips",
+     "format": "ips",
+     "size": 34
+    },
+    {
+     "label": "purity",
+     "member": "purity.ips",
+     "format": "ips",
+     "size": 72
+    }
+   ]
+  },
+  {
+   "id": 4436,
+   "kind": "hack",
+   "title": "Pokemon Retcon Micropatch Collection (Emerald)",
+   "system": "GBA",
+   "game": "Pokémon: Emerald Version",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "PowerPanda",
+   "version": "1.0",
+   "released": "31 March 2019",
+   "downloads": 451,
+   "score": "0/0",
+   "pokemon": true,
+   "desc": "Retcon - Short for “retroactive continuity”, a practice in media where previously-established information is changed in order to fit with a new direction that the series is going. The Pokémon Series, for the most part, does not retcon. Instead, they create elaborate reasons for why things didn’t exist before. One example of this is in Eevee’s evolutions. Rather than simply adding new evolutions, GameFreak came up with increasingly complex reasons why Eevee couldn’t evolve to new forms in previous games. First it was because of happiness, then because it must evolve in certain locations, then because it needs to know a specific move.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_sha1": "F3AE088181BF583E55DAF962A92BB46F4F1D07B7"
+   },
+   "archive": "hacks/GBA/Pokémon_ Emerald Version/Pokemon Retcon Micropatch Collection (Emerald)___1_0/Retcon Emerald.zip",
+   "shot": "hacks/GBA/Pokémon_ Emerald Version/Pokemon Retcon Micropatch Collection (Emerald)___1_0/Pokemon Retcon Micropatch Collection (Emerald)_screenshot0.png",
+   "variants": [
+    {
+     "label": "allin",
+     "member": "allin.ips",
+     "format": "ips",
+     "size": 353
+    },
+    {
+     "label": "azurill",
+     "member": "azurill.ips",
+     "format": "ips",
+     "size": 21
+    },
+    {
+     "label": "babyless",
+     "member": "babyless.ips",
+     "format": "ips",
+     "size": 78
+    },
+    {
+     "label": "badkitty",
+     "member": "badkitty.ips",
+     "format": "ips",
+     "size": 28
+    },
+    {
+     "label": "clamperl",
+     "member": "clamperl.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "dragons",
+     "member": "dragons.ips",
+     "format": "ips",
+     "size": 38
+    },
+    {
+     "label": "eevee",
+     "member": "eevee.ips",
+     "format": "ips",
+     "size": 24
+    },
+    {
+     "label": "happiness",
+     "member": "happiness.ips",
+     "format": "ips",
+     "size": 66
+    },
+    {
+     "label": "lightningbug",
+     "member": "lightningbug.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "lugia",
+     "member": "lugia.ips",
+     "format": "ips",
+     "size": 14
+    },
+    {
+     "label": "mrmime",
+     "member": "mrmime.ips",
+     "format": "ips",
+     "size": 14
+    },
+    {
+     "label": "nidorina",
+     "member": "nidorina.ips",
+     "format": "ips",
+     "size": 22
+    },
+    {
+     "label": "normalize",
+     "member": "normalize.ips",
+     "format": "ips",
+     "size": 29
+    },
+    {
+     "label": "pinsir",
+     "member": "pinsir.ips",
+     "format": "ips",
+     "size": 14
+    },
+    {
+     "label": "porygon",
+     "member": "porygon.ips",
+     "format": "ips",
+     "size": 22
+    },
+    {
+     "label": "psydark",
+     "member": "psydark.ips",
+     "format": "ips",
+     "size": 21
+    },
+    {
+     "label": "psyduck",
+     "member": "psyduck.ips",
+     "format": "ips",
+     "size": 20
+    },
+    {
+     "label": "purity",
+     "member": "purity.ips",
+     "format": "ips",
+     "size": 32
+    }
+   ]
+  },
+  {
    "id": 5721,
    "kind": "hack",
    "title": "Pokémon - Faria Version",
@@ -5449,6 +5897,150 @@
    ]
   },
   {
+   "id": 1631,
+   "kind": "hack",
+   "title": "Final Fantasy Restored",
+   "system": "NES",
+   "game": "Final Fantasy",
+   "category": "Improvement",
+   "genre": "Role Playing",
+   "author": "AstralEsper",
+   "version": "1.0",
+   "released": "25 May 2011",
+   "downloads": 9311,
+   "score": "5/6",
+   "desc": "Bugfix and Enhancement Patch. This fixes most of the known bugs in FF1, and provides a few enhancements. Consult Read Me for complete details. Optional Patches are also available as well, included in the Settings folder. All credits go to the numerous people who worked on creating this patch, which is in section 5 of the read me file.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "5C892F3B",
+    "rom_crc": "CEBD2A31"
+   },
+   "archive": "hacks/NES/Final Fantasy/Final Fantasy Restored___1_0/FF Restored.zip",
+   "shot": "hacks/NES/Final Fantasy/Final Fantasy Restored___1_0/Final Fantasy Restored_screenshot0.png",
+   "variants": [
+    {
+     "label": "Final Fantasy Restored - 1.0",
+     "member": "FF Restored/Final Fantasy Restored - 1.0.ips",
+     "format": "ips",
+     "size": 59712
+    },
+    {
+     "label": "Settings › Battle Speed 5",
+     "member": "FF Restored/Settings/Battle Speed 5.ips",
+     "format": "ips",
+     "size": 16
+    },
+    {
+     "label": "Settings › Battle Speed 6 (Default)",
+     "member": "FF Restored/Settings/Battle Speed 6 (Default).ips",
+     "format": "ips",
+     "size": 16
+    },
+    {
+     "label": "Settings › Battle Speed 7",
+     "member": "FF Restored/Settings/Battle Speed 7.ips",
+     "format": "ips",
+     "size": 16
+    },
+    {
+     "label": "Settings › Battle Speed 8",
+     "member": "FF Restored/Settings/Battle Speed 8.ips",
+     "format": "ips",
+     "size": 16
+    },
+    {
+     "label": "Settings › Boss HP - Double",
+     "member": "FF Restored/Settings/Boss HP - Double.ips",
+     "format": "ips",
+     "size": 97
+    },
+    {
+     "label": "Settings › Boss HP - Normal (Default)",
+     "member": "FF Restored/Settings/Boss HP - Normal (Default).ips",
+     "format": "ips",
+     "size": 97
+    },
+    {
+     "label": "Settings › M.Def Fix - All classes (Default)",
+     "member": "FF Restored/Settings/M.Def Fix - All classes (Default).ips",
+     "format": "ips",
+     "size": 25
+    },
+    {
+     "label": "Settings › M.Def Fix - MK+MA only",
+     "member": "FF Restored/Settings/M.Def Fix - MK+MA only.ips",
+     "format": "ips",
+     "size": 25
+    },
+    {
+     "label": "Settings › Menu Color - Green",
+     "member": "FF Restored/Settings/Menu Color - Green.ips",
+     "format": "ips",
+     "size": 830
+    },
+    {
+     "label": "Settings › Menu Color - Purple",
+     "member": "FF Restored/Settings/Menu Color - Purple.ips",
+     "format": "ips",
+     "size": 830
+    },
+    {
+     "label": "Settings › Menu Color - Red",
+     "member": "FF Restored/Settings/Menu Color - Red.ips",
+     "format": "ips",
+     "size": 830
+    },
+    {
+     "label": "Settings › Menu Color - Standard Blue",
+     "member": "FF Restored/Settings/Menu Color - Standard Blue.ips",
+     "format": "ips",
+     "size": 830
+    },
+    {
+     "label": "Settings › New Music Off",
+     "member": "FF Restored/Settings/New Music Off.ips",
+     "format": "ips",
+     "size": 34
+    },
+    {
+     "label": "Settings › New Music On (Default)",
+     "member": "FF Restored/Settings/New Music On (Default).ips",
+     "format": "ips",
+     "size": 32
+    },
+    {
+     "label": "Settings › Remove Battle Menu Color (Default)",
+     "member": "FF Restored/Settings/Remove Battle Menu Color (Default).ips",
+     "format": "ips",
+     "size": 856
+    },
+    {
+     "label": "Settings › Remove New Music + Restore Ship Game (Default)",
+     "member": "FF Restored/Settings/Remove New Music + Restore Ship Game (Default).ips",
+     "format": "ips",
+     "size": 2278
+    },
+    {
+     "label": "Settings › Remove Ship Game + Add New Music",
+     "member": "FF Restored/Settings/Remove Ship Game + Add New Music.ips",
+     "format": "ips",
+     "size": 2398
+    },
+    {
+     "label": "Settings › RNG - Improved",
+     "member": "FF Restored/Settings/RNG - Improved.ips",
+     "format": "ips",
+     "size": 639
+    },
+    {
+     "label": "Settings › RNG - Original (Default)",
+     "member": "FF Restored/Settings/RNG - Original (Default).ips",
+     "format": "ips",
+     "size": 632
+    }
+   ]
+  },
+  {
    "id": 1186,
    "kind": "hack",
    "title": "Metroid + Saving",
@@ -5565,25 +6157,25 @@
    "shot": "hacks/NES/Mega Man 4/Roll-chan 4___2_2a/Roll-chan 4_screenshot0.png",
    "variants": [
     {
-     "label": "ROLLCHAN4-JP-CLASSIC",
+     "label": "ROLLCHAN4-JP › ROLLCHAN4-JP-CLASSIC",
      "member": "ROLLCHAN4 v2-2a/ROLLCHAN4-JP/ROLLCHAN4-JP-CLASSIC.ips",
      "format": "ips",
      "size": 51780
     },
     {
-     "label": "ROLLCHAN4-JP-MM8",
+     "label": "ROLLCHAN4-JP › ROLLCHAN4-JP-MM8",
      "member": "ROLLCHAN4 v2-2a/ROLLCHAN4-JP/ROLLCHAN4-JP-MM8.ips",
      "format": "ips",
      "size": 51771
     },
     {
-     "label": "ROLLCHAN4-US-CLASSIC",
+     "label": "ROLLCHAN4-US › ROLLCHAN4-US-CLASSIC",
      "member": "ROLLCHAN4 v2-2a/ROLLCHAN4-US/ROLLCHAN4-US-CLASSIC.ips",
      "format": "ips",
      "size": 54970
     },
     {
-     "label": "ROLLCHAN4-US-MM8",
+     "label": "ROLLCHAN4-US › ROLLCHAN4-US-MM8",
      "member": "ROLLCHAN4 v2-2a/ROLLCHAN4-US/ROLLCHAN4-US-MM8.ips",
      "format": "ips",
      "size": 55057
@@ -6499,25 +7091,25 @@
    "shot": "hacks/NES/Castlevania II_ Simon’s Quest/Castlevania 2_ Improved Controls___1_4/Castlevania 2_ Improved Controls_screenshot0.png",
    "variants": [
     {
-     "label": "cv2-controls-bisqwit",
+     "label": "bisqwit › cv2-controls-bisqwit",
      "member": "cv2-controls/bisqwit/cv2-controls-bisqwit.ips",
      "format": "ips",
      "size": 390
     },
     {
-     "label": "cv2-controls",
+     "label": "standard › cv2-controls",
      "member": "cv2-controls/standard/cv2-controls.ips",
      "format": "ips",
      "size": 404
     },
     {
-     "label": "cv2-controls-bisqwit-novcancel",
+     "label": "bisqwit › cv2-controls-bisqwit-novcancel",
      "member": "cv2-controls/bisqwit/cv2-controls-bisqwit-novcancel.ips",
      "format": "ips",
      "size": 390
     },
     {
-     "label": "cv2-controls-novcancel",
+     "label": "standard › cv2-controls-novcancel",
      "member": "cv2-controls/standard/cv2-controls-novcancel.ips",
      "format": "ips",
      "size": 404
@@ -6655,13 +7247,13 @@
      "size": 25149
     },
     {
-     "label": "FF1FontChicago",
+     "label": "FontPatches › FF1FontChicago",
      "member": "FF1Translationv1.3/FontPatches/FF1FontChicago.ips",
      "format": "ips",
      "size": 747
     },
     {
-     "label": "FF1FontUS",
+     "label": "FontPatches › FF1FontUS",
      "member": "FF1Translationv1.3/FontPatches/FF1FontUS.ips",
      "format": "ips",
      "size": 1335
@@ -6883,19 +7475,19 @@
    "shot": "hacks/NES/Mega Man 6/Rockman 6_ Unique Harassment___1_2/Rockman 6_ Unique Harassment_screenshot0.png",
    "variants": [
     {
-     "label": "Rockman6UH_ver1.1",
+     "label": "ver1.1 › Rockman6UH_ver1.1",
      "member": "Rockman6UH/ver1.1/Rockman6UH_ver1.1.ips",
      "format": "ips",
      "size": 455246
     },
     {
-     "label": "Rockman6UH_ver1.2",
+     "label": "ver1.2 › Rockman6UH_ver1.2",
      "member": "Rockman6UH/ver1.2/Rockman6UH_ver1.2.ips",
      "format": "ips",
      "size": 455579
     },
     {
-     "label": "Rockman6UH",
+     "label": "\ufffd\ufffdver › Rockman6UH",
      "member": "Rockman6UH/\ufffd\ufffdver/Rockman6UH.ips",
      "format": "ips",
      "size": 454793
@@ -7343,13 +7935,13 @@
    "shot": "hacks/NES/Battletoads \u0026 Double Dragon_ The Ultimate Team/Battletoads \u0026 Double Dragon 4 players___2_1-4stage/Battletoads \u0026 Double Dragon 4 players_screenshot0.jpg",
    "variants": [
     {
-     "label": "Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages",
+     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages",
      "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages.ips",
      "format": "ips",
      "size": 68491
     },
     {
-     "label": "Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr",
+     "label": "ips_BTDD4p_2.1-4stages › Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr",
      "member": "v2.1-4stages/ips_BTDD4p_2.1-4stages/Battletoads \u0026 Double Dragon_4_players_-_BTDD4p_2.1-4stages_256_spr.ips",
      "format": "ips",
      "size": 69966
@@ -7564,6 +8156,110 @@
      "size": 12590,
      "src_crc": "E0CA425C",
      "dst_crc": "5003960B"
+    }
+   ]
+  },
+  {
+   "id": 4163,
+   "kind": "hack",
+   "title": "Bowsette",
+   "system": "NES",
+   "game": "Super Mario Bros.",
+   "category": "Improvement",
+   "genre": "Action \u003e Platformer",
+   "author": "Zynk Oxhyde",
+   "version": "2.0",
+   "released": "20 September 2020",
+   "downloads": 2353,
+   "score": "1/1",
+   "desc": "This is a player and Bowser sprite hack of Super Mario Bros. for the NES. v1.0 Bowser is modified to Bowsette Big Mario is replaced by “Mariette/Luigette” v2.0 (09/20/2020) Mario \u0026 Luigi are replaced with Bowsette Bowser is modified to Bowsette, as in v1.0 See ReadMe file for details.",
+   "patching": "No Special Requirements",
+   "base": {
+    "file_crc": "3337EC46",
+    "file_sha1": "EA343F4E445A9050D4B4FBAC2C77D0693B1D0922",
+    "rom_crc": "D445F698",
+    "rom_sha1": "FACEE9C577A5262DBE33AC4930BB0B58C8C037F7"
+   },
+   "archive": "hacks/NES/Super Mario Bros_/Bowsette___2_0/BOWSETTE_v2.zip",
+   "shot": "hacks/NES/Super Mario Bros_/Bowsette___2_0/Bowsette_screenshot0.png",
+   "variants": [
+    {
+     "label": "Bowsette_Player",
+     "member": "Bowsette_Player/Bowsette_Player.ips",
+     "format": "ips",
+     "size": 2820
+    },
+    {
+     "label": "Mariette_and_Bowsette_Blond",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Blond.ips",
+     "format": "ips",
+     "size": 1485
+    },
+    {
+     "label": "Mariette_and_Bowsette_Boo",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Boo.ips",
+     "format": "ips",
+     "size": 1486
+    },
+    {
+     "label": "Mariette_and_Bowsette_Daisy",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Daisy.ips",
+     "format": "ips",
+     "size": 1486
+    },
+    {
+     "label": "Mariette_and_Bowsette_Green",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Green.ips",
+     "format": "ips",
+     "size": 1484
+    },
+    {
+     "label": "Mariette_and_Bowsette_Peach",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Peach.ips",
+     "format": "ips",
+     "size": 1485
+    },
+    {
+     "label": "Mariette_and_Bowsette_Red",
+     "member": "Mariette_and_Bowsette/Mariette_and_Bowsette_Red.ips",
+     "format": "ips",
+     "size": 1486
+    },
+    {
+     "label": "Bowsette_Blond",
+     "member": "Bowsette/Bowsette_Blond.ips",
+     "format": "ips",
+     "size": 282
+    },
+    {
+     "label": "Bowsette_Boo",
+     "member": "Bowsette/Bowsette_Boo.ips",
+     "format": "ips",
+     "size": 283
+    },
+    {
+     "label": "Bowsette_Daisy",
+     "member": "Bowsette/Bowsette_Daisy.ips",
+     "format": "ips",
+     "size": 283
+    },
+    {
+     "label": "Bowsette_Green",
+     "member": "Bowsette/Bowsette_Green.ips",
+     "format": "ips",
+     "size": 281
+    },
+    {
+     "label": "Bowsette_Peach",
+     "member": "Bowsette/Bowsette_Peach.ips",
+     "format": "ips",
+     "size": 282
+    },
+    {
+     "label": "Bowsette_Red",
+     "member": "Bowsette/Bowsette_Red.ips",
+     "format": "ips",
+     "size": 283
     }
    ]
   },
@@ -9584,13 +10280,13 @@
      "dst_crc": "58A3E9D0"
     },
     {
-     "label": "chrono_msu1-anti",
+     "label": "MSU-1 Files › chrono_msu1-anti",
      "member": "CTBugfix/MSU-1 Files/chrono_msu1-anti.ips",
      "format": "ips",
      "size": 136
     },
     {
-     "label": "Bugfix Alone+Mystics",
+     "label": "Mystics › Bugfix Alone+Mystics",
      "member": "CTBugfix/Mystics/Bugfix Alone+Mystics.bps",
      "format": "bps",
      "size": 161942,
@@ -9598,7 +10294,7 @@
      "dst_crc": "C221FC55"
     },
     {
-     "label": "Canoe",
+     "label": "(OLD) Canoe › Canoe",
      "member": "CTBugfix/(OLD) Canoe/Canoe.bps",
      "format": "bps",
      "size": 160527,
@@ -10182,7 +10878,7 @@
      "dst_crc": "9936593B"
     },
     {
-     "label": "MM7Refit-v120_Graphic Changes",
+     "label": "Individual Patches › MM7Refit-v120_Graphic Changes",
      "member": "Patches/Individual Patches/MM7Refit-v120_Graphic Changes.bps",
      "format": "bps",
      "size": 10323,
@@ -10190,43 +10886,43 @@
      "dst_crc": "97339613"
     },
     {
-     "label": "MM7Refit-v050_Faster Charge Shot",
+     "label": "Individual Patches › MM7Refit-v050_Faster Charge Shot",
      "member": "Patches/Individual Patches/MM7Refit-v050_Faster Charge Shot.ips",
      "format": "ips",
      "size": 36
     },
     {
-     "label": "MM7Refit-v050_Player I-Frames Increase",
+     "label": "Individual Patches › MM7Refit-v050_Player I-Frames Increase",
      "member": "Patches/Individual Patches/MM7Refit-v050_Player I-Frames Increase.ips",
      "format": "ips",
      "size": 14
     },
     {
-     "label": "MM7Refit-v052_New Damage Data",
+     "label": "Individual Patches › MM7Refit-v052_New Damage Data",
      "member": "Patches/Individual Patches/MM7Refit-v052_New Damage Data.ips",
      "format": "ips",
      "size": 576
     },
     {
-     "label": "MM7Refit-v105_No Charge Spark",
+     "label": "Individual Patches › MM7Refit-v105_No Charge Spark",
      "member": "Patches/Individual Patches/MM7Refit-v105_No Charge Spark.ips",
      "format": "ips",
      "size": 42
     },
     {
-     "label": "MM7Refit-v113_Untouchable Rush + Shield Fix",
+     "label": "Individual Patches › MM7Refit-v113_Untouchable Rush + Shield Fix",
      "member": "Patches/Individual Patches/MM7Refit-v113_Untouchable Rush + Shield Fix.ips",
      "format": "ips",
      "size": 33
     },
     {
-     "label": "MM7Refit-v116a_Stronger Charge Shot",
+     "label": "Individual Patches › MM7Refit-v116a_Stronger Charge Shot",
      "member": "Patches/Individual Patches/MM7Refit-v116a_Stronger Charge Shot.ips",
      "format": "ips",
      "size": 597
     },
     {
-     "label": "MM7Refit-v120_Text Fixes + Password",
+     "label": "Individual Patches › MM7Refit-v120_Text Fixes + Password",
      "member": "Patches/Individual Patches/MM7Refit-v120_Text Fixes + Password.ips",
      "format": "ips",
      "size": 1569
@@ -11177,7 +11873,7 @@
      "size": 690037
     },
     {
-     "label": "EnableLanguageSwitching",
+     "label": "translating › EnableLanguageSwitching",
      "member": "Rock7EP_102/translating/EnableLanguageSwitching.ips",
      "format": "ips",
      "size": 14
@@ -12524,61 +13220,61 @@
      "size": 882754
     },
     {
-     "label": "FF3us-Internal-ROM-Info_H",
+     "label": "FF3us-Internal-ROM-Info › FF3us-Internal-ROM-Info_H",
      "member": "hacking/FF3us-Internal-ROM-Info/FF3us-Internal-ROM-Info_H.ips",
      "format": "ips",
      "size": 29
     },
     {
-     "label": "FF3us-Internal-ROM-Info_NH",
+     "label": "FF3us-Internal-ROM-Info › FF3us-Internal-ROM-Info_NH",
      "member": "hacking/FF3us-Internal-ROM-Info/FF3us-Internal-ROM-Info_NH.ips",
      "format": "ips",
      "size": 29
     },
     {
-     "label": "FF3usME-Event-Fix_H",
+     "label": "FF3usME-Event-Fix › FF3usME-Event-Fix_H",
      "member": "hacking/FF3usME-Event-Fix/FF3usME-Event-Fix_H.ips",
      "format": "ips",
      "size": 69
     },
     {
-     "label": "FF3usME-Event-Fix_NH",
+     "label": "FF3usME-Event-Fix › FF3usME-Event-Fix_NH",
      "member": "hacking/FF3usME-Event-Fix/FF3usME-Event-Fix_NH.ips",
      "format": "ips",
      "size": 69
     },
     {
-     "label": "Alt-DarkWorld_H",
+     "label": "Alt-DarkWorld › Alt-DarkWorld_H",
      "member": "extras/Alt-DarkWorld/Alt-DarkWorld_H.ips",
      "format": "ips",
      "size": 14
     },
     {
-     "label": "Alt-DarkWorld_NH",
+     "label": "Alt-DarkWorld › Alt-DarkWorld_NH",
      "member": "extras/Alt-DarkWorld/Alt-DarkWorld_NH.ips",
      "format": "ips",
      "size": 14
     },
     {
-     "label": "FF6ROSE-Anti-Fix_v1-06_H",
+     "label": "Anti-Fix › FF6ROSE-Anti-Fix_v1-06_H",
      "member": "extras/Anti-Fix/FF6ROSE-Anti-Fix_v1-06_H.ips",
      "format": "ips",
      "size": 4724
     },
     {
-     "label": "FF6ROSE-Anti-Fix_v1-06_NH",
+     "label": "Anti-Fix › FF6ROSE-Anti-Fix_v1-06_NH",
      "member": "extras/Anti-Fix/FF6ROSE-Anti-Fix_v1-06_NH.ips",
      "format": "ips",
      "size": 4724
     },
     {
-     "label": "FF6ROSE-FieldMainClasses_v1-06_H",
+     "label": "Field-Main-Classes › FF6ROSE-FieldMainClasses_v1-06_H",
      "member": "extras/Field-Main-Classes/FF6ROSE-FieldMainClasses_v1-06_H.ips",
      "format": "ips",
      "size": 56
     },
     {
-     "label": "FF6ROSE-FieldMainClasses_v1-06_NH",
+     "label": "Field-Main-Classes › FF6ROSE-FieldMainClasses_v1-06_NH",
      "member": "extras/Field-Main-Classes/FF6ROSE-FieldMainClasses_v1-06_NH.ips",
      "format": "ips",
      "size": 56
@@ -13106,13 +13802,13 @@
      "size": 94
     },
     {
-     "label": "Super Castlevania IV Remix (U) [!] V1.1",
+     "label": "old Patch › Super Castlevania IV Remix (U) [!] V1.1",
      "member": "extra patches/old Patch/Super Castlevania IV Remix (U) [!] V1.1.ips",
      "format": "ips",
      "size": 1215526
     },
     {
-     "label": "Super Castlevania IV Remix (U) [!]V1.0",
+     "label": "old Patch › Super Castlevania IV Remix (U) [!]V1.0",
      "member": "extra patches/old Patch/Super Castlevania IV Remix (U) [!]V1.0.ips",
      "format": "ips",
      "size": 1215400

@@ -1,7 +1,7 @@
-generated 2026-09-28T13:00:51Z: 397 entries (33 Pokémon), 23 skipped
-  hack/GB            49
-  hack/GBA           67
-  hack/NES           82
+generated 2026-09-28T13:06:23Z: 404 entries (38 Pokémon), 18 skipped
+  hack/GB            51
+  hack/GBA           70
+  hack/NES           84
   hack/SNES          109
   translation/GB     23
   translation/GBA    7
@@ -80,6 +80,9 @@ OK   translation GB      282  Hugo 2 1/2  [ips:Hugo 2.5 English - V1.ips]  base=
 OK   translation GB      262  Masakari Densetsu - Kintarou Action Hen  [ips:Masakari Densetsu Kintaro Action Hen.ips]  base=Masakari Densetsu - Kintarou Action Hen (Japan)
 OK   translation GB      250  GB Memory Multi Menu  [ips:NP M-MENU English Patch v1.0.ips]  base=
 OK   translation GB       90  Mobile Golf  [bps:mobile_golf_en_vanilla_unlock.bps, bps:mobile_golf_en.bps]  base=Mobile Golf (Japan)
+OK   hack        GB        0  Pokémon Crystal Legacy  [bps:Pokemon_Crystal_Legacy_USA_1.0_Patch.bps, bps:Pokemon_Crystal_Legacy_USA_1.1_Patch.bps]  base=Pokemon - Crystal Version (USA, Europe) (Rev A) / (USA)
+OK   hack        GB        0  Pokémon Yellow Legacy  [bps:Pokemon Yellow Legacy V1.0.10 Patch.bps]  base=Pokemon - Yellow Version - Special Pikachu Edition (USA, Europe) (GBC,SGB Enhanced)
+OK   hack        GBA   23540  Pokémon Throwback  [bps:Pokemon Throwback v210717.bps, ips:Pokemon Throwback v210717.ips, ips:Save Compatibility v210717.ips, ips:Base Game (BPRE v1.0).ips, ips:Catch 'em All v200611.ips, ips:GB Sounds v210717.ips, ips:Catch 'em All v210311.ips, ips:Custom Learnset Changes.ips, ips:GB Sounds v210717.ips, ips:Higher Quality Cries v161104.ips, ips:Wardrobe v210717.ips, ips:Extras v200611.ips, ips:Extras v210717.ips, ips:Extras+Wardrobe.ips]  base=Pokemon - FireRed Version (USA)
 OK   hack        GBA   10396  Super Mario Advance Color Restoration  [ips:0050 - Super Mario Advance (UE).ips]  base=Super Mario Advance (USA, Europe)
 OK   hack        GBA    9687  Void's Blitzarre Adventure  [ups:Blitz v1_16.ups]  base=
 OK   hack        GBA    7894  Fire Emblem: Heaven's Bloom  [ups:HB Easymode 1.1.3.ups, ups:HB Hardmode 1.1.3.ups]  base=
@@ -138,6 +141,8 @@ OK   translation GBA     486  Nekketsu Monogatari Advance  [ips:Nekketsu Monogat
 OK   hack        GBA     476  Dragon Ball Z: Legacy of Not Dying to Wolves  [ips:DragonBallZ_LegacyOfNotDyingToWolves.ips, ips:DragonBallZ_LegacyOfNotDyingToWolves_MODE7.ips]  base=Dragon Ball Z - The Legacy of Goku (USA)
 OK   translation GBA     470  Tomato Adventure  [bps:Tomato Adventure [en-us 1.0.0].bps]  base=Tomato Adventure (Japan)
 OK   hack        GBA     457  Pokemon: Glamour Pink  [ips:Pokemon Glamour Pink  (U).ips]  base=
+OK   hack        GBA     455  Pokemon Retcon Micropatch Collection (FireRed)  [ips:allin.ips, ips:azurill.ips, ips:babyless.ips, ips:badkitty.ips, ips:clamperl.ips, ips:dragons.ips, ips:eevee.ips, ips:happiness.ips, ips:lightningbug.ips, ips:lugia.ips, ips:mrmime.ips, ips:nidorina.ips, ips:normalize.ips, ips:pinsir.ips, ips:porygon.ips, ips:psydark.ips, ips:psyduck.ips, ips:purity.ips]  base=
+OK   hack        GBA     451  Pokemon Retcon Micropatch Collection (Emerald)  [ips:allin.ips, ips:azurill.ips, ips:babyless.ips, ips:badkitty.ips, ips:clamperl.ips, ips:dragons.ips, ips:eevee.ips, ips:happiness.ips, ips:lightningbug.ips, ips:lugia.ips, ips:mrmime.ips, ips:nidorina.ips, ips:normalize.ips, ips:pinsir.ips, ips:porygon.ips, ips:psydark.ips, ips:psyduck.ips, ips:purity.ips]  base=
 OK   hack        GBA     447  Pokémon - Faria Version  [ips:Pok�mon - Faria Version.ips]  base=Pokemon - FireRed Version (USA)
 OK   hack        GBA     432  Yu-Gi-Oh - The Sacred Cards: Text Overhaul  [ips:Yu-Gi-Oh Text Overhaul.ips]  base=Yu-Gi-Oh! - The Sacred Cards (Europe) (En,Fr,De,Es,It)
 OK   hack        GBA     393  Castlevania Revenge on the Fiendsiecle - The Lost Belmonts  [ips:Castlevania RotF LTR patch.ips]  base=Castlevania - Byakuya no Concerto (Japan)
@@ -160,6 +165,7 @@ OK   hack        NES   18799  Metroid mOTHER  [ips:Metroid [mOTHER].ips]  base=
 OK   hack        NES   14361  Super Mario Ultimate  [ips:Super Mario Ultimate (U) PRG0 V1.1.ips]  base=
 OK   hack        NES   14312  Tank 1990 (255) v2.1  [ips:Tank 1990 (255) v2.1.ips]  base=
 OK   translation NES   10427  Konami Wai Wai World  [ips:KWE-VRC.IPS]  base=
+OK   hack        NES    9311  Final Fantasy Restored  [ips:Final Fantasy Restored - 1.0.ips, ips:Battle Speed 5.ips, ips:Battle Speed 6 (Default).ips, ips:Battle Speed 7.ips, ips:Battle Speed 8.ips, ips:Boss HP - Double.ips, ips:Boss HP - Normal (Default).ips, ips:M.Def Fix - All classes (Default).ips, ips:M.Def Fix - MK+MA only.ips, ips:Menu Color - Green.ips, ips:Menu Color - Purple.ips, ips:Menu Color - Red.ips, ips:Menu Color - Standard Blue.ips, ips:New Music Off.ips, ips:New Music On (Default).ips, ips:Remove Battle Menu Color (Default).ips, ips:Remove New Music + Restore Ship Game (Default).ips, ips:Remove Ship Game + Add New Music.ips, ips:RNG - Improved.ips, ips:RNG - Original (Default).ips]  base=
 OK   hack        NES    9055  Metroid + Saving  [ips:Metroid Plus.ips]  base=
 OK   hack        NES    8657  New Mario Bros.  [ips:New Mario Bros.ips]  base=
 OK   hack        NES    7669  Super Mario Bros: Time and Place  [ips:SuperMarioBros-TimeAndPlace.ips]  base=
@@ -219,6 +225,7 @@ OK   hack        NES    2524  Dragon Quest: Delocalized  [ips:dq_delocalized_114
 OK   hack        NES    2498  Castlevania - Prince of Darkness  [ips:Castlevania - Prince of Darkness 1'5 (Europe rom).ips, ips:Castlevania - Prince of Darkness 1'5 (USA rom).ips, ips:easy patch.ips, ips:hard patch.ips]  base=
 OK   hack        NES    2489  Bowser Vs. Wario  [bps:Bowser vs. Wario (World) (TitleScreen v1.00 by Ice Man).bps]  base=Super Mario Bros. (World)
 OK   hack        NES    2409  Bowsette 2  [bps:Bowsette2-Red.bps, bps:Bowsette2-Yellow.bps]  base=
+OK   hack        NES    2353  Bowsette  [ips:Bowsette_Player.ips, ips:Mariette_and_Bowsette_Blond.ips, ips:Mariette_and_Bowsette_Boo.ips, ips:Mariette_and_Bowsette_Daisy.ips, ips:Mariette_and_Bowsette_Green.ips, ips:Mariette_and_Bowsette_Peach.ips, ips:Mariette_and_Bowsette_Red.ips, ips:Bowsette_Blond.ips, ips:Bowsette_Boo.ips, ips:Bowsette_Daisy.ips, ips:Bowsette_Green.ips, ips:Bowsette_Peach.ips, ips:Bowsette_Red.ips]  base=
 OK   hack        NES    2344  NEW Super Mario Bros. 3 Redemption  [ips:nsmb3r-prg0.ips, ips:nsmb3r-prg1.ips]  base=
 OK   hack        NES    2227  Vine Man  [ips:Vine Man 1.2.ips]  base=
 OK   hack        NES    2196  Super Mario World (New Block Graphics)  [ips:Super Mario World.ips]  base=
@@ -406,17 +413,12 @@ OK   translation SNES     52  Ganbare Goemon 3: Shishi Juurokubee no Karakuri Ma
 OK   translation SNES     22  Ganbare Goemon 2: Kiteretsu Shougun Magginesu  [bps:Go for it! Goemon 2 (English).bps, ips:Go for it! Goemon 2 (English).ips]  base=Ganbare Goemon 2 - Kiteretsu Shougun Magginesu (Japan)
 OK   translation SNES      4  Kyuuyaku Megami Tensei  [ips:kmt_v1.1.ips]  base=Kyuuyaku Megami Tensei (Japan)
 SKIP hack   GB     1051  Tetris - Classic Harddrop — no IPS/BPS/UPS patch inside
-SKIP hack   GBA     451  Pokemon Retcon Micropatch Collection (Emerald) — 18 patch files — too many to choose from automatically
-SKIP hack   GBA     455  Pokemon Retcon Micropatch Collection (FireRed) — 18 patch files — too many to choose from automatically
-SKIP hack   GBA   23540  Pokémon Throwback — 14 patch files — too many to choose from automatically
 SKIP hack   NES    1997  The Legend of Zelda Redux — 70 patch files — too many to choose from automatically
 SKIP hack   NES    2090  Final Fight 3 Deluxe — download isn't a readable zip
 SKIP hack   NES    2226  Super Mario 2600 — patch files failed validation
-SKIP hack   NES    2353  Bowsette — 13 patch files — too many to choose from automatically
 SKIP hack   NES    3123  Ultima: Exodus Remastered — xdelta only (not supported yet)
 SKIP hack   NES    5874  Castlevania: Improved Controls — 80 patch files — too many to choose from automatically
 SKIP hack   NES    6776  Zelda 2 Redux — 52 patch files — too many to choose from automatically
-SKIP hack   NES    9311  Final Fantasy Restored — 20 patch files — too many to choose from automatically
 SKIP hack   SNES   1983  EarthBound Consistency patch — no IPS/BPS/UPS patch inside
 SKIP translation GB     1324  X — xdelta only (not supported yet)
 SKIP translation NES    1163  Kaiketsu Yanchamaru 2: Karakuri Land — no IPS/BPS/UPS patch inside

@@ -3,22 +3,23 @@
 go: downloading golang.org/x/image v0.24.0
 go: downloading golang.org/x/text v0.22.0
 + go test ./patch ./tools/hackdb
-ok  	mixtape/patch	0.016s
+ok  	mixtape/patch	0.011s
 ok  	mixtape/tools/hackdb	0.003s
 + go run ./tools/hackdb -out out/hacks.json -report out/report.txt
-12:52:11 archive https://ia600803.us.archive.org/24/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
-12:52:17 99109 entries
-12:52:17 5312 candidate entries with info + files
-12:52:54   500/5312
-12:53:33   1000/5312
-12:54:11   1500/5312
-12:54:50   2000/5312
-12:55:28   2500/5312
-12:56:07   3000/5312
-12:56:45   3500/5312
-12:57:25   4000/5312
-12:58:04   4500/5312
-12:58:44   5000/5312
-12:59:11 chose 420 entries
-13:00:51 wrote out/hacks.json: 397 entries, 23 skipped
+13:03:44 archive https://dn721809.ca.archive.org/0/items/rhdn-20210914/RHDN-20210914.zip (6.1 GB)
+13:04:20 99109 entries
+13:04:20 5312 candidate entries with info + files
+13:04:28   500/5312
+13:04:35   1000/5312
+13:04:43   1500/5312
+13:04:50   2000/5312
+13:04:59   2500/5312
+13:05:06   3000/5312
+13:05:13   3500/5312
+13:05:23   4000/5312
+13:05:30   4500/5312
+13:05:38   5000/5312
+13:05:43 chose 420 entries
+13:06:23 added 2 hand-picked entries
+13:06:23 wrote out/hacks.json: 404 entries, 18 skipped
 exit=0
