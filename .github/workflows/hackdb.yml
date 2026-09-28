@@ -1,0 +1,32 @@
+name: Hack DB
+
+# Builds the romhack catalog from the RomHacking.net archive (Internet Archive).
+# Runs on pushes to the hackdb branch and commits its output back to that branch.
+on:
+  push:
+    branches: [hackdb]
+    paths: ["tools/hackdb/**", ".github/workflows/hackdb.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+      - name: Run
+        run: sh tools/hackdb/run.sh
+      - name: Commit results
+        run: |
+          git config user.name "hackdb-bot"
+          git config user.email "hackdb-bot@users.noreply.github.com"
+          mkdir -p tools/hackdb/out && cp -r out/* tools/hackdb/out/ 2>/dev/null || true
+          git add tools/hackdb/out
+          git commit -m "hackdb: results [skip ci]" || echo "no changes"
+          git push
