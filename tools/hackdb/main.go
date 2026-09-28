@@ -144,10 +144,10 @@ func (r *remote) ReadAt(p []byte, off int64) (int, error) {
 
 type info struct {
 	Title, Link, Author, Platform, Category, Genre, HackOf, Version, Released, Patching, Language, Status string
-	Downloads                                                                                               int
-	Score                                                                                                   string
-	Description                                                                                             string
-	FileSHA1, FileCRC, ROMSHA1, ROMCRC, DBMatch                                                             string
+	Downloads                                                                                             int
+	Score                                                                                                 string
+	Description                                                                                           string
+	FileSHA1, FileCRC, ROMSHA1, ROMCRC, DBMatch                                                           string
 }
 
 var fieldRE = regexp.MustCompile(`(?m)^## ([a-z_]+):\s*(.*)$`)
@@ -251,7 +251,8 @@ type Hack struct {
 	Patching    string    `json:"patching,omitempty"`
 	Header      string    `json:"header,omitempty"` // SNES: "none" | "required"
 	Base        Base      `json:"base"`
-	Archive     string    `json:"archive"` // path of the download zip inside the RHDN archive
+	Archive     string    `json:"archive"` // path inside the RHDN archive, or a full https:// URL
+	Home        string    `json:"home,omitempty"`
 	Screenshot  string    `json:"shot,omitempty"`
 	Variants    []Variant `json:"variants"`
 }
@@ -414,6 +415,14 @@ func main() {
 		}
 		hacks = append(hacks, *h)
 	})
+	if b, err := os.ReadFile("tools/hackdb/extras.json"); err == nil {
+		var extra []Hack
+		if err := json.Unmarshal(b, &extra); err != nil {
+			log.Fatalf("extras.json: %v", err)
+		}
+		hacks = append(hacks, extra...)
+		log.Printf("added %d hand-picked entries", len(extra))
+	}
 	sort.Slice(hacks, func(i, j int) bool {
 		if hacks[i].System != hacks[j].System {
 			return hacks[i].System < hacks[j].System
@@ -556,7 +565,7 @@ func build(g *group) (*Hack, string) {
 	if len(vars) == 0 {
 		return nil, "patch files failed validation"
 	}
-	if len(vars) > 12 {
+	if len(vars) > 24 {
 		return nil, fmt.Sprintf("%d patch files — too many to choose from automatically", len(vars))
 	}
 	// order: likely-main first
@@ -610,7 +619,12 @@ func rank(v Variant, title string) int {
 
 func label(member string) string {
 	b := path.Base(member)
-	return strings.TrimSuffix(b, path.Ext(b))
+	b = strings.TrimSuffix(b, path.Ext(b))
+	parts := strings.Split(member, "/")
+	if len(parts) >= 3 { // top/sub/.../file: show the folder that distinguishes it
+		return parts[len(parts)-2] + " › " + b
+	}
+	return b
 }
 
 func clean(s string) string { return strings.TrimSpace(strings.ReplaceAll(s, " ", " ")) }
