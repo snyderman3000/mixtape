@@ -21,8 +21,13 @@ jobs:
         with:
           go-version: "1.24"
       - name: Run
-        run: sh tools/hackdb/run.sh
+        run: |
+          mkdir -p out
+          set +e
+          sh -x tools/hackdb/run.sh > out/log.txt 2>&1
+          echo "exit=$?" >> out/log.txt
       - name: Commit results
+        if: always()
         run: |
           git config user.name "hackdb-bot"
           git config user.email "hackdb-bot@users.noreply.github.com"
