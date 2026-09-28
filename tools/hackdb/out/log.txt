@@ -1,5 +1,16 @@
 + set -e
 + sh tools/hackdb/explore.sh
+http=401 size=172 url=https://dn720808.ca.archive.org/0/items/romhacking.net-20240801/romhacking.sql.zip
+sql.zip: HTML document, ASCII text, with CRLF line terminators
+<html>.
+<head><title>401 Authorization Required</title></head>.
+<body>.
+<center><h1>401 Authorization Required</h1></center>.
+<hr><center>nginx</center>.
+</body>.
+</html>.
+
+{"result":[{"name":"rhdn_20240801.zip","source":"original","mtime":"1722546725","size":"12573450015","md5":"4547af4b34a232eeee6d27910c1a2f44","crc32":"dd72b1ae","sha1":"c0d642c1d54713db47c10500ebdaf5fcd79e1082","format":"ZIP","filecount":"90462","private":"true"},{"name":"romhacking.net-20240801_archive.torrent","source":"metadata","btih":"ef81577600018d0d924fc775738cf6b678ac211a","mtime":"1738761332","size":"12","md5":"b90acad44e90b94cd054765f05a9a713","crc32":"f9dbd566","sha1":"7340ce619f32b96b7c3cac52e20438a0fed00d25","format":"Archive BitTorrent","private":"true"},{"name":"romhacking.net-20240801_files.xml","source":"original","format":"Metadata","md5":"641a895ba1faee809ec373c88fa77b35","summation":"md5"},{"name":"romhacking.net-20240801_meta.sqlite","source":"original","mtime":"1722548047","size":"20480","md5":"8c595ec35dbbc966987ccab4b61ca907","crc32":"f67e20c7","sha1":"f6dfdcd30fc9bc4fdd6ab7d0584e0e5cf1042f87","format":"Metadata"},{"name":"romhacking.net-20240801_meta.xml","source":"original","mtime":"1725235041","size":"926","md5":"2c376c6152d1913837c344d75fb669e1","crc32":"b62f83f6","sha1":"fb35cdf86d8cf0c751896268ab6ae8154c9188aa","format":"Metadata"},{"name":"romhacking.net-20240801_reviews.xml","source":"original","mtime":"1748773442","size":"32494","md5":"85c1f2d18d17fd7f588d3a8f64d120af","crc32":"4e7a2029","sha1":"b9d32e759556d3c6e914cd1656494f3526605652","format":"Metadata"},{"name":"romhacking.sql.zip","source":"original","mtime":"1722547968","size":"6820209","md5":"d2d4151a1628504e9cb3d59f9eff3172","crc32":"536a31ad","sha1":"111b3df6d4dfcb43c0c66480d861fa85e820c06a","format":"ZIP","filecount":"1","viruscheck":"1722548398","private":"true"}]}
 [sql.zip]
   End-of-central-directory signature not found.  Either this file is not
   a zipfile, or it constitutes one disk of a multi-part archive.  In the
