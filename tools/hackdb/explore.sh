@@ -3,7 +3,9 @@
 set -e
 mkdir -p work out
 cd work
-curl -sSL -o sql.zip "https://archive.org/download/romhacking.net-20240801/romhacking.sql.zip"
+curl -sSL -A "Mozilla/5.0 mixtape-hackdb" -w "http=%{http_code} size=%{size_download} url=%{url_effective}\n" -o sql.zip "https://archive.org/download/romhacking.net-20240801/romhacking.sql.zip"
+file sql.zip; head -c 600 sql.zip | tr -c "[:print:]\n" "."; echo
+curl -sSL "https://archive.org/metadata/romhacking.net-20240801/files" | head -c 3000; echo
 unzip -o -q sql.zip
 ls -la > ../out/files.txt
 F=$(ls *.sql | head -1)
