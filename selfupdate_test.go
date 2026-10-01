@@ -114,3 +114,26 @@ func TestSelfUpdateFlowThroughUI(t *testing.T) {
 		t.Fatal("restart flag missing")
 	}
 }
+
+func TestForcedReleaseCheckDoesNotUseStaleCache(t *testing.T) {
+	fail := false
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if fail {
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		w.Write([]byte(`[{"tag_name":"v0.1.2","assets":[]}]`))
+	}))
+	defer srv.Close()
+	env := &Env{DataDir: t.TempDir(), APIBase: srv.URL, HTTP: srv.Client()}
+	if _, err := env.Releases("a/b", true); err != nil {
+		t.Fatal(err)
+	}
+	fail = true
+	if rs, err := env.Releases("a/b", false); err != nil || len(rs) != 1 {
+		t.Fatalf("background check should still use the cache: %v %v", rs, err)
+	}
+	if _, err := env.Releases("a/b", true); err == nil {
+		t.Fatal("forced check hid a failed lookup behind the cached list")
+	}
+}

@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -102,9 +103,14 @@ func (env *Env) Releases(repo string, force bool) ([]Release, error) {
 	var rs []Release
 	err := env.ghGet(env.api()+"/repos/"+repo+"/releases?per_page=8", &rs)
 	if err != nil {
-		// Fall back to a stale cache rather than nothing.
-		if b, e2 := os.ReadFile(cache); e2 == nil && json.Unmarshal(b, &rs) == nil {
-			return rs, nil
+		log.Printf("release lookup for %s failed: %v", repo, err)
+		// Fall back to a stale cache rather than nothing, except when the
+		// user asked for a fresh check: then an old list would wrongly say
+		// "up to date", so report the problem instead.
+		if !force {
+			if b, e2 := os.ReadFile(cache); e2 == nil && json.Unmarshal(b, &rs) == nil {
+				return rs, nil
+			}
 		}
 		return nil, err
 	}
