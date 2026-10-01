@@ -12,13 +12,12 @@ import (
 	"time"
 )
 
-const version = "0.2.0"
+const version = "0.1.2"
 const userAgent = "Mixtape/" + version + " (OnionOS community port browser)"
 
 type Config struct {
 	CatalogURL  string `json:"catalog_url"`
 	GitHubToken string `json:"github_token"`
-	HacksURL    string `json:"hacks_url,omitempty"`
 	ExtraURL    string `json:"extra_url,omitempty"`
 }
 

@@ -40,11 +40,11 @@ func fakeSelf(t *testing.T, fx *fixture, releasesJSON func(dl string) string) {
 func TestSelfUpdatePlan(t *testing.T) {
 	fx := newFixture(t)
 	fakeSelf(t, fx, func(dl string) string {
-		return `[{"tag_name":"v9.5.0","prerelease":true,"assets":[{"name":"Mixtape-v9.5.0-OnionOS.zip","browser_download_url":"x"}]},
-		{"tag_name":"v9.1.0","assets":[{"name":"Mixtape-v9.1.0-OnionOS.zip","browser_download_url":"` + dl + `/m.zip","size":5}]}]`
+		return `[{"tag_name":"v9.0.0","prerelease":true,"assets":[{"name":"Mixtape-v9.0.0-OnionOS.zip","browser_download_url":"x"}]},
+		{"tag_name":"v0.2.0","assets":[{"name":"Mixtape-v0.2.0-OnionOS.zip","browser_download_url":"` + dl + `/m.zip","size":5}]}]`
 	})
 	plan, err := fx.env.SelfUpdatePlan(true)
-	if err != nil || plan == nil || plan.Version != "v9.1.0" {
+	if err != nil || plan == nil || plan.Version != "v0.2.0" {
 		t.Fatalf("plan=%+v err=%v", plan, err)
 	}
 	fx2 := newFixture(t)

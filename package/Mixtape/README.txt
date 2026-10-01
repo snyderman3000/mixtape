@@ -15,7 +15,6 @@ CONTROLS
   X ................ erase (only things Mixtape installed)
   Y ................ check for updates (list) / rescan release (detail)
   SELECT ........... update Mixtape itself (it also checks at startup)
-  HACKS tab ........ Y filter, X rescan ROMs; in a hack, left/right picks a version
   B ................ back / exit        MENU ... exit
 
 WHERE THE LIST COMES FROM
@@ -24,12 +23,6 @@ WHERE THE LIST COMES FROM
   Mixtape downloads each project's newest GitHub release, works out
   where it goes (App/, Roms/PORTS, ...), and installs it. If you're
   offline it uses the last catalog it saw (or the built-in copy).
-
-ROMHACKS (HACKS tab)
-  Mixtape looks at the ROMs in Roms/FC, SFC, GB, GBC and GBA and lists the
-  hacks and translations you can make from them. Press A to patch: it checks
-  your ROM is the exact version needed, patches it, and saves a new game next
-  to the original. It never downloads games. Zipped ROMs work; 7z doesn't.
 
 MARKERS
   ●  installed by Mixtape         ○  found on the card (installed by hand)

@@ -14,7 +14,6 @@
 - **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app. A few projects not in that catalog yet (such as [Panel Attack](https://github.com/snyderman3000/panelattack-miyoo)) are listed from Mixtape's own [`catalog/extra.json`](catalog/extra.json).
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
-- **Romhacks in one press (HACKS tab).** Mixtape checks the ROMs already on your card and lists the hacks and fan translations you can make from them, including 38 Pokémon hacks and hundreds of NES, SNES, Game Boy and GBA classics. Press A and it downloads the patch, checks your ROM is the exact version the hack needs, patches it, and saves the result as a new game next to the original. It **never downloads games**; you supply your own ROMs.
 - **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT to install it; your settings are kept and Mixtape restarts.
 - **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you.
 - **Safe by design.** Nothing is written outside the SD card, and Onion's own system files are never replaced.
@@ -39,22 +38,9 @@ Requires OnionOS 4.2 or newer. Wi-Fi features need a Miyoo Mini Plus or Mini Fli
 | X | Erase (only things Mixtape installed) |
 | Y | Check for updates (list) · re-check release (details) |
 | SELECT | Update Mixtape itself |
-| HACKS tab: Y / X | Filter (Ready, Pokémon, NES, SNES, GB, GBA, All) / rescan your ROMs |
-| Hack details: ◀ ▶ | Choose between a hack's versions, when it has several |
 | B | Back / exit · MENU exits anywhere |
 
 List markers: **●** installed by Mixtape · **○** found on the card (installed by hand) · **▲NEW** update available · **BYO** bring your own game files · **PC** must be installed from a computer (for example, `.7z` releases).
-
-## Romhacks
-
-![HACKS tab](docs/hacks.png)
-
-The HACKS tab lists about 400 popular hacks and English translations for NES, SNES, Game Boy/Color and GBA. They come from the [RomHacking.net archive](https://archive.org/details/rhdn-20210914) on the Internet Archive, plus a few newer Pokémon hacks released on GitHub ([`tools/hackdb/extras.json`](tools/hackdb/extras.json)).
-
-- **Your ROMs, checked by checksum.** Mixtape reads ROMs in `Roms/FC`, `Roms/SFC`, `Roms/GB`, `Roms/GBC` and `Roms/GBA` (plain or zipped; 7z isn't supported) and compares their CRC32 with what each hack was made for. SNES copier headers and NES headers are handled automatically.
-- **Patching on the device.** IPS, BPS and UPS patches are supported. BPS/UPS patches check the finished game too, so those show **FULLY VERIFIED**. The new game is saved beside the original (for example `Roms/GBA/Pokémon Throwback v210717.gba`), and your original is never changed. X erases a patched game you made.
-- **The catalog is built and checked automatically.** A GitHub Actions job ([`tools/hackdb`](tools/hackdb)) reads the archive, picks popular entries, validates every patch, and downloads every entry the way the device will before publishing [`catalog/hacks.json`](catalog/hacks.json). See [`catalog/report.txt`](catalog/report.txt) and [`catalog/verify.txt`](catalog/verify.txt).
-- **Want a hack added?** Hacks released on GitHub can be added to `extras.json` with a pull request.
 
 ## Settings
 
@@ -78,9 +64,6 @@ Logs are written to `App/Mixtape/data/mixtape.log`.
 | `catalog.go` | Loads the MiyooMini-Ports catalog and the extra ports in `catalog/extra.json`, with cache and built-in fallback |
 | `github.go` | Release lookup and choosing the right download (prefers OnionOS builds) |
 | `install.go` | Download, archive layout detection, safe extraction, install records, erase |
-| `hacks.go`, `ui_hacks.go` | Romhack catalog, ROM scanning and matching, patching, the HACKS tab |
-| `patch/` | IPS, UPS and BPS patchers (tested against Flips) |
-| `tools/hackdb` | Builds and verifies the romhack catalog |
 | `assets/recipes.json` | Per-project hints for the few projects that need them |
 
 It compiles to a single static ARMv7 binary written in Go, with no SDL or C toolchain involved.
