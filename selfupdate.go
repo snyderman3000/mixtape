@@ -51,7 +51,7 @@ func newerVersion(latest, current string) bool {
 
 // SelfUpdatePlan returns a plan when a newer stable release exists, nil when up to date.
 func (env *Env) SelfUpdatePlan(force bool) (*Plan, error) {
-	rels, err := env.Releases(selfRepo, force)
+	rels, err := env.releases(selfRepo, force, force)
 	if err != nil {
 		return nil, err
 	}

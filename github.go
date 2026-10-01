@@ -88,8 +88,15 @@ func (env *Env) ghGet(url string, v any) error {
 	return json.NewDecoder(io.LimitReader(resp.Body, 8<<20)).Decode(v)
 }
 
-// Releases fetches (and caches for an hour) a repo's release list.
+// Releases fetches (and caches for an hour) a repo's release list. If GitHub
+// can't be reached, a cached list is used instead (good enough for installs).
 func (env *Env) Releases(repo string, force bool) ([]Release, error) {
+	return env.releases(repo, force, false)
+}
+
+// releases with strict=true never answers from an old cache after a failed
+// lookup; the self-update check uses it so it can't wrongly say "up to date".
+func (env *Env) releases(repo string, force, strict bool) ([]Release, error) {
 	h := sha1.Sum([]byte(strings.ToLower(repo)))
 	cache := filepath.Join(env.DataDir, "cache", "rel-"+hex.EncodeToString(h[:8])+".json")
 	if !force {
@@ -104,10 +111,8 @@ func (env *Env) Releases(repo string, force bool) ([]Release, error) {
 	err := env.ghGet(env.api()+"/repos/"+repo+"/releases?per_page=8", &rs)
 	if err != nil {
 		log.Printf("release lookup for %s failed: %v", repo, err)
-		// Fall back to a stale cache rather than nothing, except when the
-		// user asked for a fresh check: then an old list would wrongly say
-		// "up to date", so report the problem instead.
-		if !force {
+		// Fall back to a stale cache rather than nothing (unless strict).
+		if !strict {
 			if b, e2 := os.ReadFile(cache); e2 == nil && json.Unmarshal(b, &rs) == nil {
 				return rs, nil
 			}

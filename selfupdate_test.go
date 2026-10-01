@@ -126,14 +126,17 @@ func TestForcedReleaseCheckDoesNotUseStaleCache(t *testing.T) {
 	}))
 	defer srv.Close()
 	env := &Env{DataDir: t.TempDir(), APIBase: srv.URL, HTTP: srv.Client()}
-	if _, err := env.Releases("a/b", true); err != nil {
+	if _, err := env.SelfUpdatePlan(true); err != nil {
 		t.Fatal(err)
 	}
 	fail = true
-	if rs, err := env.Releases("a/b", false); err != nil || len(rs) != 1 {
-		t.Fatalf("background check should still use the cache: %v %v", rs, err)
+	if _, err := env.SelfUpdatePlan(false); err != nil {
+		t.Fatalf("startup check should still use the cache: %v", err)
 	}
-	if _, err := env.Releases("a/b", true); err == nil {
-		t.Fatal("forced check hid a failed lookup behind the cached list")
+	if _, err := env.Releases(selfRepo, true); err != nil {
+		t.Fatalf("port installs should still fall back to the cache: %v", err)
+	}
+	if _, err := env.SelfUpdatePlan(true); err == nil {
+		t.Fatal("SELECT check hid a failed lookup behind the cached list")
 	}
 }
