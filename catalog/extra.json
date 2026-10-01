@@ -1,0 +1,16 @@
+{
+  "_comment": "Ports listed by Mixtape in addition to the MiyooMini-Ports catalog (same fields, plus an optional inline 'recipe' with the fields described in assets/recipes.json). If MiyooMini-Ports adds the same project, its entry wins.",
+  "ports": [
+    {
+      "name": "Panel Attack",
+      "categories": ["puzzle"],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/panelattack-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/panelattack-miyoo/main/docs/cover.png",
+      "notes": "Tetris Attack / Puzzle League clone with online play on panelattack.com. Wi-Fi needed for online. Set a name before going online.",
+      "porter": ["snyderman3000", "Claude"],
+      "recipe": { "asset": "miyoo", "keep": ["data/*"] }
+    }
+  ]
+}

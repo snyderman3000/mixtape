@@ -20,7 +20,15 @@ var embeddedPorts []byte
 //go:embed assets/recipes.json
 var embeddedRecipes []byte
 
+//go:embed catalog/extra.json
+var embeddedExtra []byte
+
 const defaultCatalogURL = "https://raw.githubusercontent.com/Producdevity/MiyooMini-Ports/master/ports.json"
+
+// Extra ports maintained in the Mixtape repo itself (catalog/extra.json), for
+// projects that aren't in the MiyooMini-Ports catalog yet. Same entry format,
+// plus an optional inline "recipe".
+const defaultExtraURL = "https://raw.githubusercontent.com/snyderman3000/mixtape/main/catalog/extra.json"
 
 type Port struct {
 	Name       string   `json:"name"`
@@ -136,22 +144,23 @@ func loadRecipes(dataDir string) map[string]*Recipe {
 	return m
 }
 
-// LoadCatalog tries the live catalog, then the on-card cache, then the built-in snapshot.
+// LoadCatalog tries the live catalog, then the on-card cache, then the built-in snapshot,
+// and adds Mixtape's own extra ports on top.
 func LoadCatalog(env *Env) *Catalog {
 	recipes := loadRecipes(env.DataDir)
+	cat := loadMainCatalog(env, recipes)
+	extra := loadExtra(env, recipes)
+	cat.Ports = mergeExtra(cat.Ports, extra)
+	return cat
+}
+
+func loadMainCatalog(env *Env, recipes map[string]*Recipe) *Catalog {
 	cachePath := filepath.Join(env.DataDir, "ports.json")
 	if !env.Offline {
-		req, _ := http.NewRequest("GET", env.Config.CatalogURL, nil)
-		req.Header.Set("User-Agent", userAgent)
-		cl := &http.Client{Timeout: 12 * time.Second, Transport: env.HTTP.Transport}
-		if resp, err := cl.Do(req); err == nil {
-			b, _ := io.ReadAll(io.LimitReader(resp.Body, 4<<20))
-			resp.Body.Close()
-			if resp.StatusCode == 200 {
-				if ports, err := parseCatalog(b, recipes); err == nil {
-					_ = writeFileAtomic(cachePath, b)
-					return &Catalog{Ports: ports, Source: "live", Fetched: time.Now()}
-				}
+		if b, err := fetchJSON(env, env.Config.CatalogURL, 4<<20); err == nil {
+			if ports, err := parseCatalog(b, recipes); err == nil {
+				_ = writeFileAtomic(cachePath, b)
+				return &Catalog{Ports: ports, Source: "live", Fetched: time.Now()}
 			}
 		} else {
 			env.LastNetErr = err
@@ -165,6 +174,104 @@ func LoadCatalog(env *Env) *Catalog {
 	}
 	ports, _ := parseCatalog(embeddedPorts, recipes)
 	return &Catalog{Ports: ports, Source: "built-in"}
+}
+
+func fetchJSON(env *Env, url string, limit int64) ([]byte, error) {
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("User-Agent", userAgent)
+	cl := &http.Client{Timeout: 12 * time.Second, Transport: env.HTTP.Transport}
+	resp, err := cl.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	b, _ := io.ReadAll(io.LimitReader(resp.Body, limit))
+	if resp.StatusCode != 200 {
+		return nil, fmt.Errorf("%s: HTTP %d", url, resp.StatusCode)
+	}
+	return b, nil
+}
+
+// parseExtra reads catalog/extra.json. Entries may carry an inline recipe;
+// otherwise the usual recipes apply.
+func parseExtra(data []byte, recipes map[string]*Recipe) ([]*Port, error) {
+	var doc struct {
+		Ports []json.RawMessage `json:"ports"`
+	}
+	if err := json.Unmarshal(data, &doc); err != nil {
+		return nil, err
+	}
+	var out []*Port
+	for _, raw := range doc.Ports {
+		var p Port
+		var r struct {
+			Recipe *Recipe `json:"recipe"`
+		}
+		if json.Unmarshal(raw, &p) != nil || p.Name == "" {
+			continue
+		}
+		_ = json.Unmarshal(raw, &r)
+		if m := repoRE.FindStringSubmatch(p.Upstream); m != nil {
+			p.Repo = m[1] + "/" + strings.TrimSuffix(m[2], ".git")
+			p.Recipe = recipes[strings.ToLower(p.Repo)]
+		}
+		if r.Recipe != nil {
+			p.Recipe = r.Recipe
+		}
+		out = append(out, &p)
+	}
+	return out, nil
+}
+
+func loadExtra(env *Env, recipes map[string]*Recipe) []*Port {
+	url := env.Config.ExtraURL
+	if url == "" {
+		url = defaultExtraURL
+	}
+	cachePath := filepath.Join(env.DataDir, "extra.json")
+	if !env.Offline {
+		if b, err := fetchJSON(env, url, 1<<20); err == nil {
+			if ports, err := parseExtra(b, recipes); err == nil {
+				_ = writeFileAtomic(cachePath, b)
+				return ports
+			}
+		}
+	}
+	if b, err := os.ReadFile(cachePath); err == nil {
+		if ports, err := parseExtra(b, recipes); err == nil {
+			return ports
+		}
+	}
+	ports, _ := parseExtra(embeddedExtra, recipes)
+	return ports
+}
+
+// mergeExtra adds extra ports that the main catalog doesn't already list
+// (matched by GitHub repo or name; the main catalog wins).
+func mergeExtra(ports, extra []*Port) []*Port {
+	have := map[string]bool{}
+	for _, p := range ports {
+		if p.Repo != "" {
+			have["repo:"+strings.ToLower(p.Repo)] = true
+		}
+		have["name:"+norm(p.Name)] = true
+	}
+	for _, p := range extra {
+		if (p.Repo != "" && have["repo:"+strings.ToLower(p.Repo)]) || have["name:"+norm(p.Name)] {
+			continue
+		}
+		ports = append(ports, p)
+	}
+	sort.SliceStable(ports, func(i, j int) bool {
+		return strings.ToLower(ports[i].Name) < strings.ToLower(ports[j].Name)
+	})
+	for i, p := range ports {
+		p.Index = i
+	}
+	return ports
 }
 
 func writeFileAtomic(path string, b []byte) error {

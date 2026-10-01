@@ -19,6 +19,7 @@ type Config struct {
 	CatalogURL  string `json:"catalog_url"`
 	GitHubToken string `json:"github_token"`
 	HacksURL    string `json:"hacks_url,omitempty"`
+	ExtraURL    string `json:"extra_url,omitempty"`
 }
 
 type Env struct {

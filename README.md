@@ -11,7 +11,7 @@
 
 ## Features
 
-- **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app.
+- **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app. A few projects not in that catalog yet (such as [Panel Attack](https://github.com/snyderman3000/panelattack-miyoo)) are listed from Mixtape's own [`catalog/extra.json`](catalog/extra.json).
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
 - **Romhacks in one press (HACKS tab).** Mixtape checks the ROMs already on your card and lists the hacks and fan translations you can make from them, including 38 Pokémon hacks and hundreds of NES, SNES, Game Boy and GBA classics. Press A and it downloads the patch, checks your ROM is the exact version the hack needs, patches it, and saves the result as a new game next to the original. It **never downloads games**; you supply your own ROMs.
@@ -62,6 +62,7 @@ The HACKS tab lists about 400 popular hacks and English translations for NES, SN
 
 - `github_token`: optional GitHub personal access token (no scopes needed). Without one, GitHub allows 60 release lookups per hour per network.
 - `catalog_url`: point Mixtape at a different `ports.json`.
+- `extra_url`: point Mixtape at a different extra-ports list (default: this repo's `catalog/extra.json`).
 
 `App/Mixtape/data/recipes.json` (optional) overrides the built-in install hints in [`assets/recipes.json`](assets/recipes.json).
 
@@ -74,7 +75,7 @@ Logs are written to `App/Mixtape/data/mixtape.log`.
 | `device.go` | Framebuffer output (rotated 180° for the Mini's panel) and button input from `/dev/input/event0` |
 | `gfx.go` | Software renderer: fonts, cassette, VU meter and CRT effects |
 | `ui.go` | Screens and navigation |
-| `catalog.go` | Loads the MiyooMini-Ports catalog with cache and built-in fallback |
+| `catalog.go` | Loads the MiyooMini-Ports catalog and the extra ports in `catalog/extra.json`, with cache and built-in fallback |
 | `github.go` | Release lookup and choosing the right download (prefers OnionOS builds) |
 | `install.go` | Download, archive layout detection, safe extraction, install records, erase |
 | `hacks.go`, `ui_hacks.go` | Romhack catalog, ROM scanning and matching, patching, the HACKS tab |
