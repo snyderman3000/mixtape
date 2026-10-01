@@ -43,6 +43,9 @@ type Port struct {
 	Repo   string  `json:"-"` // owner/repo
 	Recipe *Recipe `json:"-"`
 	Index  int     `json:"-"`
+
+	inlineRecipe *Recipe // install hints given in catalog/extra.json
+
 }
 
 type Recipe struct {
@@ -220,6 +223,7 @@ func parseExtra(data []byte, recipes map[string]*Recipe) ([]*Port, error) {
 		}
 		if r.Recipe != nil {
 			p.Recipe = r.Recipe
+			p.inlineRecipe = r.Recipe
 		}
 		out = append(out, &p)
 	}
@@ -250,17 +254,30 @@ func loadExtra(env *Env, recipes map[string]*Recipe) []*Port {
 }
 
 // mergeExtra adds extra ports that the main catalog doesn't already list
-// (matched by GitHub repo or name; the main catalog wins).
+// (matched by GitHub repo or name). When both list a project, the main
+// catalog's entry is shown, but install hints from extra.json are kept, so
+// how our own projects install stays under our control.
 func mergeExtra(ports, extra []*Port) []*Port {
-	have := map[string]bool{}
+	byRepo := map[string]*Port{}
+	byName := map[string]*Port{}
 	for _, p := range ports {
 		if p.Repo != "" {
-			have["repo:"+strings.ToLower(p.Repo)] = true
+			byRepo[strings.ToLower(p.Repo)] = p
 		}
-		have["name:"+norm(p.Name)] = true
+		byName[norm(p.Name)] = p
 	}
 	for _, p := range extra {
-		if (p.Repo != "" && have["repo:"+strings.ToLower(p.Repo)]) || have["name:"+norm(p.Name)] {
+		var dup *Port
+		if p.Repo != "" {
+			dup = byRepo[strings.ToLower(p.Repo)]
+		}
+		if dup == nil {
+			dup = byName[norm(p.Name)]
+		}
+		if dup != nil {
+			if p.inlineRecipe != nil {
+				dup.Recipe = p.inlineRecipe
+			}
 			continue
 		}
 		ports = append(ports, p)
