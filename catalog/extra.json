@@ -10,7 +10,7 @@
       "assets": "free",
       "upstream": "https://github.com/snyderman3000/panelattack-miyoo/releases",
       "image": "https://raw.githubusercontent.com/snyderman3000/panelattack-miyoo/main/docs/cover.png",
-      "notes": "Tetris Attack / Puzzle League clone with online play on panelattack.com. Wi-Fi needed for online. Set a name before going online.",
+      "notes": "Tetris Attack / Puzzle League clone with online play on panelattack.com. Installs to Games > Ports (needs OnionOS's Ports system). Wi-Fi needed for online; set a name before going online.",
       "porter": [
         "snyderman3000",
         "Claude"
@@ -31,7 +31,7 @@
       "assets": "free",
       "upstream": "https://github.com/snyderman3000/miniamp/releases",
       "image": "https://raw.githubusercontent.com/snyderman3000/miniamp/main/docs/cover.png",
-      "notes": "Classic-skin music player: MP3/FLAC/OGG/WAV, .wsz skins with a skin browser, 10-band EQ, visualizers, screen-off playback. Add skins to MiniAmp/skins.",
+      "notes": "Classic-skin music player: MP3/FLAC/OGG/WAV, .wsz skins with a skin browser, 10-band EQ, visualizers. Music in games: keep listening in the menu, games and apps (SELECT+L/R skip). Add skins to MiniAmp/skins.",
       "porter": [
         "snyderman3000",
         "Claude"
