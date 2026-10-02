@@ -10,6 +10,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"os/exec"
 	"path"
 	"path/filepath"
 	"regexp"
@@ -805,14 +806,59 @@ func (env *Env) download(ctx context.Context, url, dest string, prog func(n, tot
 	return nil
 }
 
-// Uninstall removes exactly the files Mixtape recorded, then prunes empty folders.
-func (env *Env) Uninstall(p *Port) (int, error) {
+// UninstallHook is a script a package can ship (anywhere in its files) to undo
+// changes it made outside its own folder, such as a system library it swapped.
+// Mixtape runs it with sh, from its own folder, before erasing anything.
+const UninstallHook = "mixtape-uninstall.sh"
+
+const hookTimeout = 30 * time.Second
+
+// runUninstallHooks runs the package's cleanup scripts. It returns a note for
+// the user when one fails; erasing goes ahead either way.
+func (env *Env) runUninstallHooks(m *Manifest) string {
+	var notes []string
+	for _, f := range m.Files {
+		if path.Base(f.P) != UninstallHook {
+			continue
+		}
+		abs := env.safeDest(f.P)
+		if abs == "" {
+			continue
+		}
+		if _, err := os.Stat(abs); err != nil {
+			continue
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), hookTimeout)
+		cmd := exec.CommandContext(ctx, "/bin/sh", abs)
+		cmd.Dir = filepath.Dir(abs)
+		cmd.Env = append(os.Environ(), "MIXTAPE_UNINSTALL=1", "SDCARD="+env.SDRoot)
+		out, err := cmd.CombinedOutput()
+		timedOut := ctx.Err() != nil
+		cancel()
+		if err != nil {
+			msg := strings.TrimSpace(string(out))
+			if len(msg) > 200 {
+				msg = msg[len(msg)-200:]
+			}
+			if timedOut {
+				msg = "(it took too long)"
+			}
+			notes = append(notes, fmt.Sprintf("Its cleanup script (%s) failed: %v %s", f.P, err, msg))
+		}
+	}
+	return strings.Join(notes, "\n")
+}
+
+// Uninstall runs the package's cleanup script if it has one, removes exactly
+// the files Mixtape recorded, then prunes empty folders. note is set when the
+// cleanup script failed (the files are erased anyway).
+func (env *Env) Uninstall(p *Port) (removed int, note string, err error) {
 	m := env.LoadManifest(p)
 	if m == nil {
-		return 0, fmt.Errorf("Mixtape didn't install this one, so it won't guess which files to delete")
+		return 0, "", fmt.Errorf("Mixtape didn't install this one, so it won't guess which files to delete")
 	}
+	note = env.runUninstallHooks(m)
 	dirs := map[string]bool{}
-	removed := 0
 	for _, f := range m.Files {
 		abs := env.safeDest(f.P)
 		if abs == "" {
@@ -839,7 +885,7 @@ func (env *Env) Uninstall(p *Port) (int, error) {
 	os.Remove(env.manifestPath(p))
 	res := &Result{Where: m.Where}
 	env.afterChange(res)
-	return removed, nil
+	return removed, note, nil
 }
 
 func protectedDir(d string) bool {

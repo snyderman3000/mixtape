@@ -249,7 +249,7 @@ func TestUninstall(t *testing.T) {
 		t.Fatal(err)
 	}
 	os.WriteFile(filepath.Join(fx.env.SDRoot, "Roms/PORTS/PORTS_cache6.db"), []byte("cache"), 0o644)
-	n, err := fx.env.Uninstall(p)
+	n, _, err := fx.env.Uninstall(p)
 	if err != nil || n != 3 {
 		t.Fatalf("uninstall n=%d err=%v", n, err)
 	}
@@ -262,7 +262,7 @@ func TestUninstall(t *testing.T) {
 	if fx.exists("Roms/PORTS/PORTS_cache6.db") {
 		t.Error("ports cache not refreshed")
 	}
-	if _, err := fx.env.Uninstall(p); err == nil {
+	if _, _, err := fx.env.Uninstall(p); err == nil {
 		t.Error("second uninstall should refuse (no manifest)")
 	}
 }
@@ -445,5 +445,54 @@ func TestFileNeverReplacesFolder(t *testing.T) {
 	}
 	if fx.read("App/Thing/data/save") != "s" {
 		t.Fatal("folder contents damaged")
+	}
+}
+
+func TestUninstallHook(t *testing.T) {
+	fx := newFixture(t)
+	p := &Port{Name: "Hooky"}
+	// the hook undoes a change outside the app's folder, and runs before the
+	// app's own files are erased (it reads one of them)
+	hook := `[ "$MIXTAPE_UNINSTALL" = 1 ] || exit 3
+cat ./marker > "$SDCARD/hook-ran"
+`
+	_, err := fx.install(t, p, "h.zip", mkzip(t, map[string]string{
+		"App/Hooky/launch.sh":        "x",
+		"App/Hooky/config.json":      "{}",
+		"App/Hooky/marker":           "still here",
+		"App/Hooky/" + UninstallHook: hook,
+	}), "v1", false)
+	if err != nil {
+		t.Fatal(err)
+	}
+	n, note, err := fx.env.Uninstall(p)
+	if err != nil || note != "" || n != 4 {
+		t.Fatalf("uninstall n=%d note=%q err=%v", n, note, err)
+	}
+	if fx.read("hook-ran") != "still here" {
+		t.Errorf("hook didn't run before erasing: %q", fx.read("hook-ran"))
+	}
+	if fx.exists("App/Hooky") {
+		t.Error("app folder not erased")
+	}
+}
+
+func TestUninstallHookFailureStillErases(t *testing.T) {
+	fx := newFixture(t)
+	p := &Port{Name: "Broken"}
+	_, err := fx.install(t, p, "b.zip", mkzip(t, map[string]string{
+		"App/Broken/launch.sh":        "x",
+		"App/Broken/config.json":      "{}",
+		"App/Broken/" + UninstallHook: "echo nope; exit 1\n",
+	}), "v1", false)
+	if err != nil {
+		t.Fatal(err)
+	}
+	_, note, err := fx.env.Uninstall(p)
+	if err != nil || !strings.Contains(note, "nope") {
+		t.Fatalf("note=%q err=%v", note, err)
+	}
+	if fx.exists("App/Broken") {
+		t.Error("files kept after a failed hook")
 	}
 }

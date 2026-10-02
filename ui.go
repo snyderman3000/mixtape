@@ -576,14 +576,18 @@ func (u *UI) startInstall(p *Port, plan *Plan) {
 }
 
 func (u *UI) doUninstall(p *Port) {
-	n, err := u.env.Uninstall(p)
+	n, note, err := u.env.Uninstall(p)
 	u.scanCard()
 	u.refilter()
 	if err != nil {
 		u.message("TAPE JAM", colMagenta, err.Error())
 		return
 	}
-	u.message("ERASED", colAmber, fmt.Sprintf("Removed %d file(s) for %s. Anything the app saved itself (settings, logs) was left in place.", n, p.Name))
+	body := fmt.Sprintf("Removed %d file(s) for %s. Anything the app saved itself (settings, logs) was left in place.", n, p.Name)
+	if note != "" {
+		body += "\n\n" + note
+	}
+	u.message("ERASED", colAmber, body)
 }
 
 func (u *UI) message(title string, col color.RGBA, body string) {

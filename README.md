@@ -15,7 +15,7 @@
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
 - **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT to install it; your settings are kept and Mixtape restarts.
-- **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you.
+- **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you. If the app ships a cleanup script (see below), Erase runs it first.
 - **Safe by design.** Nothing is written outside the SD card, and Onion's own system files are never replaced.
 - **Bring-your-own-files games are marked.** Ports like Balatro, Fallout and Half-Life need your own legally purchased game data. Mixtape tags them **BYO** and shows where the files go. It never downloads commercial game data.
 - **Cassette-futurism UI.** Amber phosphor, scanlines, spinning tape reels and an LED VU meter for downloads.
@@ -65,6 +65,8 @@ Logs are written to `App/Mixtape/data/mixtape.log`.
 | `github.go` | Release lookup and choosing the right download (prefers OnionOS builds) |
 | `install.go` | Download, archive layout detection, safe extraction, install records, erase |
 | `assets/recipes.json` | Per-project hints for the few projects that need them |
+
+**For app and port authors: cleanup on Erase.** If your package changes anything outside its own folder (a system library, a setting in OnionOS), include a script named `mixtape-uninstall.sh` anywhere in it. Before erasing, Mixtape runs it with `sh` from the script's own folder, with `MIXTAPE_UNINSTALL=1` and `SDCARD` (the card root) set, and allows it 30 seconds. If it fails, Mixtape still erases the files and shows the script's last output. [MiniAmp](https://github.com/snyderman3000/miniamp) uses this to restore OnionOS's sound library.
 
 It compiles to a single static ARMv7 binary written in Go, with no SDL or C toolchain involved.
 
