@@ -42,6 +42,27 @@
           "data/*"
         ]
       }
+    },
+    {
+      "name": "Rewind",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/rewind/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/rewind/main/docs/list.png",
+      "notes": "New movies on streaming with Rotten Tomatoes, IMDb and Metacritic scores, cast, ratings and trailers (QR to your phone). Sort and filter, and send movies to Radarr. Needs free TMDB and OMDb API keys in App/Rewind/data/config.json; it shows QR codes for both on first launch.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
     }
   ]
 }
