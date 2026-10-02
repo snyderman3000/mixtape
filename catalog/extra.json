@@ -63,6 +63,27 @@
           "data/*"
         ]
       }
+    },
+    {
+      "name": "Flashback",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/flashback/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/flashback/main/docs/flag.png",
+      "notes": "Anki flashcards: study shared AnkiWeb decks (.apkg) with spaced repetition, browse or shuffle them. Cloze, image occlusion, pictures, readable maths and Japanese/Chinese/Korean. Download decks on a computer from ankiweb.net/shared/decks and copy them to the Anki folder on your SD card.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
     }
   ]
 }
