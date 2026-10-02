@@ -10,7 +10,7 @@
       "assets": "free",
       "upstream": "https://github.com/snyderman3000/panelattack-miyoo/releases",
       "image": "https://raw.githubusercontent.com/snyderman3000/panelattack-miyoo/main/docs/cover.png",
-      "notes": "Unofficial port of the Tetris Attack / Puzzle League clone. Installs to Games > Ports (needs OnionOS's Ports system). Online play is off for now.",
+      "notes": "Unofficial, modified port of Panel Attack (the Tetris Attack / Puzzle League clone by the Panel Attack team, panelattack.com), not supported by them: report bugs to the port's GitHub, not to the Panel Attack team. Installs to Games > Ports (needs OnionOS's Ports system). Online play is off for now.",
       "porter": [
         "snyderman3000",
         "Claude"
