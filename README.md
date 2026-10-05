@@ -8,11 +8,13 @@
 |---|---|
 | ![Track list](docs/list.png) | ![Port details](docs/detail.png) |
 | ![Apps tab](docs/apps.png) | ![Installing](docs/busy.png) |
+| ![New arrivals](docs/whatsnew.png) | ![NEW tab](docs/newtab.png) |
 
 ## Features
 
 - **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app. A few projects not in that catalog yet (such as [Panel Attack](https://github.com/snyderman3000/panelattack-miyoo)) are listed from Mixtape's own [`catalog/extra.json`](catalog/extra.json). If a project is in both, it's shown once, using the community catalog's entry with any install hints from `extra.json`.
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
+- **What's new.** When you open Mixtape and apps or ports have been added to the catalog since your last visit, a **NEW ARRIVALS** window lists them. Press A to open one, or B to close the window. They also stay in a **NEW** tab for 14 days, newest first. On the very first visit nothing is announced. Mixtape remembers what it has shown in `data/seen.json`.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
 - **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT to install it; your settings are kept and Mixtape restarts.
 - **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you. If the app ships a cleanup script (see below), Erase runs it first.
@@ -33,14 +35,14 @@ Requires OnionOS 4.2 or newer. Wi-Fi features need a Miyoo Mini Plus or Mini Fli
 | Button | Action |
 |---|---|
 | D-pad ↑ ↓ | Move · ← → page up/down |
-| L1 / R1 | Switch tab: All · Apps · Games · On card |
+| L1 / R1 | Switch tab: All · Apps · Games · On card · New (while there are new arrivals) |
 | A | Open / install / update |
 | X | Erase (only things Mixtape installed) |
 | Y | Check for updates (list) · re-check release (details) |
 | SELECT | Update Mixtape itself |
 | B | Back / exit · MENU exits anywhere |
 
-List markers: **●** installed by Mixtape · **○** found on the card (installed by hand) · **▲NEW** update available · **BYO** bring your own game files · **PC** must be installed from a computer (for example, `.7z` releases).
+List markers: **●** installed by Mixtape · **○** found on the card (installed by hand) · **▲UPD** update available · **NEW** added to the catalog in the last 14 days · **BYO** bring your own game files · **PC** must be installed from a computer (for example, `.7z` releases).
 
 ## Settings
 
@@ -76,7 +78,7 @@ Requires Go 1.24 or newer.
 
 ```sh
 ./build.sh            # runs the tests, then builds dist/Mixtape-vX.Y.Z-OnionOS.zip
-go run . -shot list   # renders a screen to shot.png on your PC (boot|list|apps|detail|busy|done|error|confirm)
+go run . -shot list   # renders a screen to shot.png on your PC (boot|list|apps|detail|busy|done|error|confirm|whatsnew|newtab)
 ```
 
 ### Releasing

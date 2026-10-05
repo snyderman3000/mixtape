@@ -84,6 +84,27 @@ func demoScene(u *UI, scene string) {
 	case "self-confirm":
 		u.selfNew = &Plan{Version: "v0.2.0", Files: []Asset{{Name: "Mixtape-v0.2.0-OnionOS.zip", Size: 3 << 20}}}
 		u.confirmSelf()
+	case "whatsnew", "newtab", "newdetail":
+		now := time.Now()
+		u.fresh = map[*Port]int64{}
+		for i, name := range []string{"Spelunky Classic", "Mr. Rescue", "Flashback"} {
+			p := find(name)
+			u.fresh[p] = now.Add(-time.Duration(i) * 30 * time.Hour).Unix()
+			u.arrivals = append(u.arrivals, p)
+		}
+		u.fresh[find("MiniAmp")] = now.Add(-6 * 24 * time.Hour).Unix()
+		switch scene {
+		case "whatsnew":
+			u.modal = modalWhatsNew
+			u.wnSel = 0
+		case "newtab":
+			u.tab = tabNew
+			u.refilter()
+		case "newdetail":
+			u.tab = tabNew
+			u.refilter()
+			u.sel[tabNew] = 1
+		}
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail

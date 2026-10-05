@@ -26,9 +26,12 @@ const (
 	modalBusy
 	modalMsg
 	modalConfirm
+	modalWhatsNew
 )
 
-var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD"}
+var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD", "NEW"}
+
+const tabNew = 4 // only shown while something is fresh (see whatsnew.go)
 
 type UI struct {
 	env  *Env
@@ -40,8 +43,8 @@ type UI struct {
 	scr     screen
 	cat     *Catalog
 	tab     int
-	sel     [4]int
-	scroll  [4]int
+	sel     [5]int
+	scroll  [5]int
 	visible []*Port
 
 	cur        *Port
@@ -71,6 +74,11 @@ type UI struct {
 
 	toast      string
 	toastUntil time.Time
+
+	fresh    map[*Port]int64 // entries added in the last freshDays -> when first seen
+	arrivals []*Port         // added since the last visit (NEW ARRIVALS window)
+	wnSel    int
+	wnScroll int
 
 	selfNew      *Plan
 	selfChecking bool
@@ -106,10 +114,12 @@ func (u *UI) px(v int) int { return int(math.Round(float64(v) * u.s)) }
 func (u *UI) Start() {
 	u.scr = scrBoot
 	go func() {
+		prev := previousCatalog(u.env) // before LoadCatalog refreshes the saved copies
 		cat := LoadCatalog(u.env)
 		u.post <- func() {
 			u.cat = cat
 			u.scanCard()
+			u.noteNews(time.Now(), prev)
 			u.scr = scrList
 			u.refilter()
 			if cat.Source != "live" {
@@ -119,6 +129,26 @@ func (u *UI) Start() {
 			}
 		}
 	}()
+}
+
+// noteNews records the catalog in seen.json and opens the NEW ARRIVALS window
+// when something was added since the last visit.
+func (u *UI) noteNews(now time.Time, previous map[string]bool) {
+	n := noteCatalog(u.env, u.cat.Ports, now, previous)
+	u.fresh = n.firstSeen
+	u.arrivals = n.sinceLast
+	u.wnSel, u.wnScroll = 0, 0
+	if len(u.arrivals) > 0 {
+		u.modal = modalWhatsNew
+	}
+}
+
+// tabsShown is how many tabs the tab bar has: NEW only while something is fresh.
+func (u *UI) tabsShown() int {
+	if len(u.fresh) > 0 {
+		return len(tabNames)
+	}
+	return tabNew
 }
 
 // checkSelf looks for a newer Mixtape release. manual=true comes from the SELECT button.
@@ -242,8 +272,15 @@ func (u *UI) refilter() {
 			if !u.installed(p) {
 				continue
 			}
+		case tabNew:
+			if u.fresh[p] == 0 {
+				continue
+			}
 		}
 		u.visible = append(u.visible, p)
+	}
+	if u.tab == tabNew {
+		freshOrder(u.visible, u.fresh)
 	}
 	if u.sel[u.tab] >= len(u.visible) {
 		u.sel[u.tab] = len(u.visible) - 1
@@ -260,7 +297,7 @@ func (u *UI) tabCount(t int) int {
 	n := 0
 	for _, p := range u.cat.Ports {
 		switch {
-		case t == 0, t == 1 && p.IsApp(), t == 2 && !p.IsApp(), t == 3 && u.installed(p):
+		case t == 0, t == 1 && p.IsApp(), t == 2 && !p.IsApp(), t == 3 && u.installed(p), t == tabNew && u.fresh[p] > 0:
 			n++
 		}
 	}
@@ -317,6 +354,9 @@ func (u *UI) Key(k int) {
 			u.modal = modalNone
 		}
 		return
+	case modalWhatsNew:
+		u.keyWhatsNew(k)
+		return
 	}
 	if k == BtnSelect && u.scr != scrBoot {
 		u.checkSelf(true)
@@ -356,10 +396,10 @@ func (u *UI) keyList(k int) {
 			u.seekUntil = time.Now().Add(450 * time.Millisecond)
 		}
 	case BtnL1, BtnL2:
-		u.tab = (u.tab + len(tabNames) - 1) % len(tabNames)
+		u.tab = (u.tab + u.tabsShown() - 1) % u.tabsShown()
 		u.refilter()
 	case BtnR1, BtnR2:
-		u.tab = (u.tab + 1) % len(tabNames)
+		u.tab = (u.tab + 1) % u.tabsShown()
 		u.refilter()
 	case BtnA, BtnStart:
 		if p := u.selected(); p != nil {
@@ -369,6 +409,37 @@ func (u *UI) keyList(k int) {
 		u.checkUpdates()
 	case BtnB:
 		u.quit = true
+	}
+}
+
+func (u *UI) keyWhatsNew(k int) {
+	n := len(u.arrivals)
+	switch k {
+	case BtnUp:
+		if n > 0 {
+			u.wnSel = (u.wnSel + n - 1) % n
+		}
+	case BtnDown:
+		if n > 0 {
+			u.wnSel = (u.wnSel + 1) % n
+		}
+	case BtnA, BtnStart:
+		// open it from the NEW tab, so L1/R1 in the detail view steps through the new ones
+		u.modal = modalNone
+		if n == 0 {
+			return
+		}
+		p := u.arrivals[u.wnSel]
+		u.tab = tabNew
+		u.refilter()
+		for i, q := range u.visible {
+			if q == p {
+				u.sel[tabNew] = i
+			}
+		}
+		u.openDetail(p)
+	case BtnB, BtnSelect:
+		u.modal = modalNone
 	}
 }
 
@@ -618,6 +689,8 @@ func (u *UI) Draw(c *Canvas) {
 		u.drawMsg(c)
 	case modalConfirm:
 		u.drawConfirm(c)
+	case modalWhatsNew:
+		u.drawWhatsNew(c)
 	}
 	if u.toast != "" && time.Now().Before(u.toastUntil) {
 		w := u.fSmall.Width(u.toast) + u.px(24)
@@ -719,17 +792,29 @@ func (u *UI) drawTabs(c *Canvas) {
 	y := u.headerH() + u.px(14)
 	x := u.px(12)
 	x = c.Chip(u.fTiny, x, y+u.px(2), "L1", colAmberDim, false) + u.px(2)
-	for i, t := range tabNames {
+	for i, t := range tabNames[:u.tabsShown()] {
 		label := fmt.Sprintf("%s %02d", t, u.tabCount(i))
-		w := u.fSmall.Width(label) + u.px(20)
+		pad := u.px(10)
+		if u.tabsShown() > tabNew {
+			pad = u.px(7) // five tabs: a little tighter so they fit
+		}
+		w := u.fSmall.Width(label) + 2*pad
 		h := u.fSmall.height + u.px(8)
+		fill, edge := colAmber, colGrid
+		if i == tabNew {
+			fill, edge = colGreen, colGreen
+		}
 		if i == u.tab {
-			c.Fill(x, y, w, h, colAmber)
-			c.Text(u.fSmall, x+u.px(10), y+u.px(4), label, colBG)
+			c.Fill(x, y, w, h, fill)
+			c.Text(u.fSmall, x+pad, y+u.px(4), label, colBG)
 			c.Fill(x, y+h, w, u.px(2), colCyan)
 		} else {
-			c.Border(x, y, w, h, 1, colGrid)
-			c.Text(u.fSmall, x+u.px(10), y+u.px(4), label, colPaperDim)
+			fg := colPaperDim
+			if i == tabNew {
+				fg = colGreen
+			}
+			c.Border(x, y, w, h, 1, edge)
+			c.Text(u.fSmall, x+pad, y+u.px(4), label, fg)
 		}
 		x += w + u.px(6)
 	}
@@ -789,7 +874,11 @@ func (u *UI) drawList(c *Canvas) {
 			rx -= u.px(8)
 		}
 		if u.updates[p.Name] != "" {
-			mark("▲NEW", colMagenta)
+			mark("▲UPD", colMagenta)
+		} else if t := u.fresh[p]; t > 0 && u.tab == tabNew {
+			mark(ageLabel(t, time.Now()), colGreen)
+		} else if u.fresh[p] > 0 && !u.installed(p) {
+			mark("NEW", colGreen)
 		} else if u.manifests[p.Name] != nil {
 			mark("●", colCyan)
 		} else if u.onCard[p.Name] != "" {
@@ -837,6 +926,9 @@ func (u *UI) drawList(c *Canvas) {
 			kv("FILES", "BRING YOUR OWN", colAmber)
 		} else {
 			kv("FILES", "INCLUDED", colCyan)
+		}
+		if t := u.fresh[p]; t > 0 {
+			kv("ADDED", ageLabel(t, time.Now()), colGreen)
 		}
 		switch {
 		case u.updates[p.Name] != "":
@@ -1126,6 +1218,79 @@ func (u *UI) drawConfirm(c *Canvas) {
 	}
 	bx := c.Button(u.fTiny, x+u.px(20), y+h-u.px(30), "A", u.confirmOK, colMagenta)
 	c.Button(u.fTiny, bx, y+h-u.px(30), "B", "CANCEL", colPaperDim)
+}
+
+// drawWhatsNew is the NEW ARRIVALS window: apps and ports added to the catalog
+// since the last visit.
+func (u *UI) drawWhatsNew(c *Canvas) {
+	n := len(u.arrivals)
+	rowH := u.fSmall.height + u.fTiny.height + u.px(14)
+	maxRows := max(1, (c.H*82/100-u.px(130))/rowH)
+	rows := min(n, maxRows)
+	w := c.W * 86 / 100
+	h := u.px(118) + rows*rowH
+	x, y := u.panel(c, w, h, colGreen)
+
+	c.TextGlow(u.fBig, x+u.px(20), y+u.px(14), "NEW ARRIVALS", colGreen)
+	count := fmt.Sprintf("%02d", n)
+	c.TextRight(u.fLCDBig, x+w-u.px(20), y+u.px(8), count, colGreen)
+	sub := "ADDED SINCE YOUR LAST VISIT"
+	if n == 1 {
+		sub = "1 NEW TAPE " + sub
+	} else {
+		sub = fmt.Sprintf("%d NEW TAPES %s", n, sub)
+	}
+	c.Text(u.fTiny, x+u.px(20), y+u.px(44), sub, colCyan)
+	stripeY := y + u.px(64)
+	t := u.px(2)
+	c.Fill(x+u.px(20), stripeY, w-u.px(40), t, colAmber)
+	c.Fill(x+u.px(20), stripeY+t, w-u.px(40), t, colMagenta)
+	c.Fill(x+u.px(20), stripeY+2*t, w-u.px(40), t, colCyan)
+
+	if u.wnSel < u.wnScroll {
+		u.wnScroll = u.wnSel
+	}
+	if u.wnSel >= u.wnScroll+rows {
+		u.wnScroll = u.wnSel - rows + 1
+	}
+	ly := stripeY + u.px(12)
+	lx, lw := x+u.px(16), w-u.px(32)
+	for i := 0; i < rows && u.wnScroll+i < n; i++ {
+		idx := u.wnScroll + i
+		p := u.arrivals[idx]
+		ry := ly + i*rowH
+		isSel := idx == u.wnSel
+		fg, dim, chip := colPaper, colPaperDim, colGreen
+		if isSel {
+			c.Fill(lx, ry, lw, rowH-u.px(4), colAmber)
+			c.Fill(lx, ry, u.px(4), rowH-u.px(4), colCyan)
+			fg, dim, chip = colBG, colAmberDk, colBG
+		} else if i%2 == 1 {
+			c.Fill(lx, ry, lw, rowH-u.px(4), colPanel2)
+		}
+		// right: kind chip
+		kind := p.Kind()
+		kw := u.fTiny.Width(kind) + u.px(12)
+		kx := lx + lw - kw - u.px(10)
+		c.Chip(u.fTiny, kx, ry+u.px(6), kind, chip, false)
+		tx := lx + u.px(14)
+		c.Text(u.fSmall, tx, ry+u.px(4), u.fSmall.Ellipsize(p.Name, kx-tx-u.px(10)), fg)
+		info := "BY " + strings.ToUpper(strings.Join(p.Porter, ", "))
+		if p.Notes != "" {
+			info += "  ·  " + p.Notes
+		}
+		c.Text(u.fTiny, tx, ry+u.px(6)+u.fSmall.height, u.fTiny.Ellipsize(info, lw-u.px(28)), dim)
+	}
+	if n > rows { // scrollbar
+		th := rows * rowH
+		c.Fill(x+w-u.px(10), ly, u.px(3), th, colGrid)
+		bh := max(u.px(12), th*rows/n)
+		c.Fill(x+w-u.px(10), ly+(th-bh)*u.wnScroll/max(1, n-rows), u.px(3), bh, colGreen)
+	}
+	by := y + h - u.px(30)
+	bx := c.Button(u.fTiny, x+u.px(20), by, "A", "OPEN", colAmber)
+	c.Button(u.fTiny, bx, by, "B", "CLOSE", colPaperDim)
+	c.TextRight(u.fTiny, x+w-u.px(20), by+u.px(1), "ALSO IN THE NEW TAB", colPaperDim)
 }
 
 func (u *UI) drawBoot(c *Canvas) {
