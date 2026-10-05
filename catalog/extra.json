@@ -84,6 +84,27 @@
           "data/*"
         ]
       }
+    },
+    {
+      "name": "Mr. Rescue",
+      "categories": [
+        "platform"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/mrrescue-mm-/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/mrrescue-mm-/main/docs/cover.png",
+      "notes": "Unofficial port of Mr. Rescue, the arcade firefighting game by Tangram Games: fight fires and throw people out of windows to safety. Report bugs to the port's GitHub, not to Tangram Games. Installs to Games > Ports (needs OnionOS's Ports system). B jump, A grab/throw, Y shoot.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "miyoo",
+        "keep": [
+          "data/*"
+        ]
+      }
     }
   ]
 }
