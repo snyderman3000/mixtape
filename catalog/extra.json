@@ -123,6 +123,34 @@
       "recipe": {
         "asset": "miyoo"
       }
+    },
+    {
+      "name": "Hexen II",
+      "categories": [
+        "fps"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/cacuracaptors/uhexen2-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/cacuracaptors/uhexen2-miyoomini/6ac865077583482c9c8216f27aba0822db77fabf/docs/images/cover.png",
+      "notes": "uHexen2 (Hammer of Thyrion) port with a dual-core software renderer: 640x480 at 50-60 FPS, no overclock. Needs the GOG version: copy everything in its data1 folder into Roms/PORTS/Games/Hexen2/data1/, plus its music folder there for the soundtrack (optional). Original game only, no Portal of Praevus or multiplayer.",
+      "porter": [
+        "cacuracaptors"
+      ]
+    },
+    {
+      "name": "SkiFree",
+      "categories": [
+        "arcade"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/cacuracaptors/skifree-miyoomini/releases",
+      "image": "https://raw.githubusercontent.com/cacuracaptors/skifree-miyoomini/35e547a4b3a157073daf2aa9d9a737f54a0ad150/docs/images/cover.png",
+      "notes": "Unofficial port of Chris Pirih's 1991 Windows classic, from the SkiFree decompilation. Ready to run, nothing else to download. Smooth 60 FPS at the original game speed, high scores with your name. Menu+Start toggles the original 25 FPS, Menu+Select shows high scores.",
+      "porter": [
+        "cacuracaptors"
+      ]
     }
   ]
 }
