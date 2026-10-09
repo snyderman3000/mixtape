@@ -65,6 +65,48 @@
       }
     },
     {
+      "name": "Cablebox",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/cablebox-onionOS/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/cablebox-onionOS/main/docs/guide.png",
+      "notes": "TV guide in an 80s cable-box style: browse shows by channel (new, this week, popular, each streaming service, each genre) or search by name, with IMDb, Rotten Tomatoes and Metacritic scores, cast and trailers (QR to your phone). Order shows into Sonarr: new episodes, everything, or chosen seasons or episodes. Needs free TMDB and OMDb keys (uses Rewind's if installed).",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
+      "name": "Carrier",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/Carrier-onionOS/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/Carrier-onionOS/main/docs/list.png",
+      "notes": "qBittorrent remote with a retro modem look: watch progress and speeds, filter and sort torrents, stop, start, force start, recheck, set categories and file priorities, toggle slow mode, and remove torrents with or without their files. Needs your qBittorrent Web UI address (and login) in App/Carrier/data/config.json.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
       "name": "Flashback",
       "categories": [
         "app"
