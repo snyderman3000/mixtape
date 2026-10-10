@@ -193,6 +193,29 @@
       "porter": [
         "cacuracaptors"
       ]
+    },
+    {
+      "name": "RomManager",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/Plus-Cloud/RomManager/releases",
+      "image": "https://raw.githubusercontent.com/Plus-Cloud/RomManager/main/screenshots/02_home.png",
+      "notes": "On-device ROM downloader and manager: add your own sources (archive.org items, web folders or an FTP server on your PC), queue downloads over Wi-Fi in the background with box art, then play, favorite or delete games. Includes no games and links to none: only download games you own.",
+      "porter": [
+        "plusCloud",
+        "brenonsc"
+      ],
+      "recipe": {
+        "keep": [
+          "settings.ini",
+          "repos.txt",
+          "archives.txt",
+          "caches/*"
+        ]
+      }
     }
   ]
 }
