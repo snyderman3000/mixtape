@@ -35,9 +35,33 @@ const defaultExtraURL = "https://raw.githubusercontent.com/snyderman3000/mixtape
 
 // Porters' own catalogs ("sources"): the same entry format, where an entry may
 // carry its own download (url, version, sha256, size) instead of a GitHub
-// release. data/config.json "sources" replaces this list when set.
-var defaultSources = []string{
-	"https://miyoo-n64.pages.dev/manifest.json", // Miyoo64: mr-finster's N64 ports
+// release. The list of them lives in catalog/sources.json, fetched like
+// extra.json, so adding a porter needs no Mixtape update. data/config.json
+// "sources" adds more; "sources_url" points at a different list.
+const defaultSourcesURL = "https://raw.githubusercontent.com/snyderman3000/mixtape/main/catalog/sources.json"
+
+//go:embed catalog/sources.json
+var embeddedSources []byte
+
+type sourceList struct {
+	Sources []struct {
+		Name string `json:"name"`
+		URL  string `json:"url"`
+	} `json:"sources"`
+}
+
+func parseSourceList(b []byte) ([]string, error) {
+	var l sourceList
+	if err := json.Unmarshal(b, &l); err != nil {
+		return nil, err
+	}
+	var urls []string
+	for _, s := range l.Sources {
+		if strings.HasPrefix(s.URL, "https://") {
+			urls = append(urls, s.URL)
+		}
+	}
+	return urls, nil
 }
 
 type Port struct {
@@ -309,11 +333,41 @@ func loadList(env *Env, url, cachePath string, builtin []byte, recipes map[strin
 	return nil, ""
 }
 
+// sourceURLs is the published list (live, else the on-card copy, else the
+// built-in one) followed by the card's own additions, without duplicates.
 func (env *Env) sourceURLs() []string {
-	if env.Config.Sources != nil {
-		return env.Config.Sources
+	listURL := env.Config.SourcesURL
+	if listURL == "" {
+		listURL = defaultSourcesURL
 	}
-	return defaultSources
+	cachePath := filepath.Join(env.DataDir, "sources.json")
+	var urls []string
+	var err error = fmt.Errorf("offline")
+	if !env.Offline {
+		var b []byte
+		if b, err = fetchJSON(env, listURL, 256<<10); err == nil {
+			if urls, err = parseSourceList(b); err == nil {
+				_ = writeFileAtomic(cachePath, b)
+			}
+		}
+	}
+	if err != nil {
+		if b, rerr := os.ReadFile(cachePath); rerr == nil {
+			urls, err = parseSourceList(b)
+		}
+	}
+	if err != nil {
+		urls, _ = parseSourceList(embeddedSources)
+	}
+	seen := map[string]bool{}
+	var out []string
+	for _, u := range append(urls, env.Config.Sources...) {
+		if strings.HasPrefix(u, "https://") && !seen[u] {
+			seen[u] = true
+			out = append(out, u)
+		}
+	}
+	return out
 }
 
 func sourceCache(env *Env, url string) string {

@@ -13,7 +13,7 @@
 ## Features
 
 - **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app. A few projects not in that catalog yet (such as [Panel Attack](https://github.com/snyderman3000/panelattack-miyoo)) are listed from Mixtape's own [`catalog/extra.json`](catalog/extra.json). If a project is in both, it's shown once, using the community catalog's entry with any install hints from `extra.json`.
-- **Porters' own catalogs.** Porters who host their downloads on their own site can publish a small catalog file, and Mixtape lists their games next to everything else, with updates. Built in: [Miyoo64](https://github.com/mr-finster/miyoo64) by mr-finster (nine native N64 ports). See [Publishing your own catalog](#publishing-your-own-catalog).
+- **Porters' own catalogs.** Porters who host their downloads on their own site can publish a small catalog file, and Mixtape lists their games next to everything else, with updates. The list lives in [`catalog/sources.json`](catalog/sources.json), so new catalogs appear without a Mixtape update. First on it: [Miyoo64](https://github.com/mr-finster/miyoo64) by mr-finster (nine native N64 ports). See [Publishing your own catalog](#publishing-your-own-catalog).
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **What's new.** When you open Mixtape and apps or ports have been added to the catalog since your last visit, a **NEW ARRIVALS** window lists them. Press A to open one, or B to close the window. They also stay in a **NEW** tab for 14 days, newest first. On the very first visit nothing is announced. Mixtape remembers what it has shown in `data/seen.json`.
 - **Updates.** Press Y to check everything Mixtape installed. Updates keep settings files you've edited.
@@ -52,7 +52,8 @@ List markers: **●** installed by Mixtape · **○** found on the card (install
 - `github_token`: optional GitHub personal access token (no scopes needed). Without one, GitHub allows 60 release lookups per hour per network.
 - `catalog_url`: point Mixtape at a different `ports.json`.
 - `extra_url`: point Mixtape at a different extra-ports list (default: this repo's `catalog/extra.json`).
-- `sources`: the porters' catalogs to read, as a list of `https://` addresses. When set, it replaces the built-in list, so include `https://miyoo-n64.pages.dev/manifest.json` to keep Miyoo64.
+- `sources`: more porters' catalogs to read, as a list of `https://` addresses. They're added to the published list in [`catalog/sources.json`](catalog/sources.json).
+- `sources_url`: point Mixtape at a different list of porters' catalogs.
 
 `App/Mixtape/data/recipes.json` (optional) overrides the built-in install hints in [`assets/recipes.json`](assets/recipes.json).
 
@@ -105,7 +106,9 @@ If your downloads aren't GitHub releases, publish a JSON file at a fixed `https:
 - `assets: "owned"` marks games that need the player's own files (**BYO**).
 - `keep` (optional) lists files an update must never overwrite, as globs such as `App/MyGame/*.cfg`.
 
-Updates extract the new zip over the existing folders, like `unzip -o`. Saves, settings and anything else the game creates are never touched, and neither is anything the player adds. Only files that came from the previous zip and aren't in the new one are removed. If a game's name is already taken by another project, it's listed as "Name (your catalog's name)". Then open an issue to have your catalog added to the built-in list.
+Updates extract the new zip over the existing folders, like `unzip -o`. Saves, settings and anything else the game creates are never touched, and neither is anything the player adds. Only files that came from the previous zip and aren't in the new one are removed. If a game's name is already taken by another project, it's listed as "Name (your catalog's name)". Keep your game names the same over time, because Mixtape uses them to recognize what it installed.
+
+To get listed, open an [**Add my catalog**](https://github.com/snyderman3000/mixtape/issues/new?template=add-catalog.yml) issue. Once your catalog is added to `catalog/sources.json`, every copy of Mixtape picks it up on its next start. To try your catalog before then, add its address to `sources` in `App/Mixtape/data/config.json` on your own card.
 
 It compiles to a single static ARMv7 binary written in Go, with no SDL or C toolchain involved.
 

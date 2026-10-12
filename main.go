@@ -19,7 +19,8 @@ type Config struct {
 	CatalogURL  string   `json:"catalog_url"`
 	GitHubToken string   `json:"github_token"`
 	ExtraURL    string   `json:"extra_url,omitempty"`
-	Sources     []string `json:"sources,omitempty"`
+	Sources     []string `json:"sources,omitempty"`     // extra porters' catalogs, added to the published list
+	SourcesURL  string   `json:"sources_url,omitempty"` // a different published list of catalogs
 }
 
 type Env struct {

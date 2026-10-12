@@ -95,9 +95,11 @@ func TestSourcesFetchedAndCached(t *testing.T) {
 		w.Write([]byte(testSource))
 	}))
 	defer srv.Close()
-	env := &Env{DataDir: t.TempDir(), HTTP: srv.Client(), Config: Config{Sources: []string{srv.URL + "/manifest.json", "http://insecure.example/m.json"}}}
+	env := &Env{DataDir: t.TempDir(), HTTP: srv.Client(), Config: Config{
+		SourcesURL: srv.URL + "/sources.json", // answers with no published catalogs
+		Sources:    []string{srv.URL + "/manifest.json", "http://insecure.example/m.json"}}}
 	got := loadSources(env, map[string]*Recipe{})
-	if len(got) != 1 || len(got[0]) != 2 || hits != 1 {
+	if len(got) != 1 || len(got[0]) != 2 || hits != 2 {
 		t.Fatalf("sources: %d lists, hits %d", len(got), hits)
 	}
 	env.Offline = true
@@ -105,8 +107,39 @@ func TestSourcesFetchedAndCached(t *testing.T) {
 	if len(got) != 1 || len(got[0]) != 2 || got[0][0].Source != "Miyoo64" {
 		t.Fatalf("offline: cached copy not used: %+v", got)
 	}
-	if def := (&Env{}).sourceURLs(); len(def) == 0 || !strings.Contains(def[0], "miyoo-n64.pages.dev") {
-		t.Fatalf("default sources: %v", def)
+}
+
+func TestSourceListIsPublishedAndAdditive(t *testing.T) {
+	list := `{"sources":[{"name":"A","url":"https://a.example/m.json"},{"name":"Bad","url":"http://b.example/m.json"}]}`
+	srv := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(list))
+	}))
+	defer srv.Close()
+	env := &Env{DataDir: t.TempDir(), HTTP: srv.Client(), Config: Config{
+		SourcesURL: srv.URL + "/sources.json",
+		Sources:    []string{"https://mine.example/m.json", "https://a.example/m.json"},
+	}}
+	want := "https://a.example/m.json https://mine.example/m.json"
+	if got := strings.Join(env.sourceURLs(), " "); got != want {
+		t.Fatalf("live list: %q, want %q", got, want)
+	}
+	// Offline: the copy saved on the card is used.
+	env.Offline = true
+	if got := strings.Join(env.sourceURLs(), " "); got != want {
+		t.Fatalf("cached list: %q", got)
+	}
+	// Nothing saved and offline: the built-in list (Miyoo64) plus the card's own.
+	fresh := &Env{DataDir: t.TempDir(), Offline: true, Config: Config{Sources: []string{"https://mine.example/m.json"}}}
+	got := fresh.sourceURLs()
+	if len(got) != 2 || !strings.Contains(got[0], "miyoo-n64.pages.dev") || got[1] != "https://mine.example/m.json" {
+		t.Fatalf("built-in list: %v", got)
+	}
+}
+
+func TestPublishedSourceListParses(t *testing.T) {
+	urls, err := parseSourceList(embeddedSources)
+	if err != nil || len(urls) == 0 {
+		t.Fatalf("catalog/sources.json: %v %v", err, urls)
 	}
 }
 
