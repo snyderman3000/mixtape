@@ -19,6 +19,8 @@ type Asset struct {
 	Name string `json:"name"`
 	URL  string `json:"browser_download_url"`
 	Size int64  `json:"size"`
+
+	SHA256 string `json:"-"` // expected checksum, when the catalog gives one
 }
 
 type Release struct {
@@ -203,6 +205,14 @@ func PickAssets(rel Release, r *Recipe) ([]Asset, string) {
 func (env *Env) PlanFor(p *Port, force bool) (*Plan, error) {
 	if reason := p.ManualReason(); reason != "" {
 		return &Plan{Problem: reason}, nil
+	}
+	if p.Direct() {
+		v := p.Version
+		if v == "" {
+			v = "latest"
+		}
+		base := p.URL[strings.LastIndex(p.URL, "/")+1:]
+		return &Plan{Version: v, Files: []Asset{{Name: base, URL: p.URL, Size: p.Size, SHA256: strings.ToLower(p.SHA256)}}}, nil
 	}
 	if p.Recipe != nil && p.Recipe.URL != "" {
 		base := p.Recipe.URL[strings.LastIndex(p.Recipe.URL, "/")+1:]

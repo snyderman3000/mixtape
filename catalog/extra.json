@@ -206,7 +206,7 @@
       "assets": "owned",
       "upstream": "https://github.com/cacuracaptors/mk64-miyoomini/releases",
       "image": "https://raw.githubusercontent.com/cacuracaptors/mk64-miyoomini/8312c29de636ccb77ba4596cd7f8e4c3354cfe6a/media/screenshot1.png",
-      "notes": "Native port from the Mario Kart 64 decompilation (via jnmartin84's Dreamcast port): 640x480 at up to 60 FPS in single-player, full sound, saved records and ghosts. Needs your own USA ROM (.z64, .n64, .v64 or .zip) in Roms/PORTS/Games/MarioKart64/. First start builds the game data (about 5 minutes, once).",
+      "notes": "Native port from the Mario Kart 64 decompilation (via jnmartin84's Dreamcast port): 640x480 at up to 60 FPS in single-player, full sound, saved records and ghosts. Needs your own USA ROM (.z64, .n64, .v64 or .zip) in Roms/PORTS/Games/MarioKart64/. First start builds the game data (about 5 minutes, once). Don't install it next to Mario Kart 64 (Miyoo64): both use the same Ports shortcut.",
       "porter": [
         "cacuracaptors"
       ]

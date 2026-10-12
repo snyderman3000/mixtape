@@ -5,6 +5,8 @@ import (
 	"archive/zip"
 	"compress/gzip"
 	"context"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -533,6 +535,11 @@ func (env *Env) Install(ctx context.Context, p *Port, plan *Plan, prog func(Prog
 		if st, err := os.Stat(local); err == nil {
 			doneDL += st.Size()
 		}
+		if a.SHA256 != "" {
+			if sum, err := fileSHA256(local); err != nil || sum != a.SHA256 {
+				return nil, fmt.Errorf("%s didn't download correctly (its checksum doesn't match the catalog). Nothing was changed; try again", a.Name)
+			}
+		}
 		prog(Progress{Phase: "UNPACKING", File: a.Name})
 		arc, err := openArchive(local)
 		if err != nil {
@@ -618,6 +625,19 @@ func (env *Env) Install(ctx context.Context, p *Port, plan *Plan, prog func(Prog
 		res.Notes = append(res.Notes, p.Recipe.Note)
 	}
 	return res, nil
+}
+
+func fileSHA256(p string) (string, error) {
+	f, err := os.Open(p)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+	h := sha256.New()
+	if _, err := io.Copy(h, f); err != nil {
+		return "", err
+	}
+	return hex.EncodeToString(h.Sum(nil)), nil
 }
 
 func contains(xs []string, s string) bool {
