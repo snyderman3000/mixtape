@@ -157,13 +157,30 @@
       "assets": "free",
       "upstream": "https://github.com/snyderman3000/spelunky-onionOS/releases",
       "image": "https://raw.githubusercontent.com/snyderman3000/spelunky-onionOS/main/docs/cover.png",
-      "notes": "Unofficial mod: dbeef's Spelunky-PSP remake of Derek Yu's Spelunky Classic (c) 2008-2009 Derek Yu and Mossmouth, LLC, running at full speed with sound. Not made or supported by Mossmouth or dbeef: report bugs to the port's GitHub. Free, not for sale. Installs to Games > Ports.",
+      "notes": "DEPRECATED: no longer maintained. Use Spelunky Classic (chawinyaw) instead, which runs better. Both install to the same folder, so erase this one first. Unofficial mod: dbeef's Spelunky-PSP remake of Derek Yu's Spelunky Classic (c) 2008-2009 Derek Yu and Mossmouth, LLC. Not made or supported by Mossmouth or dbeef.",
       "porter": [
         "snyderman3000",
         "Claude"
       ],
       "recipe": {
         "asset": "miyoo"
+      }
+    },
+    {
+      "name": "Spelunky Classic (chawinyaw)",
+      "categories": [
+        "platform"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/chawinyaw/spelunkyclassic_miyoo/releases",
+      "image": "",
+      "notes": "Fan port of Spelunky Classic from dbeef's spelunky-psp, by chawinyaw. The Caves area only; the intro and tutorial aren't playable. Buttons can be remapped in controls.txt. Not affiliated with Derek Yu or Mossmouth. Free, not for sale. Installs to Games > Ports.",
+      "porter": [
+        "chawinyaw"
+      ],
+      "recipe": {
+        "manual": "Released as a .rar archive, which Mixtape can't unpack. On a PC, extract it and copy its Roms folder to the SD card root, merging it. Then run '~Import ports' in Games > Ports. Erase the old Spelunky Classic in Mixtape first: both use Roms/PORTS/Games/Spelunky."
       }
     },
     {
