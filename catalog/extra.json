@@ -195,6 +195,20 @@
       ]
     },
     {
+      "name": "Minecraft",
+      "categories": [
+        "sandbox"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/DankMiimer/minecraft-bedrock-miyoo-mini-plus/releases",
+      "image": "https://raw.githubusercontent.com/DankMiimer/minecraft-bedrock-miyoo-mini-plus/54937be38d94fcd00d6e481349c807a4987179db/docs/miyoo-mini-plus-bedrock.jpg",
+      "notes": "Runs your own Android Minecraft in software: Pocket Edition 0.8.1 (about 25 FPS, recommended) or Bedrock 1.2.20.2 (5-8 FPS). Needs your own 32-bit armeabi-v7a APK: Pocket Edition in App/Minecraft/apk/, Bedrock in App/mcpe/apk/. Needs about 1 GB free. Not made or approved by Mojang or Microsoft.",
+      "porter": [
+        "DankMiimer"
+      ]
+    },
+    {
       "name": "SkiFree",
       "categories": [
         "arcade"
