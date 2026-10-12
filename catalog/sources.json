@@ -1,0 +1,12 @@
+{
+  "_comment": "Porters' own catalogs that Mixtape reads (see 'Publishing your own catalog' in the README). Every copy of Mixtape fetches this list at startup, so adding a line here adds a porter without a Mixtape update. Requests: open an 'Add my catalog' issue.",
+  "sources": [
+    {
+      "name": "Miyoo64",
+      "url": "https://miyoo-n64.pages.dev/manifest.json",
+      "porter": "mr-finster",
+      "homepage": "https://github.com/mr-finster/miyoo64",
+      "added": "2026-10-12"
+    }
+  ]
+}

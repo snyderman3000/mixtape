@@ -12,13 +12,15 @@ import (
 	"time"
 )
 
-const version = "0.1.6"
+const version = "0.1.7"
 const userAgent = "Mixtape/" + version + " (OnionOS community port browser)"
 
 type Config struct {
-	CatalogURL  string `json:"catalog_url"`
-	GitHubToken string `json:"github_token"`
-	ExtraURL    string `json:"extra_url,omitempty"`
+	CatalogURL  string   `json:"catalog_url"`
+	GitHubToken string   `json:"github_token"`
+	ExtraURL    string   `json:"extra_url,omitempty"`
+	Sources     []string `json:"sources,omitempty"`     // extra porters' catalogs, added to the published list
+	SourcesURL  string   `json:"sources_url,omitempty"` // a different published list of catalogs
 }
 
 type Env struct {

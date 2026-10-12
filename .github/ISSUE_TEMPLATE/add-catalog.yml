@@ -1,0 +1,60 @@
+name: Add my catalog
+description: Ask for your own catalog of apps or ports to be listed in Mixtape.
+title: "Add catalog: "
+labels: ["catalog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Mixtape can list your ports from a catalog file you publish yourself, with one-button installs and updates.
+        The format is in the README under **Publishing your own catalog**. Once your catalog is added to
+        `catalog/sources.json`, every copy of Mixtape picks it up on its next start, with no Mixtape update needed.
+  - type: input
+    id: name
+    attributes:
+      label: Catalog name
+      description: Shown after a game's name if another project already uses that name, e.g. "Mario Kart 64 (Miyoo64)".
+      placeholder: Miyoo64
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Catalog address
+      description: A fixed https:// address for your catalog JSON.
+      placeholder: https://example.pages.dev/manifest.json
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Project page or source code
+      placeholder: https://github.com/you/your-ports
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How to reach you
+      description: Your GitHub, Reddit or other handle, in case a download breaks.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Each zip unpacks onto the SD card root (App/, Roms/ and so on) and runs on OnionOS on a Miyoo Mini Plus.
+          required: true
+        - label: No commercial game files (ROMs, game data) are in any download. Games that need the player's own files are marked "assets":"owned" with instructions in "notes".
+          required: true
+        - label: Each version has its own download address, and "version" changes whenever the zip changes.
+          required: true
+        - label: Updating by unzipping the new zip over the old one (like unzip -o) keeps players' saves and settings.
+          required: true
+        - label: I made these ports or have the porter's permission to list them.
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

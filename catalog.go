@@ -1,10 +1,13 @@
 package main
 
 import (
+	"crypto/sha1"
 	_ "embed"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -30,6 +33,37 @@ const defaultCatalogURL = "https://raw.githubusercontent.com/Producdevity/MiyooM
 // plus an optional inline "recipe".
 const defaultExtraURL = "https://raw.githubusercontent.com/snyderman3000/mixtape/main/catalog/extra.json"
 
+// Porters' own catalogs ("sources"): the same entry format, where an entry may
+// carry its own download (url, version, sha256, size) instead of a GitHub
+// release. The list of them lives in catalog/sources.json, fetched like
+// extra.json, so adding a porter needs no Mixtape update. data/config.json
+// "sources" adds more; "sources_url" points at a different list.
+const defaultSourcesURL = "https://raw.githubusercontent.com/snyderman3000/mixtape/main/catalog/sources.json"
+
+//go:embed catalog/sources.json
+var embeddedSources []byte
+
+type sourceList struct {
+	Sources []struct {
+		Name string `json:"name"`
+		URL  string `json:"url"`
+	} `json:"sources"`
+}
+
+func parseSourceList(b []byte) ([]string, error) {
+	var l sourceList
+	if err := json.Unmarshal(b, &l); err != nil {
+		return nil, err
+	}
+	var urls []string
+	for _, s := range l.Sources {
+		if strings.HasPrefix(s.URL, "https://") {
+			urls = append(urls, s.URL)
+		}
+	}
+	return urls, nil
+}
+
 type Port struct {
 	Name       string   `json:"name"`
 	Categories []string `json:"categories"`
@@ -39,6 +73,14 @@ type Port struct {
 	Upstream   string   `json:"upstream"`
 	Image      string   `json:"image"`
 	Notes      string   `json:"notes"`
+
+	// A direct download, for projects whose files aren't GitHub releases.
+	Version string   `json:"version"`
+	URL     string   `json:"url"`
+	SHA256  string   `json:"sha256"`
+	Size    int64    `json:"size"`
+	Keep    []string `json:"keep"`
+	Source  string   `json:"-"` // name of the catalog that listed it, for direct downloads
 
 	Repo   string  `json:"-"` // owner/repo
 	Recipe *Recipe `json:"-"`
@@ -71,9 +113,15 @@ func (p *Port) Kind() string {
 
 func (p *Port) OwnFiles() bool { return p.Assets == "owned" }
 
+// Direct reports whether the port downloads from its own URL rather than GitHub.
+func (p *Port) Direct() bool { return p.URL != "" }
+
 func (p *Port) ManualReason() string {
 	if p.Recipe != nil && p.Recipe.Manual != "" {
 		return p.Recipe.Manual
+	}
+	if p.Direct() {
+		return ""
 	}
 	if p.Status == "source-only" {
 		return "Source only: there is no prebuilt binary to install."
@@ -154,6 +202,9 @@ func LoadCatalog(env *Env) *Catalog {
 	cat := loadMainCatalog(env, recipes)
 	extra := loadExtra(env, recipes)
 	cat.Ports = mergeExtra(cat.Ports, extra)
+	for _, src := range loadSources(env, recipes) {
+		cat.Ports = mergeExtra(cat.Ports, src)
+	}
 	return cat
 }
 
@@ -198,14 +249,21 @@ func fetchJSON(env *Env, url string, limit int64) ([]byte, error) {
 	return b, nil
 }
 
-// parseExtra reads catalog/extra.json. Entries may carry an inline recipe;
-// otherwise the usual recipes apply.
+// parseExtra reads catalog/extra.json or a porter's catalog. Entries may carry
+// an inline recipe; otherwise the usual recipes apply. Entries with their own
+// download URL aren't tied to a GitHub repo (several can share one source repo).
 func parseExtra(data []byte, recipes map[string]*Recipe) ([]*Port, error) {
+	ports, _, err := parseSource(data, recipes)
+	return ports, err
+}
+
+func parseSource(data []byte, recipes map[string]*Recipe) ([]*Port, string, error) {
 	var doc struct {
+		Name  string            `json:"name"`
 		Ports []json.RawMessage `json:"ports"`
 	}
 	if err := json.Unmarshal(data, &doc); err != nil {
-		return nil, err
+		return nil, "", err
 	}
 	var out []*Port
 	for _, raw := range doc.Ports {
@@ -217,17 +275,28 @@ func parseExtra(data []byte, recipes map[string]*Recipe) ([]*Port, error) {
 			continue
 		}
 		_ = json.Unmarshal(raw, &r)
-		if m := repoRE.FindStringSubmatch(p.Upstream); m != nil {
+		if p.URL != "" {
+			if !strings.HasPrefix(p.URL, "https://") {
+				continue // only HTTPS downloads
+			}
+			p.Source = doc.Name
+			if len(p.Keep) > 0 {
+				p.Recipe = &Recipe{Keep: p.Keep}
+			}
+		} else if m := repoRE.FindStringSubmatch(p.Upstream); m != nil {
 			p.Repo = m[1] + "/" + strings.TrimSuffix(m[2], ".git")
 			p.Recipe = recipes[strings.ToLower(p.Repo)]
 		}
 		if r.Recipe != nil {
+			if p.Recipe != nil && len(r.Recipe.Keep) == 0 {
+				r.Recipe.Keep = p.Recipe.Keep
+			}
 			p.Recipe = r.Recipe
 			p.inlineRecipe = r.Recipe
 		}
 		out = append(out, &p)
 	}
-	return out, nil
+	return out, doc.Name, nil
 }
 
 func loadExtra(env *Env, recipes map[string]*Recipe) []*Port {
@@ -235,22 +304,103 @@ func loadExtra(env *Env, recipes map[string]*Recipe) []*Port {
 	if url == "" {
 		url = defaultExtraURL
 	}
-	cachePath := filepath.Join(env.DataDir, "extra.json")
+	ports, _ := loadList(env, url, filepath.Join(env.DataDir, "extra.json"), embeddedExtra, recipes)
+	return ports
+}
+
+// loadList fetches a catalog list, falling back to its on-card copy and then
+// to a built-in copy (if any).
+func loadList(env *Env, url, cachePath string, builtin []byte, recipes map[string]*Recipe) ([]*Port, string) {
 	if !env.Offline {
 		if b, err := fetchJSON(env, url, 1<<20); err == nil {
-			if ports, err := parseExtra(b, recipes); err == nil {
+			if ports, name, err := parseSource(b, recipes); err == nil {
 				_ = writeFileAtomic(cachePath, b)
-				return ports
+				return ports, name
 			}
+		} else {
+			log.Printf("source %s: %v", url, err)
 		}
 	}
 	if b, err := os.ReadFile(cachePath); err == nil {
-		if ports, err := parseExtra(b, recipes); err == nil {
-			return ports
+		if ports, name, err := parseSource(b, recipes); err == nil {
+			return ports, name
 		}
 	}
-	ports, _ := parseExtra(embeddedExtra, recipes)
-	return ports
+	if builtin != nil {
+		ports, name, _ := parseSource(builtin, recipes)
+		return ports, name
+	}
+	return nil, ""
+}
+
+// sourceURLs is the published list (live, else the on-card copy, else the
+// built-in one) followed by the card's own additions, without duplicates.
+func (env *Env) sourceURLs() []string {
+	listURL := env.Config.SourcesURL
+	if listURL == "" {
+		listURL = defaultSourcesURL
+	}
+	cachePath := filepath.Join(env.DataDir, "sources.json")
+	var urls []string
+	var err error = fmt.Errorf("offline")
+	if !env.Offline {
+		var b []byte
+		if b, err = fetchJSON(env, listURL, 256<<10); err == nil {
+			if urls, err = parseSourceList(b); err == nil {
+				_ = writeFileAtomic(cachePath, b)
+			}
+		}
+	}
+	if err != nil {
+		if b, rerr := os.ReadFile(cachePath); rerr == nil {
+			urls, err = parseSourceList(b)
+		}
+	}
+	if err != nil {
+		urls, _ = parseSourceList(embeddedSources)
+	}
+	seen := map[string]bool{}
+	var out []string
+	for _, u := range append(urls, env.Config.Sources...) {
+		if strings.HasPrefix(u, "https://") && !seen[u] {
+			seen[u] = true
+			out = append(out, u)
+		}
+	}
+	return out
+}
+
+func sourceCache(env *Env, url string) string {
+	h := sha1.Sum([]byte(url))
+	return filepath.Join(env.DataDir, "sources", hex.EncodeToString(h[:6])+".json")
+}
+
+func loadSources(env *Env, recipes map[string]*Recipe) [][]*Port {
+	var out [][]*Port
+	for _, url := range env.sourceURLs() {
+		if !strings.HasPrefix(url, "https://") {
+			continue
+		}
+		ports, name := loadList(env, url, sourceCache(env, url), nil, recipes)
+		if name == "" {
+			name = hostOf(url)
+		}
+		for _, p := range ports {
+			if p.Direct() {
+				p.Source = name
+			}
+		}
+		out = append(out, ports)
+	}
+	return out
+}
+
+func hostOf(url string) string {
+	rest := strings.TrimPrefix(url, "https://")
+	if i := strings.IndexByte(rest, '/'); i >= 0 {
+		rest = rest[:i]
+	}
+	return rest
 }
 
 // mergeExtra adds extra ports that the main catalog doesn't already list
@@ -267,6 +417,19 @@ func mergeExtra(ports, extra []*Port) []*Port {
 		byName[norm(p.Name)] = p
 	}
 	for _, p := range extra {
+		if p.Direct() {
+			// A different project that happens to share a name (two ports of
+			// one game) is listed under "Name (Source)".
+			if byName[norm(p.Name)] != nil && p.Source != "" {
+				p.Name += " (" + p.Source + ")"
+			}
+			if byName[norm(p.Name)] != nil {
+				continue
+			}
+			byName[norm(p.Name)] = p
+			ports = append(ports, p)
+			continue
+		}
 		var dup *Port
 		if p.Repo != "" {
 			dup = byRepo[strings.ToLower(p.Repo)]
@@ -280,6 +443,10 @@ func mergeExtra(ports, extra []*Port) []*Port {
 			}
 			continue
 		}
+		if p.Repo != "" {
+			byRepo[strings.ToLower(p.Repo)] = p
+		}
+		byName[norm(p.Name)] = p
 		ports = append(ports, p)
 	}
 	sort.SliceStable(ports, func(i, j int) bool {
