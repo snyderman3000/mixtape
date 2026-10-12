@@ -175,13 +175,10 @@
       "assets": "free",
       "upstream": "https://github.com/chawinyaw/spelunkyclassic_miyoo/releases",
       "image": "",
-      "notes": "Fan port of Spelunky Classic from dbeef's spelunky-psp, by chawinyaw. The Caves area only; the intro and tutorial aren't playable. Buttons can be remapped in controls.txt. Not affiliated with Derek Yu or Mossmouth. Free, not for sale. Installs to Games > Ports.",
+      "notes": "Fan port of Spelunky Classic from dbeef's spelunky-psp, by chawinyaw. The Caves area only; the intro and tutorial aren't playable. Buttons can be remapped in controls.txt. Not affiliated with Derek Yu or Mossmouth. Free, not for sale. Installs to Games > Ports. If you have the old Spelunky Classic, erase it first: both use the same folder.",
       "porter": [
         "chawinyaw"
-      ],
-      "recipe": {
-        "manual": "Released as a .rar archive, which Mixtape can't unpack. On a PC, extract it and copy its Roms folder to the SD card root, merging it. Then run '~Import ports' in Games > Ports. Erase the old Spelunky Classic in Mixtape first: both use Roms/PORTS/Games/Spelunky."
-      }
+      ]
     },
     {
       "name": "Hexen II",
