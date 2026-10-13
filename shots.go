@@ -95,6 +95,7 @@ func demoScene(u *UI, scene string) {
 		u.fresh[find("MiniAmp")] = now.Add(-6 * 24 * time.Hour).Unix()
 		switch scene {
 		case "whatsnew":
+			u.wnList = u.arrivals
 			u.modal = modalWhatsNew
 			u.wnSel = 0
 		case "newtab":
@@ -105,6 +106,17 @@ func demoScene(u *UI, scene string) {
 			u.refilter()
 			u.sel[tabNew] = 1
 		}
+	case "updates":
+		var list []*Port
+		for _, v := range []struct{ name, from, to string }{
+			{"PocketFlex", "v0.4.2", "v0.4.3"}, {"Diddy Kong Racing", "1.0.0", "1.0.2"}, {"GoldenEye 007", "1.0.0", "1.0.2"}} {
+			p := find(v.name)
+			u.manifests[p.Name] = &Manifest{Name: p.Name, Version: v.from}
+			u.updates[p.Name] = v.to
+			list = append(list, p)
+		}
+		u.pendingUpd = list
+		u.maybeShowUpdates()
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail
