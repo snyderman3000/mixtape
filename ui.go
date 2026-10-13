@@ -32,6 +32,7 @@ const (
 var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD", "NEW"}
 
 const tabNew = 4 // only shown while something is fresh (see whatsnew.go)
+const tabOnCard = 3
 
 type UI struct {
 	env  *Env
@@ -75,10 +76,13 @@ type UI struct {
 	toast      string
 	toastUntil time.Time
 
-	fresh    map[*Port]int64 // entries added in the last freshDays -> when first seen
-	arrivals []*Port         // added since the last visit (NEW ARRIVALS window)
-	wnSel    int
-	wnScroll int
+	fresh      map[*Port]int64 // entries added in the last freshDays -> when first seen
+	arrivals   []*Port         // added since the last visit (NEW ARRIVALS window)
+	wnList     []*Port         // what the list window shows: arrivals, or updates
+	wnUpdates  bool            // the list window is UPDATES READY
+	pendingUpd []*Port         // updates found at startup, shown once the screen is free
+	wnSel      int
+	wnScroll   int
 
 	selfNew      *Plan
 	selfChecking bool
@@ -126,6 +130,7 @@ func (u *UI) Start() {
 				u.showToast("OFFLINE — USING " + strings.ToUpper(cat.Source) + " CATALOG")
 			} else {
 				u.checkSelf(false)
+				u.autoCheckUpdates()
 			}
 		}
 	}()
@@ -139,6 +144,7 @@ func (u *UI) noteNews(now time.Time, previous map[string]bool) {
 	u.arrivals = n.sinceLast
 	u.wnSel, u.wnScroll = 0, 0
 	if len(u.arrivals) > 0 {
+		u.wnList, u.wnUpdates = u.arrivals, false
 		u.modal = modalWhatsNew
 	}
 }
@@ -326,6 +332,11 @@ func (u *UI) Animating() bool {
 // ---------- input ----------
 
 func (u *UI) Key(k int) {
+	u.key(k)
+	u.maybeShowUpdates()
+}
+
+func (u *UI) key(k int) {
 	if k == BtnMenu && u.modal != modalBusy {
 		u.quit = true
 		return
@@ -413,7 +424,7 @@ func (u *UI) keyList(k int) {
 }
 
 func (u *UI) keyWhatsNew(k int) {
-	n := len(u.arrivals)
+	n := len(u.wnList)
 	switch k {
 	case BtnUp:
 		if n > 0 {
@@ -429,12 +440,16 @@ func (u *UI) keyWhatsNew(k int) {
 		if n == 0 {
 			return
 		}
-		p := u.arrivals[u.wnSel]
-		u.tab = tabNew
+		p := u.wnList[u.wnSel]
+		tab := tabNew
+		if u.wnUpdates {
+			tab = tabOnCard
+		}
+		u.tab = tab
 		u.refilter()
 		for i, q := range u.visible {
 			if q == p {
-				u.sel[tabNew] = i
+				u.sel[tab] = i
 			}
 		}
 		u.openDetail(p)
@@ -1223,21 +1238,30 @@ func (u *UI) drawConfirm(c *Canvas) {
 // drawWhatsNew is the NEW ARRIVALS window: apps and ports added to the catalog
 // since the last visit.
 func (u *UI) drawWhatsNew(c *Canvas) {
-	n := len(u.arrivals)
+	n := len(u.wnList)
+	accent, title := colGreen, "NEW ARRIVALS"
+	if u.wnUpdates {
+		accent, title = colMagenta, "UPDATES READY"
+	}
 	rowH := u.fSmall.height + u.fTiny.height + u.px(14)
 	maxRows := max(1, (c.H*82/100-u.px(130))/rowH)
 	rows := min(n, maxRows)
 	w := c.W * 86 / 100
 	h := u.px(118) + rows*rowH
-	x, y := u.panel(c, w, h, colGreen)
+	x, y := u.panel(c, w, h, accent)
 
-	c.TextGlow(u.fBig, x+u.px(20), y+u.px(14), "NEW ARRIVALS", colGreen)
+	c.TextGlow(u.fBig, x+u.px(20), y+u.px(14), title, accent)
 	count := fmt.Sprintf("%02d", n)
-	c.TextRight(u.fLCDBig, x+w-u.px(20), y+u.px(8), count, colGreen)
+	c.TextRight(u.fLCDBig, x+w-u.px(20), y+u.px(8), count, accent)
 	sub := "ADDED SINCE YOUR LAST VISIT"
-	if n == 1 {
+	switch {
+	case u.wnUpdates && n == 1:
+		sub = "1 TAPE ON YOUR CARD HAS A NEW VERSION"
+	case u.wnUpdates:
+		sub = fmt.Sprintf("%d TAPES ON YOUR CARD HAVE NEW VERSIONS", n)
+	case n == 1:
 		sub = "1 NEW TAPE " + sub
-	} else {
+	default:
 		sub = fmt.Sprintf("%d NEW TAPES %s", n, sub)
 	}
 	c.Text(u.fTiny, x+u.px(20), y+u.px(44), sub, colCyan)
@@ -1257,10 +1281,10 @@ func (u *UI) drawWhatsNew(c *Canvas) {
 	lx, lw := x+u.px(16), w-u.px(32)
 	for i := 0; i < rows && u.wnScroll+i < n; i++ {
 		idx := u.wnScroll + i
-		p := u.arrivals[idx]
+		p := u.wnList[idx]
 		ry := ly + i*rowH
 		isSel := idx == u.wnSel
-		fg, dim, chip := colPaper, colPaperDim, colGreen
+		fg, dim, chip := colPaper, colPaperDim, accent
 		if isSel {
 			c.Fill(lx, ry, lw, rowH-u.px(4), colAmber)
 			c.Fill(lx, ry, u.px(4), rowH-u.px(4), colCyan)
@@ -1276,7 +1300,13 @@ func (u *UI) drawWhatsNew(c *Canvas) {
 		tx := lx + u.px(14)
 		c.Text(u.fSmall, tx, ry+u.px(4), u.fSmall.Ellipsize(p.Name, kx-tx-u.px(10)), fg)
 		info := "BY " + strings.ToUpper(strings.Join(p.Porter, ", "))
-		if p.Notes != "" {
+		if u.wnUpdates {
+			from := "?"
+			if m := u.manifests[p.Name]; m != nil {
+				from = m.Version
+			}
+			info = from + " → " + u.updates[p.Name]
+		} else if p.Notes != "" {
 			info += "  ·  " + p.Notes
 		}
 		c.Text(u.fTiny, tx, ry+u.px(6)+u.fSmall.height, u.fTiny.Ellipsize(info, lw-u.px(28)), dim)
@@ -1285,12 +1315,16 @@ func (u *UI) drawWhatsNew(c *Canvas) {
 		th := rows * rowH
 		c.Fill(x+w-u.px(10), ly, u.px(3), th, colGrid)
 		bh := max(u.px(12), th*rows/n)
-		c.Fill(x+w-u.px(10), ly+(th-bh)*u.wnScroll/max(1, n-rows), u.px(3), bh, colGreen)
+		c.Fill(x+w-u.px(10), ly+(th-bh)*u.wnScroll/max(1, n-rows), u.px(3), bh, accent)
 	}
 	by := y + h - u.px(30)
 	bx := c.Button(u.fTiny, x+u.px(20), by, "A", "OPEN", colAmber)
 	c.Button(u.fTiny, bx, by, "B", "CLOSE", colPaperDim)
-	c.TextRight(u.fTiny, x+w-u.px(20), by+u.px(1), "ALSO IN THE NEW TAB", colPaperDim)
+	hint := "ALSO IN THE NEW TAB"
+	if u.wnUpdates {
+		hint = "MARKED ▲UPD IN THE LIST"
+	}
+	c.TextRight(u.fTiny, x+w-u.px(20), by+u.px(1), hint, colPaperDim)
 }
 
 func (u *UI) drawBoot(c *Canvas) {
