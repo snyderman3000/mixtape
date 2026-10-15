@@ -3,8 +3,10 @@ package main
 // Desktop-only scene setup for rendering screenshots (-shot) without a device.
 
 import (
+	"fmt"
 	"image"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -117,10 +119,82 @@ func demoScene(u *UI, scene string) {
 		}
 		u.pendingUpd = list
 		u.maybeShowUpdates()
+	case "homebrew", "hbdetail", "hbsync", "hbdone", "hbfull":
+		demoHomebrew(u, scene)
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail
 		u.planErr[u.cur.Name] = "no network — turn Wi-Fi on in Settings → Network"
 		u.imgErr[u.cur.Image] = true
+	}
+}
+
+// demoHomebrew fills the HOMEBREW tab with a few Homebrew Hub entries.
+func demoHomebrew(u *UI, scene string) {
+	c := newHBCatalog()
+	day := time.Date(2026, 9, 19, 12, 0, 0, 0, time.UTC)
+	for i, d := range []struct{ slug, title, dev, file, kind, desc string }{
+		{"dreamnoid_starfall-advance", "Starfall Advance", "Dreamnoid", "files/StarfallAdvance_jam.gba", "game", "A monster-taming RPG made for GBA Jam 2026: explore, befriend creatures and battle your way across a fallen star."},
+		{"pyro-pyro_antibody", "Antibody", "Pyro_Pyro, exelotl", "files/Antibody.gba", "game", ""},
+		{"mtthgn_sun-rise", "Sun Rise", "mtthgn", "files/sun_rise.gba", "game", ""},
+		{"thedarknessuser_spelunky-gba", "Spelunky GBA", "thedarknessuser", "files/SPELUNKYGBA_jam.gba", "game", ""},
+		{"leanart_kuli", "Kuli", "leanart", "files/kuli_jam.gbc", "game", ""},
+		{"messiahm_civ-gb", "CivGB Demo", "MessiahM", "files/CivGB Demo.gbc", "demo", ""},
+		{"wrymouth_my-dvd-logo-daycare", "My DVD Logo Daycare!", "wrymouth", "files/dvd_logo.nes", "game", ""},
+		{"johnybot_kart-racer", "Kart Racer", "johnybot", "files/kart_racer.nes", "game", ""},
+		{"2048gb", "2048gb", "Sanqui", "2048.gb", "game", ""},
+		{"1d-marathon", "1D Marathon", "VL2M STUDIO", "1D_Marathon.gb", "game", ""},
+		{"tobu-tobu-girl", "Tobu Tobu Girl", "Tangram Games", "tobutobugirl.gb", "game", ""},
+		{"gb-240p", "240p Test Suite", "PinoBatch", "gb240p.gb", "tool", ""},
+		{"deadeus", "Deadeus", "IZMA", "deadeus.gb", "game", ""},
+		{"ucity", "µCity", "AntonioND", "ucity.gbc", "game", ""},
+	} {
+		e := &HBEntry{Slug: d.slug, Title: d.title, Devs: strings.Split(d.dev, ", "), File: d.file, Type: d.kind,
+			Desc: d.desc, Shots: []string{"cover.png", "1.png", "2.png"}, Added: day.Add(-time.Duration(i*i) * 24 * time.Hour).Unix(),
+			Tags: []string{"pixel art", "2d"}, Site: "https://itch.io"}
+		if d.kind == "tool" {
+			e.Desc = "Test patterns for checking your screen and controls."
+		}
+		c.bySlug[e.Slug] = e
+	}
+	c.sortEntries()
+	c.Synced = time.Now().Add(-2 * time.Minute)
+	u.hb = c
+	u.hbRecs["mtthgn_sun-rise"] = &HBRecord{Slug: "mtthgn_sun-rise", ROM: "Roms/GBA/Sun Rise.gba"}
+	u.tab = tabHomebrew
+	u.refilter()
+	switch scene {
+	case "homebrew":
+		u.seekUntil = time.Now().Add(time.Second)
+	case "hbfull": // a full list, with the NEW tab showing too
+		for i := 0; i < 1607; i++ {
+			e := &HBEntry{Slug: fmt.Sprint("x", i), Title: fmt.Sprint("Homebrew ", i), File: "x.gb", Added: day.Add(-time.Duration(30+i) * 24 * time.Hour).Unix()}
+			c.bySlug[e.Slug] = e
+		}
+		c.sortEntries()
+		u.refilter()
+		u.fresh = map[*Port]int64{u.cat.Ports[0]: time.Now().Unix(), u.cat.Ports[1]: time.Now().Unix()}
+		u.sel[tabHomebrew] = 1203
+	case "hbsync":
+		u.hb = newHBCatalog()
+		u.refilter()
+		u.hbSyncing = true
+		u.hbProg = HBProgress{Full: true, Page: 58, Pages: 163}
+	case "hbdetail", "hbdone":
+		u.openHBDetail(u.hbVis[0])
+		if path := os.Getenv("MIXTAPE_DEMO_IMG"); path != "" {
+			if f, err := os.Open(path); err == nil {
+				img, _, err := image.Decode(f)
+				f.Close()
+				if err == nil {
+					w, h := u.shotBox()
+					u.imgs[u.hbShotURL()] = fit(img, w, h)
+				}
+			}
+		}
+		u.imgBusy = map[string]bool{}
+		if scene == "hbdone" {
+			u.message("TRACK LOADED", colCyan, "Saved to Roms/GBA/Starfall Advance.gba. Find it in Games → Game Boy Advance.\n\nIts cover was added as box art.")
+		}
 	}
 }

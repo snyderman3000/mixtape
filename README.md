@@ -1,6 +1,6 @@
 # MIXTAPE
 
-**A community port deck for OnionOS on the Miyoo Mini Plus.** Browse the community-made apps and game ports for your handheld, then install, update and remove them over Wi-Fi without taking the SD card out.
+**A community port deck for OnionOS on the Miyoo Mini Plus.** Browse the community-made apps and game ports for your handheld, plus over 1,600 homebrew games for the Game Boy, Game Boy Color, Game Boy Advance and NES, then install, update and remove them over Wi-Fi without taking the SD card out.
 
 > 🤖 **Built by Claude.** Mixtape was designed and written by [Claude](https://claude.ai), Anthropic's AI model, at the request of [@snyderman3000](https://github.com/snyderman3000). He came up with the idea, chose the direction and tested it on real hardware. Claude wrote the code, the documentation and the artwork. Please report bugs through [Issues](https://github.com/snyderman3000/mixtape/issues).
 
@@ -9,11 +9,13 @@
 | ![Track list](docs/list.png) | ![Port details](docs/detail.png) |
 | ![Apps tab](docs/apps.png) | ![Installing](docs/busy.png) |
 | ![New arrivals](docs/whatsnew.png) | ![NEW tab](docs/newtab.png) |
+| ![Homebrew tab](docs/homebrew.png) | ![Homebrew details](docs/hbdetail.png) |
 
 ## Features
 
 - **The whole community catalog.** Mixtape reads the live [MiyooMini-Ports](https://github.com/Producdevity/MiyooMini-Ports) catalog maintained by Producdevity, so new ports appear without a Mixtape update. If you're offline it uses the last catalog it downloaded, or a copy built into the app. A few projects not in that catalog yet (such as [Panel Attack](https://github.com/snyderman3000/panelattack-miyoo)) are listed from Mixtape's own [`catalog/extra.json`](catalog/extra.json). If a project is in both, it's shown once, using the community catalog's entry with any install hints from `extra.json`.
 - **Porters' own catalogs.** Porters who host their downloads on their own site can publish a small catalog file, and Mixtape lists their games next to everything else, with updates. The list lives in [`catalog/sources.json`](catalog/sources.json), so new catalogs appear without a Mixtape update. First on it: [Miyoo64](https://github.com/mr-finster/miyoo64) by mr-finster (nine native N64 ports). See [Publishing your own catalog](#publishing-your-own-catalog).
+- **Homebrew from Homebrew Hub.** The **HOMEBREW** tab lists the Game Boy, Game Boy Color, Game Boy Advance and NES homebrew archived on [Homebrew Hub](https://hh.gbdev.io), the collection behind [gbdev.io](https://gbdev.io), [gbadev.org](https://gbadev.org) and [nesdev.org](https://www.nesdev.org). Newest additions are at the top, and X switches between systems. Installing saves the ROM straight into OnionOS's folder for that system (`Roms/GBA`, `Roms/GBC`, `Roms/GB` or `Roms/FC`), names it after the game and adds its cover as box art. The list is read live from Homebrew Hub's [public API](https://github.com/gbdev/homebrewhub/blob/main/API.md); nothing from it is built into Mixtape. The first visit downloads the whole list in the background (about a minute) and keeps a copy on the card; after that, Mixtape only asks for what's new. ROM hacks of commercial games aren't listed.
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **What's new.** When you open Mixtape and apps or ports have been added to the catalog since your last visit, a **NEW ARRIVALS** window lists them. Press A to open one, or B to close the window. They also stay in a **NEW** tab for 14 days, newest first. On the very first visit nothing is announced. Mixtape remembers what it has shown in `data/seen.json`.
 - **Updates.** When you open Mixtape, it checks what it installed in the background. If anything has a new version, an **UPDATES READY** window lists it (each new version is announced once), and it's marked **▲UPD** in the list. Press Y to check again at any time. Updates keep settings files you've edited.
@@ -36,10 +38,10 @@ Requires OnionOS 4.2 or newer. Wi-Fi features need a Miyoo Mini Plus or Mini Fli
 | Button | Action |
 |---|---|
 | D-pad ↑ ↓ | Move · ← → page up/down |
-| L1 / R1 | Switch tab: All · Apps · Games · On card · New (while there are new arrivals) |
+| L1 / R1 | Switch tab: All · Apps · Games · Homebrew · On card · New (while there are new arrivals) |
 | A | Open / install / update |
-| X | Erase (only things Mixtape installed) |
-| Y | Check for updates (list) · re-check release (details) |
+| X | Erase (only things Mixtape installed) · in the Homebrew list: switch system (All · GBA · GBC · GB · NES) |
+| Y | Check for updates (list) · re-check release (details) · in Homebrew: sync with Homebrew Hub (list), next screenshot (details) |
 | SELECT | Update Mixtape itself |
 | B | Back / exit · MENU exits anywhere |
 
@@ -54,6 +56,7 @@ List markers: **●** installed by Mixtape · **○** found on the card (install
 - `extra_url`: point Mixtape at a different extra-ports list (default: this repo's `catalog/extra.json`).
 - `sources`: more porters' catalogs to read, as a list of `https://` addresses. They're added to the published list in [`catalog/sources.json`](catalog/sources.json).
 - `sources_url`: point Mixtape at a different list of porters' catalogs.
+- `homebrew_api`: point Mixtape at a different Homebrew Hub API (default `https://hh3.gbdev.io/api`).
 
 `App/Mixtape/data/recipes.json` (optional) overrides the built-in install hints in [`assets/recipes.json`](assets/recipes.json).
 
@@ -69,6 +72,9 @@ Logs are written to `App/Mixtape/data/mixtape.log`.
 | `catalog.go` | Loads the MiyooMini-Ports catalog, the extra ports in `catalog/extra.json` and porters' own catalogs (`sources`), with cache and built-in fallback |
 | `github.go` | Release lookup and choosing the right download (prefers OnionOS builds) |
 | `install.go` | Download, archive layout detection, safe extraction, install records, erase |
+| `homebrew.go` | Reads Homebrew Hub's API and keeps the on-card copy (`data/homebrew.json`) up to date |
+| `hbinstall.go` | Installs homebrew ROMs and box art into OnionOS's system folders, with records for Erase |
+| `hbui.go` | The HOMEBREW tab and its details screen |
 | `assets/recipes.json` | Per-project hints for the few projects that need them |
 
 **For app and port authors: cleanup on Erase.** If your package changes anything outside its own folder (a system library, a setting in OnionOS), include a script named `mixtape-uninstall.sh` anywhere in it. Before erasing, Mixtape runs it with `sh` from the script's own folder, with `MIXTAPE_UNINSTALL=1` and `SDCARD` (the card root) set, and allows it 30 seconds. If it fails, Mixtape still erases the files and shows the script's last output. [MiniAmp](https://github.com/snyderman3000/miniamp) uses this to restore OnionOS's sound library.

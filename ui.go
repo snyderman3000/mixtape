@@ -17,6 +17,7 @@ const (
 	scrBoot screen = iota
 	scrList
 	scrDetail
+	scrHBDetail
 )
 
 type modalKind int
@@ -29,10 +30,11 @@ const (
 	modalWhatsNew
 )
 
-var tabNames = []string{"ALL", "APPS", "GAMES", "ON CARD", "NEW"}
+var tabNames = []string{"ALL", "APPS", "GAMES", "HOMEBREW", "ON CARD", "NEW"}
 
-const tabNew = 4 // only shown while something is fresh (see whatsnew.go)
-const tabOnCard = 3
+const tabHomebrew = 3 // Homebrew Hub (see hbui.go)
+const tabOnCard = 4
+const tabNew = 5 // only shown while something is fresh (see whatsnew.go)
 
 type UI struct {
 	env  *Env
@@ -44,8 +46,8 @@ type UI struct {
 	scr     screen
 	cat     *Catalog
 	tab     int
-	sel     [5]int
-	scroll  [5]int
+	sel     [6]int
+	scroll  [6]int
 	visible []*Port
 
 	cur        *Port
@@ -88,6 +90,8 @@ type UI struct {
 	selfChecking bool
 	msgDone      func()
 
+	hbUI
+
 	frame int
 	quit  bool
 	post  chan func()
@@ -102,6 +106,7 @@ func NewUI(env *Env, w, h int) *UI {
 		plans: map[string]*Plan{}, planErr: map[string]string{}, planBusy: map[string]bool{},
 		imgs: map[string]*image.RGBA{}, imgErr: map[string]bool{}, imgBusy: map[string]bool{},
 		updates: map[string]string{}, manifests: map[string]*Manifest{}, onCard: map[string]string{}}
+	u.hbUI = newHBUI()
 	u.fLogo = loadFont(titleTTF, 23*s)
 	u.fBig = loadFont(titleTTF, 21*s)
 	u.fBody = loadFont(bodyTTF, 18*s)
@@ -120,8 +125,12 @@ func (u *UI) Start() {
 	go func() {
 		prev := previousCatalog(u.env) // before LoadCatalog refreshes the saved copies
 		cat := LoadCatalog(u.env)
+		hb := LoadHomebrew(u.env)
 		u.post <- func() {
 			u.cat = cat
+			u.setHomebrew(hb.Copy())
+			u.hbWork = hb // Y in the HOMEBREW tab can sync even if the ports catalog was offline
+			u.hbRecs = u.env.HBRecords()
 			u.scanCard()
 			u.noteNews(time.Now(), prev)
 			u.scr = scrList
@@ -131,6 +140,7 @@ func (u *UI) Start() {
 			} else {
 				u.checkSelf(false)
 				u.autoCheckUpdates()
+				u.syncHomebrew(hb)
 			}
 		}
 	}()
@@ -261,6 +271,10 @@ func (u *UI) installed(p *Port) bool {
 
 func (u *UI) refilter() {
 	u.visible = u.visible[:0]
+	if u.tab == tabHomebrew {
+		u.refilterHB()
+		return
+	}
 	if u.cat == nil {
 		return
 	}
@@ -274,7 +288,7 @@ func (u *UI) refilter() {
 			if p.IsApp() {
 				continue
 			}
-		case 3:
+		case tabOnCard:
 			if !u.installed(p) {
 				continue
 			}
@@ -297,13 +311,16 @@ func (u *UI) refilter() {
 }
 
 func (u *UI) tabCount(t int) int {
+	if t == tabHomebrew {
+		return len(u.hb.Entries)
+	}
 	if u.cat == nil {
 		return 0
 	}
 	n := 0
 	for _, p := range u.cat.Ports {
 		switch {
-		case t == 0, t == 1 && p.IsApp(), t == 2 && !p.IsApp(), t == 3 && u.installed(p), t == tabNew && u.fresh[p] > 0:
+		case t == 0, t == 1 && p.IsApp(), t == 2 && !p.IsApp(), t == tabOnCard && u.installed(p), t == tabNew && u.fresh[p] > 0:
 			n++
 		}
 	}
@@ -326,7 +343,7 @@ func (u *UI) Animating() bool {
 	return u.scr == scrBoot || u.modal == modalBusy || time.Now().Before(u.seekUntil) ||
 		(u.toast != "" && time.Now().Before(u.toastUntil.Add(100*time.Millisecond))) ||
 		(u.cur != nil && u.scr == scrDetail && (u.planBusy[u.cur.Name] || u.imgBusy[u.cur.Image])) ||
-		u.checking != ""
+		u.checking != "" || u.hbAnimating()
 }
 
 // ---------- input ----------
@@ -373,11 +390,15 @@ func (u *UI) key(k int) {
 		u.checkSelf(true)
 		return
 	}
-	switch u.scr {
-	case scrList:
+	switch {
+	case u.scr == scrList && u.tab == tabHomebrew:
+		u.keyHBList(k)
+	case u.scr == scrList:
 		u.keyList(k)
-	case scrDetail:
+	case u.scr == scrDetail:
 		u.keyDetail(k)
+	case u.scr == scrHBDetail:
+		u.keyHBDetail(k)
 	}
 }
 
@@ -536,8 +557,9 @@ func (u *UI) fetchPlan(p *Port, force bool) {
 	}()
 }
 
-func (u *UI) fetchImage(p *Port) {
-	url := p.Image
+func (u *UI) fetchImage(p *Port) { u.fetchImageURL(p.Image) }
+
+func (u *UI) fetchImageURL(url string) {
 	if url == "" || u.imgs[url] != nil || u.imgBusy[url] {
 		return
 	}
@@ -692,7 +714,14 @@ func (u *UI) Draw(c *Canvas) {
 		u.drawBoot(c)
 	case scrList:
 		u.drawHeader(c)
-		u.drawList(c)
+		if u.tab == tabHomebrew {
+			u.drawHBList(c)
+		} else {
+			u.drawList(c)
+		}
+	case scrHBDetail:
+		u.drawHeader(c)
+		u.drawHBDetail(c)
 	case scrDetail:
 		u.drawHeader(c)
 		u.drawDetail(c)
@@ -807,12 +836,35 @@ func (u *UI) drawTabs(c *Canvas) {
 	y := u.headerH() + u.px(14)
 	x := u.px(12)
 	x = c.Chip(u.fTiny, x, y+u.px(2), "L1", colAmberDim, false) + u.px(2)
-	for i, t := range tabNames[:u.tabsShown()] {
-		label := fmt.Sprintf("%s %02d", t, u.tabCount(i))
-		pad := u.px(10)
-		if u.tabsShown() > tabNew {
-			pad = u.px(7) // five tabs: a little tighter so they fit
+	// Fit the tabs: tighter padding first, then counts only on the current tab,
+	// then no counts at all.
+	shown := tabNames[:u.tabsShown()]
+	room := c.W - x - u.fTiny.Width("R1") - u.px(26)
+	var labels []string
+	pad, gap := u.px(10), u.px(6)
+	for level := 0; level < 4; level++ {
+		labels = labels[:0]
+		total := 0
+		for i, t := range shown {
+			label := t
+			if level < 2 || (level == 2 && i == u.tab) {
+				label = fmt.Sprintf("%s %02d", t, u.tabCount(i))
+			}
+			labels = append(labels, label)
+			total += u.fSmall.Width(label)
 		}
+		switch level {
+		case 1, 2:
+			pad = u.px(7)
+		case 3:
+			pad, gap = u.px(5), u.px(4)
+		}
+		if total+len(shown)*(2*pad+gap) <= room {
+			break
+		}
+	}
+	for i := range shown {
+		label := labels[i]
 		w := u.fSmall.Width(label) + 2*pad
 		h := u.fSmall.height + u.px(8)
 		fill, edge := colAmber, colGrid
@@ -831,7 +883,7 @@ func (u *UI) drawTabs(c *Canvas) {
 			c.Border(x, y, w, h, 1, edge)
 			c.Text(u.fSmall, x+pad, y+u.px(4), label, fg)
 		}
-		x += w + u.px(6)
+		x += w + gap
 	}
 	c.Chip(u.fTiny, x+u.px(2), y+u.px(2), "R1", colAmberDim, false)
 }
@@ -856,7 +908,7 @@ func (u *UI) drawList(c *Canvas) {
 	c.Corners(u.px(8), top-u.px(4), lw-u.px(8), rows*rh+u.px(8), u.px(10), colAmberDim)
 	if n == 0 {
 		msg := "NO TAPES HERE"
-		if u.tab == 3 {
+		if u.tab == tabOnCard {
 			msg = "NOTHING ON THE CARD YET"
 		}
 		c.TextCenter(u.fBody, (lw+u.px(8))/2, top+u.px(60), msg, colPaperDim)
@@ -1337,7 +1389,7 @@ func (u *UI) drawBoot(c *Canvas) {
 	c.Cassette(cx-cw/2, c.H/2-u.px(40), cw, u.px(120), "SIDE A", "COMMUNITY PORTS VOL.1", u.angle(), float64(u.frame%80)/80, u.fBody, u.fTiny)
 	msg := "LOADING CATALOG" + strings.Repeat(".", u.frame/4%4)
 	c.Text(u.fSmall, cx-u.fSmall.Width("LOADING CATALOG...")/2, c.H/2+u.px(100), msg, colAmber)
-	c.TextCenter(u.fTiny, cx, c.H-u.px(26), "CATALOG: MIYOOMINI-PORTS BY PRODUCDEVITY  ·  v"+version, colPaperDim)
+	c.TextCenter(u.fTiny, cx, c.H-u.px(26), "CATALOGS: MIYOOMINI-PORTS · HOMEBREW HUB  ·  v"+version, colPaperDim)
 }
 
 // ---------- device status ----------

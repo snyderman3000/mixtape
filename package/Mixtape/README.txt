@@ -10,10 +10,12 @@ INSTALL
 
 CONTROLS
   D-pad up/down .... move          Left/right ... page up/down
-  L1 / R1 .......... switch tab (All / Apps / Games / On card)
+  L1 / R1 .......... switch tab (All / Apps / Games / Homebrew / On card)
   A ................ open / install / update
   X ................ erase (only things Mixtape installed)
+                     Homebrew list: switch system (All/GBA/GBC/GB/NES)
   Y ................ check for updates (list) / rescan release (detail)
+                     Homebrew: sync (list) / next screenshot (detail)
   SELECT ........... update Mixtape itself (it also checks at startup)
   B ................ back / exit        MENU ... exit
 
@@ -23,6 +25,13 @@ WHERE THE LIST COMES FROM
   Mixtape downloads each project's newest GitHub release, works out
   where it goes (App/, Roms/PORTS, ...), and installs it. If you're
   offline it uses the last catalog it saw (or the built-in copy).
+
+  The HOMEBREW tab lists Game Boy, Game Boy Color, Game Boy Advance
+  and NES homebrew from Homebrew Hub (https://hh.gbdev.io), read live
+  from its public API. The first visit downloads the whole list in the
+  background (about a minute); later visits only fetch what's new.
+  Installing saves the ROM into Roms/GBA, Roms/GBC, Roms/GB or Roms/FC
+  with its cover as box art. Erase removes it again; saves are kept.
 
 MARKERS
   ●  installed by Mixtape         ○  found on the card (installed by hand)
@@ -41,6 +50,7 @@ SETTINGS  (App/Mixtape/data/config.json)
   github_token  optional personal access token (no scopes needed). GitHub
                 allows 60 release lookups per hour without one.
   catalog_url   use a different ports.json
+  homebrew_api  use a different Homebrew Hub API address
   data/recipes.json  per-repo install overrides (same format as built-in).
 
 LOGS: App/Mixtape/data/mixtape.log

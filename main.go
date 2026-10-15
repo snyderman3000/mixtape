@@ -12,15 +12,16 @@ import (
 	"time"
 )
 
-const version = "0.1.8"
+const version = "0.1.9"
 const userAgent = "Mixtape/" + version + " (OnionOS community port browser)"
 
 type Config struct {
 	CatalogURL  string   `json:"catalog_url"`
 	GitHubToken string   `json:"github_token"`
 	ExtraURL    string   `json:"extra_url,omitempty"`
-	Sources     []string `json:"sources,omitempty"`     // extra porters' catalogs, added to the published list
-	SourcesURL  string   `json:"sources_url,omitempty"` // a different published list of catalogs
+	Sources     []string `json:"sources,omitempty"`      // extra porters' catalogs, added to the published list
+	SourcesURL  string   `json:"sources_url,omitempty"`  // a different published list of catalogs
+	HomebrewAPI string   `json:"homebrew_api,omitempty"` // a different Homebrew Hub API address
 }
 
 type Env struct {
