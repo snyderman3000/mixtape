@@ -258,6 +258,27 @@
           "caches/*"
         ]
       }
+    },
+    {
+      "name": "Space Shooter",
+      "categories": [
+        "arcade"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/Miyoo-SpaceShooter/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/Miyoo-SpaceShooter/main/docs/cover.png",
+      "notes": "Original 60-second polygon space shooter in the Starfox style. Shoot the cyan drones and gold cubes, dodge asteroids, pylons and beams, and survive the minute for a bonus. A to fire, D-pad to fly, L/R to bank. Music toggles with SELECT. Built by Claude for snyderman3000.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
     }
   ]
 }
