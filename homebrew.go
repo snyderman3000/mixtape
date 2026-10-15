@@ -19,6 +19,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -47,6 +48,7 @@ type HBEntry struct {
 	Repo     string   `json:"repo,omitempty"`
 	Desc     string   `json:"desc,omitempty"`
 	Added    int64    `json:"added,omitempty"` // unix time it joined Homebrew Hub
+	Base     string   `json:"base,omitempty"`  // the database it's in, e.g. database-gba (part of its file addresses)
 }
 
 // hbSystem is where a ROM goes in OnionOS.
@@ -128,6 +130,7 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 		Repository  json.RawMessage `json:"repository"`
 		Description json.RawMessage `json:"description"`
 		FirstAdded  string          `json:"firstadded_date"`
+		Basepath    string          `json:"basepath"`
 		NSFW        json.RawMessage `json:"nsfw"`
 	}
 	if json.Unmarshal(raw, &d) != nil || d.Slug == "" {
@@ -138,14 +141,23 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 	}
 	var files []struct {
 		Default  bool   `json:"default"`
-		Playable bool   `json:"playable"`
+		Playable *bool  `json:"playable"`
 		Filename string `json:"filename"`
 	}
 	_ = json.Unmarshal(d.Files, &files)
+	// Like Homebrew Hub's own site: playable files, or every file when none
+	// is marked playable; the default one first.
+	anyPlayable := false
+	for _, f := range files {
+		if f.Playable != nil && *f.Playable {
+			anyPlayable = true
+		}
+	}
 	file := ""
-	for _, pass := range []bool{true, false} { // the default file first, then any playable one
+	for _, pass := range []bool{true, false} {
 		for _, f := range files {
-			if !f.Playable || (pass && !f.Default) || !safeEntryPath(f.Filename) {
+			playable := !anyPlayable || (f.Playable != nil && *f.Playable)
+			if !playable || (pass && !f.Default) || !safeEntryPath(f.Filename) {
 				continue
 			}
 			if _, ok := hbSystemFor(f.Filename); ok {
@@ -179,6 +191,11 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 	if e.Platform == "" {
 		e.Platform = e.SysLabel()
 	}
+	if baseRE.MatchString(d.Basepath) {
+		e.Base = d.Basepath
+	} else {
+		e.Base = guessBase(e)
+	}
 	for _, s := range jsonNames(d.Screenshots) {
 		if safeEntryPath(s) && len(e.Shots) < 8 {
 			e.Shots = append(e.Shots, s)
@@ -188,6 +205,20 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 		e.Added = t.Unix()
 	}
 	return e, true
+}
+
+var baseRE = regexp.MustCompile(`^[A-Za-z0-9._-]+$`)
+
+// guessBase is the database an entry most likely comes from, for entries
+// saved before Mixtape kept it.
+func guessBase(e *HBEntry) string {
+	switch e.SysLabel() {
+	case "GBA":
+		return "database-gba"
+	case "NES":
+		return "database-nes"
+	}
+	return "database-gb"
 }
 
 // safeEntryPath accepts a relative file path inside an entry ("files/game.gba").
@@ -321,6 +352,12 @@ func LoadHomebrew(env *Env) *HBCatalog {
 	c.state = f.State
 	for _, e := range f.Entries {
 		if e != nil && e.Slug != "" {
+			if e.Base == "" {
+				// Saved by the first test build, which didn't keep the
+				// database name: guess it now and fetch the list again.
+				e.Base = guessBase(e)
+				c.state.Complete, c.state.NextPage, c.state.Pass = false, 1, nil
+			}
 			c.bySlug[e.Slug] = e
 		}
 	}
@@ -412,13 +449,20 @@ func (env *Env) hbAPI() string {
 	return defaultHomebrewAPI
 }
 
-// hbFileURL is where Homebrew Hub serves one of an entry's files.
-func (env *Env) hbFileURL(slug, file string) string {
+// hbFileURL is where Homebrew Hub serves one of an entry's files (ROMs and
+// screenshots): <host>/static/<database>/entries/<slug>/<file>, the same
+// address Homebrew Hub's own site uses.
+func (env *Env) hbFileURL(e *HBEntry, file string) string {
+	host := strings.TrimSuffix(env.hbAPI(), "/api")
+	base := e.Base
+	if base == "" {
+		base = guessBase(e)
+	}
 	parts := strings.Split(file, "/")
 	for i, p := range parts {
 		parts[i] = url.PathEscape(p)
 	}
-	return env.hbAPI() + "/entry/" + url.PathEscape(slug) + "/" + strings.Join(parts, "/")
+	return host + "/static/" + url.PathEscape(base) + "/entries/" + url.PathEscape(e.Slug) + "/" + strings.Join(parts, "/")
 }
 
 type hbPage struct {

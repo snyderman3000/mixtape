@@ -27,7 +27,7 @@ import (
 type fakeHH struct {
 	mu      sync.Mutex
 	entries []map[string]any
-	files   map[string][]byte // "/entry/<slug>/<file>"
+	files   map[string][]byte // "/static/<database>/entries/<slug>/<file>"
 	fail    int               // fail requests after this many (0 = never)
 	calls   int
 	rng     *rand.Rand
@@ -40,7 +40,7 @@ func newFakeHH() *fakeHH {
 func (f *fakeHH) add(slug, title, platform, file string, added time.Time, extra map[string]any) {
 	e := map[string]any{"slug": slug, "title": title, "platform": platform, "typetag": "game",
 		"developer": "Dev " + slug, "files": []map[string]any{{"default": true, "playable": true, "filename": file}},
-		"screenshots": []string{"cover.png"}, "firstadded_date": added.UTC().Format(time.RFC3339)}
+		"screenshots": []string{"cover.png"}, "firstadded_date": added.UTC().Format(time.RFC3339), "basepath": "database-test"}
 	for k, v := range extra {
 		e[k] = v
 	}
@@ -246,8 +246,8 @@ func TestInstallHB(t *testing.T) {
 	f := newFakeHH()
 	env, _ := hhEnv(t, f)
 	rom := bytes.Repeat([]byte{0xAA}, 4096)
-	f.files["/entry/sun-rise/files/sun rise.gba"] = rom // the server sees the decoded path
-	f.files["/entry/sun-rise/cover.png"] = pngBytes(80, 60)
+	f.files["/static/database-gba/entries/sun-rise/files/sun rise.gba"] = rom // the server sees the decoded path
+	f.files["/static/database-gba/entries/sun-rise/cover.png"] = pngBytes(80, 60)
 	e := &HBEntry{Slug: "sun-rise", Title: "Sun Rise: Deluxe?", Platform: "GBA", File: "files/sun rise.gba", Shots: []string{"cover.png"}}
 	// Onion's cached game list must be dropped so the new game shows up.
 	os.WriteFile(filepath.Join(env.SDRoot, "Roms/GBA/GBA_cache6.db"), []byte("x"), 0o644)
@@ -284,14 +284,14 @@ func TestInstallHB(t *testing.T) {
 	}
 
 	// A different entry with the same title doesn't replace it.
-	f.files["/entry/sun-rise-2/files/x.gba"] = rom
+	f.files["/static/database-gba/entries/sun-rise-2/files/x.gba"] = rom
 	e2 := &HBEntry{Slug: "sun-rise-2", Title: "Sun Rise: Deluxe?", File: "files/x.gba"}
 	if res3, err := env.InstallHB(context.Background(), e2, func(Progress) {}); err != nil || res3.ROM != "Roms/GBA/Sun Rise Deluxe (2).gba" {
 		t.Fatalf("name clash: %v %v", res3, err)
 	}
 
 	// A web page instead of a ROM is refused.
-	f.files["/entry/bad/b.gb"] = []byte("<!DOCTYPE html><html>nope</html>" + strings.Repeat(" ", 64))
+	f.files["/static/database-gb/entries/bad/b.gb"] = []byte("<!DOCTYPE html><html>nope</html>" + strings.Repeat(" ", 64))
 	if _, err := env.InstallHB(context.Background(), &HBEntry{Slug: "bad", Title: "Bad", File: "b.gb"}, func(Progress) {}); err == nil {
 		t.Fatal("html accepted as a ROM")
 	}
@@ -300,7 +300,7 @@ func TestInstallHB(t *testing.T) {
 	}
 
 	// NES: goes to Roms/FC; the emulator is missing, so there's a note.
-	f.files["/entry/n/n.nes"] = append([]byte("NES\x1a"), rom...)
+	f.files["/static/database-nes/entries/n/n.nes"] = append([]byte("NES\x1a"), rom...)
 	resN, err := env.InstallHB(context.Background(), &HBEntry{Slug: "n", Title: "Nessy", File: "n.nes"}, func(Progress) {})
 	if err != nil || resN.ROM != "Roms/FC/Nessy.nes" || len(resN.Notes) != 1 {
 		t.Fatalf("nes: %+v %v", resN, err)
@@ -359,8 +359,8 @@ func TestHomebrewTab(t *testing.T) {
 		}
 		slug := fmt.Sprintf("hb-%02d", i)
 		f.add(slug, fmt.Sprintf("Homebrew %d", i), plat, file, base.Add(time.Duration(i)*time.Minute), nil)
-		f.files["/entry/"+slug+"/files/"+strings.TrimPrefix(file, "files/")] = bytes.Repeat([]byte{1}, 256)
-		f.files["/entry/"+slug+"/cover.png"] = pngBytes(160, 120)
+		f.files["/static/database-test/entries/"+slug+"/files/"+strings.TrimPrefix(file, "files/")] = bytes.Repeat([]byte{1}, 256)
+		f.files["/static/database-test/entries/"+slug+"/cover.png"] = pngBytes(160, 120)
 	}
 	env := fx.env
 	env.Config.HomebrewAPI = srv.URL
@@ -448,5 +448,35 @@ func TestHomebrewTab(t *testing.T) {
 	u.Key(BtnR1)
 	if u.tab == tabHomebrew {
 		t.Fatal("R1 should leave the tab")
+	}
+}
+
+func TestHBFileURL(t *testing.T) {
+	env := &Env{}
+	e, ok := parseHHEntry(json.RawMessage(`{"slug":"messiahm_civ-gb","title":"CivGB","platform":"GBC","basepath":"database-gb","files":[{"default":true,"playable":true,"filename":"files/CivGB Demo.gbc"}],"screenshots":["cover.png"]}`))
+	if !ok {
+		t.Fatal("not parsed")
+	}
+	want := "https://hh3.gbdev.io/static/database-gb/entries/messiahm_civ-gb/files/CivGB%20Demo.gbc"
+	if got := env.hbFileURL(e, e.File); got != want {
+		t.Fatalf("got %s\nwant %s", got, want)
+	}
+	// Entries saved without a database name: guessed from the system.
+	old := &HBEntry{Slug: "antibody", File: "files/Antibody.gba"}
+	if got := env.hbFileURL(old, "cover.png"); got != "https://hh3.gbdev.io/static/database-gba/entries/antibody/cover.png" {
+		t.Fatal(got)
+	}
+	// No file marked playable: any file will do, like on Homebrew Hub's site.
+	if e, ok := parseHHEntry(json.RawMessage(`{"slug":"x","files":[{"filename":"x.gb"}]}`)); !ok || e.File != "x.gb" {
+		t.Fatal("files without 'playable' skipped")
+	}
+}
+
+func TestHBOldCacheResyncs(t *testing.T) {
+	env := &Env{DataDir: t.TempDir()}
+	writeFileAtomic(hbCachePath(env), []byte(`{"state":{"complete":true,"full_at":1},"entries":[{"slug":"a","title":"A","file":"a.gba"}]}`))
+	c := LoadHomebrew(env)
+	if c.state.Complete || c.bySlug["a"].Base != "database-gba" {
+		t.Fatalf("old cache: complete=%v base=%q", c.state.Complete, c.bySlug["a"].Base)
 	}
 }

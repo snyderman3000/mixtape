@@ -200,7 +200,7 @@ func (u *UI) hbShotURL() string {
 	if e == nil || len(e.Shots) == 0 {
 		return ""
 	}
-	return u.env.hbFileURL(e.Slug, e.Shots[u.hbShot%len(e.Shots)])
+	return u.env.hbFileURL(e, e.Shots[u.hbShot%len(e.Shots)])
 }
 
 func (u *UI) keyHBDetail(k int) {

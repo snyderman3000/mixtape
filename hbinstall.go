@@ -134,7 +134,7 @@ func (env *Env) InstallHB(ctx context.Context, e *HBEntry, prog func(Progress)) 
 	defer os.RemoveAll(dlDir)
 	tmp := filepath.Join(dlDir, "rom"+sys.Ext)
 	name := path.Base(e.File)
-	err := env.download(ctx, env.hbFileURL(e.Slug, e.File), tmp, func(n, t int64) {
+	err := env.download(ctx, env.hbFileURL(e, e.File), tmp, func(n, t int64) {
 		prog(Progress{Phase: "DOWNLOADING", Done: n, Total: t, File: name})
 	})
 	if err != nil {
@@ -162,7 +162,7 @@ func (env *Env) InstallHB(ctx context.Context, e *HBEntry, prog func(Progress)) 
 	ours := old != nil && old.Art == art
 	if len(e.Shots) > 0 && (artErr != nil || ours) {
 		prog(Progress{Phase: "LABELLING", File: name})
-		if err := env.saveBoxArt(ctx, env.hbFileURL(e.Slug, e.Shots[0]), env.safeDest(art)); err == nil {
+		if err := env.saveBoxArt(ctx, env.hbFileURL(e, e.Shots[0]), env.safeDest(art)); err == nil {
 			rec.Art = art
 			res.Art = true
 		}
