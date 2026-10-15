@@ -1,0 +1,47 @@
+{
+    "name": "Mixtape",
+    "author": "Claude for snyderman3000",
+    "description": "Amber phosphor, scanlines and tape stripes, to match the Mixtape app",
+    "hideLabels": {
+        "icons": false,
+        "hints": false
+    },
+    "batteryPercentage": {
+        "visible": true,
+        "font": "VT323.ttf",
+        "size": 20,
+        "color": "#FFB000",
+        "textAlign": "center",
+        "fixed": false,
+        "offsetX": 0,
+        "offsetY": 0
+    },
+    "title": {
+        "font": "Orbitron.ttf",
+        "size": 26,
+        "color": "#FFB000"
+    },
+    "hint": {
+        "font": "ShareTechMono.ttf",
+        "size": 26,
+        "color": "#8C887C"
+    },
+    "currentpage": {
+        "color": "#FFB000"
+    },
+    "total": {
+        "color": "#8C887C"
+    },
+    "grid": {
+        "font": "ShareTechMono.ttf",
+        "grid1x4": 24,
+        "grid3x4": 18,
+        "color": "#8C887C",
+        "selectedcolor": "#FFB000"
+    },
+    "list": {
+        "font": "ShareTechMono.ttf",
+        "size": 24,
+        "color": "#E8E2D0"
+    }
+}

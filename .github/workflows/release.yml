@@ -65,6 +65,9 @@ jobs:
           TAG: ${{ steps.check.outputs.tag }}
         run: |
           ZIP="dist/Mixtape-${TAG}-OnionOS.zip"
+          THEME="dist/Mixtape-Theme-${TAG}.zip"
           test -f "$ZIP"
-          gh release create "$TAG" "$ZIP" --target "$GITHUB_SHA" \
+          FILES="$ZIP"
+          if [ -f "$THEME" ]; then FILES="$ZIP $THEME"; fi
+          gh release create "$TAG" $FILES --target "$GITHUB_SHA" \
             --title "Mixtape $TAG" --notes-file "docs/releases/$TAG.md"

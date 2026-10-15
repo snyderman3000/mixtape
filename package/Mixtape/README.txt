@@ -16,7 +16,8 @@ CONTROLS
                      Homebrew list: switch system (All/GBA/GBC/GB/NES)
   Y ................ check for updates (list) / rescan release (detail)
                      Homebrew: sync (list) / next screenshot (detail)
-  SELECT ........... update Mixtape itself (it also checks at startup)
+  SELECT ........... Mixtape menu: update Mixtape (it also checks at
+                     startup), Mixtape in Games list (to add it to Favorites)
   B ................ back / exit        MENU ... exit
 
 WHERE THE LIST COMES FROM

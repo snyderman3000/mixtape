@@ -90,7 +90,11 @@ func TestSelfUpdateFlowThroughUI(t *testing.T) {
 		}
 	}
 	pump(200 * time.Millisecond)
-	u.Key(BtnSelect)
+	u.Key(BtnSelect) // the MIXTAPE menu
+	if u.modal != modalMenu {
+		t.Fatalf("expected the menu, modal=%v", u.modal)
+	}
+	u.Key(BtnA) // CHECK FOR A NEW MIXTAPE
 	pump(300 * time.Millisecond)
 	if u.modal != modalConfirm {
 		t.Fatalf("expected confirm, modal=%v toast=%q msg=%v", u.modal, u.toast, u.msgBody)
@@ -138,5 +142,18 @@ func TestForcedReleaseCheckDoesNotUseStaleCache(t *testing.T) {
 	}
 	if _, err := env.SelfUpdatePlan(true); err == nil {
 		t.Fatal("SELECT check hid a failed lookup behind the cached list")
+	}
+}
+
+// The theme zip in a release must never be picked as Mixtape's own update.
+func TestSelfUpdateSkipsThemeZip(t *testing.T) {
+	env := &Env{DataDir: t.TempDir()}
+	rel := Release{Tag: "v9.0.0", Assets: []Asset{
+		{Name: "Mixtape-Theme-v9.0.0.zip", URL: "t"},
+		{Name: "Mixtape-v9.0.0-OnionOS.zip", URL: "a"},
+	}}
+	files, _ := PickAssets(rel, env.selfPort().Recipe)
+	if len(files) != 1 || files[0].URL != "a" {
+		t.Fatalf("picked %v", files)
 	}
 }

@@ -28,6 +28,7 @@ const (
 	modalMsg
 	modalConfirm
 	modalWhatsNew
+	modalMenu
 )
 
 var tabNames = []string{"ALL", "APPS", "GAMES", "HOMEBREW", "ON CARD", "NEW"}
@@ -86,6 +87,8 @@ type UI struct {
 	wnSel      int
 	wnScroll   int
 
+	menuSel      int
+	gamesOn      bool
 	selfNew      *Plan
 	selfChecking bool
 	msgDone      func()
@@ -385,9 +388,12 @@ func (u *UI) key(k int) {
 	case modalWhatsNew:
 		u.keyWhatsNew(k)
 		return
+	case modalMenu:
+		u.keyMenu(k)
+		return
 	}
 	if k == BtnSelect && u.scr != scrBoot {
-		u.checkSelf(true)
+		u.openMenu()
 		return
 	}
 	switch {
@@ -735,6 +741,8 @@ func (u *UI) Draw(c *Canvas) {
 		u.drawConfirm(c)
 	case modalWhatsNew:
 		u.drawWhatsNew(c)
+	case modalMenu:
+		u.drawMenu(c)
 	}
 	if u.toast != "" && time.Now().Before(u.toastUntil) {
 		w := u.fSmall.Width(u.toast) + u.px(24)

@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-const version = "0.1.9"
+const version = "0.1.10"
 const userAgent = "Mixtape/" + version + " (OnionOS community port browser)"
 
 type Config struct {

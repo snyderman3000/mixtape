@@ -121,6 +121,12 @@ func demoScene(u *UI, scene string) {
 		u.maybeShowUpdates()
 	case "homebrew", "hbdetail", "hbsync", "hbdone", "hbfull":
 		demoHomebrew(u, scene)
+	case "menu", "menu-update":
+		if scene == "menu-update" {
+			u.selfNew = &Plan{Version: "v0.2.0"}
+		}
+		u.openMenu()
+		u.menuSel = 1
 	case "offline-detail":
 		u.cur = find("Moonlight")
 		u.scr = scrDetail

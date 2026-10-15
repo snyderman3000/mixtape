@@ -19,7 +19,9 @@
 - **One-button installs.** It downloads each project's newest GitHub release, detects where the files belong (`App/`, `Roms/PORTS`, and so on) and installs them. Projects without releases are installed from their repository.
 - **What's new.** When you open Mixtape and apps or ports have been added to the catalog since your last visit, a **NEW ARRIVALS** window lists them. Press A to open one, or B to close the window. They also stay in a **NEW** tab for 14 days, newest first. On the very first visit nothing is announced. Mixtape remembers what it has shown in `data/seen.json`.
 - **Updates.** When you open Mixtape, it checks what it installed in the background. If anything has a new version, an **UPDATES READY** window lists it (each new version is announced once), and it's marked **▲UPD** in the list. Press Y to check again at any time. Updates keep settings files you've edited.
-- **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT to install it; your settings are kept and Mixtape restarts.
+- **Updates itself.** Mixtape checks its own GitHub releases at startup and shows **▲ READY · SELECT** in the header when there's a new version. Press SELECT and choose **Update Mixtape**; your settings are kept and Mixtape restarts.
+- **Mixtape in Games (optional).** In the SELECT menu, **Mixtape in Games list** adds Mixtape to OnionOS's Games list as its own system. From there you can add it to Favorites, so it's on the home screen instead of deep in Apps. It's off until you turn it on, and turning it off removes everything it added (`Emu/MIXTAPE` and `Roms/MIXTAPE`).
+- **A matching OnionOS theme.** `Mixtape-Theme-vX.Y.Z.zip` in each release reskins OnionOS in the same amber-phosphor style: main menu, lists, dialogs, toggles, the boot and power screens and a tape-reel charging animation. See [OnionOS theme](#onionos-theme).
 - **Clean removal.** Erase deletes only the files Mixtape recorded when installing, and refreshes the Ports list for you. If the app ships a cleanup script (see below), Erase runs it first.
 - **Safe by design.** Nothing is written outside the SD card, and Onion's own system files are never replaced.
 - **Bring-your-own-files games are marked.** Ports like Balatro, Fallout and Half-Life need your own legally purchased game data. Mixtape tags them **BYO** and shows where the files go. It never downloads commercial game data.
@@ -42,10 +44,20 @@ Requires OnionOS 4.2 or newer. Wi-Fi features need a Miyoo Mini Plus or Mini Fli
 | A | Open / install / update |
 | X | Erase (only things Mixtape installed) · in the Homebrew list: switch system (All · GBA · GBC · GB · NES) |
 | Y | Check for updates (list) · re-check release (details) · in Homebrew: sync with Homebrew Hub (list), next screenshot (details) |
-| SELECT | Update Mixtape itself |
+| SELECT | Mixtape menu: update Mixtape itself, Mixtape in Games list |
 | B | Back / exit · MENU exits anywhere |
 
 List markers: **●** installed by Mixtape · **○** found on the card (installed by hand) · **▲UPD** update available · **NEW** added to the catalog in the last 14 days · **BYO** bring your own game files · **PC** must be installed from a computer (for example, `.7z` releases).
+
+## OnionOS theme
+
+![Mixtape theme](theme/Mixtape/preview.png)
+
+1. Download `Mixtape-Theme-vX.Y.Z.zip` from [Releases](https://github.com/snyderman3000/mixtape/releases).
+2. Extract it and copy the `Themes` folder to the root of your SD card, merging it with the one already there.
+3. Open **Apps → Theme Switcher** and pick **Mixtape**.
+
+The theme keeps OnionOS's own layout and changes how it looks. It doesn't include system icons, so your current icon pack stays. Every image is drawn by [`theme/generate.py`](theme/generate.py) (Python with Pillow); run it again after changing the palette or artwork.
 
 ## Settings
 
@@ -75,6 +87,8 @@ Logs are written to `App/Mixtape/data/mixtape.log`.
 | `homebrew.go` | Reads Homebrew Hub's API and keeps the on-card copy (`data/homebrew.json`) up to date |
 | `hbinstall.go` | Installs homebrew ROMs and box art into OnionOS's system folders, with records for Erase |
 | `hbui.go` | The HOMEBREW tab and its details screen |
+| `menu.go`, `launcher.go` | The SELECT menu and the optional Mixtape entry in Games |
+| `theme/generate.py` | Draws the OnionOS theme in `theme/Mixtape` |
 | `assets/recipes.json` | Per-project hints for the few projects that need them |
 
 **For app and port authors: cleanup on Erase.** If your package changes anything outside its own folder (a system library, a setting in OnionOS), include a script named `mixtape-uninstall.sh` anywhere in it. Before erasing, Mixtape runs it with `sh` from the script's own folder, with `MIXTAPE_UNINSTALL=1` and `SDCARD` (the card root) set, and allows it 30 seconds. If it fails, Mixtape still erases the files and shows the script's last output. [MiniAmp](https://github.com/snyderman3000/miniamp) uses this to restore OnionOS's sound library.
