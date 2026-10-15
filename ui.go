@@ -89,6 +89,7 @@ type UI struct {
 
 	menuSel      int
 	gamesOn      bool
+	themeSt      ThemeState
 	selfNew      *Plan
 	selfChecking bool
 	msgDone      func()

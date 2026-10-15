@@ -23,7 +23,8 @@ import (
 
 // fakeHH imitates Homebrew Hub's /search route: pages of 10, newest first by
 // default (entries sharing a timestamp come back in a different order on every
-// request, as the real API does), or by slug with order_by=slug.
+// request, as the real API does), or by slug with sort=slug. Page size comes
+// from "results" (default 10), like the real one.
 type fakeHH struct {
 	mu      sync.Mutex
 	entries []map[string]any
@@ -66,7 +67,16 @@ func (f *fakeHH) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	list := append([]map[string]any{}, f.entries...)
-	if r.URL.Query().Get("order_by") == "slug" {
+	q := r.URL.Query()
+	if q.Get("order_by") != "" || (q.Get("sort") != "" && q.Get("sort") != "slug" && q.Get("sort") != "firstadded_date") {
+		http.Error(w, "unexpected parameters", 400) // the docs' names; the API ignores them
+		return
+	}
+	size := 10
+	if n, err := strconv.Atoi(q.Get("results")); err == nil && n > 0 {
+		size = n
+	}
+	if q.Get("sort") == "slug" {
 		sort.Slice(list, func(i, j int) bool { return list[i]["slug"].(string) < list[j]["slug"].(string) })
 	} else {
 		f.rng.Shuffle(len(list), func(i, j int) { list[i], list[j] = list[j], list[i] })
@@ -74,7 +84,7 @@ func (f *fakeHH) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return list[i]["firstadded_date"].(string) > list[j]["firstadded_date"].(string)
 		})
 	}
-	total := (len(list) + 9) / 10
+	total := (len(list) + size - 1) / size
 	page, _ := strconv.Atoi(r.URL.Query().Get("page"))
 	if page < 1 {
 		page = 1
@@ -82,12 +92,12 @@ func (f *fakeHH) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if page > total {
 		page = total
 	}
-	lo, hi := (page-1)*10, min(page*10, len(list))
+	lo, hi := (page-1)*size, min(page*size, len(list))
 	if lo > hi {
 		lo = hi
 	}
 	json.NewEncoder(w).Encode(map[string]any{"results": len(list), "page_total": total, "page_current": page,
-		"page_elements": 10, "sort": "firstadded_date", "order": "desc", "entries": list[lo:hi]})
+		"page_elements": hi - lo, "sort": "firstadded_date", "order": "desc", "entries": list[lo:hi]})
 }
 
 func hhEnv(t *testing.T, f *fakeHH) (*Env, *httptest.Server) {
@@ -158,7 +168,7 @@ func TestHomebrewSync(t *testing.T) {
 	c := LoadHomebrew(env)
 	var pages int
 	added, err := env.SyncHomebrew(c, now, func(p HBProgress) { pages = p.Page })
-	if err != nil || added != 96 || len(c.Entries) != 95 || pages != 10 || !c.state.Complete {
+	if err != nil || added != 96 || len(c.Entries) != 95 || pages != 2 || !c.state.Complete {
 		t.Fatalf("full sync: added=%d entries=%d pages=%d complete=%v err=%v", added, len(c.Entries), pages, c.state.Complete, err)
 	}
 	if c.Entries[0].Added < c.Entries[len(c.Entries)-1].Added {
@@ -214,19 +224,19 @@ func TestHomebrewSyncResumes(t *testing.T) {
 		f.add(fmt.Sprintf("g-%03d", i), fmt.Sprintf("G %d", i), "GB", "g.gb", base, nil)
 	}
 	env, _ := hhEnv(t, f)
-	f.fail = 12 // the connection drops after 12 pages
+	f.fail = 3 // the connection drops after 3 pages of 50
 	c := LoadHomebrew(env)
 	if _, err := env.SyncHomebrew(c, base, nil); err == nil {
 		t.Fatal("expected an error")
 	}
 	got := len(LoadHomebrew(env).Entries)
-	if got != 120 {
-		t.Fatalf("saved %d entries before the error, want 120", got)
+	if got != 150 {
+		t.Fatalf("saved %d entries before the error, want 150", got)
 	}
-	// Mixtape reopens: it carries on from page 13.
+	// Mixtape reopens: it carries on from page 4.
 	f.fail, f.calls = 0, 0
 	c = LoadHomebrew(env)
-	if _, err := env.SyncHomebrew(c, base, nil); err != nil || len(c.Entries) != 250 || f.calls != 13 {
+	if _, err := env.SyncHomebrew(c, base, nil); err != nil || len(c.Entries) != 250 || f.calls != 2 {
 		t.Fatalf("resume: entries=%d calls=%d err=%v", len(c.Entries), f.calls, err)
 	}
 }
@@ -478,5 +488,17 @@ func TestHBOldCacheResyncs(t *testing.T) {
 	c := LoadHomebrew(env)
 	if c.state.Complete || c.bySlug["a"].Base != "database-gba" {
 		t.Fatalf("old cache: complete=%v base=%q", c.state.Complete, c.bySlug["a"].Base)
+	}
+}
+
+func TestParseReleaseDate(t *testing.T) {
+	want := time.Date(2016, 1, 29, 0, 0, 0, 0, time.UTC).Unix()
+	for _, in := range []string{`"2016-01-29"`, `"01-29-2016"`, `"2016/01/29"`, `"20160129"`, `"2016-1-29"`, `"2016-01-29T00:00:00"`, `1454025600`} {
+		if got := parseReleaseDate(json.RawMessage(in)); got != want {
+			t.Errorf("%s: got %d", in, got)
+		}
+	}
+	if parseReleaseDate(json.RawMessage(`"2011"`)) == 0 || parseReleaseDate(json.RawMessage(`"soon"`)) != 0 || parseReleaseDate(nil) != 0 {
+		t.Error("year-only / unreadable")
 	}
 }

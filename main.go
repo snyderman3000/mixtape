@@ -25,15 +25,16 @@ type Config struct {
 }
 
 type Env struct {
-	SDRoot     string
-	AppDir     string
-	DataDir    string
-	Config     Config
-	HTTP       *http.Client
-	Offline    bool
-	LastNetErr error
-	APIBase    string // overridable for tests
-	dirCache   map[string][]string
+	SDRoot       string
+	AppDir       string
+	DataDir      string
+	Config       Config
+	HTTP         *http.Client
+	Offline      bool
+	LastNetErr   error
+	APIBase      string // overridable for tests
+	SystemConfig string // OnionOS's /appconfigs/system.json (overridable for tests)
+	dirCache     map[string][]string
 }
 
 func newEnv() *Env {

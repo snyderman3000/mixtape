@@ -6,8 +6,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"hash/fnv"
 	"image/color"
 	"math"
+	"sort"
 	"strings"
 	"time"
 )
@@ -17,6 +19,8 @@ type hbUI struct {
 	hbWork   *HBCatalog
 	hbVis    []*HBEntry
 	hbFilter int
+	hbSort   int
+	hbSeed   uint32 // shuffle order, new each time SHUFFLE is picked
 	hbRecs   map[string]*HBRecord
 	hbCur    *HBEntry
 	hbShot   int
@@ -50,20 +54,49 @@ func (u *UI) setHomebrew(c *HBCatalog) {
 	}
 }
 
+// Sort orders for the HOMEBREW tab (Y cycles through them). Homebrew Hub
+// keeps no download counts or ratings, so there's no "most popular".
+var hbSorts = []string{"NEWEST", "A–Z", "RELEASED", "SHUFFLE"}
+
 func (u *UI) refilterHB() {
 	u.hbVis = u.hbVis[:0]
 	want := hbFilters[u.hbFilter]
-	for _, e := range u.hb.Entries {
+	for _, e := range u.hb.Entries { // already newest first
 		if want == "ALL" || e.SysLabel() == want {
 			u.hbVis = append(u.hbVis, e)
 		}
 	}
+	sortHB(u.hbVis, hbSorts[u.hbSort], u.hbSeed)
 	t := tabHomebrew
 	if u.sel[t] >= len(u.hbVis) {
 		u.sel[t] = len(u.hbVis) - 1
 	}
 	if u.sel[t] < 0 {
 		u.sel[t] = 0
+	}
+}
+
+// sortHB orders a list that starts out newest first.
+func sortHB(list []*HBEntry, mode string, seed uint32) {
+	title := func(e *HBEntry) string { return strings.ToLower(strings.TrimLeft(e.Title, " .-_'\"[(")) }
+	switch mode {
+	case "A–Z":
+		sort.SliceStable(list, func(i, j int) bool { return title(list[i]) < title(list[j]) })
+	case "RELEASED": // newest release first; entries without a date after the rest
+		sort.SliceStable(list, func(i, j int) bool {
+			a, b := list[i].Released, list[j].Released
+			if (a == 0) != (b == 0) {
+				return a != 0
+			}
+			return a > b
+		})
+	case "SHUFFLE":
+		key := func(e *HBEntry) uint32 {
+			h := fnv.New32a()
+			h.Write([]byte(e.Slug))
+			return h.Sum32() ^ seed*2654435761
+		}
+		sort.SliceStable(list, func(i, j int) bool { return key(list[i]) < key(list[j]) })
 	}
 }
 
@@ -171,19 +204,30 @@ func (u *UI) keyHBList(k int) {
 			u.openHBDetail(e)
 		}
 	case BtnY:
-		switch {
-		case u.hbSyncing:
-			u.showToast("ALREADY SYNCING WITH HOMEBREW HUB")
-		case u.env.Offline || u.hbWork == nil:
-			u.showToast("OFFLINE — TURN ON WI-FI AND REOPEN MIXTAPE")
-		case !wifiUp() && u.env.SDRoot == "/mnt/SDCARD":
-			u.showToast("WI-FI IS OFF — TURN IT ON IN SETTINGS → NETWORK")
-		default:
-			u.showToast("SYNCING WITH HOMEBREW HUB" + "…")
-			u.syncHomebrew(u.hbWork)
+		u.hbSort = (u.hbSort + 1) % len(hbSorts)
+		if hbSorts[u.hbSort] == "SHUFFLE" {
+			u.hbSeed = uint32(time.Now().UnixNano())
 		}
+		u.sel[t], u.scroll[t] = 0, 0
+		u.refilterHB()
+		u.seekUntil = time.Now().Add(450 * time.Millisecond)
 	case BtnB:
 		u.quit = true
+	}
+}
+
+// startHBSync is the SELECT menu's "Sync Homebrew Hub".
+func (u *UI) startHBSync() {
+	switch {
+	case u.hbSyncing:
+		u.showToast("ALREADY SYNCING WITH HOMEBREW HUB")
+	case u.env.Offline || u.hbWork == nil:
+		u.showToast("OFFLINE — TURN ON WI-FI AND REOPEN MIXTAPE")
+	case !wifiUp() && u.env.SDRoot == "/mnt/SDCARD":
+		u.showToast("WI-FI IS OFF — TURN IT ON IN SETTINGS → NETWORK")
+	default:
+		u.showToast("SYNCING WITH HOMEBREW HUB" + "…")
+		u.syncHomebrew(u.hbWork)
 	}
 }
 
@@ -350,7 +394,7 @@ func (u *UI) drawHBList(c *Canvas) {
 		case len(u.hb.Entries) == 0 && (u.env.Offline || u.hbErr != ""):
 			msg, sub = "HOMEBREW HUB IS OUT OF RANGE", "TURN ON WI-FI AND REOPEN MIXTAPE"
 		case len(u.hb.Entries) == 0:
-			msg, sub = "NOTHING LOADED YET", "Y TO SYNC WITH HOMEBREW HUB"
+			msg, sub = "NOTHING LOADED YET", "SELECT → SYNC HOMEBREW HUB"
 		}
 		c.TextCenter(u.fBody, (lw+u.px(8))/2, top+u.px(60), msg, colPaperDim)
 		c.TextCenter(u.fTiny, (lw+u.px(8))/2, top+u.px(90), sub, colAmberDim)
@@ -415,7 +459,9 @@ func (u *UI) drawHBList(c *Canvas) {
 		}
 		kv("SYSTEM", e.System().Label, sysColor(e.SysLabel()))
 		kv("TYPE", e.Kind(), colPaper)
-		if e.Added > 0 {
+		if e.Released > 0 && hbSorts[u.hbSort] == "RELEASED" {
+			kv("RELEASED", time.Unix(e.Released, 0).UTC().Format("2006-01-02"), colPaper)
+		} else if e.Added > 0 {
 			kv("ADDED", time.Unix(e.Added, 0).Format("2006-01-02"), colPaper)
 		}
 		if r := u.hbRecs[e.Slug]; r != nil {
@@ -439,7 +485,7 @@ func (u *UI) drawHBList(c *Canvas) {
 			y += u.fTiny.height + u.px(1)
 		}
 	}
-	u.footer(c, [][2]string{{"A", "PLAY"}, {"B", "EXIT"}, {"X", "SYS: " + hbFilters[u.hbFilter]}, {"Y", "SYNC"}}, u.hbStatusLine())
+	u.footer(c, [][2]string{{"A", "PLAY"}, {"B", "EXIT"}, {"X", "SYS: " + hbFilters[u.hbFilter]}, {"Y", "SORT: " + hbSorts[u.hbSort]}}, u.hbStatusLine())
 }
 
 func (u *UI) drawHBDetail(c *Canvas) {
@@ -502,7 +548,9 @@ func (u *UI) drawHBDetail(c *Canvas) {
 		ry += u.fSmall.height + u.px(3)
 	}
 	kv("SOURCE", "HOMEBREW HUB", colPaper)
-	if e.Added > 0 {
+	if e.Released > 0 {
+		kv("RELEASED", time.Unix(e.Released, 0).UTC().Format("2006-01-02"), colPaper)
+	} else if e.Added > 0 {
 		kv("ADDED", time.Unix(e.Added, 0).Format("2006-01-02"), colPaper)
 	}
 	if e.License != "" {

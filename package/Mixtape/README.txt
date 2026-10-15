@@ -15,9 +15,11 @@ CONTROLS
   X ................ erase (only things Mixtape installed)
                      Homebrew list: switch system (All/GBA/GBC/GB/NES)
   Y ................ check for updates (list) / rescan release (detail)
-                     Homebrew: sync (list) / next screenshot (detail)
+                     Homebrew: change the order (list) / next screenshot (detail)
   SELECT ........... Mixtape menu: update Mixtape (it also checks at
-                     startup), Mixtape in Games list (to add it to Favorites)
+                     startup), install/update/remove the Mixtape theme,
+                     Mixtape in Games list (to add it to Favorites),
+                     sync Homebrew Hub
   B ................ back / exit        MENU ... exit
 
 WHERE THE LIST COMES FROM
@@ -30,7 +32,7 @@ WHERE THE LIST COMES FROM
   The HOMEBREW tab lists Game Boy, Game Boy Color, Game Boy Advance
   and NES homebrew from Homebrew Hub (https://hh.gbdev.io), read live
   from its public API. The first visit downloads the whole list in the
-  background (about a minute); later visits only fetch what's new.
+  background; later visits only fetch what's new.
   Installing saves the ROM into Roms/GBA, Roms/GBC, Roms/GB or Roms/FC
   with its cover as box art. Erase removes it again; saves are kept.
 

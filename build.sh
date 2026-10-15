@@ -9,6 +9,9 @@ CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build -trimpath -ldflags="-s -w" 
 rm -rf dist && mkdir -p dist/stage/App
 cp -r package/Mixtape dist/stage/App/
 rm -rf dist/stage/App/Mixtape/data
+# Mixtape carries the theme, so its SELECT menu can install it (theme.go).
+mkdir -p dist/stage/App/Mixtape/theme
+cp -r theme/Mixtape dist/stage/App/Mixtape/theme/
 (cd dist/stage && zip -qr "../Mixtape-v$VERSION-OnionOS.zip" App)
 rm -rf dist/stage
 # The OnionOS theme (theme/Mixtape, drawn by theme/generate.py). Its name

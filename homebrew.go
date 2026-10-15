@@ -21,6 +21,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -47,8 +48,9 @@ type HBEntry struct {
 	Site     string   `json:"site,omitempty"`
 	Repo     string   `json:"repo,omitempty"`
 	Desc     string   `json:"desc,omitempty"`
-	Added    int64    `json:"added,omitempty"` // unix time it joined Homebrew Hub
-	Base     string   `json:"base,omitempty"`  // the database it's in, e.g. database-gba (part of its file addresses)
+	Added    int64    `json:"added,omitempty"`    // unix time it joined Homebrew Hub
+	Base     string   `json:"base,omitempty"`     // the database it's in, e.g. database-gba (part of its file addresses)
+	Released int64    `json:"released,omitempty"` // its own release date, when the entry gives one
 }
 
 // hbSystem is where a ROM goes in OnionOS.
@@ -131,6 +133,7 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 		Description json.RawMessage `json:"description"`
 		FirstAdded  string          `json:"firstadded_date"`
 		Basepath    string          `json:"basepath"`
+		Date        json.RawMessage `json:"date"`
 		NSFW        json.RawMessage `json:"nsfw"`
 	}
 	if json.Unmarshal(raw, &d) != nil || d.Slug == "" {
@@ -204,7 +207,39 @@ func parseHHEntry(raw json.RawMessage) (e *HBEntry, ok bool) {
 	if t, err := time.Parse(time.RFC3339, d.FirstAdded); err == nil {
 		e.Added = t.Unix()
 	}
+	e.Released = parseReleaseDate(d.Date)
 	return e, true
+}
+
+// parseReleaseDate reads the free-form "date" field entries use: 2020-05-11,
+// 2023-05-20T20:05:00, 2001-11, 2011, 01-29-2016, 2020/05/11, 20250308 or a
+// unix timestamp. 0 when there's none or it can't be read.
+func parseReleaseDate(raw json.RawMessage) int64 {
+	if len(raw) == 0 {
+		return 0
+	}
+	var num float64
+	if json.Unmarshal(raw, &num) == nil {
+		if num > 1e8 && num < 1e10 {
+			return int64(num)
+		}
+		raw, _ = json.Marshal(fmt.Sprint(int64(num)))
+	}
+	var s string
+	if json.Unmarshal(raw, &s) != nil {
+		return 0
+	}
+	s = strings.TrimSpace(s)
+	if n, err := strconv.ParseInt(s, 10, 64); err == nil && n > 1e8 && n < 1e10 && len(s) == 10 {
+		return n
+	}
+	for _, layout := range []string{time.RFC3339, "2006-01-02T15:04:05", "2006-01-02", "2006-1-2", "2006/01/02",
+		"01-02-2006", "01/02/2006", "20060102", "2006-01", "2006"} {
+		if t, err := time.Parse(layout, s); err == nil && t.Year() >= 1989 && t.Year() <= 2100 {
+			return t.Unix()
+		}
+	}
+	return 0
 }
 
 var baseRE = regexp.MustCompile(`^[A-Za-z0-9._-]+$`)
@@ -317,7 +352,13 @@ type hbState struct {
 	Offset int `json:"offset,omitempty"`
 }
 
+// hbCacheFormat changes when older on-card copies need fetching again in full.
+// 2: copies made by v0.1.9 may have missed entries (its full pass wasn't in a
+// stable order), and lack release dates.
+const hbCacheFormat = 2
+
 type hbCacheFile struct {
+	Format  int        `json:"format"`
 	State   hbState    `json:"state"`
 	Entries []*HBEntry `json:"entries"`
 	Skipped []string   `json:"skipped,omitempty"` // slugs Mixtape doesn't list (counted for the check above)
@@ -350,6 +391,9 @@ func LoadHomebrew(env *Env) *HBCatalog {
 		return c
 	}
 	c.state = f.State
+	if f.Format < hbCacheFormat {
+		c.state.Complete, c.state.NextPage, c.state.Pass = false, 1, nil
+	}
 	for _, e := range f.Entries {
 		if e != nil && e.Slug != "" {
 			if e.Base == "" {
@@ -372,7 +416,7 @@ func LoadHomebrew(env *Env) *HBCatalog {
 }
 
 func (c *HBCatalog) save(env *Env) error {
-	f := hbCacheFile{State: c.state, Entries: c.Entries, Synced: c.Synced.Unix()}
+	f := hbCacheFile{Format: hbCacheFormat, State: c.state, Entries: c.Entries, Synced: c.Synced.Unix()}
 	if c.Synced.IsZero() {
 		f.Synced = 0
 	}
@@ -465,6 +509,15 @@ func (env *Env) hbFileURL(e *HBEntry, file string) string {
 	return host + "/static/" + url.PathEscape(base) + "/entries/" + url.PathEscape(e.Slug) + "/" + strings.Join(parts, "/")
 }
 
+// hbPageSize is how many entries to ask for per page. (The API's sort and
+// page-size parameters are "sort", "order" and "results", as in its source;
+// its written docs give other names, which it ignores.)
+const hbPageSize = "50"
+
+func hbNewest(page int) url.Values {
+	return url.Values{"sort": {"firstadded_date"}, "order": {"desc"}, "results": {hbPageSize}, "page": {fmt.Sprint(page)}}
+}
+
 type hbPage struct {
 	Results   int               `json:"results"`
 	PageTotal int               `json:"page_total"`
@@ -515,7 +568,7 @@ func (env *Env) SyncHomebrew(c *HBCatalog, now time.Time, prog func(HBProgress))
 	added := 0
 	// 1. Newest first, until we reach entries we already have.
 	if c.state.Complete {
-		first, err := env.hbSearch(url.Values{"page": {"1"}})
+		first, err := env.hbSearch(hbNewest(1))
 		if err != nil {
 			return 0, err
 		}
@@ -541,7 +594,7 @@ func (env *Env) SyncHomebrew(c *HBCatalog, now time.Time, prog func(HBProgress))
 			if !fresh || older || n >= page.PageTotal || n >= 30 || len(page.Entries) == 0 {
 				break
 			}
-			if page, err = env.hbSearch(url.Values{"page": {fmt.Sprint(n + 1)}}); err != nil {
+			if page, err = env.hbSearch(hbNewest(n + 1)); err != nil {
 				c.Synced = now
 				c.sortEntries()
 				_ = c.save(env)
@@ -567,7 +620,7 @@ func (env *Env) SyncHomebrew(c *HBCatalog, now time.Time, prog func(HBProgress))
 		}
 		for c.state.NextPage <= hbMaxPages {
 			n := c.state.NextPage
-			page, err := env.hbSearch(url.Values{"order_by": {"slug"}, "sort": {"asc"}, "page": {fmt.Sprint(n)}})
+			page, err := env.hbSearch(url.Values{"sort": {"slug"}, "order": {"asc"}, "results": {hbPageSize}, "page": {fmt.Sprint(n)}})
 			if err != nil {
 				c.state.Pass = keys(pass)
 				c.sortEntries()

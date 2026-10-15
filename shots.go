@@ -126,6 +126,7 @@ func demoScene(u *UI, scene string) {
 			u.selfNew = &Plan{Version: "v0.2.0"}
 		}
 		u.openMenu()
+		u.themeSt = ThemeState{Bundled: true}
 		u.menuSel = 1
 	case "offline-detail":
 		u.cur = find("Moonlight")
