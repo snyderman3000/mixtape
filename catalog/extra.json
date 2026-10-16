@@ -279,6 +279,20 @@
           "data/*"
         ]
       }
+    },
+    {
+      "name": "Plants vs. Zombies",
+      "categories": [
+        "strategy"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/Fnava1/pvz-portable-miyoo-/releases",
+      "image": "https://raw.githubusercontent.com/Fnava1/pvz-portable-miyoo-/8514c70545c2efe2c636f38dd8c96e3da40a7307/packaging/Roms/PORTS/Imgs/Plants%20vs.%20Zombies.png",
+      "notes": "Native port of Plants vs. Zombies GOTY from the PvZ-Portable decompilation, with grid D-pad controls and auto-collected sun. Needs main.pak from your own PC copy (Steam, EA App or Origin) in Roms/PORTS/Games/Plants vs. Zombies/. The first launch converts it for the Miyoo (the progress screen looks glitchy; let it finish). Not made or supported by PopCap or EA.",
+      "porter": [
+        "Fnava1"
+      ]
     }
   ]
 }
