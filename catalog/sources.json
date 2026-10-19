@@ -7,6 +7,13 @@
       "porter": "mr-finster",
       "homepage": "https://github.com/mr-finster/miyoo64",
       "added": "2026-10-12"
+    },
+    {
+      "name": "slop.kitchen",
+      "url": "https://slop.kitchen/mixtape/manifest.json",
+      "porter": "the LAST LIGHT authors",
+      "homepage": "https://lastlight.slop.kitchen",
+      "added": "2026-10-19"
     }
   ]
 }
