@@ -181,6 +181,28 @@
       ]
     },
     {
+      "name": "Gravity Circuit",
+      "categories": [
+        "platform"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/snyderman3000/gravitycircuit-onionOS/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/gravitycircuit-onionOS/main/docs/cover.png",
+      "notes": "Unofficial port of Gravity Circuit, the action platformer by Domesticated Ant Games. Mostly playable, with some frame rate drops. Needs your own copy: put GravityCircuit.exe (Windows version) or the GravityCircuit program from inside the Linux AppImage in Roms/PORTS/Games/GravityCircuit/. The first start copies the game out of it (a few minutes, about 700 MB free needed). Report bugs to the port's GitHub, not to Domesticated Ant Games.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "miyoo",
+        "keep": [
+          "data/*"
+        ],
+        "note": "Now copy GravityCircuit.exe (or the GravityCircuit program from the Linux AppImage) from your copy of the game into Roms/PORTS/Games/GravityCircuit/, then launch it from Games > Ports."
+      }
+    },
+    {
       "name": "Hexen II",
       "categories": [
         "fps"
