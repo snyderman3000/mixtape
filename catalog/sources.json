@@ -11,8 +11,8 @@
     {
       "name": "slop.kitchen",
       "url": "https://slop.kitchen/mixtape/manifest.json",
-      "porter": "the LAST LIGHT authors",
-      "homepage": "https://lastlight.slop.kitchen",
+      "porter": "slop.kitchen",
+      "homepage": "https://slop.kitchen",
       "added": "2026-10-19"
     }
   ]
