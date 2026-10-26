@@ -315,6 +315,20 @@
       "porter": [
         "Fnava1"
       ]
+    },
+    {
+      "name": "Risk of Rain",
+      "categories": [
+        "platform"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/Fnava1/risk-of-rain-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/Fnava1/risk-of-rain-miyoo/d146150507a0826427193d950104d5d7ae3cacd5/dist/Roms/PORTS/Imgs/Risk%20of%20Rain.png",
+      "notes": "Port of Risk of Rain (2013) on a custom Butterscotch GameMaker runtime, with 1.25x and 1.5x zoom (Audio and Video > Zoom Scale). Mostly smooth, dipping to about 40 FPS in busy fights. Needs data.win and all the .ogg files from your own Steam or GOG copy in Roms/PORTS/Games/Risk of Rain/. Not made or supported by Hopoo Games.",
+      "porter": [
+        "Fnava1"
+      ]
     }
   ]
 }
