@@ -128,10 +128,12 @@ func TestSourceListIsPublishedAndAdditive(t *testing.T) {
 	if got := strings.Join(env.sourceURLs(), " "); got != want {
 		t.Fatalf("cached list: %q", got)
 	}
-	// Nothing saved and offline: the built-in list (Miyoo64) plus the card's own.
+	// Nothing saved and offline: the built-in list (catalog/sources.json,
+	// Miyoo64 first) plus the card's own, last.
 	fresh := &Env{DataDir: t.TempDir(), Offline: true, Config: Config{Sources: []string{"https://mine.example/m.json"}}}
 	got := fresh.sourceURLs()
-	if len(got) != 2 || !strings.Contains(got[0], "miyoo-n64.pages.dev") || got[1] != "https://mine.example/m.json" {
+	builtIn, _ := parseSourceList(embeddedSources)
+	if len(got) != len(builtIn)+1 || !strings.Contains(got[0], "miyoo-n64.pages.dev") || got[len(got)-1] != "https://mine.example/m.json" {
 		t.Fatalf("built-in list: %v", got)
 	}
 }
