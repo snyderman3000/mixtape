@@ -128,6 +128,27 @@
       }
     },
     {
+      "name": "Cyberspace.miyoo",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/Cyberspace.miyoo/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/Cyberspace.miyoo/main/docs/feed.png",
+      "notes": "Client for cyberspace.online, the text-only social network, released with its developer's blessing: feed, topics, threaded replies, alerts and posting, plus C-Mail and cIRC chat with live updates. Three themes like the site. Needs a Cyberspace account with a verified email. Not made by Cyberspace: report bugs to its GitHub.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
       "name": "Mr. Rescue",
       "categories": [
         "platform"
