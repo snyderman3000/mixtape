@@ -350,6 +350,20 @@
       "porter": [
         "Fnava1"
       ]
+    },
+    {
+      "name": "Overclock",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/retroshelf64nmore/miyoo-overclock/releases",
+      "image": "https://raw.githubusercontent.com/retroshelf64nmore/miyoo-overclock/main/screenshots/main.png",
+      "notes": "Set the CPU clock for all systems or per system (DS and other standalone emulators too), with green/yellow/orange zones per model and one-step restore of your card's original clocks. New clocks apply the next time a game starts. Overclocking can cause crashes, save corruption and extra heat: use at your own risk. Report bugs to the app's GitHub.",
+      "porter": [
+        "retroshelf64nmore"
+      ]
     }
   ]
 }
