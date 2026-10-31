@@ -364,6 +364,23 @@
       "porter": [
         "retroshelf64nmore"
       ]
+    },
+    {
+      "name": "Kingdom: New Lands",
+      "categories": [
+        "strategy"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/devarshi16/kingdom-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/devarshi16/kingdom-miyoo/main/media/gameplay.gif",
+      "notes": "Native clean-room port of Kingdom: New Lands. Bring your own data: needs the Kingdom_Data folder from your own Steam, Epic or GOG copy, converted on a PC. Not made or supported by Noio or Raw Fury: report bugs to the port's GitHub.",
+      "porter": [
+        "devarshi16"
+      ],
+      "recipe": {
+        "manual": "Kingdom needs a PC step: clone github.com/devarshi16/kingdom-miyoo, run ./compile.sh with the path to your Kingdom_Data folder (Linux, macOS or WSL), then copy the Roms folder it builds to the SD card root and refresh Ports."
+      }
     }
   ]
 }
