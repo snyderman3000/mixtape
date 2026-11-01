@@ -149,6 +149,27 @@
       }
     },
     {
+      "name": "ROM Roulette",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/ROM-Roulette/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/ROM-Roulette/main/docs/idle.png",
+      "notes": "A slot machine for your ROM collection: pull the lever, stop the reel and play whatever it lands on. A game card shows box art, region, play counts and scraped descriptions before you launch. Spin all games, favorites, never-played or one system; keeps a played list and favorites. Games launch through OnionOS (Recents, GameSwitcher, Play Activity). Original 8-bit arcade sound effects, R2 to mute.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
       "name": "Mr. Rescue",
       "categories": [
         "platform"
