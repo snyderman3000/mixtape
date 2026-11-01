@@ -319,6 +319,20 @@ func TestPickAssets(t *testing.T) {
 			t.Errorf("%v → %q, want %q", c.rel.Assets, names(got), c.want)
 		}
 	}
+	// Better Favorites ships dependency source next to the app ZIP; the
+	// "miyoo" in sdl2-miyoo-<sha>.tar.gz must not outscore the real build.
+	bf := rel("better-favorites-1.0.0-rc.7.zip", "better-favorites-1.0.0-rc.7-source.tar.gz",
+		"sdl2-miyoo-3c68ed01fee7feffd4ea338b1cc5018a455e2be9.tar.gz", "zlib-1.2.11-source.tar.gz", "SHA256SUMS")
+	if got, _ := PickAssetsFor(bf, nil, "Architeg/miyoo-better-favorites"); names(got) != "better-favorites-1.0.0-rc.7.zip" {
+		t.Errorf("better favorites (repo-aware) → %q", names(got))
+	}
+	if got, _ := PickAssets(bf, nil); names(got) != "better-favorites-1.0.0-rc.7.zip" {
+		t.Errorf("better favorites (no repo) → %q", names(got))
+	}
+	recipes := loadRecipes(t.TempDir())
+	if got, _ := PickAssets(bf, recipes["architeg/miyoo-better-favorites"]); names(got) != "better-favorites-1.0.0-rc.7.zip" {
+		t.Errorf("better favorites (recipe) → %q", names(got))
+	}
 	if _, problem := PickAssets(rel("OpenRCT2mini-1.0.7z"), nil); !strings.Contains(problem, ".7z") {
 		t.Errorf("7z problem = %q", problem)
 	}

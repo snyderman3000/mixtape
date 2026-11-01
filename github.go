@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -131,7 +132,35 @@ var badAssetWords = []string{"portmaster", "muos", "muxapp", "allium", "spruce",
 	"anbernic", "rg35", "rg40", "x86_64", "x86-64", "amd64", "aarch64", "arm64", "windows", "win64", "macos",
 	"darwin", "source", "src", "debug", "symbols", "sha256", ".sig", ".asc", "arkos", "batocera", "garlic", "minui", "nextui"}
 
+// genericRepoWords are left out when matching asset names against the repo name.
+var genericRepoWords = map[string]bool{"miyoo": true, "mini": true, "plus": true, "mmp": true, "onion": true,
+	"onionos": true, "port": true, "ports": true, "app": true, "for": true, "the": true}
+
+// repoTokens splits "Architeg/miyoo-better-favorites" into its distinctive words: [better favorites].
+func repoTokens(repo string) []string {
+	if i := strings.LastIndexByte(repo, '/'); i >= 0 {
+		repo = repo[i+1:]
+	}
+	var out []string
+	for _, w := range nonAlnumRE.Split(strings.ToLower(repo), -1) {
+		if len(w) >= 2 && !genericRepoWords[w] {
+			out = append(out, w)
+		}
+	}
+	return out
+}
+
+var nonAlnumRE = regexp.MustCompile(`[^a-z0-9]+`)
+
+// A 40-character commit hash in a file name marks a pinned dependency source
+// bundle (e.g. sdl2-miyoo-<sha>.tar.gz), never the project's own build.
+var commitHashRE = regexp.MustCompile(`[0-9a-f]{40}`)
+
 func assetScore(name string, want string) int {
+	return assetScoreFor(name, want, nil)
+}
+
+func assetScoreFor(name string, want string, repoWords []string) int {
 	n := strings.ToLower(name)
 	if !(strings.HasSuffix(n, ".zip") || strings.HasSuffix(n, ".tar.gz") || strings.HasSuffix(n, ".tgz")) {
 		return -1000
@@ -161,11 +190,34 @@ func assetScore(name string, want string) int {
 	if strings.Contains(n, "app") {
 		s += 5
 	}
+	if commitHashRE.MatchString(n) {
+		s -= 100
+	}
+	// Files named after the project beat companions that only mention the device.
+	if len(repoWords) > 0 {
+		all := true
+		for _, w := range repoWords {
+			if !strings.Contains(n, w) {
+				all = false
+				break
+			}
+		}
+		if all {
+			s += 40
+		}
+	}
 	return s
 }
 
 // PickAssets chooses which release files to install.
 func PickAssets(rel Release, r *Recipe) ([]Asset, string) {
+	return PickAssetsFor(rel, r, "")
+}
+
+// PickAssetsFor is PickAssets with the GitHub owner/repo known, so files named
+// after the project win over source/dependency companions.
+func PickAssetsFor(rel Release, r *Recipe, repo string) ([]Asset, string) {
+	words := repoTokens(repo)
 	want := ""
 	all := false
 	if r != nil {
@@ -178,7 +230,7 @@ func PickAssets(rel Release, r *Recipe) ([]Asset, string) {
 		if strings.HasSuffix(strings.ToLower(a.Name), ".7z") {
 			has7z = true
 		}
-		sc := assetScore(a.Name, want)
+		sc := assetScoreFor(a.Name, want, words)
 		if all && sc > 0 {
 			picks = append(picks, a)
 		}
@@ -226,7 +278,7 @@ func (env *Env) PlanFor(p *Port, force bool) (*Plan, error) {
 		if rel.Draft {
 			continue
 		}
-		files, problem := PickAssets(rel, p.Recipe)
+		files, problem := PickAssetsFor(rel, p.Recipe, p.Repo)
 		if len(files) == 0 && problem == "" {
 			continue // release with no binaries; try an older one
 		}
