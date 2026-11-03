@@ -170,6 +170,27 @@
       }
     },
     {
+      "name": "Miyoo mctl",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/Miyoo-mctl/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/Miyoo-mctl/main/docs/track.png",
+      "notes": "Mission-control spacecraft tracker: the ISS, Tiangong, Hubble and their visiting ships on a live world map and 3D globe, plus 5 days of passes over your city with the ones you can see by eye starred. Four retro themes, time warp and a desk-display kiosk mode. Needs Wi-Fi once to download orbits, then works offline. Unofficial handheld take inspired by mctl by Liam Droog (github.com/LiamDroog/mctl); not affiliated, report bugs to its GitHub.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
       "name": "Mr. Rescue",
       "categories": [
         "platform"
