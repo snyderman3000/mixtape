@@ -191,6 +191,27 @@
       }
     },
     {
+      "name": "Rabbit Ears",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/rabbitears/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/rabbitears/main/docs/cover.png",
+      "notes": "A 90s TV set: videos in Media/TV become channels you flip through with the d-pad, with snow between channels and a green channel number. Every channel is always on the air, so you tune in mid-show. A folder of episodes is one channel. Channel guide on Select. Plays through Onion's video player. Convert videos first with vhsify (on the release page) for small, quick-tuning, VHS-look files.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
+    },
+    {
       "name": "Mr. Rescue",
       "categories": [
         "platform"
