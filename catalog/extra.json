@@ -452,14 +452,14 @@
       ],
       "status": "playable",
       "assets": "free",
-      "upstream": "https://github.com/EntertainmentMuch144/CartOS",
+      "upstream": "https://github.com/EntertainmentMuch144/CartOS/releases",
       "image": "",
       "notes": "Cartridge-style game browser: flip through your systems as cartridges, browse Recent, Favourite and custom lists, search, see artwork, details and playtime (with Activity Tracker), and launch games and apps through OnionOS. Custom backgrounds (BG*.png) and many layout options. The optional start-on-boot hook is a manual step: see INSTALL.txt on the project page. Report bugs to the project's GitHub.",
       "porter": [
         "EntertainmentMuch144"
       ],
       "recipe": {
-        "url": "https://raw.githubusercontent.com/EntertainmentMuch144/CartOS/main/Releases/CartOS-0.1.25.zip",
+        "asset": "CartOS",
         "keep": [
           "settings.ini",
           "BG*.png",
