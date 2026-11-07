@@ -466,6 +466,24 @@
           "list-order.txt"
         ]
       }
+    },
+    {
+      "name": "Battery Monitor V2",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/ksielick/batterymonitor-miyoo/releases",
+      "image": "https://raw.githubusercontent.com/ksielick/batterymonitor-miyoo/main/docs/screenshot_axp_menu.png",
+      "notes": "Enhanced Onion Battery Monitor: live PMIC readings (voltage, mA draw, mAh left), coulomb-counter fuel gauge, a one-cycle calibration wizard for jumpy battery %, a ~45 s battery health test, and browsable session/charge history with zoom. Hardware features need the Mini Plus. Installs alongside Onion's own Battery Monitor (same name in Apps) and reads the same history. The shutdown-voltage setting is a hard power cut: change it with care. Report bugs to the project's GitHub.",
+      "porter": [
+        "ksielick"
+      ],
+      "recipe": {
+        "asset": "BatteryMonitorUI",
+        "appDir": "BatteryMonitorV2"
+      }
     }
   ]
 }
