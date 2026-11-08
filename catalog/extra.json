@@ -484,6 +484,23 @@
         "asset": "BatteryMonitorUI",
         "appDir": "BatteryMonitorV2"
       }
+    },
+    {
+      "name": "Endless Sky",
+      "categories": [
+        "simulation"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/zakijss/EndlessSky/releases",
+      "image": "https://raw.githubusercontent.com/zakijss/EndlessSky/miyoo/miyoo/docs/flight.png",
+      "notes": "The full Endless Sky, the open-source space trading and combat game: trade, take missions, mine, fight pirates and build a fleet across the whole campaign. Software renderer at 30 FPS in open space, every action on a button, on-screen keyboard. PC saves carry over both ways. About 200 MB. Land before quitting: progress since your last landing is lost. Installs to Games > Ports > Space. Report port bugs to the port's GitHub.",
+      "porter": [
+        "zakijss"
+      ],
+      "recipe": {
+        "asset": "EndlessSky-Miyoo"
+      }
     }
   ]
 }
