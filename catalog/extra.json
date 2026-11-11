@@ -516,6 +516,28 @@
       "porter": [
         "shrimpmaster-flex"
       ]
+    },
+    {
+      "name": "Diablo II",
+      "categories": [
+        "rpg"
+      ],
+      "status": "playable",
+      "assets": "owned",
+      "upstream": "https://github.com/Comaonetwo/diablo2-miyoo-mini/releases",
+      "image": "",
+      "notes": "Diablo II: Lord of Destruction (classic, not Resurrected) on a decompiled engine, single-player Acts I-IV with full button controls; Act V, multiplayer and cinematics are left out. Heavy scenes, especially Act IV, can drop frames. Needs your own classic game files in Roms/PORTS/Games/DiabloII/data/: d2data.mpq, d2char.mpq, d2exp.mpq and LODPatch_114d.exe (the 1.14d patch), plus d2sfx, d2speech, d2xtalk, d2music and d2xmusic .mpq for sound. Saves are kept on update. Not made or approved by Blizzard. Report bugs (with diablo2.log) to the port's GitHub.",
+      "porter": [
+        "Comaonetwo"
+      ],
+      "recipe": {
+        "asset": "Diablo-II-Miyoo",
+        "keep": [
+          "data/*",
+          "state/*"
+        ],
+        "note": "Now copy your own classic Diablo II + Lord of Destruction files into Roms/PORTS/Games/DiabloII/data/: d2data.mpq, d2char.mpq, d2exp.mpq and LODPatch_114d.exe, plus the five sound/music MPQs for audio. Then launch it from Games > Ports."
+      }
     }
   ]
 }
