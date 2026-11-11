@@ -501,6 +501,21 @@
       "recipe": {
         "asset": "EndlessSky-Miyoo"
       }
+    },
+    {
+      "name": "Kaiten Patissier Trilogy",
+      "categories": [
+        "platform",
+        "puzzle"
+      ],
+      "status": "experimental",
+      "assets": "free",
+      "upstream": "https://github.com/shrimpmaster-flex/Kaiten_Patissier_Trilogy_Miyoo_Mini_Plus/releases",
+      "image": "",
+      "notes": "Kaiten Patissier, Ura Kaiten Patissier and Champ Kaiten Patissier, Alpha Secret Base's freeware rotating-stage platformers, built from MK2k's PSP ports. D-pad moves, B rotates the stage, A jumps, Y opens the menu. Installs to Games > Ports > Puzzle; saves are kept on update. The rotation animation is newly fixed and not yet confirmed on a real device. Report bugs to the port's GitHub.",
+      "porter": [
+        "shrimpmaster-flex"
+      ]
     }
   ]
 }
