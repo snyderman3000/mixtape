@@ -538,6 +538,32 @@
         ],
         "note": "Now copy your own classic Diablo II + Lord of Destruction files into Roms/PORTS/Games/DiabloII/data/: d2data.mpq, d2char.mpq, d2exp.mpq and LODPatch_114d.exe, plus the five sound/music MPQs for audio. Then launch it from Games > Ports."
       }
+    },
+    {
+      "name": "ArchiveTV",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/mroxfordyazuka/ArchiveTV/releases",
+      "image": "https://raw.githubusercontent.com/mroxfordyazuka/ArchiveTV/main/docs/guide.png",
+      "notes": "A little TV for Internet Archive videos: search videos and collections, browse a Guide of hand-picked shelves (cartoons, 80s and 90s anime, movies and more), watch while it downloads, and keep a download queue that survives Wi-Fi drops. Saved shows, playlists, resume, four themes, scanlines and menu music. Browsing and downloading need Wi-Fi; otherwise it plays videos copied into App/ArchiveTV/videos. Your videos, saved shows, playlists and settings are kept on update. Report bugs to the project's GitHub.",
+      "porter": [
+        "mroxfordyazuka"
+      ],
+      "recipe": {
+        "asset": "ArchiveTV",
+        "keep": [
+          "videos/*",
+          "playlists/*",
+          "settings.txt",
+          "queue.txt",
+          "channels.txt",
+          "searches.txt",
+          ".resume"
+        ]
+      }
     }
   ]
 }
