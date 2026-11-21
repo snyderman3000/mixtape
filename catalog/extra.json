@@ -564,6 +564,26 @@
           ".resume"
         ]
       }
+    },
+    {
+      "name": "Homebrew Store",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/jojobt55/MiyooMiniPlus-CoolTools",
+      "image": "https://raw.githubusercontent.com/jojobt55/MiyooMiniPlus-CoolTools/main/homebrew-store/shots/1-browse.png",
+      "notes": "Browse and install free, legal homebrew from Homebrew Hub for Game Boy, Game Boy Color, GBA and NES: screenshots, descriptions and authors for each game, search and sorting. X installs a game straight into Roms/GB, GBC, GBA or FC with box art, so it shows up in your game list right away; Y on its page removes it. Needs Wi-Fi. Part of jojobt55's CoolTools. Report bugs to the project's GitHub.",
+      "porter": [
+        "jojobt55"
+      ],
+      "recipe": {
+        "url": "https://raw.githubusercontent.com/jojobt55/MiyooMiniPlus-CoolTools/main/homebrew-store/dist/HomebrewStore.zip",
+        "keep": [
+          "norotate"
+        ]
+      }
     }
   ]
 }
