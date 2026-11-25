@@ -584,6 +584,27 @@
           "norotate"
         ]
       }
+    },
+    {
+      "name": "Ante Up",
+      "categories": [
+        "app"
+      ],
+      "status": "playable",
+      "assets": "free",
+      "upstream": "https://github.com/snyderman3000/Ante-Up/releases",
+      "image": "https://raw.githubusercontent.com/snyderman3000/Ante-Up/main/docs/run.png",
+      "notes": "Balatro stats the game doesn't show: a boss blind board for your current run (beaten, this ante's boss, could be next, locked until ante N), win-loss records for every deck on every stake, and how each joker did in won and lost runs. Reads the saves of the Balatro for Miyoo Mini port without changing them; art and font come from your own copy of the game.",
+      "porter": [
+        "snyderman3000",
+        "Claude"
+      ],
+      "recipe": {
+        "asset": "onionos",
+        "keep": [
+          "data/*"
+        ]
+      }
     }
   ]
 }
